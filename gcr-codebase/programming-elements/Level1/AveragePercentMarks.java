@@ -9,20 +9,25 @@ O/P => Sam’s average mark in PCM is ___
 
  
 
-public class AveragePercentMarks{
-	
-	public static void main(String [] args){
+// Main class to calculate average percentage of marks
+public class AveragePercentMarks {
 
- 
-		
-		int MathsMarks = 94;
-		int PhysicsMarks = 95;
-		int ChemistryMarks = 96;
+    // Main method – program execution starts here
+    public static void main(String[] args) {
 
-		float Average = (float) (MathsMarks + PhysicsMarks + ChemistryMarks) / 3;
+	// Marks obtained in individual subjects
+        int MathsMarks = 94;
+        int PhysicsMarks = 95;
+        int ChemistryMarks = 96;
 
-		System.out.println("Sam’s average mark in PCM is " + Average +" %");
+        // Calculating average percentage
+        // Type casting to float is done to get decimal value
+        float Average = (float) (MathsMarks + PhysicsMarks + ChemistryMarks) / 3;
 
-	}
 
+	        // Printing the final average percentage
+        System.out.println("Sam’s average mark in PCM is " + Average + " %");
+
+    }
 }
+
