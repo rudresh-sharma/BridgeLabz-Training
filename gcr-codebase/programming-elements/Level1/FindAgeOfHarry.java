@@ -8,22 +8,22 @@ O/P => Harry's age in 2024 is ___
 
 
 
+// Program to find Harry's age
+public class FindAgeOfHarry {
 
-public class FindAgeOfHarry{
+    // main method
+    public static void main(String[] args) {
 
-	public static void main(String[] args){
+        // Harry's birth year
+        int birthYear = 2000;
 
-		
-		int birthYear = 2000;
-		int currentYear = 2024;
-		
-		int age = currentYear - birthYear;	
-		
-		System.out.println("Harry's age in 2024 is " + age);
+        // present year
+        int currentYear = 2024;
 
-		
+        // calculating age
+        int age = currentYear - birthYear;
 
-	}
-
-
+        // printing the result
+        System.out.println("Harry's age in 2024 is " + age);
+    }
 }
