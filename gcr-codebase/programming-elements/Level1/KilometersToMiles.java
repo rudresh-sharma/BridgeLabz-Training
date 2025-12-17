@@ -7,19 +7,23 @@ O/P => The distance  ___ km in miles is ___
 */
 
 
-public class KilometersToMiles{
+// Program to convert kilometers into miles
+public class KilometersToMiles {
 
-	public static void main(String [] args){
+    // main method
+    public static void main(String[] args) {
 
-		float distanceInKilometers = 10.8f;
-		float oneKmInMiles = 1.6f;
+        // distance given in kilometers
+        float distanceInKilometers = 10.8f;
 
+        // value of one kilometer in miles
+        float oneKmInMiles = 0.62f;
 
-		float distanceInMiles = distanceInKilometers * oneKmInMiles;
+        // converting kilometers to miles
+        float distanceInMiles = distanceInKilometers * oneKmInMiles;
 
-		System.out.println("The distance " +  distanceInKilometers +  " km in miles is " + distanceInMiles);
-
-
-	}
-
+        // printing the converted distance
+        System.out.println("The distance " + distanceInKilometers +
+                           " km in miles is " + distanceInMiles);
+    }
 }
