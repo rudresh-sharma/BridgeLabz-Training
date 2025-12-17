@@ -16,7 +16,6 @@ O/P => The discount amount is INR ___ and final discounted fee is INR ___
 
 import java.util.Scanner;
 
-import java.util.Scanner;
 
 // Program to calculate discounted university fees based on user input
 public class UniversityDiscountFeesInput {
