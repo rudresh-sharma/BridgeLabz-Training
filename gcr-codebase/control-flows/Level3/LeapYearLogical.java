@@ -10,14 +10,13 @@ import java.util.Scanner;
 public class LeapYearLogical{
 	public static void main(String[] args){
 
-	//
+	// Taking inputs
 	Scanner in = new Scanner(System.in);
 	System.out.print("Enter the year: " );
 	int year = in.nextInt();
 
 
-	//
-
+	// Cheking given year is leap year or not
 	        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
 			System.out.print("Year is a leap year\n" );
 		}
