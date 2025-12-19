@@ -16,13 +16,13 @@ import java.util.Scanner;
 public class LeapYear{
 	public static void main(String[] args){
 
-	//
+	// Taking inputs
 	Scanner in = new Scanner(System.in);
 	System.out.print("Enter the year: " );
 	int year = in.nextInt();
 
 
-	//
+	// Cheking given is leap year or not
 		if(year<1582){
 			System.out.print("Year should be >=1582 " );
 		}
