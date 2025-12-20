@@ -22,8 +22,8 @@ public class PersonsBMIS{
 	// Taking inputs
 	Scanner in = new Scanner(System.in);
 	System.out.print("Enter the number of persons: ");
-	int number = in.nextInt();
-	double[] personData    = new double[number][3];
+	int	 number = in.nextInt();
+	double[][] personData    = new double[number][3];
 	String[] weightStatus  = new String[number];
 		for(int i=0; i<number; i++){
 			System.out.print("Enter the weight(kg) and heights(meter) of person " + (i+1) +" :");
@@ -36,17 +36,17 @@ public class PersonsBMIS{
 
 	// Printing weights, heights, bmi, status of each person
 	for(int i=0; i<number; i++){
-		personData[i][2] = bodyMassIndex(weights[i], heights[i]);
+		personData[i][2] = bodyMassIndex(personData[i][0], personData[i][1]);
 	}
 	for(int i=0; i<number; i++){
-		weightStatus[i] = personData[i][2];
+		weightStatus[i] = weightStatus(personData[i][2]);
 	}
 	for (int i = 0; i < number; i++) {
  	   	System.out.println("Details of person " + (i + 1) + " are:");
-    		System.out.println("Weight = " + weights[i]);
-    		System.out.println("Height = " + heights[i]);
-    		System.out.println("BMI = " + bmi[i]);
-    		System.out.println("Weight Status = " + status[i]);
+    		System.out.println("Weight = " + personData[i][0]);
+    		System.out.println("Height = " + personData[i][1]);
+    		System.out.println("BMI = " + personData[i][2]);
+    		System.out.println("Weight Status = " + weightStatus[i]);
     		System.out.println(); // <-- this line creates a blank line
 }	
 
