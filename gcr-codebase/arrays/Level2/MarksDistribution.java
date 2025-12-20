@@ -35,39 +35,39 @@ public class MarksDistribution{
  				System.out.print("Enter the marks of Physics: ");
 				while(true){
 				int temp1 = in.nextInt();
-					if(temp1>=0){
+					if(temp1>=0 && temp1<=100){
 						physics[i] = temp1; 
 						count++; 
 						break;
 					}
 					else{
-						System.out.print("Enter the positive marks:");
+						System.out.print("Enter the valid marks:");
 				}
 				}
 				System.out.print("Enter the marks of Chemistry: ");
 				while(true){
 				int temp2 = in.nextInt();
-					if(temp2>=0){
+					if(temp2>=0 && temp2<=100){
 						chemistry[i] = temp2; 
 						count++; 
 						break;
 				}
 					else{
-						System.out.print("Enter the positive marks:");
+						System.out.print("Enter the valid marks:");
 					}
 				}
 				System.out.print("Enter the marks of Maths: ");
 
 				while(true){
 				int temp3 = in.nextInt();
-				if(temp3>=0){
+				if(temp3>=0 && temp3<=100){
 					maths[i] = temp3; 
 					count++;
 					break;
 					
 				}
 				else{
-					System.out.print("Enter the positive marks:");
+					System.out.print("Enter the valid marks:");
 				}
 				}
 				totalMarks = physics[i] + chemistry[i] + maths[i];
