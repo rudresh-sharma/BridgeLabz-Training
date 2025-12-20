@@ -14,6 +14,7 @@ Display the frequency of each digit in the number
 
 
 import java.util.Scanner;
+import java.util.Arrays;
 public class DigitFrequency{
 	public static void main(String[] args){
 
@@ -70,12 +71,13 @@ public class DigitFrequency{
 
 	// Printing Frequencies of digit
 	k=0;
-
+	Arrays.fill(previousElements,-1);
 		for(int i=0; i<index; i++){
 			if(!isPreviousEqual(previousElements, digits[i]) && frequency[i][0] > 0){	
 				System.out.println("Frequency of " + digits[i] + " = " + frequency[i][0]);
 			}
 			previousElements[k] = digits[i];
+			k++;
 
 		}
 
