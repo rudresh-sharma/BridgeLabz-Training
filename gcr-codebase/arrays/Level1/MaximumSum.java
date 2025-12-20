@@ -37,10 +37,14 @@ public class MaximumSum{
 		}
 	
 
-	// Printing total of all values
-	for(int i=0; i<10; i++){
-		total += nums[i];
-	}
+	// Printing total of all values and values
+	
+		for(int i=0; i<nums.length; i++){
+			System.out.print(nums[i] + " ");
+		}
+		for(int i=0; i<10; i++){
+			total += nums[i];
+		}
 
 	System.out.println("Total of all value is: " + total);
 
