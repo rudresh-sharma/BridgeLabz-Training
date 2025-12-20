@@ -11,7 +11,7 @@ Finally, print the odd and even numbers array using the odd and even index
 */
 
 
-
+import static java.lang.System.exit;
 import java.util.Scanner;
 public class OddEven{
 	public static void main(String[] args){
@@ -20,6 +20,10 @@ public class OddEven{
 	Scanner in = new Scanner(System.in);
 	System.out.print("Enter the number: ");
 	int number = in.nextInt();
+	if(number<0){
+		System.err.println("You are enter negative number ");
+		exit(-1);
+	}
 	int noOfOdds = (number-1)/2 + 1;
 	int[] odds = new int[noOfOdds];
 	int[] evens = new int[number-noOfOdds];
