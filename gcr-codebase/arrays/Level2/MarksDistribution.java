@@ -26,18 +26,61 @@ public class MarksDistribution{
 	int[] maths 	= new int[n];
 	float[] percentages = new float[n];
 	char[] grades = new char[n];		
-		for(int i=0; i<n; i++){
+		for(int i=0; i<n; i++)	{
+			float totalMarks =0;
+
 			System.out.println("Enter the marks of student "+ (i+1) +": ");
-			
-			System.out.print("Enter the marks of Physics: ");
-			physics[i] = in.nextInt();
-			System.out.print("Enter the marks of Chemistry: ");
-			chemistry[i] = in.nextInt();	
-			System.out.print("Enter the marks of Maths: ");
-			maths[i] = in.nextInt();
-			float totalMarks = physics[i] + chemistry[i] + maths[i];
+			while(true){
+			int count = 0;
+ 				System.out.print("Enter the marks of Physics: ");
+				while(true){
+				int temp1 = in.nextInt();
+					if(temp1>=0){
+						physics[i] = temp1; 
+						count++; 
+						break;
+					}
+					else{
+						System.out.print("Enter the positive marks:");
+				}
+				}
+				System.out.print("Enter the marks of Chemistry: ");
+				while(true){
+				int temp2 = in.nextInt();
+					if(temp2>=0){
+						chemistry[i] = temp2; 
+						count++; 
+						break;
+				}
+					else{
+						System.out.print("Enter the positive marks:");
+					}
+				}
+				System.out.print("Enter the marks of Maths: ");
+
+				while(true){
+				int temp3 = in.nextInt();
+				if(temp3>=0){
+					maths[i] = temp3; 
+					count++;
+					break;
+					
+				}
+				else{
+					System.out.print("Enter the positive marks:");
+				}
+				}
+				totalMarks = physics[i] + chemistry[i] + maths[i];
+				
+				if(count == 3){
+					break;
+				}
+			}
+				
+ 
 			float percentage = totalMarks/3;
 			percentages[i] = percentage;
+			totalMarks = 0;
 			System.out.println();
 
 		}
