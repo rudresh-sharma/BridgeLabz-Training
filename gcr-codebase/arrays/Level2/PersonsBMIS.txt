@@ -12,7 +12,7 @@ Calculate BMI of all the persons and store them in the personData array and also
 Display the height, weight, BMI and status of each person
 
 
-*.
+*/
 
 
 import java.util.Scanner;
