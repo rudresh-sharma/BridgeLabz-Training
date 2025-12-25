@@ -3,7 +3,7 @@
 ---
 
 ## 📅 Day 1 – Git and GitHub Setup  
-**Date:** 16-Dec-2025  
+**Date:** 15-Dec-2025  
 
 - Installed and configured Git  
 - Set up GitHub repository  
@@ -34,7 +34,7 @@ C:.
 
 
 ### 🗓 Day 2 – Git Practice & Basic Java Programs  
-**Date:** 17-Dec-2025
+**Date:** 16-Dec-2025
 
 - Practiced Git workflow to understand commits and version control.
 - Solved very basic Java programs to understand syntax and structure.
@@ -46,7 +46,7 @@ C:.
 ---
 
 ### 🗓 Day 3 – Programming Elements in Java  
-**Date:** 18-Dec-2025
+**Date:** 17-Dec-2025
 
 - Studied Java programming elements:
   - Variables and data types
@@ -62,7 +62,7 @@ C:.
 
 
 ### 🗓 Day 4 – Control Flow & Logical Constructs  
-**Date:** 19-Dec-2025
+**Date:** 18-Dec-2025
 
 - Studied logical constructs in Java:
   - if, if-else
@@ -85,7 +85,7 @@ C:.
 
 
 ### 🗓 Day 5 – Arrays & Basic Problem Solving  
-**Date:** 20-Dec-2025
+**Date:** 19-Dec-2025
 
 - Studied arrays in Java:
   - Single-dimensional arrays
@@ -105,7 +105,7 @@ C:.
 
 
 ### 🗓 Day 6 –Concepts & problems on Methods  
-**Date: 22-Dec-2025
+**Date: 20-Dec-2025
 
 - Studied Java methods:
   - Method declaration
@@ -120,3 +120,28 @@ C:.
 ---
 
 
+
+# Week2 : Worked on Strings and Extras Problems
+
+---
+## 📅 Day 1 – Strings Concepts & Problems  
+**Date:** 22-Dec-2025 
+
+- [Learn the string concepts](https://docs.google.com/document/d/1-UXHtzpozVZznDVGYivscpQYEL6-vxOFZWiPpvBH5CE/edit?tab=t.0#heading=h.66yv6crqdvrd)
+    - Learn about built in methods for strings
+    - Why string is immutable
+    - Exception handling
+ 
+- Solve Problems at three levels
+   - **Level1** Basic problems to create own method resemebles built in method
+   - **Level2** Learn how to print data in tabular format
+   - **Level2** Solve random values generated problems
+
+
+🔗 **Code Link:** <br>
+👉[Day 1 - String problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/strings)
+
+ ---
+
+
+  
