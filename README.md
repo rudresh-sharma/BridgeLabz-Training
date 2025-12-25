@@ -144,4 +144,21 @@ C:.
  ---
 
 
+ ## 📅 Day 2 – Solve Extras Problems 
+**Date:** 23-Dec-2025 
+
+- [Extras Problems on String](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/a/ODIxNjE3NTg5MDU3/details)
+   - Work on concepts like frequency,substring,anagram etc . about string
+
+ - [Extras Problems on Built in function](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/a/ODIxNjE3NTg5MDYx/details)
+     - Ex. includes time packages functions like LocalDate.now(), LocalTime.now() etc.
+
+  **Code Link:** <br>
+  [String Extras solved](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/extras/String%20Handling) ,
+  [Buiilt function extras Solved](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/extras/Buiit%20In%20Function)
+  <br>
+  **Notes source:** <br>
+  [Built in functions 1](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details) , 
+  [Built in functions 2](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details)
+
   
