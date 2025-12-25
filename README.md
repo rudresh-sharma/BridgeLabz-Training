@@ -154,11 +154,27 @@ C:.
      - Ex. includes time packages functions like LocalDate.now(), LocalTime.now() etc.
 
   **Code Link:** <br>
-  [String Extras solved](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/extras/String%20Handling) ,
-  [Buiilt function extras Solved](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/extras/Buiit%20In%20Function)
+  👉[String Extras solved](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/extras/String%20Handling) ,
+  👉[Buiilt function extras Solved](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/extras/Buiit%20In%20Function)
   <br>
   **Notes source:** <br>
-  [Built in functions 1](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details) , 
-  [Built in functions 2](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details)
+  👉[Built in functions 1](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details) , 
+  👉[Built in functions 2](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details)
 
-  
+
+
+  ## 📅 Day 3 - Leetcode Practice 1
+**Date:** 24-Dec-2025
+   - Solved Below problems on leetcode
+     - [Two Sum](https://leetcode.com/problems/two-sum/description/)
+     - [First Palindromic string in array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/description/)
+     - [Number of Employees meet target](https://leetcode.com/problems/number-of-employees-who-met-the-target/description/)
+     - [Minimum Number of game](https://leetcode.com/problems/minimum-number-game/description/)
+     - [Difference between Element and digit sum](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/description/)
+     - [Multiples](https://leetcode.com/problems/sum-multiples/description/)
+     - [Type of Triangle](https://leetcode.com/problems/type-of-triangle/description/)
+    
+  🔗 **Code Link:** <br>
+  👉[Code of above Problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice1)
+
+  --- 
