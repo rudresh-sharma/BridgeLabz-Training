@@ -104,5 +104,19 @@ C:.
 ---
 
 
+### 🗓 Day 6 –Concepts & problems on Methods  
+**Date: 22-Dec-2025
+
+- Studied Java methods:
+  - Method declaration
+  - Method calling
+  - Parameter passing
+- Practiced reusable logic using methods.
+- Committed and pushed solutions to the repository.
+
+🔗 **Code Link:**  
+👉 [Day 6 – Problems on Methods](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/methods)
+
+---
 
 
