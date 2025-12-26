@@ -1,8 +1,10 @@
-java-oops-practice/gcr-codebase/.metadata/
+# Eclipse workspace files
+.metadata/
+.settings/
+.classpath
+.project
 
-java-oops-practice/gcr-codebase/JavaOopsConcepts/.settings
-java-oops-practice/gcr-codebase/JavaOopsConcepts/bin
-java-oops-practice/gcr-codebase/JavaOopsConcepts/.classpath
-java-oops-practice/gcr-codebase/JavaOopsConcepts/.project
+# Java build output
+bin/
 
-
+# (Do NOT ignore gcr-codebase — we want to track src)
