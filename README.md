@@ -177,4 +177,17 @@ C:.
   🔗 **Code Link:** <br>
   👉[Code of above Problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice1)
 
+
+  -  Solve following schenario based question
+    [24 Dec SBQ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase/24Dec2025)
   --- 
+
+  ## 📅Day 4 - Scenario based Questions
+  **Date:** 26-Dec-2025
+
+    - Solve following schenario based question
+    [26 Dec SBQ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase/26Dec2025)
+  
+
+
+  
