@@ -12,18 +12,20 @@
 ### 📂 Repository Structure
 
 ```text
-C:.
-├── gcr-codebase
-│   ├── arrays
-│   ├── control-flows
-│   ├── extras
-│   ├── methods
-│   ├── program-prerequisites
-│   ├── programming-elements
-│   └── strings
-├── leetcode-codebase
-├── scenario-based-codebase
-└── README.md
+BridgeLabz-Training/
+│── core-java-practice/
+│ │── gcr-codebase/
+│ │ │── arrays/
+│ │ │── control-flow/
+│ │ │── extras/
+│ │ │── methods/
+│ │ │── programming-elements/
+│ │ │── programming-requisites/
+│ │ │── strings/
+│ │── leet-code-codebase/
+│ │── scenario-based-codebase/
+│ |── README.md
+
 
 ```
 
@@ -162,32 +164,34 @@ C:.
   👉[Built in functions 2](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details)
 
 
+## 📅 Day 3 - Leetcode Practice 1  
+**Date:** 24-Dec-2025  
 
-  ## 📅 Day 3 - Leetcode Practice 1
-**Date:** 24-Dec-2025
-   - Solved Below problems on leetcode
-     - [Two Sum](https://leetcode.com/problems/two-sum/description/)
-     - [First Palindromic string in array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/description/)
-     - [Number of Employees meet target](https://leetcode.com/problems/number-of-employees-who-met-the-target/description/)
-     - [Minimum Number of game](https://leetcode.com/problems/minimum-number-game/description/)
-     - [Difference between Element and digit sum](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/description/)
-     - [Multiples](https://leetcode.com/problems/sum-multiples/description/)
-     - [Type of Triangle](https://leetcode.com/problems/type-of-triangle/description/)
-    
-  🔗 **Code Link:** <br>
-  👉[Code of above Problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice1)
+- Solved below problems on LeetCode:
+  - [Two Sum](https://leetcode.com/problems/two-sum/description/)
+  - [First Palindromic String in Array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/description/)
+  - [Number of Employees Who Met the Target](https://leetcode.com/problems/number-of-employees-who-met-the-target/description/)
+  - [Minimum Number Game](https://leetcode.com/problems/minimum-number-game/description/)
+  - [Difference Between Element & Digit Sum](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/description/)
+  - [Sum Multiples](https://leetcode.com/problems/sum-multiples/description/)
+  - [Type of Triangle](https://leetcode.com/problems/type-of-triangle/description/)
+
+🔗 **Code Link:**  
+👉 [Code of above Problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice1)
 
 
-  -  Solve following schenario based question
-    [24 Dec SBQ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase/24Dec2025)
-  --- 
+🔗 **Scenario Based Questions (SBQ):**  
+👉 [24 Dec SBQ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase/24Dec2025)
 
-  ## 📅Day 4 - Scenario based Questions
-  **Date:** 26-Dec-2025
+---
 
-    - Solve following schenario based question
-    [26 Dec SBQ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase/26Dec2025)
-  
+
+
+## 📅 Day 4 – Scenario Based Questions  
+**Date:** 26-Dec-2025  
+
+- Solved scenario based problems  
+  - 👉 [26 Dec SBQ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase/26Dec2025)
 
 
   
