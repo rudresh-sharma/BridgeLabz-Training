@@ -164,7 +164,7 @@ BridgeLabz-Training/
   👉[Built in functions 2](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details)
 
 
-## 📅 Day 3 - Leetcode Practice 1  
+## 📅 Day 3 - Leetcode Practice & Scenario Based Questions(SBQ) 
 **Date:** 24-Dec-2025  
 
 - Solved below problems on LeetCode:
@@ -190,8 +190,31 @@ BridgeLabz-Training/
 ## 📅 Day 4 – Scenario Based Questions  
 **Date:** 26-Dec-2025  
 
-- Solved scenario based problems  
-  - 👉 [26 Dec SBQ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase/26Dec2025)
+- Continued working on advanced scenario-based Core Java problems.
+- Applied concepts:
+  -  Scanner input, variables & primitive data types
+  - if-else & switch decision handling
+  - for, while & do-while loops
+  - Ternary operator usage
+  - break & continue control flow
+  Clean-code formatting, indentation & meaningful comments
+
+🔗 **Code Link:**  
+👉 [26 Dec SBQ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase/26Dec2025)
+
+---
+
+## 📅 Day 5- Leetcode Practice  
+**Date:** 27-Dec-2025  
+
+- Solved below problems on LeetCode:
+  - [Missing Number](https://leetcode.com/problems/missing-number/description/)
+  - [Rotate Array](https://leetcode.com/problems/rotate-array/description/)
+  - [Find If Array can be sorted](https://leetcode.com/problems/find-if-array-can-be-sorted/description/)
+  - [Move Zeroes](https://leetcode.com/problems/move-zeroes/description/)
+  - [Remove Duplicates in sorted array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)
 
 
+🔗 **Code Link:**  
+👉 [Code of above Problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice2)
   
