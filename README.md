@@ -222,7 +222,6 @@ BridgeLabz-Training/
 ## 📅 Day 1 - Solved following SBQ's
 **Date** 29-Dec-2025
 
----
 
 1. *Parking Lot Gate Systemn*
  
@@ -273,9 +272,67 @@ BridgeLabz-Training/
 
 🔗 [Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/PhoneRechargeSimulator.java)
 
----
+--- 
+## Day 2 - Solved following SBQ's and Leetcode Questions
+**Date:** 30-Dec-2025
 
+**1. Scenario Based Questions(SBQ)**
 
+1. *Temperature Logger*
+   
+  - Recorded temperatures over 7 days using an array.
+  - Used for-loop to input data.
+  - Calculated: Average temperature, Maximum temperature
+  - Used if conditions for comparisons.
+  - Maintained readable variable names and modular logic.
 
+[Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/TemperatureLogger.java)
+
+2. *Train Reservation Queue*
+   
+  - Simulated a basic ticket booking system.
+  - Displayed menu using switch-case.
+  - Allowed multiple bookings using while-loop.
+  - Stopped booking once seats reached zero using break.
+
+[Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/TrainReservation.java)
+
+3.  *Sandeep’s Fitness Challenge Tracker*
+   
+  - Stored daily push-up counts for a week.
+  - Used for-each loop to calculate:
+  - Total push-ups
+  - Average push-ups
+  - Used continue to skip rest days.
+
+[Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/FitnessChallengeTracker.java)
+
+4. *Movie Ticket Booking App*
+   
+  - Asked users for: Movie type, Seat type (Gold / Silver), Snacks selection
+  - Used switch and if-else together.
+  - Looped through multiple customers.
+
+[Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/MovieTicketBooking.java)
+
+5. *Rohan’s Library Reminder App*
+  - Calculated library fines based on: Due date and return date
+  - Fine charged: ₹5 per day for late returns.
+  - Repeated fine calculation for 5 books using for-loop.
+
+[Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/LibraryReminderApp.java)
+
+**2. Leetcode Questions**
+
+  _Solved Following Question(with Code)_
+
+  - [Integer to Roman](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/IntegerToRoman.java)
+  - [Roman to Integer](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/RomanToInteger.java)
+  - [Reverse words in string](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/ReverseWordsInString.java)
+  - [Remove outermost parenthesis](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/RemoveOutermostParenthesis.java)
+  - [Longest Palindromic substring](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/LongestPalindromicSubstring.java)
+
+## Day 3 -
+**Date:** 31-Dec-2025
 
   
