@@ -5,6 +5,6 @@
 .project
 
 # Java build output
-bin/
+gcr-codebase/JavaOopsConcepts/src/com/bin
 
 # (Do NOT ignore gcr-codebase — we want to track src)
