@@ -1,0 +1,12 @@
+/RUn.class
+/bin/
+
+.metadata/
+.settings/
+.classpath
+.project
+
+# Java build output
+gcr-codebase/JavaOopsConcepts/src/com/bin
+
+# (Do NOT ignore gcr-codebase — we want to track src)
