@@ -10,19 +10,21 @@
 
 
 ## 📚 Table of Contents
- 1. Branches in repository:
+1. Branches in repository:
       - main
       - core-java-practice
       - java-oops-practice
       - java-dsa-practice
-3. [Core Java Practice – Progress Tracker](#-core-java-practice--progress-tracker)
-4. [Java OOPS Practice – Progress Tracker](#java-oops-practice--progress-tracker)
-5. [Java DSA Practice – Progress Tracker](#java-dsa-practice--progress-tracker)
+   
+ 2.[Core Java Practice – Progress Tracker](#core-java-practice-progress-tracker) <br>
+ 3.[Java OOPS Practice – Progress Tracker](#java-oops-practice-progress-tracker) <br>
+ 4.[Java DSA Practice – Progress Tracker](#java-dsa-practice-progress-tracker)
+
 
  ---
 
 
-# core-java-practice--progress-tracker
+# Core Java Practice – Progress Tracker
 > In core-java-practiceI have learnt about basics of java like operators, conditional statements, switch case, loops and solves a different types of questions on respective topics.
 > the progress of given branch is showed up in weeks followed with each day work had been done by me.
 > Core-Java-Practice branch has been created on 15th December 2025!
@@ -151,6 +153,7 @@ BridgeLabz-Training/
 🔗 **Code Link:**  
 👉 [Day 6 – Problems on Methods](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/methods)
 
+>> Week 1 ends!
 
 
 
@@ -215,4 +218,223 @@ BridgeLabz-Training/
   👉[Code of above Problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice1)
 
 ![down](https://img.icons8.com/ios-filled/50/7F00FF/double-down.png)
+
+  ## 📅 Day 4 - Christmas Holiday
+**Date:** 25-Dec-2025
+
+
+📌Note-->> Now After this Leetcode questions are documented which has been done in core-java-practice branch
+  
+  
+
+#  java-oops-practice--progress-tracker
+> In java-oops-branch I have learnt about object oriented programming, covers concepts like class and objext, encapsulation, inheritance, abstraction etc. solved a different types of questions on respective topics.
+> the progress of given branch is showed up in weeks followed with each day work had been done by me.
+> Java-Oops-Practice branch has been created on 26th December 2025!
+![line](https://capsule-render.vercel.app/api?type=rect&color=0:00b09b,100:96c93d&height=10)
+
+## Project Structure
+
+```
+BridgeLabz-Training
+|
+---📁 java-oops-practice/
+    └── 📁 gcr-codebase/
+        └── 📁 JavaOopsConcepts/
+            └── 📁 src/
+                └── 📁 com/bridgelabz/
+                    ├── 📁 oops/
+                    │   ├── levelone/      
+                    │   └── leveltwo/      
+                    └── 📁 constructor/
+                        └── levelone/    
+
+```
+
+# Week 2 :Object Orient Programming Fundamentals
+![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
+
+
+## 📅 Day 5 – Class & Object 
+**Date:** 26-Dec-2025  
+
+- Learn Basic concepts of oops
+- Explore about class and object
+    - Solved following Questions on class & objects
+    - [Level1](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/classandobject/level1)
+    - [Level2](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/classandobject/level2)
+ 
+
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
+  
+## 📅 Day 6 – Constructors & Access Modifiers
+**Date:** 27-Dec-2025  
+
+
+__Learned core OOP concepts in Java:__
+
+- Constructors in Java
+- Default Constructor
+- Parameterized Constructor
+- Copy Constructor
+- Constructor Overloading
+- Access Modifiers:
+- public, protected, default, private
+- Instance vs Class (static) variables and methods
+- Implemented practice programs:
+
+
+.
+
+🔗**Code Link**
+👉 [Constructor Code](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/constructors/levelone)
+
+
+
+
+# Week 3 :Object Orient Programming Fundamentals(Continue)
+![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
+
+
+## 📅 Day 1 – Core Java Keywords & Inbuiltfunctions
+**Date:** 29-Dec-2025  
+
+
+- Studied Core Java keywords:
+  - this keyword
+  - static keyword.
+  - final keyword
+- Practiced scenario-based Core Java problems:
+- Applied concepts using:
+  - for, for-each, while, do-while loops
+  -  if-else and switch-case statements
+- Improved logic building through real-world problem scenarios.  
+
+🔗 **Code Link:**  
+👉 [Core Java Keywords &Inbuilt Functions](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/inbuiltfunction)
+
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
+
+## 📅 Day 2 - Object modelling and Class Diagrams
+**Date:** 30-Dec-2025  
+
+Learned core concepts of **Object Modeling** and **object communication** in Java.
+
+#### Topics Covered:
+- Classes vs Objects (definition, purpose, memory allocation)
+- Object relationships:
+  - Aggregation
+  - Association
+  - Composition
+- UML basics:
+  - Class Diagrams
+  - Object Diagrams
+  - Sequence Diagrams
+ 
+  
+🔗 **Code Link:**  
+👉 [Object Modelling](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/objectmodeling)
+
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
+
+## 📅 Day 3 -  Java Inheritance & OOPS Hierarchies
+**Date:** 31-Dec-2025  
+
+**Topics Covered:**
+- Practiced Single, Multilevel, Hierarchical & Hybrid Inheritance
+- Implemented method overriding, super() constructor calls, and polymorphism
+- Understood access modifiers and their behavior in inheritance
+- Modeled real-world hierarchies (Animal, Employee, Vehicle, Bank, Restaurant)
+  
+🔗 Code Links:
+👉 [Inheritance code ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/inheritance)
+
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
+
+## 📅 Day 4 -  Encapsulation, Polymorphism, Interface and Abstract Class
+**Date:** 01-Jan-2026 
+
+#### 🔹 Java OOPS Practice (`java-oops-practice`)
+Learned and practiced Encapsulation along with scenario-based OOPS problem solving.
+
+**Topics Covered:**
+- Data hiding using private fields
+- Controlled access via getters & setters
+- Validation logic inside methods
+- Securing sensitive data (e.g., account balance, user details)
+- Improved code safety, flexibility, and maintainability
+- Example Implemented:
+   - BankAccount with validated deposit & withdrawal operations
+ 
+  🔗 Code Links:
+👉 [Encapsulation code ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/encapsulation)
+
+
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
+
+## 📅 Day 5 - Scenario Bases Question(SBQ) On OOPS  
+**Date:** 02-Jan-2026 
+
+
+- Solve following SBQ
+   1. [hospitalpatientmanagementsystem](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/hospitalpatientmanagementsystem)
+   2. [E wallet](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/ewallet)
+   3. [Smart home](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/smarthome)
+   4. [University](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/university)
+   5. [Vehicle rental application](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/vehiclerentalapplication)
+
+
+ ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
+
+## 📅 Day 6 - Scenario Bases Question(SBQ) On OOPS (continue) 
+**Date:** 03-Jan-2026 
+
+
+- Solve following SBQ
+    1. [Cabby Go](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daytwo/cabbygo)
+    2. [My Bank](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daytwo/mybank)
+ 
+
+
+---
+
+
+
+# Week 3 : Scenario Bases Question(SBQ) On OOPS (continue) 
+![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
+
+## 📅 Day 1 - Scenario Bases Question(SBQ) On OOPS (continue) 
+**Date:** 05-Jan-2026
+
+
+- Solve following SBQ
+
+   1. [Campus Connect](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daythree/campusconnect)
+   2. [Swift Cart](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daythree/swiftcart)
+ 
+  
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
+
+## 📅 Day 2 - Scenario Bases Question(SBQ) On OOPS (continue) 
+**Date:** 06-Jan-2026
+
+
+- Solve following SBQ
+
+   1. [Edu mentor](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/edumentor)
+   2. [Fit Track](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/fittrack)
+   3. [Pet Pal](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/petpal)
+   4. [Event Ease](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/eventease)
+ 
+      
+
+
+
 
