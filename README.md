@@ -1,6 +1,55 @@
-# Week 1: Git, GitHub & Java Programming Fundamentals
+# BridgeLabz Training Journey
+> A Java Full Stack Training program covering everything from core java,  object oriented programminh  to hard core backend frameworks
 
----
+# Training Overview & Acknowledgement
+> I am gratefull to have a mentors provided by BridgeLabz, I sincerely thanks to all my mentors to trust on me and teaching everything which an industry demands.
+> @Bhuvan Sir
+> @Vishal Sir
+> @Karthik Sir
+> @Koteshwar Sir 
+
+
+## 📚 Table of Contents
+ 1. Branches in repository:
+      - main
+      - core-java-practice
+      - java-oops-practice
+      - java-dsa-practice
+3. [Core Java Practice – Progress Tracker](#-core-java-practice--progress-tracker)
+4. [Java OOPS Practice – Progress Tracker](#java-oops-practice--progress-tracker)
+5. [Java DSA Practice – Progress Tracker](#java-dsa-practice--progress-tracker)
+
+ ---
+
+
+# core-java-practice--progress-tracker
+> In core-java-practiceI have learnt about basics of java like operators, conditional statements, switch case, loops and solves a different types of questions on respective topics.
+> the progress of given branch is showed up in weeks followed with each day work had been done by me.
+> Core-Java-Practice branch has been created on 15th December 2025!
+![line](https://capsule-render.vercel.app/api?type=rect&color=0:00b09b,100:96c93d&height=10)
+
+
+## Project Structure
+
+```
+BridgeLabz-Training/
+│
+├── 📁 core-java-practice/
+│   ├── 📁 gcr-codebase/
+│   │   ├── 📁 programming-prerequisites/          
+│   │   ├── 📁 programming-elements/
+│   │   ├── 📁 control-flows/          
+│   │   ├── 📁 arrays/                 
+│   │   ├── 📁 methods/                
+│   │   ├── 📁 strings/                
+│   │   └── 📁 Extras/                 
+│   ├── 📁 leet-code-codebase/         
+│   └── 📁 scenario-based/             
+│
+```
+# Week 1: Core Java Fundamentals & Git, Github
+![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
+
 
 ## 📅 Day 1 – Git and GitHub Setup  
 **Date:** 15-Dec-2025  
@@ -8,30 +57,10 @@
 - Installed and configured Git  
 - Set up GitHub repository  
 - Created core-java-practice branch
-
-### 📂 Repository Structure
-
-```text
-BridgeLabz-Training/
-│── core-java-practice/
-│ │── gcr-codebase/
-│ │ │── arrays/
-│ │ │── control-flow/
-│ │ │── extras/
-│ │ │── methods/
-│ │ │── programming-elements/
-│ │ │── programming-requisites/
-│ │ │── strings/
-│ │── leet-code-codebase/
-│ │── scenario-based-codebase/
-│── README.md
-
-```
-
 - Learned basic git commands like (git init, git status, git commit -m "", git add, git push)
 - Successfully pushed files to the remote repository
 
-***
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
 
 ### 🗓 Day 2 – Git Practice & Basic Java Programs  
@@ -44,7 +73,8 @@ BridgeLabz-Training/
 🔗 **Code Link:**  
 👉 [Day 2 – Basic Java Programs](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/program-prerequisites)
 
----
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
 
 ### 🗓 Day 3 – Programming Elements in Java  
 **Date:** 17-Dec-2025
@@ -59,7 +89,8 @@ BridgeLabz-Training/
 🔗 **Code Link:**  
 👉 [Day 3 – Programming Elements](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/programming-elements)
 
----
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
 
 
 ### 🗓 Day 4 – Control Flow & Logical Constructs  
@@ -82,7 +113,8 @@ BridgeLabz-Training/
 🔗 **Code Link:**  
 👉 [Day 4 – Control Flow](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/control-flows)
 
----
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
 
 
 ### 🗓 Day 5 – Arrays & Basic Problem Solving  
@@ -102,7 +134,8 @@ BridgeLabz-Training/
 👉 [Day 5 – Arrays](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/arrays)
 
 
----
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
 
 
 ### 🗓 Day 6 –Concepts & problems on Methods  
@@ -118,13 +151,13 @@ BridgeLabz-Training/
 🔗 **Code Link:**  
 👉 [Day 6 – Problems on Methods](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/methods)
 
----
+
 
 
 
 # Week2 : Worked on Strings and Extras Problems
+![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
 
----
 ## 📅 Day 1 – Strings Concepts & Problems  
 **Date:** 22-Dec-2025 
 
@@ -142,7 +175,8 @@ BridgeLabz-Training/
 🔗 **Code Link:** <br>
 👉[Day 1 - String problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/strings)
 
- ---
+ ![down](https://img.icons8.com/ios-filled/50/7F00FF/double-down.png)
+
 
 
  ## 📅 Day 2 – Solve Extras Problems 
@@ -163,6 +197,8 @@ BridgeLabz-Training/
   👉[Built in functions 2](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details)
 
 
+![down](https://img.icons8.com/ios-filled/50/7F00FF/double-down.png)
+
 
   ## 📅 Day 3 - Leetcode Practice 1
 **Date:** 24-Dec-2025
@@ -178,4 +214,5 @@ BridgeLabz-Training/
   🔗 **Code Link:** <br>
   👉[Code of above Problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice1)
 
-  --- 
+![down](https://img.icons8.com/ios-filled/50/7F00FF/double-down.png)
+
