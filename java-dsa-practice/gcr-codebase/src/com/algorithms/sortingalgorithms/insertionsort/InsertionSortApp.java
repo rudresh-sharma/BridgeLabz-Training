@@ -1,3 +1,14 @@
+/*
+ * 2. Insertion Sort - Sort Employee IDs
+Problem Statement:
+A company stores employee IDs in an unsorted array. Implement Insertion Sort to sort the employee IDs in ascending order.
+Hint:
+Divide the array into sorted and unsorted parts.
+Pick an element from the unsorted part and insert it into its correct position in the sorted part.
+Repeat for all elements.
+
+ */
+
 package com.algorithms.sortingalgorithms.insertionsort;
 
 import java.util.Scanner;

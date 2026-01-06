@@ -1,3 +1,16 @@
+/*
+ * 3. Merge Sort - Sort an Array of Book Prices
+Problem Statement:
+A bookstore maintains a list of book prices in an array. Implement Merge Sort to sort the prices in ascending order.
+Hint:
+Divide the array into two halves recursively.
+Sort both halves individually.
+Merge the sorted halves by comparing elements.
+
+ */
+
+
+
 package com.algorithms.sortingalgorithms.mergesort;
 
 import java.util.Scanner;

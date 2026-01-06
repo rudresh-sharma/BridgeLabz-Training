@@ -1,3 +1,20 @@
+/*
+ * 
+ * 1. Bubble Sort - Sort Student Marks
+Problem Statement:
+A school maintains student marks in an array. Implement Bubble Sort to sort the student marks in ascending order.
+Hint:
+Traverse through the array multiple times.
+Compare adjacent elements and swap if needed.
+Repeat the process until no swaps are required.
+
+ * 
+ */
+
+
+
+
+
 package com.algorithms.sortingalgorithms.bubblesort;
 import java.util.Scanner;
 
