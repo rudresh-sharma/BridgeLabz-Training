@@ -101,5 +101,25 @@ __Learned core OOP concepts in Java:__
 ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
 
+### 📅 Day 2 - Object modelling and Class Diagrams
+**Date:** 30-Dec-2025  
 
+Learned core concepts of **Object Modeling** and **object communication** in Java.
+
+#### Topics Covered:
+- Classes vs Objects (definition, purpose, memory allocation)
+- Object relationships:
+  - Aggregation
+  - Association
+  - Composition
+- UML basics:
+  - Class Diagrams
+  - Object Diagrams
+  - Sequence Diagrams
+ 
+  
+🔗 **Code Link:**  
+👉 [Object Modelling](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/objectmodeling)
+
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
