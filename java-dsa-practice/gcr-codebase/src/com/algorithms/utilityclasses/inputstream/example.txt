@@ -1,0 +1,6 @@
+Java is a popular programming language.
+Many developers love Java because it is versatile.
+Learning Java can open up many career opportunities.
+FileReader in Java can be used to read files.
+BufferedReader makes reading lines easier in Java.
+Practice Java regularly to improve your coding skills.
