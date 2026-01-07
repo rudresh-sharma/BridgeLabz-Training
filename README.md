@@ -25,9 +25,8 @@
    - [Week 1 - Core Java Fundamentals & Git, Github](#week-1-core-java-fundamentals--git-github)
    - [Week 2: Strings Extras Problems and OOPS starting](#week-2-strings-extras-problems-and-oops-starting)
    - [Week 3: Object Orient Programming Fundamentals and DSA Starting](#week-3-object-orient-programming-fundamentals-and-dsa-starting)
-   - [Week 4: Scenario Bases Question(SBQ) On OOPS (continue)](#week-4--scenario-bases-questionsbq-on-oops-continue)
-
-
+   - [Week 4: Data structure and Algorithm](#week-4--data-structure-and-algorithm)
+     
 
 ---
 
