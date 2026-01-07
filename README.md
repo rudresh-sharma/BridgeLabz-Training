@@ -1,19 +1,47 @@
 # Data Structure and Algorthim 
 
 > This branch is responsible on learning of Data structure and algorithm
-
+--- 
 
 ## 📚 Table of content
-    1. Project Structure
-    2. Progress Timeline
+  1. [Project Structure](#project-structure)
+  2. [Week 3](#week-3-linekedlist-stack-queue-hashmap-sorting-algorithms)
+  3. [Week 4](#week-4--algorithms-practice)
+    
 
 
 
+
+
+
+## Project Structure
+
+```
+BridgeLabz-Training
+└───java-dsa-practice
+    └───gcr-codebase
+        └───src
+            └───com
+                ├───algorithms
+                │   ├───searchingalgorithms
+                │   ├───sortingalgorithms
+                │   └───utilityclasses
+                └───datastructure
+                    ├───hashmap
+                    ├───linkedlist
+                    │   ├───circularlinkedlist
+                    │   ├───doublylinkedlist
+                    │   └───singlylinkedlist
+                    └───stackandqueue
+
+```
 
 
 
 ## Week 3: Linekedlist, Stack, Queue, HashMap, Sorting algorithms
 > Data structure is started on Week 3 day 5 i.e 02-Jan-2026
+
+---
 ### 📅 Day 5 - Solve Question on LinkedList and OOPS (SBQ) 
 **Date:** 02-Jan-2026 
 
@@ -47,8 +75,7 @@
 </div>
 
 # Week 4 : Algorithms Practice
-![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
-
+--- 
 ### 📅 Day 1 - Sorting algorithms 
 **Date:** 05-Jan-2026
 
@@ -63,5 +90,31 @@
 
    👉 [Sorting algorithms code](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/sortingalgorithms)
 
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
-        
+</div
+<br>
+
+###    📅 Day 2 - Searching algorithms and Utility Classes
+**Date:** 06-Jan-2026 
+
+- Learn following Searching algorithms
+  - Linear Search
+  - Binary Search
+
+- Work on following utility classes
+  - StringBuffer
+  - StringBuilder
+  - FileReader
+  - InputStreamReader
+
+
+🔗 **Code Link:**  
+👉 [Searching Algo's](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/searchingalgorithms) <br>
+👉 [Utility Classes](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/utilityclasses)
+
+
+  
