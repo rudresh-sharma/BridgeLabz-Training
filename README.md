@@ -177,7 +177,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
  ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
- ### 📅 Day 6 - Stack, Queue & HashMap with OOPS(SBQ)  
+### 📅 Day 6 - Solved Scenario based question on OOPs
 **Date:** 03-Jan-2026 
  
    
@@ -188,3 +188,20 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
        
   ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
+
+
+# Week 4 :  Continue solving SBQ's
+![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
+
+### 📅 Day 1 - Solved Scenario based question on OOPs
+**Date:** 05-Jan-2026
+
+
+
+- Solve following OOPS SBQ
+
+   1. [Campus Connect](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daythree/campusconnect)
+   2. [Swift Cart](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daythree/swiftcart)
+ 
+  
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
