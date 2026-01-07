@@ -17,46 +17,21 @@
    - java-oops-practice
    - java-dsa-practice
 
-2. Progress Timeline
+2. Project Structure of respective branch
+   -  [Project Structure (core-java-practice)](#project-structure-core-java-practice)
+   -  [Project Structure (java-oops-practice)](#project-structure-java-oops-practice)
+
+4. Progress Timeline
    - [Week 1 - Core Java Fundamentals & Git, Github](#week-1-core-java-fundamentals--git-github)
-     - [Project Structure (core-java-practice)](#project-structure-core-java-practice)
-     - [Day 1 – Git and GitHub Setup](#-day-1--git-and-github-setup)
-     - [Day 2 – Git Practice & Basic Java Programs](#-day-2--git-practice--basic-java-programs)
-     - [Day 3 – Programming Elements in Java](#-day-3--programming-elements-in-java)
-     - [Day 4 – Control Flow & Logical Constructs](#-day-4--control-flow--logical-constructs)
-     - [Day 5 – Arrays & Basic Problem Solving](#-day-5--arrays--basic-problem-solving)
-     - [Day 6 – Concepts & problems on Methods](#-day-6-concepts--problems-on-methods)
-
    - [Week 2: Strings Extras Problems and OOPS starting](#week-2-strings-extras-problems-and-oops-starting)
-     - [Project Structure (java-oops-practice)](#project-structure-java-oops-practice)
-     - [Day 1 – Strings Concepts & Problems](#-day-1--strings-concepts--problems)
-     - [Day 2 – Solve Extras Problems](#-day-2--solve-extras-problems)
-     - [Day 3 - Leetcode Practice 1](#-day-3---leetcode-practice-1)
-     - [Day 4 - Christmas Holiday](#-day-4---christmas-holiday)
-     - [Day 5 – Class & Object](#-day-5--class--object)
-     - [Day 6 – Constructors & Access Modifiers](#-day-6--constructors--access-modifiers)
+   - [Week 3: Object Orient Programming Fundamentals and DSA Starting](#week-3-object-orient-programming-fundamentals-and-dsa-starting)
+   - [Week 4: Scenario Bases Question(SBQ) On OOPS (continue)](#week-4--scenario-bases-questionsbq-on-oops-continue)
 
-- [Week 3: Object Orient Programming Fundamentals (Continue)](#week-3-object-orient-programming-fundamentalscontinue)
-  - [Day 1 – Core Java Keywords & Inbuiltfunctions](#-day-1--core-java-keywords--inbuiltfunctions)
-  - [Day 2 - Object modelling and Class Diagrams](#-day-2---object-modelling-and-class-diagrams)
-  - [Day 3 - Java Inheritance & OOPS Hierarchies](#-day-3---java-inheritance--oops-hierarchies)
-  - [Day 4 - Encapsulation, Polymorphism, Interface and Abstract Class](#-day-4---encapsulation--polymorphism--interface-and-abstract-class)
-  - [Day 5 - Scenario Bases Question(SBQ) On OOPS](#-day-5---scenario-bases-questionsbq-on-oops)
-  - [Day 6 - Scenario Bases Question(SBQ) On OOPS (continue)](#-day-6---scenario-bases-questionsbq-on-oops-continue)
-
-- [Week 4: Scenario Bases Question(SBQ) On OOPS (continue)](#week-4--scenario-bases-questionsbq-on-oops-continue)
-  - [Day 1 - Scenario Bases Question(SBQ) On OOPS (continue)](#-day-1---scenario-bases-questionsbq-on-oops-continue)
-  - [Day 2 - Scenario Bases Question(SBQ) On OOPS (continue)](#-day-2---scenario-bases-questionsbq-on-oops-continue)
 
 
 ---
 
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00b09b,100:96c93d&height=10)
-
-
-
-# Week 1: Core Java Fundamentals & Git, Github
-![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
 
 ## Project Structure (core-java-practice)
 
@@ -76,6 +51,30 @@ BridgeLabz-Training/
 │   └── 📁 scenario-based/             
 │
 ```
+
+## Project Structure (java-oops-practice)
+
+```
+BridgeLabz-Training
+|
+---📁 java-oops-practice/
+    └── 📁 gcr-codebase/
+        └── 📁 JavaOopsConcepts/
+            └── 📁 src/
+                └── 📁 com/
+                    ├── 📁 /
+                    │   ├── levelone/      
+                    │   └── leveltwo/      
+                    └── 📁 constructor/
+                        └── levelone/    
+
+```
+
+
+# Week 1: Core Java Fundamentals & Git, Github
+![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
+
+
 
 ### 📅 Day 1 – Git and GitHub Setup  
 **Date:** 15-Dec-2025  
@@ -253,23 +252,6 @@ BridgeLabz-Training/
 
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00b09b,100:96c93d&height=10)
 
-## Project Structure (java-oops-practice)
-
-```
-BridgeLabz-Training
-|
----📁 java-oops-practice/
-    └── 📁 gcr-codebase/
-        └── 📁 JavaOopsConcepts/
-            └── 📁 src/
-                └── 📁 com/
-                    ├── 📁 /
-                    │   ├── levelone/      
-                    │   └── leveltwo/      
-                    └── 📁 constructor/
-                        └── levelone/    
-
-```
 
 ## Object Orient Programming Fundamentals
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
@@ -313,7 +295,7 @@ __Learned core OOP concepts in Java:__
 
 
 
-# Week 3 :Object Orient Programming Fundamentals(Continue)
+# Week 3 :Object Orient Programming Fundamentals and DSA Starting
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
 
 
@@ -396,9 +378,12 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
-
-### 📅 Day 5 - Scenario Bases Question(SBQ) On OOPS  
+## DSA starting
+### 📅 Day 5 - Solve Question on LinkedList and OOPS (SBQ) 
 **Date:** 02-Jan-2026 
+
+- Learn about linkedlist data structure and practice following question
+    - [Code of Questions](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/datastructure/linkedlist)
 
 
 - Solve following SBQ
@@ -412,10 +397,14 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
  ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
 
-### 📅 Day 6 - Scenario Bases Question(SBQ) On OOPS (continue) 
+### 📅 Day 6 - Stack, Queue & HashMap with OOPS(SBQ)  
 **Date:** 03-Jan-2026 
 
-
+- Learn abot stack, queue and Hashmap
+   - [Stack & Queue](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/datastructure/stackandqueue)
+   - [HashMap](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/datastructure/hashmap)
+ 
+   
 - Solve following SBQ
     1. [Cabby Go](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daytwo/cabbygo)
     2. [My Bank](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daytwo/mybank)
@@ -426,14 +415,24 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 
 
-# Week 4 : Scenario Bases Question(SBQ) On OOPS (continue) 
+# Week 4 : Data structure and Algorithm 
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
 
-### 📅 Day 1 - Scenario Bases Question(SBQ) On OOPS (continue) 
+### 📅 Day 1 - Sorting algorithms and (SBQ) On OOPS  
 **Date:** 05-Jan-2026
 
+- Learn About following sorting algorithm
+     - Bubble sort
+     - Selection sort
+     - Insertion sort
+     - Merge sort
+     - Quick sort
+     - Heap sort
+     - Counting sort
 
-- Solve following SBQ
+   👉 [Sorting algorithms code](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/sortingalgorithms)
+
+- Solve following OOPS SBQ
 
    1. [Campus Connect](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daythree/campusconnect)
    2. [Swift Cart](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daythree/swiftcart)
