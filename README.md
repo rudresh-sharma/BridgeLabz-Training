@@ -26,8 +26,12 @@
 - Code of question solved
 - [Code links](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/datastructure/linkedlist)
     
- ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+<div align="left">
+│<br>
+│<br>
+│<br>
 
+</div>
 
  ### 📅 Day 6 - Stack, Queue & HashMap with OOPS(SBQ)  
 **Date:** 03-Jan-2026 
@@ -35,6 +39,13 @@
 - Learn about stack, queue and Hashmap
    - [Stack & Queue](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/datastructure/stackandqueue)
    - [HashMap](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/datastructure/hashmap)
- 
+ <div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
+
+
 
         
