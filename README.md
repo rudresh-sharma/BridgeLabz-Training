@@ -18,14 +18,15 @@
    - java-dsa-practice
 
 2. Project Structure of respective branch
-   -  [Project Structure (core-java-practice)](#project-structure-core-java-practice)
-   -  [Project Structure (java-oops-practice)](#project-structure-java-oops-practice)
+   -  [Project Structure (core-java-practice)](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice?tab=readme-ov-file#-repository-structure)
+   -  [Project Structure (java-oops-practice)](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice?tab=readme-ov-file#project-structure)
 
 4. Progress Timeline
-   - [Week 1 - Core Java Fundamentals & Git, Github](#week-1-core-java-fundamentals--git-github)
-   - [Week 2: Strings Extras Problems and OOPS starting](#week-2-strings-extras-problems-and-oops-starting)
-   - [Week 3: Object Orient Programming Fundamentals and DSA Starting](#week-3-object-orient-programming-fundamentals-and-dsa-starting)
-   - [Week 4: Data structure and Algorithm](#week-4--data-structure-and-algorithm)
+   - [Week 1: Programming Elements](#week-1-programming-elements)
+   - [Week 2: Object Oriented Programming](#week-2-object-oriented-programming)
+   - [Week 3: Data Structure and Algorithm 1](#week-3--data-structure-and-algorithm-1)
+   - [Week 4: Data Structure and Algorithm 2](#week-4--data-structure-and-algorithm-2)
+
      
 
 ---
@@ -70,11 +71,9 @@ BridgeLabz-Training
 ```
 
 
-# Week 1: Core Java Fundamentals & Git, Github
-![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
+# Week 1: Programming Elements
 
-
-
+--- 
 ### 📅 Day 1 – Git and GitHub Setup  
 **Date:** 15-Dec-2025  
 
@@ -84,8 +83,12 @@ BridgeLabz-Training
 - Learned basic git commands like (git init, git status, git commit -m "", git add, git push)
 - Successfully pushed files to the remote repository
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
 
 ### 🗓 Day 2 – Git Practice & Basic Java Programs  
 **Date:** 16-Dec-2025
@@ -97,8 +100,12 @@ BridgeLabz-Training
 🔗 **Code Link:**  
 👉 [Day 2 – Basic Java Programs](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/program-prerequisites)
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
 
 ### 🗓 Day 3 – Programming Elements in Java  
 **Date:** 17-Dec-2025
@@ -113,8 +120,12 @@ BridgeLabz-Training
 🔗 **Code Link:**  
 👉 [Day 3 – Programming Elements](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/programming-elements)
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
 
 
 ### 🗓 Day 4 – Control Flow & Logical Constructs  
@@ -137,8 +148,12 @@ BridgeLabz-Training
 🔗 **Code Link:**  
 👉 [Day 4 – Control Flow](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/control-flows)
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
 
 
 ### 🗓 Day 5 – Arrays & Basic Problem Solving  
@@ -158,8 +173,12 @@ BridgeLabz-Training
 👉 [Day 5 – Arrays](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/arrays)
 
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
 
 
 ### 🗓 Day 6 –Concepts & problems on Methods  
@@ -175,12 +194,16 @@ BridgeLabz-Training
 🔗 **Code Link:**  
 👉 [Day 6 – Problems on Methods](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/methods)
 
->> Week 1 ends!
+ <div align="left">
+│<br>
+│<br>
+│<br>
+
+</div
 
 
 
-
-# Week 2: Strings Extras Problems and OOPS starting
+# Week 2: Object Oriented Programming
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
 
 ### 📅 Day 1 – Strings Concepts & Problems  
@@ -200,8 +223,12 @@ BridgeLabz-Training
 🔗 **Code Link:** <br>
 👉[Day 1 - String problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/strings)
 
- ![down](https://img.icons8.com/ios-filled/50/7F00FF/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
 
 
  ### 📅 Day 2 – Solve Extras Problems 
@@ -222,8 +249,12 @@ BridgeLabz-Training
   👉[Built in functions 2](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details)
 
 
-![down](https://img.icons8.com/ios-filled/50/7F00FF/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
 
   ## 📅 Day 3 - Leetcode Practice 1
 **Date:** 24-Dec-2025
@@ -239,8 +270,12 @@ BridgeLabz-Training
   🔗 **Code Link:** <br>
   👉[Code of above Problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice1)
 
-![down](https://img.icons8.com/ios-filled/50/7F00FF/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
   ## 📅 Day 4 - Christmas Holiday
 **Date:** 25-Dec-2025
 
@@ -249,11 +284,12 @@ BridgeLabz-Training
   
   
 
-![line](https://capsule-render.vercel.app/api?type=rect&color=0:00b09b,100:96c93d&height=10)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
-
-## Object Orient Programming Fundamentals
-![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
+</div
 
 
 ### 📅 Day 5 – Class & Object 
@@ -266,8 +302,12 @@ BridgeLabz-Training
     - [Level2](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/classandobject/level2)
  
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
   
 ### 📅 Day 6 – Constructors & Access Modifiers
 **Date:** 27-Dec-2025  
@@ -290,13 +330,17 @@ __Learned core OOP concepts in Java:__
 
 🔗**Code Link**
 👉 [Constructor Code](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/constructors/levelone)
+ <div align="left">
+│<br>
+│<br>
+│<br>
+
+</div
 
 
 
-
-# Week 3 :Object Orient Programming Fundamentals and DSA Starting
-![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
-
+# Week 3 : Data Structure And Algorithm 1
+---
 
 ### 📅 Day 1 – Core Java Keywords & Inbuiltfunctions
 **Date:** 29-Dec-2025  
@@ -315,8 +359,12 @@ __Learned core OOP concepts in Java:__
 🔗 **Code Link:**  
 👉 [Core Java Keywords &Inbuilt Functions](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/inbuiltfunction)
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
 
 ### 📅 Day 2 - Object modelling and Class Diagrams
 **Date:** 30-Dec-2025  
@@ -338,8 +386,12 @@ Learned core concepts of **Object Modeling** and **object communication** in Jav
 🔗 **Code Link:**  
 👉 [Object Modelling](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/objectmodeling)
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
 
 ### 📅 Day 3 -  Java Inheritance & OOPS Hierarchies
 **Date:** 31-Dec-2025  
@@ -353,8 +405,12 @@ Learned core concepts of **Object Modeling** and **object communication** in Jav
 🔗 Code Links:
 👉 [Inheritance code ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/inheritance)
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
 
 ### 📅 Day 4 -  Encapsulation, Polymorphism, Interface and Abstract Class
 **Date:** 01-Jan-2026 
@@ -375,9 +431,12 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 👉 [Encapsulation code ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/encapsulation)
 
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
-## DSA starting
+</div
 ### 📅 Day 5 - Solve Question on LinkedList and OOPS (SBQ) 
 **Date:** 02-Jan-2026 
 
@@ -393,8 +452,12 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
    5. [Vehicle rental application](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/vehiclerentalapplication)
 
 
- ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
 
 ### 📅 Day 6 - Stack, Queue & HashMap with OOPS(SBQ)  
 **Date:** 03-Jan-2026 
@@ -409,13 +472,17 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
     2. [My Bank](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daytwo/mybank)
  
 
+ <div align="left">
+│<br>
+│<br>
+│<br>
 
+</div
+
+
+
+# Week 4 : Data structure and Algorithm 2
 ---
-
-
-
-# Week 4 : Data structure and Algorithm 
-![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
 
 ### 📅 Day 1 - Sorting algorithms and (SBQ) On OOPS  
 **Date:** 05-Jan-2026
@@ -437,14 +504,33 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
    2. [Swift Cart](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daythree/swiftcart)
  
   
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+ <div align="left">
+│<br>
+│<br>
+│<br>
+
+</div
 
 
-### 📅 Day 2 - Scenario Bases Question(SBQ) On OOPS (continue) 
+### 📅 Day 2 - Searching algorithms, utility classes, and SBO on OOPs 
 **Date:** 06-Jan-2026
 
+- Learn following Searching algorithms
+  - Linear Search
+  - Binary Search
 
-- Solve following SBQ
+- Work on following utility classes
+  - StringBuffer
+  - StringBuilder
+  - FileReader
+  - InputStreamReader
+
+
+🔗 **Code Link:**  
+👉 [Searching Algo's](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/searchingalgorithms) <br>
+👉 [Utility Classes](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/utilityclasses)
+
+***Solve following SBQ***
 
    1. [Edu mentor](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/edumentor)
    2. [Fit Track](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/fittrack)
