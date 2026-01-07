@@ -116,10 +116,26 @@ Learned core concepts of **Object Modeling** and **object communication** in Jav
   - Class Diagrams
   - Object Diagrams
   - Sequence Diagrams
- 
+
   
 🔗 **Code Link:**  
 👉 [Object Modelling](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/objectmodeling)
+
+
+### 📅 Day 3 -  Java Inheritance & OOPS Hierarchies
+**Date:** 31-Dec-2025  
+
+**Topics Covered:**
+- Practiced Single, Multilevel, Hierarchical & Hybrid Inheritance
+- Implemented method overriding, super() constructor calls, and polymorphism
+- Understood access modifiers and their behavior in inheritance
+- Modeled real-world hierarchies (Animal, Employee, Vehicle, Bank, Restaurant)
+  
+🔗 Code Links:
+👉 [Inheritance code ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/inheritance)
+
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
 
 ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
