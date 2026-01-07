@@ -205,3 +205,19 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
  
   
 ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
+
+
+
+### 📅 Day 2 - Scenario Bases Question(SBQ) On OOPS 
+**Date:** 06-Jan-2026
+
+
+- Solve following SBQ
+
+   1. [Edu mentor](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/edumentor)
+   2. [Fit Track](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/fittrack)
+   3. [Pet Pal](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/petpal)
+   4. [Event Ease](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/eventease)
+ 
+      
