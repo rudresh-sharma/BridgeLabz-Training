@@ -139,3 +139,25 @@ Learned core concepts of **Object Modeling** and **object communication** in Jav
 
 ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
+
+
+### 📅 Day 4 -  Encapsulation, Polymorphism, Interface and Abstract Class
+**Date:** 01-Jan-2026 
+
+#### 🔹 Java OOPS Practice (`java-oops-practice`)
+Learned and practiced Encapsulation along with scenario-based OOPS problem solving.
+
+**Topics Covered:**
+- Data hiding using private fields
+- Controlled access via getters & setters
+- Validation logic inside methods
+- Securing sensitive data (e.g., account balance, user details)
+- Improved code safety, flexibility, and maintainability
+- Example Implemented:
+   - BankAccount with validated deposit & withdrawal operations
+ 
+  🔗 Code Links:
+👉 [Encapsulation code ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/encapsulation)
+
+
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
