@@ -16,18 +16,29 @@
 ## Project Structure
 
 ```
+
 BridgeLabz-Training
-|
----📁 java-oops-practice/
-    └── 📁 gcr-codebase/
-        └── 📁 JavaOopsConcepts/
-            └── 📁 src/
-                └── 📁 com/
-                    ├── 📁 /
-                    │   ├── levelone/      
-                    │   └── leveltwo/      
-                    └── 📁 constructor/
-                        └── levelone/    
+└───java-oops-practice
+    ├───bin
+    ├───gcr-codebase
+    │   └───JavaOopsConcepts
+    │       └───src
+    │           └───com
+    │               ├───classandobject
+    │               ├───constructor
+    │               ├───encapsulation
+    │               ├───inbuiltfunction
+    │               ├───inheritance
+    │               └───objectmodeling
+    ├───leetcode-codebase
+    └───scenario-base
+        └───src
+            └───com
+                ├───dayfive
+                ├───dayfour
+                ├───dayone
+                ├───daythree
+                └───daytwo
 
 ```
 
@@ -44,7 +55,12 @@ BridgeLabz-Training
     - [Level2](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/classandobject/level2)
  
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+<div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
 
 
 
@@ -70,7 +86,12 @@ __Learned core OOP concepts in Java:__
 🔗**Code Link**
 👉 [Constructor Code](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/constructors/levelone) 
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+<div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
 
 
 
@@ -96,7 +117,12 @@ __Learned core OOP concepts in Java:__
 🔗 **Code Link:**  
 👉 [Core Java Keywords &Inbuilt Functions](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/inbuiltfunction)
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+<div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
 
 
 ### 📅 Day 2 - Object modelling and Class Diagrams
@@ -118,6 +144,13 @@ Learned core concepts of **Object Modeling** and **object communication** in Jav
   
 🔗 **Code Link:**  
 👉 [Object Modelling](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/objectmodeling)
+<div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
+
 
 
 ### 📅 Day 3 -  Java Inheritance & OOPS Hierarchies
@@ -130,14 +163,14 @@ Learned core concepts of **Object Modeling** and **object communication** in Jav
 - Modeled real-world hierarchies (Animal, Employee, Vehicle, Bank, Restaurant)
   
 🔗 Code Links:
-👉 [Inheritance code ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/inheritance)
+ 👉 [Inheritance code ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/inheritance)
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+<div align="left">
+│<br>
+│<br>
+│<br>
 
-
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
-
-
+</div>
 
 ### 📅 Day 4 -  Encapsulation, Polymorphism, Interface and Abstract Class
 **Date:** 01-Jan-2026 
@@ -158,7 +191,12 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 👉 [Encapsulation code ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/encapsulation)
 
 
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+<div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
 
 
 
@@ -174,7 +212,12 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
    5. [Vehicle rental application](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/vehiclerentalapplication)
 
 
- ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+<div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
 
 ### 📅 Day 6 - Solved Scenario based question on OOPs
 **Date:** 03-Jan-2026 
@@ -185,7 +228,12 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
     2. [My Bank](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daytwo/mybank)
  
        
-  ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+<div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
 
 
 
@@ -203,7 +251,12 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
    2. [Swift Cart](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daythree/swiftcart)
  
   
-![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+<div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
 
 
 
@@ -219,4 +272,21 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
    3. [Pet Pal](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/petpal)
    4. [Event Ease](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/eventease)
  
-      
+
+
+<div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
+
+### 📅 Day 3 - Scenario Bases Question(SBQ) On OOPS 
+**Date:** 07-Jan-2026
+
+
+
+
+
+
+
