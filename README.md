@@ -46,6 +46,22 @@
 
 </div>
 
+# Week 4 : Algorithms Practice
+![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
+
+### 📅 Day 1 - Sorting algorithms 
+**Date:** 05-Jan-2026
+
+- Learn About following sorting algorithm
+     - Bubble sort
+     - Selection sort
+     - Insertion sort
+     - Merge sort
+     - Quick sort
+     - Heap sort
+     - Counting sort
+
+   👉 [Sorting algorithms code](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/sortingalgorithms)
 
 
         
