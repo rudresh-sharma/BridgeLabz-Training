@@ -24,8 +24,9 @@
 4. Progress Timeline
    - [Week 1: Programming Elements](#week-1-programming-elements)
    - [Week 2: Object Oriented Programming](#week-2-object-oriented-programming)
-   - [Week 3: Data Structure and Algorithm 1](#week-3--data-structure-and-algorithm-1)
-   - [Week 4: Data Structure and Algorithm 2](#week-4--data-structure-and-algorithm-2)
+   - [Week 3: Data Structure And Algorithm 1](#week-3-data-structure-and-algorithm-1)
+   - [Week 4: Data Structure and Algorithm 2](#week-4-data-structure-and-algorithm-2)
+
 
      
 
@@ -88,7 +89,7 @@ BridgeLabz-Training
 │<br>
 │<br>
 
-</div
+</div>
 
 ### 🗓 Day 2 – Git Practice & Basic Java Programs  
 **Date:** 16-Dec-2025
@@ -105,7 +106,7 @@ BridgeLabz-Training
 │<br>
 │<br>
 
-</div
+</div>
 
 ### 🗓 Day 3 – Programming Elements in Java  
 **Date:** 17-Dec-2025
@@ -125,7 +126,7 @@ BridgeLabz-Training
 │<br>
 │<br>
 
-</div
+</div>
 
 
 ### 🗓 Day 4 – Control Flow & Logical Constructs  
@@ -153,7 +154,7 @@ BridgeLabz-Training
 │<br>
 │<br>
 
-</div
+</div>
 
 
 ### 🗓 Day 5 – Arrays & Basic Problem Solving  
@@ -178,7 +179,7 @@ BridgeLabz-Training
 │<br>
 │<br>
 
-</div
+</div>
 
 
 ### 🗓 Day 6 –Concepts & problems on Methods  
@@ -199,7 +200,7 @@ BridgeLabz-Training
 │<br>
 │<br>
 
-</div
+</div>
 
 
 
@@ -228,7 +229,7 @@ BridgeLabz-Training
 │<br>
 │<br>
 
-</div
+</div>
 
 
  ### 📅 Day 2 – Solve Extras Problems 
@@ -254,7 +255,7 @@ BridgeLabz-Training
 │<br>
 │<br>
 
-</div
+</div>
 
   ## 📅 Day 3 - Leetcode Practice 1
 **Date:** 24-Dec-2025
@@ -275,7 +276,7 @@ BridgeLabz-Training
 │<br>
 │<br>
 
-</div
+</div>
   ## 📅 Day 4 - Christmas Holiday
 **Date:** 25-Dec-2025
 
@@ -289,7 +290,7 @@ BridgeLabz-Training
 │<br>
 │<br>
 
-</div
+</div>
 
 
 ### 📅 Day 5 – Class & Object 
@@ -307,7 +308,7 @@ BridgeLabz-Training
 │<br>
 │<br>
 
-</div
+</div>
   
 ### 📅 Day 6 – Constructors & Access Modifiers
 **Date:** 27-Dec-2025  
@@ -335,11 +336,11 @@ __Learned core OOP concepts in Java:__
 │<br>
 │<br>
 
-</div
+</div>
 
 
 
-# Week 3 : Data Structure And Algorithm 1
+# Week 3: Data Structure And Algorithm 1
 ---
 
 ### 📅 Day 1 – Core Java Keywords & Inbuiltfunctions
@@ -364,7 +365,7 @@ __Learned core OOP concepts in Java:__
 │<br>
 │<br>
 
-</div
+</div>
 
 ### 📅 Day 2 - Object modelling and Class Diagrams
 **Date:** 30-Dec-2025  
@@ -391,7 +392,7 @@ Learned core concepts of **Object Modeling** and **object communication** in Jav
 │<br>
 │<br>
 
-</div
+</div>
 
 ### 📅 Day 3 -  Java Inheritance & OOPS Hierarchies
 **Date:** 31-Dec-2025  
@@ -410,7 +411,7 @@ Learned core concepts of **Object Modeling** and **object communication** in Jav
 │<br>
 │<br>
 
-</div
+</div>
 
 ### 📅 Day 4 -  Encapsulation, Polymorphism, Interface and Abstract Class
 **Date:** 01-Jan-2026 
@@ -436,7 +437,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 │<br>
 │<br>
 
-</div
+</div>
 ### 📅 Day 5 - Solve Question on LinkedList and OOPS (SBQ) 
 **Date:** 02-Jan-2026 
 
@@ -457,7 +458,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 │<br>
 │<br>
 
-</div
+</div>
 
 ### 📅 Day 6 - Stack, Queue & HashMap with OOPS(SBQ)  
 **Date:** 03-Jan-2026 
@@ -477,11 +478,11 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 │<br>
 │<br>
 
-</div
+</div>
 
 
 
-# Week 4 : Data structure and Algorithm 2
+# Week 4: Data Structure and Algorithm 2
 ---
 
 ### 📅 Day 1 - Sorting algorithms and (SBQ) On OOPS  
@@ -509,11 +510,12 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 │<br>
 │<br>
 
-</div
-
+</div>
+<br>
 
 ### 📅 Day 2 - Searching algorithms, utility classes, and SBO on OOPs 
 **Date:** 06-Jan-2026
+
 
 - Learn following Searching algorithms
   - Linear Search
