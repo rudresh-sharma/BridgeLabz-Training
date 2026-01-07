@@ -77,5 +77,29 @@ __Learned core OOP concepts in Java:__
 
 
 
+# Week 3 :Learn about Object modelling, inheritance and encapsulation
+![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
+
+
+### 📅 Day 1 – Core Java Keywords & Inbuiltfunctions
+**Date:** 29-Dec-2025  
+
+
+- Studied Core Java keywords:
+  - this keyword
+  - static keyword.
+  - final keyword
+- Practiced scenario-based Core Java problems:
+- Applied concepts using:
+  - for, for-each, while, do-while loops
+  -  if-else and switch-case statements
+- Improved logic building through real-world problem scenarios.  
+
+🔗 **Code Link:**  
+👉 [Core Java Keywords &Inbuilt Functions](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/inbuiltfunction)
+
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
+
 
 
