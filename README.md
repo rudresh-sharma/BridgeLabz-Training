@@ -5,9 +5,12 @@
 
 # 📚 Table Of Content
 
-  1. [Proje
+  1. Project Structure
   2. Progress Timeline
-       -[
+       -  [Week 2 - Working on pillars of Object oriented programming](#week-2---working-on-pillars-of-object-oriented-programming)
+       -  [Week 3: Learn about Object modelling, inheritance and encapsulation](#week-3-learn-about-object-modelling-inheritance-and-encapsulation)
+       -  [Week 4: Continue solving SBQ's](#week-4--continue-solving-sbqs)
+
 
 
 
