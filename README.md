@@ -45,8 +45,7 @@ BridgeLabz-Training
     - [Level2](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/classandobject/level2)
  
 
-
-
+![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
 
 
@@ -161,3 +160,31 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 
 ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
+
+
+
+### 📅 Day 5 - Solved Scenario based question on OOPs
+**Date:** 02-Jan-2026 
+
+- Solve following SBQ
+   1. [hospitalpatientmanagementsystem](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/hospitalpatientmanagementsystem)
+   2. [E wallet](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/ewallet)
+   3. [Smart home](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/smarthome)
+   4. [University](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/university)
+   5. [Vehicle rental application](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/vehiclerentalapplication)
+
+
+ ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
+ ### 📅 Day 6 - Stack, Queue & HashMap with OOPS(SBQ)  
+**Date:** 03-Jan-2026 
+ 
+   
+- Solve following SBQ
+    1. [Cabby Go](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daytwo/cabbygo)
+    2. [My Bank](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daytwo/mybank)
+ 
+       
+  ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
+
