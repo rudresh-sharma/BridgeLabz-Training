@@ -8,12 +8,9 @@
   1. Project Structure
   2. Progress Timeline
        -  [Week 2 - Working on pillars of Object oriented programming](#week-2---working-on-pillars-of-object-oriented-programming)
+          > Java-oops-practice started on Week 2 day 5
        -  [Week 3: Learn about Object modelling, inheritance and encapsulation](#week-3-learn-about-object-modelling-inheritance-and-encapsulation)
        -  [Week 4: Continue solving SBQ's](#week-4--continue-solving-sbqs)
-
-
-
-
 
 
 ## Project Structure
@@ -36,8 +33,7 @@ BridgeLabz-Training
 
 
 ## Week 2 - Working on pillars of Object oriented programming
-> Java oops started from day 5 of Week 2
-> 
+
 ### 📅 Day 5 – Class & Object 
 **Date:** 26-Dec-2025  
 
@@ -193,7 +189,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 
 
-# Week 4 :  Continue solving SBQ's
+# Week 4 : Continue solving SBQ's
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
 
 ### 📅 Day 1 - Solved Scenario based question on OOPs
