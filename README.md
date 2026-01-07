@@ -10,28 +10,55 @@
 
 
 ## 📚 Table of Contents
+
 1. Branches in repository:
-      - main
-      - core-java-practice
-      - java-oops-practice
-      - java-dsa-practice
-   
- 2.[Core Java Practice – Progress Tracker](#core-java-practice-progress-tracker) <br>
- 3.[Java OOPS Practice – Progress Tracker](#java-oops-practice-progress-tracker) <br>
- 4.[Java DSA Practice – Progress Tracker](#java-dsa-practice-progress-tracker)
+   - main
+   - core-java-practice
+   - java-oops-practice
+   - java-dsa-practice
+
+2. Progress Timeline
+   - [Week 1 - Core Java Fundamentals & Git, Github](#week-1-core-java-fundamentals--git-github)
+     - [Project Structure (core-java-practice)](#project-structure-core-java-practice)
+     - [Day 1 – Git and GitHub Setup](#-day-1--git-and-github-setup)
+     - [Day 2 – Git Practice & Basic Java Programs](#-day-2--git-practice--basic-java-programs)
+     - [Day 3 – Programming Elements in Java](#-day-3--programming-elements-in-java)
+     - [Day 4 – Control Flow & Logical Constructs](#-day-4--control-flow--logical-constructs)
+     - [Day 5 – Arrays & Basic Problem Solving](#-day-5--arrays--basic-problem-solving)
+     - [Day 6 – Concepts & problems on Methods](#-day-6-concepts--problems-on-methods)
+
+   - [Week 2: Strings Extras Problems and OOPS starting](#week-2-strings-extras-problems-and-oops-starting)
+     - [Project Structure (java-oops-practice)](#project-structure-java-oops-practice)
+     - [Day 1 – Strings Concepts & Problems](#-day-1--strings-concepts--problems)
+     - [Day 2 – Solve Extras Problems](#-day-2--solve-extras-problems)
+     - [Day 3 - Leetcode Practice 1](#-day-3---leetcode-practice-1)
+     - [Day 4 - Christmas Holiday](#-day-4---christmas-holiday)
+     - [Day 5 – Class & Object](#-day-5--class--object)
+     - [Day 6 – Constructors & Access Modifiers](#-day-6--constructors--access-modifiers)
+
+- [Week 3: Object Orient Programming Fundamentals (Continue)](#week-3-object-orient-programming-fundamentalscontinue)
+  - [Day 1 – Core Java Keywords & Inbuiltfunctions](#-day-1--core-java-keywords--inbuiltfunctions)
+  - [Day 2 - Object modelling and Class Diagrams](#-day-2---object-modelling-and-class-diagrams)
+  - [Day 3 - Java Inheritance & OOPS Hierarchies](#-day-3---java-inheritance--oops-hierarchies)
+  - [Day 4 - Encapsulation, Polymorphism, Interface and Abstract Class](#-day-4---encapsulation--polymorphism--interface-and-abstract-class)
+  - [Day 5 - Scenario Bases Question(SBQ) On OOPS](#-day-5---scenario-bases-questionsbq-on-oops)
+  - [Day 6 - Scenario Bases Question(SBQ) On OOPS (continue)](#-day-6---scenario-bases-questionsbq-on-oops-continue)
+
+- [Week 4: Scenario Bases Question(SBQ) On OOPS (continue)](#week-4--scenario-bases-questionsbq-on-oops-continue)
+  - [Day 1 - Scenario Bases Question(SBQ) On OOPS (continue)](#-day-1---scenario-bases-questionsbq-on-oops-continue)
+  - [Day 2 - Scenario Bases Question(SBQ) On OOPS (continue)](#-day-2---scenario-bases-questionsbq-on-oops-continue)
 
 
- ---
+---
 
-
-# Core Java Practice – Progress Tracker
-> In core-java-practiceI have learnt about basics of java like operators, conditional statements, switch case, loops and solves a different types of questions on respective topics.
-> the progress of given branch is showed up in weeks followed with each day work had been done by me.
-> Core-Java-Practice branch has been created on 15th December 2025!
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00b09b,100:96c93d&height=10)
 
 
-## Project Structure
+
+# Week 1: Core Java Fundamentals & Git, Github
+![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
+
+## Project Structure (core-java-practice)
 
 ```
 BridgeLabz-Training/
@@ -49,11 +76,8 @@ BridgeLabz-Training/
 │   └── 📁 scenario-based/             
 │
 ```
-# Week 1: Core Java Fundamentals & Git, Github
-![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
 
-
-## 📅 Day 1 – Git and GitHub Setup  
+### 📅 Day 1 – Git and GitHub Setup  
 **Date:** 15-Dec-2025  
 
 - Installed and configured Git  
@@ -158,10 +182,10 @@ BridgeLabz-Training/
 
 
 
-# Week2 : Worked on Strings and Extras Problems
+# Week 2: Strings Extras Problems and OOPS starting
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
 
-## 📅 Day 1 – Strings Concepts & Problems  
+### 📅 Day 1 – Strings Concepts & Problems  
 **Date:** 22-Dec-2025 
 
 - [Learn the string concepts](https://docs.google.com/document/d/1-UXHtzpozVZznDVGYivscpQYEL6-vxOFZWiPpvBH5CE/edit?tab=t.0#heading=h.66yv6crqdvrd)
@@ -182,7 +206,7 @@ BridgeLabz-Training/
 
 
 
- ## 📅 Day 2 – Solve Extras Problems 
+ ### 📅 Day 2 – Solve Extras Problems 
 **Date:** 23-Dec-2025 
 
 - [Extras Problems on String](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/a/ODIxNjE3NTg5MDU3/details)
@@ -227,13 +251,9 @@ BridgeLabz-Training/
   
   
 
-#  java-oops-practice--progress-tracker
-> In java-oops-branch I have learnt about object oriented programming, covers concepts like class and objext, encapsulation, inheritance, abstraction etc. solved a different types of questions on respective topics.
-> the progress of given branch is showed up in weeks followed with each day work had been done by me.
-> Java-Oops-Practice branch has been created on 26th December 2025!
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00b09b,100:96c93d&height=10)
 
-## Project Structure
+## Project Structure (java-oops-practice)
 
 ```
 BridgeLabz-Training
@@ -242,8 +262,8 @@ BridgeLabz-Training
     └── 📁 gcr-codebase/
         └── 📁 JavaOopsConcepts/
             └── 📁 src/
-                └── 📁 com/bridgelabz/
-                    ├── 📁 oops/
+                └── 📁 com/
+                    ├── 📁 /
                     │   ├── levelone/      
                     │   └── leveltwo/      
                     └── 📁 constructor/
@@ -251,11 +271,11 @@ BridgeLabz-Training
 
 ```
 
-# Week 2 :Object Orient Programming Fundamentals
+## Object Orient Programming Fundamentals
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
 
 
-## 📅 Day 5 – Class & Object 
+### 📅 Day 5 – Class & Object 
 **Date:** 26-Dec-2025  
 
 - Learn Basic concepts of oops
@@ -268,7 +288,7 @@ BridgeLabz-Training
 ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
   
-## 📅 Day 6 – Constructors & Access Modifiers
+### 📅 Day 6 – Constructors & Access Modifiers
 **Date:** 27-Dec-2025  
 
 
@@ -297,7 +317,7 @@ __Learned core OOP concepts in Java:__
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
 
 
-## 📅 Day 1 – Core Java Keywords & Inbuiltfunctions
+### 📅 Day 1 – Core Java Keywords & Inbuiltfunctions
 **Date:** 29-Dec-2025  
 
 
@@ -317,7 +337,7 @@ __Learned core OOP concepts in Java:__
 ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
 
-## 📅 Day 2 - Object modelling and Class Diagrams
+### 📅 Day 2 - Object modelling and Class Diagrams
 **Date:** 30-Dec-2025  
 
 Learned core concepts of **Object Modeling** and **object communication** in Java.
@@ -340,7 +360,7 @@ Learned core concepts of **Object Modeling** and **object communication** in Jav
 ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
 
-## 📅 Day 3 -  Java Inheritance & OOPS Hierarchies
+### 📅 Day 3 -  Java Inheritance & OOPS Hierarchies
 **Date:** 31-Dec-2025  
 
 **Topics Covered:**
@@ -355,7 +375,7 @@ Learned core concepts of **Object Modeling** and **object communication** in Jav
 ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
 
-## 📅 Day 4 -  Encapsulation, Polymorphism, Interface and Abstract Class
+### 📅 Day 4 -  Encapsulation, Polymorphism, Interface and Abstract Class
 **Date:** 01-Jan-2026 
 
 #### 🔹 Java OOPS Practice (`java-oops-practice`)
@@ -377,7 +397,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
 
-## 📅 Day 5 - Scenario Bases Question(SBQ) On OOPS  
+### 📅 Day 5 - Scenario Bases Question(SBQ) On OOPS  
 **Date:** 02-Jan-2026 
 
 
@@ -392,7 +412,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
  ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
 
-## 📅 Day 6 - Scenario Bases Question(SBQ) On OOPS (continue) 
+### 📅 Day 6 - Scenario Bases Question(SBQ) On OOPS (continue) 
 **Date:** 03-Jan-2026 
 
 
@@ -406,10 +426,10 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 
 
-# Week 3 : Scenario Bases Question(SBQ) On OOPS (continue) 
+# Week 4 : Scenario Bases Question(SBQ) On OOPS (continue) 
 ![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
 
-## 📅 Day 1 - Scenario Bases Question(SBQ) On OOPS (continue) 
+### 📅 Day 1 - Scenario Bases Question(SBQ) On OOPS (continue) 
 **Date:** 05-Jan-2026
 
 
@@ -422,7 +442,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 ![down](https://img.icons8.com/ios-filled/50/0072ff/double-down.png)
 
 
-## 📅 Day 2 - Scenario Bases Question(SBQ) On OOPS (continue) 
+### 📅 Day 2 - Scenario Bases Question(SBQ) On OOPS (continue) 
 **Date:** 06-Jan-2026
 
 
