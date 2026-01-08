@@ -5,10 +5,10 @@
 
 # 📚 Table Of Content
 
-  1. Project Structure
+  1. Project Structur
   2. Progress Timeline
+       > Java-oops-practice started on Week 2 day 5
        -  [Week 2 - Working on pillars of Object oriented programming](#week-2---working-on-pillars-of-object-oriented-programming)
-          > Java-oops-practice started on Week 2 day 5
        -  [Week 3: Learn about Object modelling, inheritance and encapsulation](#week-3-learn-about-object-modelling-inheritance-and-encapsulation)
        -  [Week 4: Continue solving SBQ's](#week-4--continue-solving-sbqs)
 
@@ -19,7 +19,6 @@
 
 BridgeLabz-Training
 └───java-oops-practice
-    ├───bin
     ├───gcr-codebase
     │   └───JavaOopsConcepts
     │       └───src
@@ -284,7 +283,12 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 ### 📅 Day 3 - Scenario Bases Question(SBQ) On OOPS 
 **Date:** 07-Jan-2026
 
-
+  - Solve following SBQ's
+      1. [Book Bazaar](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfive/bookbazaar)
+      2. [Loan Buddy](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfive/loanbuddy)
+      3. [Park Ease](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfive/parkease)
+   
+  
 
 
 
