@@ -1,4 +1,4 @@
-package com.algorithms.searchingalgorithms.binarysearch.challenge;
+package com.algorithms.searchingalgorithms.challenge;
 
 import java.util.Scanner;
 
