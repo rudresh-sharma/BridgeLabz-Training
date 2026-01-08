@@ -18,9 +18,8 @@
    - java-dsa-practice
 
 2. Project Structure of respective branch
-   -  [Project Structure (core-java-practice)](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice?tab=readme-ov-file#-repository-structure)
-   -  [Project Structure (java-oops-practice)](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice?tab=readme-ov-file#project-structure)
-
+   - [Project Structure (core-java-practice)](#project-structure-core-java-practice)
+   - [Project Structure (java-oops-practice)](#project-structure-java-oops-practice)
 4. Progress Timeline
    - [Week 1: Programming Elements](#week-1-programming-elements)
    - [Week 2: Object Oriented Programming](#week-2-object-oriented-programming)
@@ -38,38 +37,52 @@
 
 ```
 BridgeLabz-Training/
-│
-├── 📁 core-java-practice/
-│   ├── 📁 gcr-codebase/
-│   │   ├── 📁 programming-prerequisites/          
-│   │   ├── 📁 programming-elements/
-│   │   ├── 📁 control-flows/          
-│   │   ├── 📁 arrays/                 
-│   │   ├── 📁 methods/                
-│   │   ├── 📁 strings/                
-│   │   └── 📁 Extras/                 
-│   ├── 📁 leet-code-codebase/         
-│   └── 📁 scenario-based/             
-│
+│── core-java-practice/
+│ │── gcr-codebase/
+│ │ │── arrays/
+│ │ │── control-flow/
+│ │ │── extras/
+│ │ │── methods/
+│ │ │── programming-elements/
+│ │ │── programming-requisites/
+│ │ │── strings/
+│ │── leet-code-codebase/
+│ │── scenario-based-codebase/
+│ |── README.md
+
+
 ```
 
 ## Project Structure (java-oops-practice)
 
 ```
 BridgeLabz-Training
-|
----📁 java-oops-practice/
-    └── 📁 gcr-codebase/
-        └── 📁 JavaOopsConcepts/
-            └── 📁 src/
-                └── 📁 com/
-                    ├── 📁 /
-                    │   ├── levelone/      
-                    │   └── leveltwo/      
-                    └── 📁 constructor/
-                        └── levelone/    
+└───java-oops-practice
+    ├───gcr-codebase
+    │   └───JavaOopsConcepts
+    │       └───src
+    │           └───com
+    │               ├───classandobject
+    │               ├───constructor
+    │               ├───encapsulation
+    │               ├───inbuiltfunction
+    │               ├───inheritance
+    │               └───objectmodeling
+    ├───leetcode-codebase
+    └───scenario-base
+        └───src
+            └───com
+                ├───dayfive
+                ├───dayfour
+                ├───dayone
+                ├───daythree
+                └───daytwo
+
 
 ```
+
+
+
 
 
 # Week 1: Programming Elements
@@ -539,7 +552,9 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
    3. [Pet Pal](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/petpal)
    4. [Event Ease](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/eventease)
  
-      
+
+### 📅 Day 3 - 
+**Date:** 07-Jan-2026
 
 
 
