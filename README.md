@@ -1,12 +1,12 @@
 # BridgeLabz Training Journey
-> A Java Full Stack Training program covering everything from core java,  object oriented programminh  to hard core backend frameworks
+> A Java Full Stack Training program covering everything from core java,  object oriented programming  to hard core backend frameworks
 
 # Training Overview & Acknowledgement
 > I am gratefull to have a mentors provided by BridgeLabz, I sincerely thanks to all my mentors to trust on me and teaching everything which an industry demands.
 > @Bhuvan Sir
 > @Vishal Sir
 > @Karthik Sir
-> @Koteshwar Sir 
+> @Koteshwara Sir 
 
 
 ## 📚 Table of Contents
@@ -20,6 +20,8 @@
 2. Project Structure of respective branch
    - [Project Structure (core-java-practice)](#project-structure-core-java-practice)
    - [Project Structure (java-oops-practice)](#project-structure-java-oops-practice)
+   - [Project Structure (java-dsa-practice)](#project-structure-java-dsa-practice)
+
 4. Progress Timeline
    - [Week 1: Programming Elements](#week-1-programming-elements)
    - [Week 2: Object Oriented Programming](#week-2-object-oriented-programming)
@@ -81,8 +83,27 @@ BridgeLabz-Training
 
 ```
 
+##  Project Structure (java-dsa-practice)
 
+```
+BridgeLabz-Training
+└───java-dsa-practice
+    └───gcr-codebase
+        └───src
+            └───com
+                ├───algorithms
+                │   ├───searchingalgorithms
+                │   ├───sortingalgorithms
+                │   └───utilityclasses
+                └───datastructure
+                    ├───hashmap
+                    ├───linkedlist
+                    │   ├───circularlinkedlist
+                    │   ├───doublylinkedlist
+                    │   └───singlylinkedlist
+                    └───stackandqueue
 
+```
 
 
 # Week 1: Programming Elements
