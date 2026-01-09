@@ -1,12 +1,14 @@
-/RUn.class
-/bin/
 
+
+
+# Eclipse workspace files
 .metadata/
 .settings/
 .classpath
 .project
 
 # Java build output
-gcr-codebase/JavaOopsConcepts/src/com/bin
+# gcr-codebase/JavaOopsConcepts/src/com/bin
 
 # (Do NOT ignore gcr-codebase — we want to track src)
+/bin/
