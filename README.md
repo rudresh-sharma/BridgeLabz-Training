@@ -5,8 +5,8 @@
 
 ## 📚 Table of content
   1. [Project Structure](#project-structure)
-  2. [Week 3](#week-3-linekedlist-stack-queue-hashmap-sorting-algorithms)
-  3. [Week 4](#week-4--algorithms-practice)
+  2. [Week-3 Data Structure Practice](#week-3-data-structure-practice)
+  3. [Week-4 Algorithms Practice](#week-4--algorithms-practice)
     
 
 
@@ -38,7 +38,7 @@ BridgeLabz-Training
 
 
 
-## Week 3: Linekedlist, Stack, Queue, HashMap, Sorting algorithms
+## Week 3: Data Structure Practice
 > Data structure is started on Week 3 day 5 i.e 02-Jan-2026
 
 ---
@@ -117,4 +117,21 @@ BridgeLabz-Training
 👉 [Utility Classes](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/utilityclasses)
 
 
-  
+
+###    📅 Day 3 - Algorithms Analysis
+**Date:** 07-Jan-2026
+
+
+- Compare the Follwing algo's
+    - Fibonacci using recursion and iterative
+    - Linear search and Binary Search
+    - Bubble, Merge, Quick Sort Algo's
+    - String concatenation using StringBuffer and StringBuilder
+ 
+🔗 **Code Link:**  
+👉[Alogrithm Analysis](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/analysis)
+
+
+
+
+
