@@ -288,7 +288,15 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
       2. [Loan Buddy](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfive/loanbuddy)
       3. [Park Ease](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfive/parkease)
    
-  
+
+
+<div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
+
 ### 📅 Day 4 - Scenario Bases Question(SBQ) On OOPS 
 **Date:** 08-Jan-2026
 
@@ -297,6 +305,33 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
       1. [Medistore](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daysix/medistore)
       2. [Tourmate](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daysix/tourmate)
    
+<div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
+
+### 📅 Day 5 - Scenario Bases Question(SBQ) On OOPS 
+**Date:** 09-Jan-2026
+
+
+  - Solve Following SBQ's
+        1. [Artify](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/artify)
+        2. [FoodLoop](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/foodloop)
+        3. [SkillForge](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/skillforge)
+
+
+
+<div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
+
+
+
 
 
 
