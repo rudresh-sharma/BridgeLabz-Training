@@ -289,6 +289,14 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
       3. [Park Ease](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfive/parkease)
    
   
+### 📅 Day 4 - Scenario Bases Question(SBQ) On OOPS 
+**Date:** 08-Jan-2026
+
+
+  - Solve following SBQ's
+      1. [Medistore](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daysix/medistore)
+      2. [Tourmate](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daysix/tourmate)
+   
 
 
 
