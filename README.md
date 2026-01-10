@@ -547,7 +547,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 </div>
 <br>
 
-### 📅 Day 2 - Searching algorithms, utility classes, and SBO on OOPs 
+### 📅 Day 2 - Searching algorithms, utility classes, and SBQ on OOPs 
 **Date:** 06-Jan-2026
 
 
@@ -574,9 +574,30 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
    4. [Event Ease](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/eventease)
  
 
-### 📅 Day 3 - 
+
+ <div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
+<br>
+
+### 📅 Day 3 - Algorithms Analysis and SBQ on OOPS
 **Date:** 07-Jan-2026
 
 
+   - Worked on Algorithm Analysis
+        - [Algorithm Analysis](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/analysis)
+
+   - Solve an SBQ's on OOP's
+        - [SBQ's Solution](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfive)
 
 
+
+│<br>
+│<br>
+│<br>
+
+</div>
+<br>
