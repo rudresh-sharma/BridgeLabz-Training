@@ -601,3 +601,10 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 </div>
 <br>
+
+
+### 📅 Day 4 - Solve SBQ's on OOP's
+**Date:** 08-Jan-2026
+
+   - Solve Following  SBQ's
+      - [SBQ's](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daysix)
