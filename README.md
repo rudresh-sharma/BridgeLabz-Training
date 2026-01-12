@@ -116,6 +116,13 @@ BridgeLabz-Training
 👉 [Searching Algo's](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/searchingalgorithms) <br>
 👉 [Utility Classes](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/utilityclasses)
 
+ <div align="left">
+│<br>
+│<br>
+│<br>
+
+</div
+<br>
 
 
 ###    📅 Day 3 - Algorithms Analysis
@@ -131,7 +138,48 @@ BridgeLabz-Training
 🔗 **Code Link:**  
 👉[Alogrithm Analysis](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/analysis)
 
+ <div align="left">
+│<br>
+│<br>
+│<br>
+
+</div
+<br>
 
 
+###    📅 Day 4 & 5 - Revisited the following DSA concepts
+**Date:** 08-Jan-2026 and 09-Jan-2026
 
 
+  - LinkedList
+      - Singly LL
+      - Doubly LL
+      - Circular LL
+  - Learn about Stacks and following operations
+      - Push
+      - Pop
+      - Peek
+   
+
+ <div align="left">
+│<br>
+│<br>
+│<br>
+
+</div
+<br>
+
+###    📅 Day 6 - Solved Scneario bases Questions 1
+**Date:** 10-Jan-2026
+
+
+  - Solve Following SBQ's
+     - [BookShelf](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayone/bookshelf)
+     - [Browser Buddy](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayone/browserbuddy)
+     - [Ambulance route](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayone/ambulanceroute)
+
+
+    
+
+
+  
