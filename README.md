@@ -594,20 +594,25 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
         - [SBQ's Solution](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfive)
 
 
-
+ <div align="left">
 │<br>
 │<br>
 │<br>
 
 </div>
 <br>
+>
 
 
 ### 📅 Day 4 - Solve SBQ's on OOP's
 **Date:** 08-Jan-2026
 
-   - Solve Following  SBQ's
-      - [SBQ's](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daysix)
+  - Solve following SBQ's
+      - [Medistore](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daysix/medistore)
+      - [Tourmate](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daysix/tourmate)
+ 
+ 
+ <div align="left">
 │<br>
 │<br>
 │<br>
@@ -616,11 +621,34 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 <br>
 
 
+
 ### 📅 Day 5 - Solve SBQ's on OOP's
 **Date:** 09-Jan-2026
 
-   - Solve Following SBQ's
-        - [SBQ's](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven)
+  - Solve Following SBQ's
+    - [Artify](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/artify)
+    - [FoodLoop](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/foodloop)
+    - [SkillForge](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/skillforge)
+
+
+ <div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
+<br>
+
+### 📅 Day 6 - Solve SBQ's on DSA
+**Date:** 10-Jan-2026
+
+   - Solve Following DSA SBQ's
+        - [Ambulance Route](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayone/ambulanceroute)
+        - [Browwer Buddy](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayone/browserbuddy)
+        - [Bookshelf](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayone/bookshelf)
+    
+     
+
 
 
 
