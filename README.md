@@ -10,7 +10,7 @@
        > Java-oops-practice started on Week 2 day 5
        -  [Week 2:  Working on pillars of Object oriented programming](#week-2---working-on-pillars-of-object-oriented-programming)
        -  [Week 3: Learn about Object modelling, inheritance and encapsulation](#week-3-learn-about-object-modelling-inheritance-and-encapsulation)
-       -  [Week 4: Practice Scenario based question Part 1](#week-5-practice-scenario-based-question-1)  
+       -  [Week 4: Practice Scenario based question Part 1](#week-4-practice-scenario-based-question-1)  
        -  [Week 5: Practice Scenario based question Part 2](#week-5-practice-scenario-based-question-2)
 
 
