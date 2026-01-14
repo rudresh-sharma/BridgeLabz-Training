@@ -27,6 +27,8 @@
    - [Week 2: Object Oriented Programming](#week-2-object-oriented-programming)
    - [Week 3: Data Structure And Algorithm 1](#week-3-data-structure-and-algorithm-1)
    - [Week 4: Data Structure and Algorithm 2](#week-4-data-structure-and-algorithm-2)
+   - [Scenario based questions on OOPS and DSA](#week-5--sbqs-on-oops--dsa)
+
 
 
      
@@ -648,7 +650,33 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
         - [Bookshelf](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayone/bookshelf)
     
      
+---
 
+
+# Week 5 : SBQ's On OOPs & DSA
+
+### 📅 Day 1 - Solve SBQ's 
+**Date:** 12-Jan-2026
+
+`java-dsa-practice`
+
+- Solve Following SBQ's
+    1. [TrafficManager ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/trafficmanager)
+    2. [CallCenter ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/callcenter)
+    3. [TrainCompanion ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/traincompanion)
+    4. [TextEditor ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/texteditor)
+
+<br>
+
+`java-oops-practice`
+
+- Solve Following SBQ's
+    1. [HomeNest](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/homenest)
+    2. [BudgetWise](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/budgetwise)
+    3. [Game Box](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/gamebox)
+ 
+
+     
 
 
 
