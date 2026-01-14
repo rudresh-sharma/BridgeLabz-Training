@@ -165,7 +165,6 @@ BridgeLabz-Training
 │<br>
 │<br>
 │<br>
-
 </div
 <br>
 
@@ -179,7 +178,24 @@ BridgeLabz-Training
      - [Ambulance route](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayone/ambulanceroute)
 
 
-    
+---
+
+# Week-5 Scenario Based Question Practice
+> In this week I continue practicing dsa concepts by applyting them in real world scenarios
+
+
+###    📅 Day 1 - Solved Scneario bases Questions 2
+**Date:** 12-Jan-2026
+
+- Solve Following SBQ's
+    1. [TrafficManager ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/trafficmanager)
+    2. [CallCenter ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/callcenter)
+    3. [TrainCompanion ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/traincompanion)
+    4. [TextEditor ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/texteditor)
+ 
+       
+
+  
 
 
   
