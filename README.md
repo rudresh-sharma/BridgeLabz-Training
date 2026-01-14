@@ -27,7 +27,7 @@
    - [Week 2: Object Oriented Programming](#week-2-object-oriented-programming)
    - [Week 3: Data Structure And Algorithm 1](#week-3-data-structure-and-algorithm-1)
    - [Week 4: Data Structure and Algorithm 2](#week-4-data-structure-and-algorithm-2)
-   - [Scenario based questions on OOPS and DSA](#week-5--sbqs-on-oops--dsa)
+   - [Week 5: Scenario based questions on OOPS and DSA](#week-5--sbqs-on-oops--dsa)
 
 
 
@@ -675,8 +675,34 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
     2. [BudgetWise](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/budgetwise)
     3. [Game Box](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/gamebox)
  
+)
 
+
+ <div align="left">
+│<br>
+│<br>
+│<br>
+
+</div>
+<br>
      
+### 📅 Day 2 - Solve SBQ's 
+**Date:** 13-Jan-2026
 
+`java-dsa-practice`
+
+- Solve Following SBQ's
+  1. [ParcelTracker ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daythree/parceltracker)
+  2. [SmartCheckout ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daythree/smartcheckout)
+  3. [ExamProctor ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daythree/examproctor)
+ 
+
+`java-oops-practice`
+
+- Solve Following SBQ's
+    1. [PayXpress](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daynine/payxpress)
+    2. [Bird Sanctuary](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daynine/birdsanctuary)
+ 
+     
 
 
