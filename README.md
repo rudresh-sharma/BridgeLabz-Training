@@ -311,8 +311,8 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 │<br>
 │<br>
 │<br>
-
 </div>
+
 
 ### 📅 Day 5 - Scenario Bases Question(SBQ) On OOPS 7
 **Date:** 09-Jan-2026
@@ -333,14 +333,31 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 ### 📅 Day 1 - Scenario Bases Question(SBQ) On OOPS 8
 **Date:** 12-Jan-2026
 
-- SOlve Following SBQ's
+- Solve Following SBQ's
     1. [HomeNest](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/homenest)
     2. [BudgetWise](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/budgetwise)
     3. [Game Box](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/gamebox)
  
   
 
+<div align="left">
+│<br>
+│<br>
+│<br>
+</div>
 
+
+
+
+### 📅 Day 2 - Scenario Bases Question(SBQ) On OOPS 9
+**Date:** 13-Jan-2026
+
+
+- Solve Following SBQ's
+    - [PayXpress](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daynine/payxpress)
+    - [Bird Sanctuary](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daynine/birdsanctuary)
+ 
+      
 
 
 
