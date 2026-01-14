@@ -1,12 +1,14 @@
 # Data Structure and Algorthim 
 
-> This branch is responsible on learning of Data structure and algorithm
+> In this branch i documented learnings of Data structure and algorithm
 --- 
 
 ## 📚 Table of content
   1. [Project Structure](#project-structure)
   2. [Week-3 Data Structure Practice](#week-3-data-structure-practice)
   3. [Week-4 Algorithms Practice](#week-4--algorithms-practice)
+  4. [Week-5 Scenario based Practice](#week-5-scenario-based-question-practice)
+
     
 
 
@@ -73,9 +75,12 @@ BridgeLabz-Training
 │<br>
 
 </div>
+<br>
 
+
+---
 # Week 4 : Algorithms Practice
---- 
+ 
 ### 📅 Day 1 - Sorting algorithms 
 **Date:** 05-Jan-2026
 
@@ -193,7 +198,23 @@ BridgeLabz-Training
     3. [TrainCompanion ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/traincompanion)
     4. [TextEditor ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/texteditor)
  
-       
+<div align="left">
+│<br>
+│<br>
+│<br>
+</div
+<br>
+
+###    📅 Day 2 - Solved Scneario bases Questions 3
+**Date:** 13-Jan-2026
+
+
+- Solve Following SBQ's
+  1. [ParcelTracker ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daythree/parceltracker)
+  2. [SmartCheckout ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daythree/smartcheckout)
+  3. [ExamProctor ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daythree/examproctor)
+ 
+
 
   
 
