@@ -8,9 +8,11 @@
   1. Project Structur
   2. Progress Timeline
        > Java-oops-practice started on Week 2 day 5
-       -  [Week 2 - Working on pillars of Object oriented programming](#week-2---working-on-pillars-of-object-oriented-programming)
+       -  [Week 2:  Working on pillars of Object oriented programming](#week-2---working-on-pillars-of-object-oriented-programming)
        -  [Week 3: Learn about Object modelling, inheritance and encapsulation](#week-3-learn-about-object-modelling-inheritance-and-encapsulation)
-       -  [Week 4: Continue solving SBQ's](#week-4--continue-solving-sbqs)
+       -  [Week 4: Practice Scenario based question Part 1](#week-5-practice-scenario-based-question-1)  
+       -  [Week 5: Practice Scenario based question Part 2](#week-5-practice-scenario-based-question-2)
+
 
 
 ## Project Structure
@@ -43,6 +45,7 @@ BridgeLabz-Training
 
 
 ## Week 2 - Working on pillars of Object oriented programming
+---
 
 ### 📅 Day 5 – Class & Object 
 **Date:** 26-Dec-2025  
@@ -96,8 +99,7 @@ __Learned core OOP concepts in Java:__
 
 
 # Week 3 :Learn about Object modelling, inheritance and encapsulation
-![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
-
+---
 
 ### 📅 Day 1 – Core Java Keywords & Inbuiltfunctions
 **Date:** 29-Dec-2025  
@@ -200,7 +202,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 
 
-### 📅 Day 5 - Solved Scenario based question on OOPs
+### 📅 Day 5 - Scenario Bases Question(SBQ) On OOPS 1
 **Date:** 02-Jan-2026 
 
 - Solve following SBQ
@@ -218,7 +220,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 </div>
 
-### 📅 Day 6 - Solved Scenario based question on OOPs
+### 📅 Day 6 - Scenario Bases Question(SBQ) On OOPS 2
 **Date:** 03-Jan-2026 
  
    
@@ -236,10 +238,10 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 
 
-# Week 4 : Continue solving SBQ's
-![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
+# Week-4 Practice Scenario based question 1
+---
 
-### 📅 Day 1 - Solved Scenario based question on OOPs
+### 📅 Day 1 - Scenario Bases Question(SBQ) On OOPS 3
 **Date:** 05-Jan-2026
 
 
@@ -260,7 +262,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 
 
-### 📅 Day 2 - Scenario Bases Question(SBQ) On OOPS 
+### 📅 Day 2 - Scenario Bases Question(SBQ) On OOPS 4
 **Date:** 06-Jan-2026
 
 
@@ -280,7 +282,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 </div>
 
-### 📅 Day 3 - Scenario Bases Question(SBQ) On OOPS 
+### 📅 Day 3 - Scenario Bases Question(SBQ) On OOPS 5
 **Date:** 07-Jan-2026
 
   - Solve following SBQ's
@@ -297,7 +299,7 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 </div>
 
-### 📅 Day 4 - Scenario Bases Question(SBQ) On OOPS 
+### 📅 Day 4 - Scenario Bases Question(SBQ) On OOPS 6
 **Date:** 08-Jan-2026
 
 
@@ -312,25 +314,31 @@ Learned and practiced Encapsulation along with scenario-based OOPS problem solvi
 
 </div>
 
-### 📅 Day 5 - Scenario Bases Question(SBQ) On OOPS 
+### 📅 Day 5 - Scenario Bases Question(SBQ) On OOPS 7
 **Date:** 09-Jan-2026
 
 
   - Solve Following SBQ's
-        1. [Artify](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/artify)
-        2. [FoodLoop](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/foodloop)
-        3. [SkillForge](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/skillforge)
+    1. [Artify](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/artify)
+    2. [FoodLoop](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/foodloop)
+    3. [SkillForge](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/skillforge)
 
 
 
-<div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
+> Day 6(10-Jan-2026), No work on JAVA-OOPS-PRACTICE branch
 
 
+# Week-5 Practice Scenario based question 2
+
+### 📅 Day 1 - Scenario Bases Question(SBQ) On OOPS 8
+**Date:** 12-Jan-2026
+
+- SOlve Following SBQ's
+    1. [HomeNest](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/homenest)
+    2. [BudgetWise](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/budgetwise)
+    3. [Game Box](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/gamebox)
+ 
+  
 
 
 
