@@ -385,12 +385,13 @@ BridgeLabz-Training
 #### 📅 Day 3 - Revision and debugging (MakarSakranti Holiday)
 **Date:** January 14, 2026
 
+---
 
 #### 📅 Day 4 - Sorting Algorithms Scenario based Set1
 **Date:** January 15, 2026
 
 <details>
-<summary><b>📦 Application of Sorting algorithm in real based scenarion        </b></summary>
+<summary><b>📦 Sorting in Real Scenarios    </b></summary>
 
 ##### 1. 🏥 HospitalQueue – Patient Sorting by Criticality
 
@@ -448,7 +449,56 @@ BridgeLabz-Training
 </details>
 
 **🔗 Code:** [Hospital Queue](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/hospitalqueue) | [Smart Shelf](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/smartshelf) | [ZipZipMart](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/zipzipmart) |[Event Manager](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/eventmanager) | [Exam Cell](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/examcell)
-  
+
+
+
+
+---
+
+#### 📅 Day 5 - Sorting Algorithms Scenario based Set2
+**Date:** January 16, 2026
+
+<details>
+<summary><b>📦 Sorting in Real Scenarios </b></summary>
+
+
+  ##### 1. 🤖 RoboWarehouse – Shelf Loading Robot (Insertion Sort)
+
+- **Problem:** Maintain ascending order of package weights as a robot loads shelves
+- **Algorithm:** Insertion Sort
+- **Features:**
+  - Dynamic insertion into sorted list
+  - Low memory usage
+  - Efficient for streaming data
+- **Learning:** Real-time sorting, in-place insertion, handling incremental updates
+
+##### 2. 🎬 CinemaHouse – Movie Time Sorting (Bubble Sort)
+
+- **Problem:** Sort daily movie showtimes for a small cinema
+- **Algorithm:** Bubble Sort
+- **Features:**
+  - Simple in-place sorting
+  - Ideal for small datasets (~10 shows)
+  - Minimal code complexity
+- **Learning:** Bubble Sort for small lists, in-place swapping, practical use in small-scale scheduling
+
+
+##### 3. 🌾 CropMonitor – Sensor Data Ordering (Quick Sort)
+
+- **Problem:** Sort large, unordered sensor data by timestamp for analysis
+- **Algorithm:** Quick Sort
+- **Features:**
+  - Fast average-case performance
+  - Efficient for large datasets
+  - Partitioning based on timestamps
+- **Learning:** Quick Sort for real-time sensor data, recursive partitioning, handling large-scale time-series data
+
+
+</details>
+
+
+**🔗 Code:** [Robo WareHouse](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfive/robowarehouse) | [Cinema House](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/smartshelf) | [Crop Monitor](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfive/cropmonitor) 
+
 ## 🎓 Key Concepts Covered
 
 ### Data Structures
