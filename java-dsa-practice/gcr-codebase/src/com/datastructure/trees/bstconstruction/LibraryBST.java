@@ -1,4 +1,4 @@
-package com.datastructure.tree.bstconstruction;
+package com.datastructure.trees.bstconstruction;
 
 import java.util.*;
 
