@@ -49,7 +49,7 @@ public class SmartLibraryMain {
 		
         
         
-        System.out.println("\n\n Sorted User boooks");
+        System.out.println("\n\nSorted User boooks");
         
         for(Books b : userBooks) {
         		System.out.println(b);
