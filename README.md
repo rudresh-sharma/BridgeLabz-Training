@@ -1,338 +1,485 @@
-# Week 1: Git, GitHub & Java Programming Fundamentals
+# ☕ Core Java Programming Journey
+
+<div align="center">
+
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+
+**Master Java fundamentals through hands-on practice**
+
+[📂 View Repository](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice)
+
+</div>
 
 ---
 
-## 📅 Day 1 – Git and GitHub Setup  
-**Date:** 15-Dec-2025  
+## 📋 Navigation
 
-- Installed and configured Git  
-- Set up GitHub repository  
-- Created core-java-practice branch
+- [Overview](#-overview)
+- [Project Structure](#-project-structure)
+- [Weekly Progress](#-weekly-progress)
+  - [Week 1: Git & Java Fundamentals](#week-1-git--java-fundamentals)
+  - [Week 2: Strings & Problem Solving](#week-2-strings--problem-solving)
+  - [Week 3: Scenario-Based Applications](#week-3-scenario-based-applications)
+- [Concepts Mastered](#-concepts-mastered)
 
-### 📂 Repository Structure
+---
 
-```text
-BridgeLabz-Training/
-│── core-java-practice/
-│ │── gcr-codebase/
-│ │ │── arrays/
-│ │ │── control-flow/
-│ │ │── extras/
-│ │ │── methods/
-│ │ │── programming-elements/
-│ │ │── programming-requisites/
-│ │ │── strings/
-│ │── leet-code-codebase/
-│ │── scenario-based-codebase/
-│ |── README.md
+## 🎯 Overview
 
+A structured journey through Core Java programming, from setting up Git and GitHub to solving real-world scenario-based problems. This repository showcases progressive learning through **hands-on coding, LeetCode challenges, and practical applications**.
+
+**Duration:** December 15, 2025 - Ongoing  
+**Focus:** Java Fundamentals → Problem Solving → Real-world Scenarios
+
+---
+
+## 📁 Project Structure
 
 ```
-
-- Learned basic git commands like (git init, git status, git commit -m "", git add, git push
-- Successfully pushed files to the remote repository
-
-***
-
-
-### 🗓 Day 2 – Git Practice & Basic Java Programs  
-**Date:** 16-Dec-2025
-
-- Practiced Git workflow to understand commits and version control.
-- Solved very basic Java programs to understand syntax and structure.
-- Practiced adding, committing, and pushing Java files to GitHub.
-
-🔗 **Code Link:**  
-👉 [Day 2 – Basic Java Programs](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/program-prerequisites)
-
----
-
-### 🗓 Day 3 – Programming Elements in Java  
-**Date:** 17-Dec-2025
-
-- Studied Java programming elements:
-  - Variables and data types
-  - Operators
-  - User input and output
-- Solved practice problems based on programming elements.
-- Committed and pushed solutions to the repository.
-
-🔗 **Code Link:**  
-👉 [Day 3 – Programming Elements](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/programming-elements)
+core-java-practice/
+├── gcr-codebase/
+│   ├── programming-requisites/    # Basic Java syntax
+│   ├── programming-elements/      # Variables, operators, I/O
+│   ├── control-flows/            # Loops, conditionals
+│   ├── arrays/                   # Array operations
+│   ├── methods/                  # Function concepts
+│   ├── strings/                  # String manipulation
+│   └── extras/                   # Advanced topics
+│       ├── String Handling/
+│       └── Built In Function/
+│
+├── leetcode-codebase/
+│   ├── Arrays/
+│   │   ├── Practice1/
+│   │   └── Practice2/
+│   └── Strings/
+│
+└── scenario-based-codebase/      # Real-world applications
+    ├── 24Dec2025/
+    ├── 26Dec2025/
+    └── Individual Projects/
+```
 
 ---
 
+## 📚 Weekly Progress
 
-### 🗓 Day 4 – Control Flow & Logical Constructs  
-**Date:** 18-Dec-2025
+### Week 1: Git & Java Fundamentals
 
-- Studied logical constructs in Java:
-  - if, if-else
-  - switch statement
-  - ternary operator
-- Practiced iteration statements:
-  - for loop
-  - while loop
-  - do-while loop
-- Used break and continue statements.
-- Solved logical problems such as:
-  - Factorial
-  - Prime number check
-- Committed and pushed solutions to the repository.
+#### 📅 Day 1 - Git & GitHub Setup
+**Date:** December 15, 2025
 
-🔗 **Code Link:**  
-👉 [Day 4 – Control Flow](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/control-flows)
+**🎯 Milestone:** Version control foundation
 
----
+**Achievements:**
+- ✅ Installed and configured Git
+- ✅ Created GitHub repository structure
+- ✅ Set up `core-java-practice` branch
+- ✅ Mastered basic Git commands
 
-
-### 🗓 Day 5 – Arrays & Basic Problem Solving  
-**Date:** 19-Dec-2025
-
-- Studied arrays in Java:
-  - Single-dimensional arrays
-  - Multi-dimensional arrays
-- Practiced array traversal and operations.
-- Solved problems related to:
-  - Finding missing elements
-  - Basic array-based logic
-- Strengthened logical thinking using array problems.
-- Committed and pushed solutions to the repository.
-
-🔗 **Code Link:**  
-👉 [Day 5 – Arrays](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/arrays)
-
+**Commands Learned:**
+```bash
+git init
+git status
+git add
+git commit -m "message"
+git push
+```
 
 ---
 
+#### 📅 Day 2 - Java Basics & Git Workflow
+**Date:** December 16, 2025
 
-### 🗓 Day 6 –Concepts & problems on Methods  
-**Date: 20-Dec-2025
+**🎯 Focus:** Understanding Java syntax and Git workflow
 
-- Studied Java methods:
-  - Method declaration
-  - Method calling
-  - Parameter passing
-- Practiced reusable logic using methods.
-- Committed and pushed solutions to the repository.
+**Topics Covered:**
+- Basic Java program structure
+- Print statements and output
+- File management with Git
 
-🔗 **Code Link:**  
-👉 [Day 6 – Problems on Methods](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/methods)
+**🔗 Code:** [Basic Java Programs](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/program-prerequisites)
 
 ---
 
+#### 📅 Day 3 - Programming Elements
+**Date:** December 17, 2025
 
+**🎯 Focus:** Core Java building blocks
 
-# Week2 : Worked on Strings and Extras Problems
+**Topics Covered:**
+- Variables and data types (`int`, `float`, `double`, `char`, `boolean`)
+- Operators (arithmetic, relational, logical)
+- User input using `Scanner`
+- Output formatting
 
----
-## 📅 Day 1 – Strings Concepts & Problems  
-**Date:** 22-Dec-2025 
-
-- [Learn the string concepts](https://docs.google.com/document/d/1-UXHtzpozVZznDVGYivscpQYEL6-vxOFZWiPpvBH5CE/edit?tab=t.0#heading=h.66yv6crqdvrd)
-    - Learn about built in methods for strings
-    - Why string is immutable
-    - Exception handling
- 
-- Solve Problems at three levels
-   - **Level1** Basic problems to create own method resemebles built in method
-   - **Level2** Learn how to print data in tabular format
-   - **Level2** Solve random values generated problems
-
-
-🔗 **Code Link:** <br>
-👉[Day 1 - String problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/strings)
-
- ---
-
-
- ## 📅 Day 2 – Solve Extras Problems 
-**Date:** 23-Dec-2025 
-
-- [Extras Problems on String](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/a/ODIxNjE3NTg5MDU3/details)
-   - Work on concepts like frequency,substring,anagram etc . about string
-
- - [Extras Problems on Built in function](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/a/ODIxNjE3NTg5MDYx/details)
-     - Ex. includes time packages functions like LocalDate.now(), LocalTime.now() etc.
-
-  **Code Link:** <br>
-  👉[String Extras solved](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/extras/String%20Handling) ,
-  👉[Buiilt function extras Solved](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/extras/Buiit%20In%20Function)
-  <br>
-  **Notes source:** <br>
-  👉[Built in functions 1](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details) , 
-  👉[Built in functions 2](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details)
-
-
-## 📅 Day 3 - Leetcode Practice & Scenario Based Questions(SBQ) 
-**Date:** 24-Dec-2025  
-
-- Solved below problems on LeetCode:
-  - [Two Sum](https://leetcode.com/problems/two-sum/description/)
-  - [First Palindromic String in Array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/description/)
-  - [Number of Employees Who Met the Target](https://leetcode.com/problems/number-of-employees-who-met-the-target/description/)
-  - [Minimum Number Game](https://leetcode.com/problems/minimum-number-game/description/)
-  - [Difference Between Element & Digit Sum](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/description/)
-  - [Sum Multiples](https://leetcode.com/problems/sum-multiples/description/)
-  - [Type of Triangle](https://leetcode.com/problems/type-of-triangle/description/)
-
-🔗 **Code Link:**  
-👉 [Code of above Problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice1)
-
-
-🔗 **Scenario Based Questions (SBQ):**  
-👉 [24 Dec SBQ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase/24Dec2025)
+**🔗 Code:** [Programming Elements](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/programming-elements)
 
 ---
 
+#### 📅 Day 4 - Control Flow Statements
+**Date:** December 18, 2025
 
+**🎯 Focus:** Decision making and iteration
 
-## 📅 Day 4 – Scenario Based Questions  
-**Date:** 26-Dec-2025  
+**Topics Covered:**
+- **Conditionals:** `if`, `if-else`, `switch`, ternary operator
+- **Loops:** `for`, `while`, `do-while`
+- **Control:** `break`, `continue`
 
-- Continued working on advanced scenario-based Core Java problems.
-- Applied concepts:
-  -  Scanner input, variables & primitive data types
-  - if-else & switch decision handling
-  - for, while & do-while loops
-  - Ternary operator usage
-  - break & continue control flow
-  Clean-code formatting, indentation & meaningful comments
+**Problems Solved:**
+- Factorial calculation
+- Prime number checker
+- Pattern printing
 
-🔗 **Code Link:**  
-👉 [26 Dec SBQ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase/26Dec2025)
+**🔗 Code:** [Control Flow](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/control-flows)
 
 ---
 
-## 📅 Day 5- Leetcode Practice  
-**Date:** 27-Dec-2025  
+#### 📅 Day 5 - Arrays Fundamentals
+**Date:** December 19, 2025
 
-- Solved below problems on LeetCode:
-  - [Missing Number](https://leetcode.com/problems/missing-number/description/)
-  - [Rotate Array](https://leetcode.com/problems/rotate-array/description/)
-  - [Find If Array can be sorted](https://leetcode.com/problems/find-if-array-can-be-sorted/description/)
-  - [Move Zeroes](https://leetcode.com/problems/move-zeroes/description/)
-  - [Remove Duplicates in sorted array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)
+**🎯 Focus:** Array manipulation and operations
 
+**Topics Covered:**
+- Single-dimensional arrays
+- Multi-dimensional arrays
+- Array traversal techniques
 
-🔗 **Code Link:**  
-👉 [Code of above Problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice2)
+**Problems Solved:**
+- Finding missing elements
+- Array reversal
+- Basic sorting logic
 
-# 📚 Week-3 Scenario-Based Problems (SBQ)
-## 📅 Day 1 - Solved following SBQ's
-**Date** 29-Dec-2025
+**🔗 Code:** [Arrays](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/arrays)
 
+---
 
-1. *Parking Lot Gate Systemn*
- 
--  Developed a smart parking system  
--  Menu options: Park, Exit, Show Occupancy  
--  Used switch-case for menu handling  
--  Used while loop to keep the system running  
+#### 📅 Day 6 - Methods & Reusability
+**Date:** December 20, 2025
 
-🔗 [Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/ParkingLotSystem.java)
+**🎯 Focus:** Writing modular and reusable code
 
+**Topics Covered:**
+- Method declaration and calling
+- Parameter passing (by value)
+- Return types
+- Method overloading basics
 
+**🔗 Code:** [Methods](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/methods)
 
-2. *Number Guessing Game*
--  Player guesses a number between 1 and 100  
--  Implemented using do-while loop  
--  Shows hints: Too High / Too Low  
--  Game ends after 5 wrong attempts  
+---
 
-🔗 [Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/NumberGuessGame.java)
+### Week 2: Strings & Problem Solving
 
+#### 📅 Day 1 - String Concepts & Operations
+**Date:** December 22, 2025
 
+**🎯 Focus:** Mastering String manipulation
 
-3. *Shopkeeper’s Discount Dashboard*
--  Item prices taken using a for loop  
--  Total bill calculated  
--  Discount applied using if-else  
--  Followed clean coding standards  
+**Topics Covered:**
+- String immutability in Java
+- Built-in String methods
+- Exception handling basics
+- Custom method implementation
 
-🔗 [Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/DiscountDashboard.java)
+**Practice Levels:**
+- **Level 1:** Recreate built-in methods
+- **Level 2:** Tabular data formatting
+- **Level 3:** Random value generation
 
+**📖 Notes:** [String Concepts](https://docs.google.com/document/d/1-UXHtzpozVZznDVGYivscpQYEL6-vxOFZWiPpvBH5CE/edit?tab=t.0#heading=h.66yv6crqdvrd)
 
+**🔗 Code:** [String Problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/strings)
 
-4. *School Bus Attendance System*
--  Attendance of 10 students tracked  
--  Used for-each loop for names  
--  Input: Present / Absent  
--  Displayed total present & absent count  
+---
 
-🔗 [Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/BusAttendance.java)
+#### 📅 Day 2 - Advanced String & Built-in Functions
+**Date:** December 23, 2025
 
+**🎯 Focus:** Complex string operations and Java utilities
 
+**Topics Covered:**
+- Frequency counting in strings
+- Substring operations
+- Anagram detection
+- Time packages (`LocalDate`, `LocalTime`)
 
-5. *Phone Recharge Simulator*
-- ○ Takes mobile operator and recharge amount  
-- ○ Uses switch for operator offers  
-- ○ Loop allows multiple recharges  
-- ○ Displays updated balance  
+**🔗 Code:** [String Extras](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/extras/String%20Handling) | [Built-in Functions](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/extras/Buiit%20In%20Function)
 
-🔗 [Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/PhoneRechargeSimulator.java)
+---
 
---- 
-## Day 2 - Solved following SBQ's and Leetcode Questions
-**Date:** 30-Dec-2025
+#### 📅 Day 3 - LeetCode Practice Session 1
+**Date:** December 24, 2025
 
-**1. Scenario Based Questions(SBQ)**
+**🎯 Solved 7 LeetCode Problems**
 
-1. *Temperature Logger*
-   
-  - Recorded temperatures over 7 days using an array.
-  - Used for-loop to input data.
-  - Calculated: Average temperature, Maximum temperature
-  - Used if conditions for comparisons.
-  - Maintained readable variable names and modular logic.
+| # | Problem | Difficulty | Concept |
+|---|---------|-----------|---------|
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | Easy | Arrays, HashMap |
+| 2 | [First Palindromic String](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/) | Easy | Strings |
+| 3 | [Employees Met Target](https://leetcode.com/problems/number-of-employees-who-met-the-target/) | Easy | Arrays |
+| 4 | [Minimum Number Game](https://leetcode.com/problems/minimum-number-game/) | Easy | Arrays |
+| 5 | [Element & Digit Sum Difference](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/) | Easy | Math |
+| 6 | [Sum Multiples](https://leetcode.com/problems/sum-multiples/) | Easy | Math |
+| 7 | [Type of Triangle](https://leetcode.com/problems/type-of-triangle/) | Easy | Logic |
 
-[Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/TemperatureLogger.java)
+**🔗 Code:** [LeetCode Solutions](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice1) | [Scenario Questions](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase/24Dec2025)
 
-2. *Train Reservation Queue*
-   
-  - Simulated a basic ticket booking system.
-  - Displayed menu using switch-case.
-  - Allowed multiple bookings using while-loop.
-  - Stopped booking once seats reached zero using break.
+---
 
-[Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/TrainReservation.java)
+#### 📅 Day 4 - Scenario-Based Questions
+**Date:** December 26, 2025
 
-3.  *Sandeep’s Fitness Challenge Tracker*
-   
-  - Stored daily push-up counts for a week.
-  - Used for-each loop to calculate:
-  - Total push-ups
-  - Average push-ups
-  - Used continue to skip rest days.
+**🎯 Focus:** Applying concepts to real-world problems
 
-[Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/FitnessChallengeTracker.java)
+**Concepts Applied:**
+- Scanner input handling
+- Multi-way decision making (`if-else`, `switch`)
+- Loop implementations
+- Clean code practices (formatting, comments)
 
-4. *Movie Ticket Booking App*
-   
-  - Asked users for: Movie type, Seat type (Gold / Silver), Snacks selection
-  - Used switch and if-else together.
-  - Looped through multiple customers.
+**🔗 Code:** [26 Dec SBQ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/scenario-based-codebase/26Dec2025)
 
-[Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/MovieTicketBooking.java)
+---
 
-5. *Rohan’s Library Reminder App*
-  - Calculated library fines based on: Due date and return date
-  - Fine charged: ₹5 per day for late returns.
-  - Repeated fine calculation for 5 books using for-loop.
+#### 📅 Day 5 - LeetCode Practice Session 2
+**Date:** December 27, 2025
 
-[Code Link](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/LibraryReminderApp.java)
+**🎯 Solved 5 Array Manipulation Problems**
 
-**2. Leetcode Questions**
+| # | Problem | Difficulty | Concept |
+|---|---------|-----------|---------|
+| 1 | [Missing Number](https://leetcode.com/problems/missing-number/) | Easy | Arrays, Math |
+| 2 | [Rotate Array](https://leetcode.com/problems/rotate-array/) | Medium | Arrays |
+| 3 | [Array Can Be Sorted](https://leetcode.com/problems/find-if-array-can-be-sorted/) | Medium | Sorting |
+| 4 | [Move Zeroes](https://leetcode.com/problems/move-zeroes/) | Easy | Two Pointers |
+| 5 | [Remove Duplicates](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy | Two Pointers |
 
-  _Solved Following Question(with Code)_
+**🔗 Code:** [LeetCode Solutions](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice2)
 
-  - [Integer to Roman](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/IntegerToRoman.java)
-  - [Roman to Integer](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/RomanToInteger.java)
-  - [Reverse words in string](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/ReverseWordsInString.java)
-  - [Remove outermost parenthesis](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/RemoveOutermostParenthesis.java)
-  - [Longest Palindromic substring](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/LongestPalindromicSubstring.java)
+---
 
-## Day 3 -
-**Date:** 31-Dec-2025
+### Week 3: Scenario-Based Applications
 
-  
+#### 📅 Day 1 - Real-World System Design
+**Date:** December 29, 2025
+
+**🎯 Built 5 Practical Applications**
+
+<table>
+<tr>
+<td width="50%">
+
+**1. 🅿️ Parking Lot Gate System**
+- Smart parking management
+- Menu-driven interface
+- Switch-case navigation
+- Real-time occupancy tracking
+
+[📂 Code](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/ParkingLotSystem.java)
+
+---
+
+**2. 🎲 Number Guessing Game**
+- Interactive guessing game (1-100)
+- 5 attempt limit
+- Hint system (Too High/Low)
+- Do-while loop implementation
+
+[📂 Code](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/NumberGuessGame.java)
+
+---
+
+**3. 💰 Discount Dashboard**
+- Shopping cart system
+- Dynamic pricing calculation
+- Tiered discount logic
+- Clean billing format
+
+[📂 Code](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/DiscountDashboard.java)
+
+</td>
+<td width="50%">
+
+**4. 🚌 School Bus Attendance**
+- Student attendance tracker
+- 10 students monitoring
+- For-each loop usage
+- Present/Absent analytics
+
+[📂 Code](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/BusAttendance.java)
+
+---
+
+**5. 📱 Phone Recharge Simulator**
+- Multi-operator support
+- Balance management
+- Offer calculation
+- Multiple recharge handling
+
+[📂 Code](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/PhoneRechargeSimulator.java)
+
+</td>
+</tr>
+</table>
+
+---
+
+#### 📅 Day 2 - Advanced Scenarios & LeetCode Strings
+**Date:** December 30, 2025
+
+**🎯 Part 1: Scenario-Based Applications (5 Projects)**
+
+<table>
+<tr>
+<td width="50%">
+
+**1. 🌡️ Temperature Logger**
+- 7-day weather tracking
+- Statistical analysis (avg, max)
+- Array-based storage
+
+[📂 Code](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/TemperatureLogger.java)
+
+---
+
+**2. 🚂 Train Reservation Queue**
+- Ticket booking simulation
+- Seat availability tracking
+- Queue management system
+
+[📂 Code](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/TrainReservation.java)
+
+---
+
+**3. 💪 Fitness Challenge Tracker**
+- Weekly push-up logger
+- Rest day handling
+- Progress analytics
+
+[📂 Code](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/FitnessChallengeTracker.java)
+
+</td>
+<td width="50%">
+
+**4. 🎬 Movie Ticket Booking**
+- Multi-tier pricing
+- Snacks integration
+- Customer queue handling
+
+[📂 Code](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/MovieTicketBooking.java)
+
+---
+
+**5. 📚 Library Reminder App**
+- Fine calculation system
+- Due date tracking
+- Multi-book processing
+
+[📂 Code](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/scenario-based-codebase/LibraryReminderApp.java)
+
+</td>
+</tr>
+</table>
+
+**🎯 Part 2: LeetCode String Problems (5 Solved)**
+
+| # | Problem | Difficulty | Key Concept |
+|---|---------|-----------|-------------|
+| 1 | [Integer to Roman](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/IntegerToRoman.java) | Medium | String building |
+| 2 | [Roman to Integer](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/RomanToInteger.java) | Easy | String parsing |
+| 3 | [Reverse Words](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/ReverseWordsInString.java) | Medium | String manipulation |
+| 4 | [Remove Parenthesis](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/RemoveOutermostParenthesis.java) | Easy | Stack simulation |
+| 5 | [Longest Palindrome](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/leetcode-codebase/Strings/LongestPalindromicSubstring.java) | Medium | Dynamic programming |
+
+---
+
+#### 📅 Day 3 - Continued Practice
+**Date:** December 31, 2025
+
+🔄 **Ongoing development and problem solving**
+
+---
+
+## 🎓 Concepts Mastered
+
+### Core Java Fundamentals
+- ✅ Variables & Data Types
+- ✅ Operators (Arithmetic, Relational, Logical)
+- ✅ Control Flow (`if-else`, `switch`, `ternary`)
+- ✅ Loops (`for`, `while`, `do-while`)
+- ✅ Arrays (1D & 2D)
+- ✅ Methods & Modularity
+- ✅ Strings & String Manipulation
+
+### Advanced Concepts
+- ✅ Exception Handling Basics
+- ✅ Scanner Input Handling
+- ✅ Built-in Functions (`LocalDate`, `LocalTime`)
+- ✅ Algorithm Design
+- ✅ Problem-Solving Patterns
+
+### Practical Skills
+- ✅ Git & GitHub Workflow
+- ✅ Clean Code Practices
+- ✅ Menu-Driven Programs
+- ✅ Real-world Application Design
+- ✅ LeetCode Problem Solving
+
+**LeetCode Stats:** 17+ Problems Solved  
+**Scenario Apps:** 10+ Built  
+**Practice Hours:** 50+
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone -b core-java-practice https://github.com/rudresh-sharma/BridgeLabz-Training.git
+
+# Navigate to practice directory
+cd core-java-practice/gcr-codebase
+
+# Compile and run any Java file
+javac programming-elements/Variables.java
+java programming-elements.Variables
+
+# For scenario-based projects
+cd ../scenario-based-codebase
+javac ParkingLotSystem.java
+java ParkingLotSystem
+```
+
+---
+
+## 💡 Learning Highlights
+
+**What Makes This Journey Special:**
+- 📈 **Progressive Learning** - From basics to complex applications
+- 🎯 **Hands-on Practice** - Every concept backed by code
+- 🏆 **LeetCode Integration** - Real coding challenge experience
+- 🌍 **Real-world Scenarios** - Practical problem-solving
+- 🧹 **Clean Code** - Industry-standard practices from day one
+
+---
+
+<div align="center">
+
+### 🌟 Journey Summary
+
+**From Git Setup to Building Real-World Java Applications**
+
+---
+
+**⭐ Star this repository if you find it helpful!**
+
+Made with ☕ and determination by [Rudresh Sharma](https://github.com/rudresh-sharma)
+
+*"The only way to learn programming is by writing programs"*
+
+</div>
