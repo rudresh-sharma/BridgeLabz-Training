@@ -499,6 +499,61 @@ BridgeLabz-Training
 
 **🔗 Code:** [Robo WareHouse](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfive/robowarehouse) | [Cinema House](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/smartshelf) | [Crop Monitor](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfive/cropmonitor) 
 
+
+
+---
+
+#### 📅 Day 6 - Sorting Algorithms Scenario based Set3
+**Date:** January 17, 2026
+
+<details>
+<summary><b>📦 Sorting in Real Scenarios    </b></summary
+
+##### 1. 🎨 ArtExpo – Sort Artists by Registration Time (Insertion Sort)
+
+- **Problem:** Maintain a sorted list of artist registrations for booth assignments
+- **Algorithm:** Insertion Sort
+- **Features:**
+  - Real-time insertion of new registrations
+  - Efficient for nearly sorted data
+  - Time-based ordering
+- **Learning:** Insertion Sort for incremental data, in-place updates, managing real-time registrations
+
+##### 2. 🚚 FleetManager – Vehicle Maintenance Scheduler (Merge Sort)
+
+- **Problem:** Merge vehicle lists from multiple depots to create a master maintenance schedule
+- **Algorithm:** Merge Sort
+- **Features:**
+  - Combines pre-sorted depot lists efficiently
+  - Maintains overall sorted order by mileage
+  - Handles large datasets with low memory usage
+- **Learning:** Merge Sort for merging sorted lists, stable sorting, efficient handling of large-scale operational data
+
+##### 3. 🍦 IceCreamRush – Sorting Flavors by Popularity (Bubble Sort)
+
+- **Problem:** Sort ice cream flavors by weekly sales for a small vendor
+- **Algorithm:** Bubble Sort
+- **Features:**
+  - Simple in-place sorting
+  - Ideal for small datasets (8 flavors)
+  - Repeated adjacent comparisons for ranking
+- **Learning:** Bubble Sort mechanics, handling small data, practical use of adjacent swapping
+
+
+##### 4. 📚 SmartLibrary – Auto-Sort Borrowed Books (Insertion Sort)
+
+- **Problem:** Keep a user's borrowed books alphabetically sorted as new books are added
+- **Algorithm:** Insertion Sort
+- **Features:**
+  - Real-time insertion into sorted list
+  - Efficient for nearly sorted data
+  - Maintains alphabetical order dynamically
+- **Learning:** Insertion Sort for incremental updates, dynamic list management, handling nearly sorted datasets
+
+
+</details>
+
+**🔗 Code:** [ArtExpo](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daysix/artexpo) | [FleetManager](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daysix/fleetmanager) | [IceCream Rush](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daysix/icecreamrush) | [SmartLibary](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daysix/smartlibrary)
 ## 🎓 Key Concepts Covered
 
 ### Data Structures
