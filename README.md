@@ -381,6 +381,179 @@ BridgeLabz-Training
 
 ---
 
+
+#### 📅 Day 3 - Revision and debugging (MakarSakranti Holiday)
+**Date:** January 14, 2026
+
+---
+
+#### 📅 Day 4 - Sorting Algorithms Scenario based Set1
+**Date:** January 15, 2026
+
+<details>
+<summary><b>📦 Sorting in Real Scenarios    </b></summary>
+
+##### 1. 🏥 HospitalQueue – Patient Sorting by Criticality
+
+- **Problem:** Prioritize ER patients by criticality before bed assignment
+- **Algorithm:** Bubble Sort
+- **Features:**
+  - In-place patient sorting
+  - Criticality-based priority (1–10)
+  - Efficient for small datasets
+- **Learning:** In-place sorting, adjacent swapping, real-world use of Bubble Sort
+
+
+##### 2. 📚 SmartShelf – Real-Time Book Arrangement (Insertion Sort)
+
+- **Problem:** Maintain a reading list sorted alphabetically as books are added
+- **Algorithm:** Insertion Sort
+- **Features:**
+  - Real-time (online) sorting
+  - Efficient for nearly sorted lists
+  - Stable sorting by book title
+- **Learning:** Insertion Sort for incremental data, stability, real-world list maintenance
+
+
+##### 3. 🛒 ZipZipMart – Daily Sales Summary Report (Merge Sort)
+
+- **Problem:** Sort large volumes of sales transactions by date and amount
+- **Algorithm:** Merge Sort
+- **Features:**
+  - Efficient for large datasets
+  - Stable sorting of transactions
+  - Divide-and-conquer approach
+- **Learning:** Recursive sorting, stability, handling large-scale data efficiently
+
+##### 4. 🎟️ EventManager – Ticket Price Optimizer (Quick Sort)
+
+- **Problem:** Sort large, unsorted ticket prices to find cheapest or most expensive tickets
+- **Algorithm:** Quick Sort
+- **Features:**
+  - Fast average-case performance
+  - Efficient for large, random datasets
+  - Recursive partitioning strategy
+- **Learning:** Divide-and-partition logic, performance trade-offs, real-world sorting at scale
+
+
+##### 5. 🏫 ExamCell – Student Rank Generator (Merge Sort)
+
+- **Problem:** Merge and sort student scores from multiple test centers to generate rank lists
+- **Algorithm:** Merge Sort
+- **Features:**
+  - Efficient merging of pre-sorted scores
+  - Accurate ranking across centers
+  - Handles large datasets effectively
+- **Learning:** Merge Sort for big data, stable sorting, combining multiple sorted lists
+
+</details>
+
+**🔗 Code:** [Hospital Queue](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/hospitalqueue) | [Smart Shelf](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/smartshelf) | [ZipZipMart](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/zipzipmart) |[Event Manager](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/eventmanager) | [Exam Cell](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/examcell)
+
+
+
+
+---
+
+#### 📅 Day 5 - Sorting Algorithms Scenario based Set2
+**Date:** January 16, 2026
+
+<details>
+<summary><b>📦 Sorting in Real Scenarios </b></summary>
+
+
+  ##### 1. 🤖 RoboWarehouse – Shelf Loading Robot (Insertion Sort)
+
+- **Problem:** Maintain ascending order of package weights as a robot loads shelves
+- **Algorithm:** Insertion Sort
+- **Features:**
+  - Dynamic insertion into sorted list
+  - Low memory usage
+  - Efficient for streaming data
+- **Learning:** Real-time sorting, in-place insertion, handling incremental updates
+
+##### 2. 🎬 CinemaHouse – Movie Time Sorting (Bubble Sort)
+
+- **Problem:** Sort daily movie showtimes for a small cinema
+- **Algorithm:** Bubble Sort
+- **Features:**
+  - Simple in-place sorting
+  - Ideal for small datasets (~10 shows)
+  - Minimal code complexity
+- **Learning:** Bubble Sort for small lists, in-place swapping, practical use in small-scale scheduling
+
+
+##### 3. 🌾 CropMonitor – Sensor Data Ordering (Quick Sort)
+
+- **Problem:** Sort large, unordered sensor data by timestamp for analysis
+- **Algorithm:** Quick Sort
+- **Features:**
+  - Fast average-case performance
+  - Efficient for large datasets
+  - Partitioning based on timestamps
+- **Learning:** Quick Sort for real-time sensor data, recursive partitioning, handling large-scale time-series data
+
+
+</details>
+
+
+**🔗 Code:** [Robo WareHouse](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfive/robowarehouse) | [Cinema House](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfour/smartshelf) | [Crop Monitor](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayfive/cropmonitor) 
+
+
+
+---
+
+#### 📅 Day 6 - Sorting Algorithms Scenario based Set3
+**Date:** January 17, 2026
+
+<details>
+<summary><b>📦 Sorting in Real Scenarios    </b></summary
+
+##### 1. 🎨 ArtExpo – Sort Artists by Registration Time (Insertion Sort)
+
+- **Problem:** Maintain a sorted list of artist registrations for booth assignments
+- **Algorithm:** Insertion Sort
+- **Features:**
+  - Real-time insertion of new registrations
+  - Efficient for nearly sorted data
+  - Time-based ordering
+- **Learning:** Insertion Sort for incremental data, in-place updates, managing real-time registrations
+
+##### 2. 🚚 FleetManager – Vehicle Maintenance Scheduler (Merge Sort)
+
+- **Problem:** Merge vehicle lists from multiple depots to create a master maintenance schedule
+- **Algorithm:** Merge Sort
+- **Features:**
+  - Combines pre-sorted depot lists efficiently
+  - Maintains overall sorted order by mileage
+  - Handles large datasets with low memory usage
+- **Learning:** Merge Sort for merging sorted lists, stable sorting, efficient handling of large-scale operational data
+
+##### 3. 🍦 IceCreamRush – Sorting Flavors by Popularity (Bubble Sort)
+
+- **Problem:** Sort ice cream flavors by weekly sales for a small vendor
+- **Algorithm:** Bubble Sort
+- **Features:**
+  - Simple in-place sorting
+  - Ideal for small datasets (8 flavors)
+  - Repeated adjacent comparisons for ranking
+- **Learning:** Bubble Sort mechanics, handling small data, practical use of adjacent swapping
+
+
+##### 4. 📚 SmartLibrary – Auto-Sort Borrowed Books (Insertion Sort)
+
+- **Problem:** Keep a user's borrowed books alphabetically sorted as new books are added
+- **Algorithm:** Insertion Sort
+- **Features:**
+  - Real-time insertion into sorted list
+  - Efficient for nearly sorted data
+  - Maintains alphabetical order dynamically
+- **Learning:** Insertion Sort for incremental updates, dynamic list management, handling nearly sorted datasets
+
+
+</details>
+
+**🔗 Code:** [ArtExpo](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daysix/artexpo) | [FleetManager](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daysix/fleetmanager) | [IceCream Rush](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daysix/icecreamrush) | [SmartLibary](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daysix/smartlibrary)
 ## 🎓 Key Concepts Covered
 
 ### Data Structures
