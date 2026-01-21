@@ -20,8 +20,9 @@
 - [Program Overview](#-program-overview)
 - [Training Structure](#-training-structure)
 - [Week-wise Progress](#-week-wise-progress)
-- [Skills Being Developed](#-skills-being-developed)
-- [Repository Navigation](#-repository-navigation)
+- [Technical Competencies](#technical-competencies)
+- [Repository Navigation](#️-repository-navigation)
+
 
 ---
 
@@ -49,7 +50,10 @@ Training Repository/
 │   └── Branch: java-oops-practice
 │
 └── 📌 Week 3: Data Structures & Algorithms
-    └── Branch: java-dsa-practice
+|    └── Branch: java-dsa-practice
+│
+└── 📌 Week 4: Collections Framework in Java
+    └── Branch: java-collections-practice
 ```
 
 ---
@@ -168,13 +172,103 @@ Training Repository/
 
 ---
 
-## 🎓 Skills Being Developed
+### Week 4: Collections Framework & Advanced Java Concepts
+**Branch:** [`java-collections-practice`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-collections-practice)  
+
+
+**Objective:** Master Collection Framework and advanced Java concepts  
+
+
+<details>
+<summary><b>📕 Topics Covered</b></summary>
+
+#### Collection Framework
+- ✅ Collection Interface Hierarchy
+- ✅ List, Set, Queue, Deque Interfaces
+- ✅ Map Interface & its implementations
+- ✅ Iterator & ListIterator
+- ✅ ArrayList vs LinkedList
+- ✅ HashSet, LinkedHashSet, TreeSet
+- ✅ HashMap, LinkedHashMap, TreeMap
+- ✅ PriorityQueue & ArrayDeque
+- ✅ Thread-safe Collections (ConcurrentHashMap, CopyOnWriteArrayList)
+- ✅ Collections utility class methods
+
+#### Generics
+- ✅ Generic Classes & Interfaces
+- ✅ Generic Methods
+- ✅ Bounded Type Parameters
+- ✅ Wildcards (?, extends, super)
+- ✅ Type Erasure & Bridge Methods
+- ✅ Generic Collections
+
+#### Streams API
+- ✅ Stream creation & operations
+- ✅ Intermediate operations (filter, map, flatMap)
+- ✅ Terminal operations (collect, reduce, forEach)
+- ✅ Parallel Streams
+- ✅ Stream with Collections
+- ✅ Collectors & Custom Collectors
+
+#### Exception Handling
+- ✅ Checked vs Unchecked Exceptions
+- ✅ try-catch-finally blocks
+- ✅ try-with-resources
+- ✅ Custom Exception classes
+- ✅ Exception propagation
+- ✅ Best practices & patterns
+
+#### Regular Expressions (Regex)
+- ✅ Pattern & Matcher classes
+- ✅ Regex syntax & metacharacters
+- ✅ String validation & extraction
+- ✅ Search & replace operations
+- ✅ Real-world regex applications
+
+#### JUnit Testing
+- ✅ JUnit 5 framework
+- ✅ Test annotations (@Test, @BeforeEach, @AfterEach)
+- ✅ Assertions (assertEquals, assertTrue, assertThrows)
+- ✅ Parameterized tests
+- ✅ Test lifecycle & setup/teardown
+- ✅ Mocking & test doubles
+- ✅ Test coverage & best practices
+
+#### Advanced Concepts
+- ✅ Comparable vs Comparator
+- ✅ Functional Interfaces & Lambda expressions
+- ✅ Method References
+- ✅ Optional class
+- ✅ Time complexity analysis
+- ✅ Performance benchmarking
+
+#### Practical Applications
+- ✅ Collection selection strategies
+- ✅ Real-world use case implementations
+- ✅ Stream-based data processing
+- ✅ Error handling patterns
+- ✅ Regex for data validation
+- ✅ Test-Driven Development (TDD)
+- ✅ Best practices & common pitfalls
+
+</details>
+
+**Deliverables:**
+- 15+ Collection implementations mastered
+- Generic programming patterns applied
+- 25+ Stream API operations practiced
+- Robust exception handling implemented
+- Complex regex patterns for validation
+- Comprehensive JUnit test suites written
+- 30+ practical use cases solved
+- Complete complexity analysis
+
+[📂 View Detailed Work →](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-collections-practice/README.md)  
 
 ### Technical Competencies
-
 <table>
 <tr>
-<td width="33%">
+<td width="25%">
 
 **Core Java**
 - Variables & Data Types
@@ -183,9 +277,10 @@ Training Repository/
 - Methods & Functions
 - Exception Handling
 - File I/O Operations
+- Regular Expressions
 
 </td>
-<td width="33%">
+<td width="25%">
 
 **Object-Oriented Programming**
 - Encapsulation
@@ -196,7 +291,7 @@ Training Repository/
 - Design Patterns
 
 </td>
-<td width="33%">
+<td width="25%">
 
 **Data Structures & Algorithms**
 - LinkedList, Stack, Queue
@@ -207,9 +302,20 @@ Training Repository/
 - Problem Solving
 
 </td>
+<td width="25%">
+
+**Collections & Advanced Java**
+- List (ArrayList, LinkedList)
+- Set (HashSet, TreeSet)
+- Map (HashMap, TreeMap)
+- Generics
+- Streams API
+- JUnit Testing
+- Lambda Expressions
+
+</td>
 </tr>
 </table>
-
 ### Professional Skills
 
 - ✅ **Version Control:** Git & GitHub workflow
@@ -231,13 +337,12 @@ Training Repository/
 | 3 | `java-dsa-practice` | Data Structures & Algorithms | ✅ Completed |
 
 ### Quick Access Links
-
 <div align="center">
 
-| 📂 **Week 1: Core Java** | 📂 **Week 2: OOP** | 📂 **Week 3: DSA** |
-|:---:|:---:|:---:|
-| [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice) |
-| [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-oops-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-dsa-practice/README.md) |
+| 📂 **Week 1: Core Java** | 📂 **Week 2: OOP** | 📂 **Week 3: DSA** | 📂 **Week 4: Collections** |
+|:---:|:---:|:---:|:---:|
+| [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-collections-practice) |
+| [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-oops-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-dsa-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-collections-practice/README.md) |
 
 </div>
 
