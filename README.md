@@ -607,6 +607,56 @@ BridgeLabz-Training
 
 **🔗 Code:** [EduResults](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayseven/eduresults) | [FlashDealz](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayseven/flashdealz) | [FitnessTracker](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayseven/fitnesstracker)
 
+---
+
+#### 📅 Day 2 - Sorting Algorithms Scenario based Set4
+**Date:** January 20, 2026
+
+<details>
+<summary><b>📦 Sorting in Real Scenarios    </b></summary
+
+##### 1. 🎬 MovieTime – Theater Show Listings (Insertion Sort)
+
+- **Problem:** Insert new movie showtimes into an almost sorted list throughout the day  
+- **Algorithm:** Insertion Sort  
+- **Features:**
+  - Real-time insertion into sorted showtime list  
+  - Efficient for nearly sorted schedules  
+  - Maintains correct time-based ordering  
+- **Learning:** Insertion Sort for incremental updates, time-based sorting, handling nearly sorted data  
+
+---
+
+##### 2. 🍔 FoodFest – Sorting Stalls by Customer Footfall (Merge Sort)
+
+- **Problem:** Merge sorted footfall data from multiple zones into a master performance list  
+- **Algorithm:** Merge Sort  
+- **Features:**
+  - Combines multiple already-sorted datasets  
+  - Maintains stability for equal footfall values  
+  - Efficient for large daily logs  
+- **Learning:** Merge Sort for merging sorted lists, stability in sorting, large dataset handling  
+
+---
+
+##### 3. 🎮 GamerZone – High Score Ranking System (Quick Sort)
+
+- **Problem:** Rank thousands of players in real-time based on dynamic score updates  
+- **Algorithm:** Quick Sort  
+- **Features:**
+  - Fast reordering of large unsorted score lists  
+  - Handles frequent updates efficiently  
+  - Optimized for leaderboard generation  
+- **Learning:** Quick Sort for dynamic datasets, performance optimization, real-time ranking  
+
+
+</details>
+
+
+**🔗 Code:** [Movie Time](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayeight/movietime) | [Food Fest](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayeight/FoodFest) | [Gamer Zone](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayeight/gamerzone)
+
+---
+
 ## 🎓 Key Concepts Covered
 
 ### Data Structures
