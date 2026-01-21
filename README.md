@@ -23,6 +23,7 @@
   - [Week 3: Core Pillars & First Projects](#week-3-core-pillars--first-projects)
   - [Week 4: Advanced Applications Part 1](#week-4-advanced-applications-part-1)
   - [Week 5: Enterprise Solutions Part 2](#week-5-enterprise-solutions-part-2)
+  - [Week 6: Advance OOPS SBQ Part3](#week-6-advance-oops-sbq-part3)
 - [Concepts Covered](#-concepts-covered)
 
 ---
@@ -324,6 +325,33 @@ java-oops-practice/
 | 2 |[Bag-n-Ball Organizer](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayten/bagnball) | Toy Management | Bag capacity handling, ball tracking |
 
 
+
+### Week 6: Advance OOPS SBQ Part3
+
+#### 📅 Day 1 - Scenario Projects: Address Book System
+**Date:** January 19, 2026
+
+
+<details>
+<summary><b>📒 Address Book System (Click Arrow to see detail)</b></summary>
+  
+**Domain:** Contact Management  
+
+**Key Concepts:**  
+Classes, Objects, Encapsulation, Constructors, Collections  
+
+**Features:**
+- Add new contacts with duplicate validation  
+- Edit and delete contacts by name  
+- Search contacts by city or state  
+- Display all contacts in alphabetical order  
+- Store data using `ArrayList<Contact>`  
+
+**Learning Applied:**  
+Encapsulation, Object Modeling, Collection Framework, Composition
+</details>
+
+**🔗 Code:** [AddressBook System](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeleven/addressbooksystem)
 
 ## 🎓 Concepts Covered
 
