@@ -306,6 +306,25 @@ java-oops-practice/
 
 ---
 
+#### 📅 Day 3,4,5 - Break Day
+**Date:** January 14,15,16, 2026
+
+⏸️ **No coding work - Rest and review**
+
+---
+
+#### 📅 Day 6 - Scenario Projects: Payments & Wildlife
+**Date:** January 17, 2026
+
+**🎯 Built 2 Scenario-Based OOP Systems**
+
+| # | Project | Domain | Key Features |
+|---|---------|--------|--------------|
+| 1 | [GeoMeasure – Line Comparison](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayten/geomeasure) | Engineering | Line length calculation, comparison |
+| 2 |[Bag-n-Ball Organizer](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayten/bagnball) | Toy Management | Bag capacity handling, ball tracking |
+
+
+
 ## 🎓 Concepts Covered
 
 ### Core OOP Fundamentals
