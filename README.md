@@ -335,7 +335,7 @@ Training Repository/
 | 1 | `core-java-practice` | Java Fundamentals | ✅ Completed |
 | 2 | `java-oops-practice` | Object-Oriented Programming | ✅ Completed |
 | 3 | `java-dsa-practice` | Data Structures & Algorithms | ✅ Completed |
-
+| 4 | `java-collections-practice` | Collections in Java |  Ongoing |
 ### Quick Access Links
 <div align="center">
 
