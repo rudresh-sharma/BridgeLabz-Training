@@ -18,14 +18,16 @@
 
 - [Overview](#-overview)
 - [Project Structure](#-project-structure)
-- [Learning Journey](#-learning-journey)
+- [Learning Journey (DSA branch is start on Week 3)](#-learning-journey)
   - [Week 3: Data Structures](#week-3-data-structures-fundamentals)
   - [Week 4: Algorithms](#week-4-algorithms-mastery)
-  - [Week 5: Scenario-Based Applications](#week-5-real-world-applications)
+  - [Week 5: Scenario-Based Applications Part2](#week-6-scenario-based-applications-part1)
+  - [Week 6: Scenario-Based Applications Part2](#week-6-scenario-based-applications-part2)
 - [Key Concepts Covered](#-key-concepts-covered)
 - [How to Use](#-how-to-use)
 - [Progress Tracker](#-progress-tracker)
-
+- **__Note__**
+    - <details><summary><i> Click that Arrow to see full details </i></summary> </details>
 ---
 
 ## 🎯 Overview
@@ -69,7 +71,7 @@ BridgeLabz-Training
 **Date:** January 2, 2026
 
 <details>
-<summary><b>🔗 Topics Covered</b></summary>
+<summary><b>🔗 Topics Covered </b></summary>
 
 ##### Singly Linked List
 - **Concept:** Unidirectional nodes with data and next pointer
@@ -285,7 +287,7 @@ BridgeLabz-Training
 
 ---
 
-### Week 5: Real-World Applications
+### Week 6: Scenario-Based Applications Part1
 
 #### 📅 Day 1 - Advanced Scenario Problems Set 2
 **Date:** January 12, 2026
@@ -554,6 +556,107 @@ BridgeLabz-Training
 </details>
 
 **🔗 Code:** [ArtExpo](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daysix/artexpo) | [FleetManager](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daysix/fleetmanager) | [IceCream Rush](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daysix/icecreamrush) | [SmartLibary](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daysix/smartlibrary)
+
+
+---
+
+### Week 6: Scenario-Based Applications Part2
+
+
+#### 📅 Day 1 - Sorting Algorithms Scenario based Set4
+**Date:** January 19, 2026
+
+<details>
+<summary><b>📦 Sorting in Real Scenarios    </b></summary
+
+##### 1. 🎓 EduResults – Rank Sheet Generator (Merge Sort)
+
+- **Problem:** Merge sorted student lists from multiple districts into a single state-wise rank list  
+- **Algorithm:** Merge Sort  
+- **Features:**
+  - Merges multiple already-sorted sublists  
+  - Maintains stable ordering for equal scores  
+  - Efficient for very large datasets  
+- **Learning:** Merge Sort for large-scale data, stability in sorting, handling multiple sorted sources  
+
+
+
+##### 2. ⚡ FlashDealz – Product Sorting by Discount (Quick Sort)
+
+- **Problem:** Sort millions of products by discount to show top offers instantly  
+- **Algorithm:** Quick Sort  
+- **Features:**
+  - Fast average-case performance  
+  - Handles large unsorted datasets efficiently  
+  - Optimized for quick retrieval of top results  
+- **Learning:** Quick Sort performance, partitioning logic, backend optimization  
+
+
+
+##### 3. 🏃 FitnessTracker – Daily Step Count Ranking (Bubble Sort)
+
+- **Problem:** Rank users by daily step count in a small, frequently updated group  
+- **Algorithm:** Bubble Sort  
+- **Features:**
+  - Simple sorting for small lists  
+  - Quickly adapts to frequent updates  
+  - Suitable for nearly shuffled small datasets  
+- **Learning:** Bubble Sort behavior, real-time re-sorting, small dataset optimization  
+
+</details>
+
+**🔗 Code:** [EduResults](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayseven/eduresults) | [FlashDealz](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayseven/flashdealz) | [FitnessTracker](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayseven/fitnesstracker)
+
+---
+
+#### 📅 Day 2 - Sorting Algorithms Scenario based Set4
+**Date:** January 20, 2026
+
+<details>
+<summary><b>📦 Sorting in Real Scenarios    </b></summary
+
+##### 1. 🎬 MovieTime – Theater Show Listings (Insertion Sort)
+
+- **Problem:** Insert new movie showtimes into an almost sorted list throughout the day  
+- **Algorithm:** Insertion Sort  
+- **Features:**
+  - Real-time insertion into sorted showtime list  
+  - Efficient for nearly sorted schedules  
+  - Maintains correct time-based ordering  
+- **Learning:** Insertion Sort for incremental updates, time-based sorting, handling nearly sorted data  
+
+---
+
+##### 2. 🍔 FoodFest – Sorting Stalls by Customer Footfall (Merge Sort)
+
+- **Problem:** Merge sorted footfall data from multiple zones into a master performance list  
+- **Algorithm:** Merge Sort  
+- **Features:**
+  - Combines multiple already-sorted datasets  
+  - Maintains stability for equal footfall values  
+  - Efficient for large daily logs  
+- **Learning:** Merge Sort for merging sorted lists, stability in sorting, large dataset handling  
+
+---
+
+##### 3. 🎮 GamerZone – High Score Ranking System (Quick Sort)
+
+- **Problem:** Rank thousands of players in real-time based on dynamic score updates  
+- **Algorithm:** Quick Sort  
+- **Features:**
+  - Fast reordering of large unsorted score lists  
+  - Handles frequent updates efficiently  
+  - Optimized for leaderboard generation  
+- **Learning:** Quick Sort for dynamic datasets, performance optimization, real-time ranking  
+
+
+</details>
+
+
+**🔗 Code:** [Movie Time](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayeight/movietime) | [Food Fest](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayeight/FoodFest) | [Gamer Zone](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayeight/gamerzone)
+
+---
+
 ## 🎓 Key Concepts Covered
 
 ### Data Structures
