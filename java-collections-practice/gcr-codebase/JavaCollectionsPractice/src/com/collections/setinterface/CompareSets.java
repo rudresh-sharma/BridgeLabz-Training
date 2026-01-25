@@ -1,4 +1,4 @@
-package com.collections.setinterface.comparesets;
+package com.collections.setinterface;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;

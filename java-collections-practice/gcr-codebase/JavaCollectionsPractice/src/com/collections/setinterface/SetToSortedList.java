@@ -1,4 +1,4 @@
-package com.collections.setinterface.settosortedlist;
+package com.collections.setinterface;
 import java.util.*;
 
 public class SetToSortedList {
