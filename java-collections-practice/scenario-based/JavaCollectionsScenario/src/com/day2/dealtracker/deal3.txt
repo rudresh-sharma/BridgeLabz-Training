@@ -1,0 +1,4 @@
+DealCode: OLD10
+ValidTill: 01-01-2027
+Discount: 10%
+MinimumPurchase: 199

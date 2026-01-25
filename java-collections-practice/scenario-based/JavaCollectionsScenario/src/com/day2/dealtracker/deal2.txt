@@ -1,0 +1,4 @@
+DealCode: SAVE20
+ValidTill: 10-12-2024
+Discount: 20%
+MinimumPurchase: 499
