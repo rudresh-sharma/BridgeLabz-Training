@@ -1,0 +1,31 @@
+[ {
+  "empId" : 101,
+  "name" : "Amit Sharma",
+  "designation" : "Software Engineer",
+  "department" : "IT",
+  "salary" : 65000
+}, {
+  "empId" : 102,
+  "name" : "Priya Verma",
+  "designation" : "QA Engineer",
+  "department" : "IT",
+  "salary" : 55000
+}, {
+  "empId" : 103,
+  "name" : "Rohit Mehta",
+  "designation" : "HR Manager",
+  "department" : "HR",
+  "salary" : 70000
+}, {
+  "empId" : 104,
+  "name" : "Neha Singh",
+  "designation" : "Data Analyst",
+  "department" : "Analytics",
+  "salary" : 72000
+}, {
+  "empId" : 105,
+  "name" : "Kunal Patel",
+  "designation" : "Support Engineer",
+  "department" : "Support",
+  "salary" : 48000
+} ]
