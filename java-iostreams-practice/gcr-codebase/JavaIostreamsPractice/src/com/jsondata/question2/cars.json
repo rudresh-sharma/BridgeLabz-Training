@@ -1,0 +1,21 @@
+[ {
+  "brand" : "Toyota",
+  "model" : "Camry",
+  "year" : 2026
+}, {
+  "brand" : "Honda",
+  "model" : "Civic",
+  "year" : 2025
+}, {
+  "brand" : "Ford",
+  "model" : "Mustang",
+  "year" : 2024
+}, {
+  "brand" : "Tesla",
+  "model" : "Model S",
+  "year" : 2026
+}, {
+  "brand" : "BMW",
+  "model" : "X5",
+  "year" : 2023
+} ]
