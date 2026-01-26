@@ -1,0 +1,7 @@
+<ObjectNode>
+  <name>Rudresh Sharma</name>
+  <age>21</age>
+  <email>rudresh@example.com</email>
+  <subjects>Math</subjects>
+  <subjects>Physics</subjects>
+</ObjectNode>
