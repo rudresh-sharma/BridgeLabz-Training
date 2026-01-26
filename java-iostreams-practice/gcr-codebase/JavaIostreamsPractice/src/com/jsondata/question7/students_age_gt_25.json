@@ -1,0 +1,11 @@
+[ {
+  "name" : "Anita Verma",
+  "age" : 28,
+  "email" : "anita@example.com",
+  "subjects" : [ "Biology", "Chemistry" ]
+}, {
+  "name" : "Rahul Singh",
+  "age" : 30,
+  "email" : "rahul@example.com",
+  "subjects" : [ "History", "Geography" ]
+} ]
