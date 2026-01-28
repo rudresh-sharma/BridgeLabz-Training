@@ -1,0 +1,34 @@
+[ {
+  "studentId" : "S101",
+  "name" : "Rahul",
+  "subjectMarks" : {
+    "English" : 88,
+    "Science" : 90,
+    "Math" : 85
+  },
+  "total" : 263,
+  "average" : 87.66666666666667,
+  "grade" : "A"
+}, {
+  "studentId" : "S102",
+  "name" : "Anita",
+  "subjectMarks" : {
+    "English" : 82,
+    "Science" : 0,
+    "Math" : 78
+  },
+  "total" : 160,
+  "average" : 53.333333333333336,
+  "grade" : "C"
+}, {
+  "studentId" : "S103",
+  "name" : "Kiran",
+  "subjectMarks" : {
+    "English" : 40,
+    "Science" : 50,
+    "Math" : 45
+  },
+  "total" : 135,
+  "average" : 45.0,
+  "grade" : "C"
+} ]
