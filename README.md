@@ -396,7 +396,7 @@ Training Repository/
 <tr>
 <td width="25%">
 
-**Core Java**
+**Core Java(Week 1)**
 - Variables & Data Types
 - Control Flow & Loops
 - Arrays & Strings
@@ -408,7 +408,7 @@ Training Repository/
 </td>
 <td width="25%">
 
-**Object-Oriented Programming**
+**Object-Oriented Programming(Week 2)**
 - Encapsulation
 - Inheritance
 - Polymorphism
@@ -419,7 +419,7 @@ Training Repository/
 </td>
 <td width="25%">
 
-**Data Structures & Algorithms**
+**Data Structures & Algorithms(Week 3)**
 - LinkedList, Stack, Queue
 - HashMap, HashSet
 - Sorting Algorithms
@@ -430,7 +430,7 @@ Training Repository/
 </td>
 <td width="25%">
 
-**Collections & Advanced Java**
+**Collections & Advanced Java(Week 4)**
 - List (ArrayList, LinkedList)
 - Set (HashSet, TreeSet)
 - Map (HashMap, TreeMap)
@@ -442,6 +442,53 @@ Training Repository/
 </td>
 </tr>
 </table>
+
+<table>
+<tr>
+<td width="25%">
+
+**IO Programming (Week 5)**
+- File I/O Fundamentals
+- BufferedReader & BufferedWriter
+- FileInputStream & FileOutputStream
+- CSV Data Handling
+- Reading & Writing CSV Files
+- Parsing CSV Data
+- Data Validation & Error Handling
+- JSON Data Structure
+- Reading & Writing JSON
+- Parsing JSON (Gson, Jackson, org.json)
+- JSON Schema Validation
+- Data Format Conversion (CSV ↔ JSON)
+- Resource Management (try-with-resources)
+- Exception Handling in I/O
+- File Operations & Utilities
+
+</td>
+<td width="25%">
+
+**Java 8 Features (Week 6)**
+- Lambda Expressions
+- Functional Programming Concepts
+- Method References (Static, Instance, Constructor)
+- Functional Interfaces (@FunctionalInterface)
+- Built-in Functional Interfaces (Predicate, Function, Consumer, Supplier)
+- Default & Static Methods in Interfaces
+- Marker Interfaces
+- Stream API - Intermediate Operations (filter, map, flatMap, sorted, distinct)
+- Stream API - Terminal Operations (collect, forEach, reduce, count, anyMatch)
+- Stateless vs Stateful Operations
+- Parallel Streams & Performance
+- Collectors API (groupingBy, partitioningBy, joining)
+- Custom Collectors
+- Optional Class
+- Data Transformation Pipelines
+
+</td>
+</tr>
+</table>
+
+
 ### Professional Skills
 
 - ✅ **Version Control:** Git & GitHub workflow
@@ -462,6 +509,10 @@ Training Repository/
 | 2 | `java-oops-practice` | Object-Oriented Programming | ✅ Completed |
 | 3 | `java-dsa-practice` | Data Structures & Algorithms | ✅ Completed |
 | 4 | `java-collections-practice` | Collections in Java |  Ongoing |
+
+---
+
+
 ### Quick Access Links
 <div align="center">
 
@@ -469,6 +520,15 @@ Training Repository/
 |:---:|:---:|:---:|:---:|
 | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-collections-practice) |
 | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/core-java-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-oops-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-dsa-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-collections-practice/README.md) |
+
+</div>
+
+<div align="center">
+
+| 📂 **Week 5: IO Programming** | 📂 **Week 6: Java 8 Features** |
+|:---:|:---:|
+| [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice) |
+| [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-iostreams-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java8-programming-practice/README.md) |
 
 </div>
 
