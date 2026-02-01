@@ -38,7 +38,7 @@ This repository documents my intensive Java training journey, covering essential
 
 ## 📚 Training Structure
 
-The program is organized into **three progressive learning phases**, each building upon the previous:
+The program is organized into **six progressive learning phases**, each building upon the previous:
 
 ```
 Training Repository/
@@ -50,10 +50,20 @@ Training Repository/
 │   └── Branch: java-oops-practice
 │
 └── 📌 Week 3: Data Structures & Algorithms
-|    └── Branch: java-dsa-practice
+|   └── Branch: java-dsa-practice
 │
 └── 📌 Week 4: Collections Framework in Java
-    └── Branch: java-collections-practice
+|   └── Branch: java-collections-practice
+│
+└── 📌 Week 5 : IO Stream Programming
+|   └── Branch: java-iostreams-practice
+|
+└── 📌 Week 6 :  Java 8 & its Features
+   └── Branch: java8-programming-practice
+
+
+
+
 ```
 
 ---
@@ -265,6 +275,122 @@ Training Repository/
 
 [📂 View Detailed Work →](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-collections-practice/README.md)  
 
+
+---
+
+### Week 5: IO Programming
+**Branch:** [`java-iostreams-practice`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice) <br>
+**Objective:** Master file handling, data serialization, and I/O operations in Java
+
+<details>
+<summary><b>📕 Topics Covered</b></summary>
+
+#### CSV Data Handling
+- ✅ Introduction to CSV format
+- ✅ Reading CSV files using BufferedReader
+- ✅ Writing CSV files using FileWriter
+- ✅ Parsing CSV data with custom parsers
+- ✅ Data validation and error handling
+- ✅ CSV libraries (OpenCSV, Apache Commons CSV)
+
+#### JSON Data Handling
+- ✅ Introduction to JSON structure
+- ✅ Reading JSON data from files
+- ✅ Writing JSON data to files
+- ✅ Parsing JSON using libraries (Gson, Jackson, org.json)
+- ✅ JSON Schema validation
+- ✅ Converting between Java objects and JSON
+
+#### File I/O Fundamentals
+- ✅ FileInputStream & FileOutputStream
+- ✅ BufferedReader & BufferedWriter
+- ✅ File class operations
+- ✅ Exception handling in I/O operations
+- ✅ Resource management (try-with-resources)
+
+#### Practical Applications
+- ✅ CSV to JSON conversion
+- ✅ Data import/export utilities
+- ✅ File parsing and data extraction
+- ✅ Real-world data processing scenarios
+</details>
+
+**Deliverables:**
+- CSV data handling implementation with validation
+- JSON parsing and serialization utilities
+- File I/O operations mastery
+- Data format conversion tools
+- Error handling and resource management
+
+
+[📂 View Detailed Work →](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-iostreams-practice/README.md)
+
+---
+
+
+### Week 6: Java 8 & its Features
+**Branch:** [`java8-programming-practice`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice) <br>
+**Objective:** Master modern Java programming with functional programming paradigms and advanced features
+
+<details>
+<summary><b>📕 Topics Covered</b></summary>
+
+#### Lambda Expressions
+- ✅ Introduction to Lambda syntax
+- ✅ Functional programming concepts
+- ✅ Lambda expressions vs Anonymous classes
+- ✅ Method References (static, instance, constructor)
+- ✅ Type inference in Lambda expressions
+- ✅ Scope and variable capture
+
+#### Functional Interfaces
+- ✅ Defining and Implementing Interfaces (Best Practices)
+- ✅ @FunctionalInterface annotation
+- ✅ Built-in Functional Interfaces (Predicate, Function, Consumer, Supplier)
+- ✅ Default and Static Methods in Interfaces
+- ✅ Marker Interfaces
+- ✅ BiFunction, BiConsumer, BiPredicate
+
+#### Stream API
+- ✅ **Intermediate Operations:**
+  - filter, map, flatMap
+  - distinct, sorted, peek
+  - limit, skip
+- ✅ **Terminal Operations:**
+  - collect, forEach, reduce
+  - count, anyMatch, allMatch, noneMatch
+- ✅ Stateless vs Stateful operations
+- ✅ Ordered vs Unordered streams
+- ✅ Parallel Streams & performance optimization
+- ✅ forEach() — Iterable vs Stream comparison
+
+#### Collectors
+- ✅ Collectors - Roles and Capabilities
+- ✅ toList(), toSet(), toMap()
+- ✅ groupingBy(), partitioningBy()
+- ✅ joining(), counting(), summarizing
+- ✅ Custom Collectors
+- ✅ Downstream Collectors
+
+#### Practical Applications
+- ✅ Data transformation pipelines
+- ✅ Complex filtering and aggregation
+- ✅ Real-world stream processing
+- ✅ Performance comparison: Loops vs Streams
+</details>
+
+**Deliverables:**
+- Lambda Expressions implementation (20+ examples)
+- Functional Interfaces mastery with best practices
+- Stream API operations (30+ operations)
+- Advanced Collectors usage
+- Mini Project: Hospital Appointment Manager
+- Workshop: Smart City Transport & Service Management System
+
+
+[📂 View Detailed Work →](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java8-programming-practice/README.md)
+
+---
 ### Technical Competencies
 <table>
 <tr>
