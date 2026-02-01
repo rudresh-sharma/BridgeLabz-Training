@@ -536,33 +536,6 @@ Training Repository/
 
 ---
 
-## 📊 Progress Summary
-
-<div align="center">
-
-### Current Progress
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                                                         │
-│  📅  Duration              Dec 2025 - Ongoing           │
-│  💻  Projects Built        50+ Applications             │
-│  🧩  LeetCode Solved       17+ Problems                 │
-│  📚  Topics Covered        25+ Core Concepts            │
-│  🏆  Current Status        Week 3 In Progress           │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
-```
-
-### Learning Path
-
-**Week 1** → Java Syntax & Control Flow → Problem Solving Basics  
-**Week 2** → OOP Design Principles → Real-world Applications  
-**Week 3** → Data Structures → Algorithm Optimization
-
-</div>
-
----
 
 ## 💡 Key Accomplishments
 
