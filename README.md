@@ -28,8 +28,6 @@
     - [Day 6: Real-World Scenarios](#-day-6---real-world-scenarios)
 - [🎓 Key Concepts Covered](#-key-concepts-covered)
 - [💡 How to Use This Repository](#-how-to-use-this-repository)
-- [📊 Progress Tracker](#-progress-tracker)
-- [🛠️ Technologies & Tools](#️-technologies--tools)
 - [🤝 Contributing](#-contributing)
 - [📞 Connect & Collaborate](#-connect--collaborate)
 
@@ -356,7 +354,6 @@ java-iostreams-practice/
 
 ---
 
-**📦 Complete Module:** [View All JSON Solutions →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata)
 
 ---
 
@@ -377,7 +374,7 @@ java-iostreams-practice/
 
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question1)
 
----
+
 
 ### 2️⃣ Java Object to JSON
 **Objective:** Convert Car POJO to JSON format.
@@ -389,7 +386,7 @@ java-iostreams-practice/
 
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question2)
 
----
+
 
 ### 3️⃣ Extract Specific Fields
 **Objective:** Read JSON and extract only name and email.
@@ -401,7 +398,7 @@ java-iostreams-practice/
 
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question3)
 
----
+
 
 ### 4️⃣ Merge JSON Objects
 **Objective:** Combine two JSON objects into one.
@@ -413,7 +410,7 @@ java-iostreams-practice/
 
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question4)
 
----
+
 
 ### 5️⃣ Validate JSON Structure
 **Objective:** Ensure JSON conforms to expected schema using Jackson.
@@ -425,7 +422,7 @@ java-iostreams-practice/
 
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question5)
 
----
+
 
 ### 6️⃣ List to JSON Array
 **Objective:** Convert List<Object> to JSON array.
@@ -437,7 +434,7 @@ java-iostreams-practice/
 
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question6)
 
----
+
 
 ### 7️⃣ Filter JSON Data
 **Objective:** Extract records where age > 25.
@@ -449,7 +446,7 @@ java-iostreams-practice/
 
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question7)
 
----
+
 
 ### 8️⃣ Print All Keys and Values
 **Objective:** Iterate and display all JSON fields.
@@ -461,7 +458,7 @@ java-iostreams-practice/
 
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question8)
 
----
+
 
 ### 9️⃣ Validate Email with Schema
 **Objective:** Use JSON Schema to validate email format.
@@ -473,7 +470,6 @@ java-iostreams-practice/
 
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question9)
 
----
 
 ### 🔟 Merge Multiple JSON Files
 **Objective:** Combine 2+ JSON files into single object.
@@ -485,7 +481,6 @@ java-iostreams-practice/
 
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question10)
 
----
 
 ### 1️⃣1️⃣ JSON to XML Conversion
 **Objective:** Transform JSON to XML format.
@@ -497,7 +492,7 @@ java-iostreams-practice/
 
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question11)
 
----
+
 
 ### 1️⃣2️⃣ CSV to JSON Conversion
 **Objective:** Parse CSV and convert to JSON format.
@@ -509,7 +504,7 @@ java-iostreams-practice/
 
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question12)
 
----
+
 
 ### 1️⃣3️⃣ Database to JSON Report
 **Objective:** Fetch database records and export as JSON.
@@ -522,6 +517,9 @@ java-iostreams-practice/
 **🔗 Code:** [View Solution →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata/question13)
 
 </details>
+</details>
+
+**📦 Complete Module:** [View All JSON Solutions →](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice/java-iostreams-practice/gcr-codebase/JavaIostreamsPractice/src/com/jsondata)
 
 ---
 
@@ -759,51 +757,14 @@ java MainClass
 | **Week 5** | CSV Data Handling | 15/15 | ✅ Completed |
 | **Week 5** | JSON Processing | 13/13 | ✅ Completed |
 | **Week 5** | Real-World Scenarios | 3/3 | ✅ Completed |
-| **Week 6** | Advanced Topics | TBD | ⏳ Upcoming |
+
 
 ---
 
-### 📊 Statistics
 
-```
-Total Problems Solved:     31+
-Lines of Code Written:     5,000+
-Concepts Mastered:         40+
-Projects Completed:        3
-Files Processed:           100+
-```
 
----
 
-### 🏆 Achievements Unlocked
 
-- [x] 🥇 CSV Master - Solved all 15 CSV problems
-- [x] 🥈 JSON Wizard - Completed all JSON challenges  
-- [x] 🥉 Real-World Ready - Built 3 production-like projects
-- [x] 🔐 Security Conscious - Implemented encryption
-- [x] 📊 Data Transformer - Mastered format conversions
-- [ ] 🚀 Performance Guru - Optimize for 1M+ records (Upcoming)
-
----
-
-## 🛠️ Technologies & Tools
-
-<div align="center">
-
-### 💻 Development Stack
-
-</div>
-
-| Category | Tools & Libraries |
-|----------|------------------|
-| **Language** | ![Java](https://img.shields.io/badge/Java_17+-ED8B00?style=flat&logo=openjdk&logoColor=white) |
-| **JSON Processing** | ![Gson](https://img.shields.io/badge/Gson-2.10-blue?style=flat) ![Jackson](https://img.shields.io/badge/Jackson-2.15-green?style=flat) |
-| **Database** | ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat&logo=mysql&logoColor=white) |
-| **Build Tool** | ![Maven](https://img.shields.io/badge/Maven-3.9-C71A36?style=flat&logo=apache-maven) |
-| **IDE** | ![IntelliJ](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=flat&logo=intellij-idea) |
-| **Version Control** | ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github) |
-
----
 
 ## 🤝 Contributing
 
