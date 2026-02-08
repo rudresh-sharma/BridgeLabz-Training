@@ -191,7 +191,6 @@ class PayPal implements PaymentMethod {
 </tr>
 </table>
 
-**🔗 View Code:** [Design Patterns](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-design-pattern-practice/java-design-pattern-practice/gcr-codebase/JavaDesignPattternAndMultiThreadingPractice/src/com/designpattern)
 
 </details>
 
@@ -434,7 +433,7 @@ class Investor implements Observer {
 }
 ```
 
-**🔗 View Code:** [Design Patterns](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-design-pattern-practice/java-design-pattern-practice/design-patterns)
+**🔗 View Code:** [Design Patterns](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-design-pattern-practice/java-design-pattern-practice/gcr-codebase/JavaDesignPattternAndMultiThreadingPractice/src/com/designpattern)
 
 </details>
 
