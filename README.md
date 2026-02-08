@@ -396,6 +396,118 @@ Training Repository/
 [📂 View Detailed Work →](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java8-programming-practice/README.md)
 
 ---
+
+### Week 7: Design Patterns & Multithreading  
+**Branch:** [`java-design-pattern-practice`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-design-pattern-practice) <br>  
+**Objective:** Master software design principles, implement Gang of Four design patterns, and develop concurrent programming skills with Java multithreading  
+
+<details>
+<summary><b>📕 Topics Covered</b></summary>
+
+---
+
+#### 🧠 Design Principles (SOLID & Beyond)
+
+- ✅ **Single Responsibility Principle (SRP)** – One class, one responsibility  
+- ✅ **Open/Closed Principle (OCP)** – Open for extension, closed for modification  
+- ✅ **Liskov Substitution Principle (LSP)** – Substitutability of derived classes  
+- ✅ **Interface Segregation Principle (ISP)** – Client-specific interfaces  
+- ✅ **Dependency Inversion Principle (DIP)** – Depend on abstractions  
+- ✅ **DRY (Don't Repeat Yourself)** – Code reusability principles  
+- ✅ **KISS (Keep It Simple, Stupid)** – Simplicity in design  
+- ✅ **YAGNI (You Aren't Gonna Need It)** – Avoid premature optimization  
+
+---
+
+#### 🏗 Gang of Four (GoF) Design Patterns  
+
+##### 🔹 Creational Patterns
+- ✅ Singleton Pattern (Thread-safe implementations)
+- ✅ Factory Pattern (Simple Factory, Factory Method)
+- ✅ Abstract Factory Pattern
+- ✅ Builder Pattern (Fluent API design)
+- ✅ Prototype Pattern  
+
+##### 🔹 Structural Patterns
+- ✅ Adapter Pattern  
+- ✅ Decorator Pattern  
+- ✅ Facade Pattern  
+- ✅ Proxy Pattern  
+
+##### 🔹 Behavioral Patterns
+- ✅ Observer Pattern (Event-driven programming)  
+- ✅ Strategy Pattern  
+- ✅ Command Pattern  
+- ✅ Template Method Pattern  
+
+---
+
+#### 📊 UML Designing
+
+- ✅ Class Diagrams  
+- ✅ Sequence Diagrams  
+- ✅ Pattern Visualization  
+- ✅ Relationship Modeling:
+  - Association  
+  - Aggregation  
+  - Composition  
+
+---
+
+#### 🧵 Java Multithreading  
+
+##### 🔹 Thread Fundamentals
+- ✅ Creating Threads (Thread class & Runnable interface)  
+- ✅ Thread Lifecycle and States  
+- ✅ Thread Priority and Scheduling  
+
+##### 🔹 Synchronization
+- ✅ `synchronized` keyword (methods & blocks)  
+- ✅ Thread Safety and Race Conditions  
+- ✅ Deadlock Prevention and Detection  
+- ✅ Inter-thread Communication (`wait`, `notify`, `notifyAll`)  
+
+##### 🔹 Advanced Concurrency
+- ✅ Executor Framework (ThreadPoolExecutor)  
+- ✅ Callable and Future  
+- ✅ Thread-safe Collections  
+- ✅ Atomic Variables  
+- ✅ Locks (ReentrantLock, ReadWriteLock)  
+
+##### 🔹 Concurrent Utilities
+- ✅ CountDownLatch  
+- ✅ CyclicBarrier  
+- ✅ Semaphore  
+- ✅ BlockingQueue Implementations  
+- ✅ Fork/Join Framework  
+
+---
+
+#### 🚀 Practical Applications
+
+- ✅ Pattern Selection Strategies  
+- ✅ Real-world Design Problem Solving  
+- ✅ Thread Pool Management  
+- ✅ Producer–Consumer Pattern  
+- ✅ Performance Optimization with Concurrency  
+
+</details>
+
+---
+
+### Deliverables:
+
+- Design Principles implementation (SOLID + DRY, KISS, YAGNI)
+- 15+ GoF Design Patterns with examples
+- UML diagrams for pattern visualization
+- 20+ Multithreading programs
+- Thread-safe application development
+- Case Study: Smart University Library Management System (LMS)
+- Mini Project: Concurrent Task Execution Framework  
+
+[📂 View Detailed Work →](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-design-pattern-practice/README.md)
+
+---
 ### Technical Competencies
 <table>
 <tr>
