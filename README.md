@@ -602,6 +602,19 @@ Training Repository/
 - Data Transformation Pipelines
 
 </td>
+
+<td width="25%">
+    
+**Design Patterns & Multithreading (Week 7)**
+- Design Principles (SOLID, DRY, KISS, YAGNI)
+- Creational Patterns (Singleton, Factory, Builder)
+- Structural Patterns (Adapter, Decorator, Facade)
+- Behavioral Patterns (Observer, Strategy, Command)
+- UML Designing
+- Java Multithreading
+- Thread Synchronization
+- Executor Framework
+</td>
 </tr>
 </table>
 
@@ -627,7 +640,9 @@ Training Repository/
 | 3 | `java-dsa-practice` | Data Structures & Algorithms | ✅ Completed |
 | 4 | `java-collections-practice` | Collections in Java | ✅ Completed  |
 | 5 | `java-iostreams-practice` | IO Programming | ✅ Completed  |
-| 6 | `java8-programming-practice` | Java 8 Features | Ongoing  |
+| 6 | `java8-programming-practice` | Java 8 Features | ✅ Completed  |
+| 7 | `java-design-pattern-practice` | Design Patterns & Multithreading | ✅ Completed  |
+| 8 | `dbms-jdbc-practice` |  MySQL & JDBC | Ongoing  |
 
 ---
 
@@ -644,11 +659,11 @@ Training Repository/
 
 <div align="center">
 
-| 📂 **Week 5: IO Programming** | 📂 **Week 6: Java 8 Features** |
-|:---:|:---:|
-| [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice) |
+| 📂 **Week 5: IO Programming** | 📂 **Week 6: Java 8 Features** | 📂 **Week 7: Design Patterns & Multithreading** | 📂 **Week 8:  MySQL & JDBC** | 
+|:---:|:---:|:---:|:---:|
+| [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-design-pattern-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/dbms-jdbc-practice)
 | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-iostreams-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java8-programming-practice/README.md) |
-
+| [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-design-pattern-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/dbms-jdbc-practice/README.md)
 </div>
 
 ---
