@@ -659,11 +659,11 @@ Training Repository/
 
 <div align="center">
 
-| 📂 **Week 5: IO Programming** | 📂 **Week 6: Java 8 Features** | 📂 **Week 7: Design Patterns & Multithreading** | 📂 **Week 8:  MySQL & JDBC** | 
+| 📂 **Week 5: IO Programming** | 📂 **Week 6: Java 8 Features** | 📂 **Week 7: Design Patterns & Multithreading** | 📂 **Week 8: MySQL & JDBC** | 
 |:---:|:---:|:---:|:---:|
-| [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-design-pattern-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/dbms-jdbc-practice)
-| [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-iostreams-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java8-programming-practice/README.md) |
-| [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-design-pattern-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/dbms-jdbc-practice/README.md)
+| [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-iostreams-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-design-pattern-practice) | [View Branch](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/dbms-jdbc-practice) |
+| [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-iostreams-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java8-programming-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/java-design-pattern-practice/README.md) | [Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/dbms-jdbc-practice/README.md) |
+
 </div>
 
 ---
