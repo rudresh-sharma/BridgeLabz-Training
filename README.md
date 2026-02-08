@@ -59,8 +59,13 @@ Training Repository/
 |   └── Branch: java-iostreams-practice
 |
 └── 📌 Week 6 :  Java 8 & its Features
-   └── Branch: java8-programming-practice
-
+|   └── Branch: java8-programming-practice
+|
+└── 📌 Week 7 :  Design Patterns & Multithreading
+|   └── Branch: java-design-pattern-practice
+|
+└── 📌 Week 8 :  MySQL & JDBC
+    └── Branch: dbms-jdbc-practice
 
 
 
