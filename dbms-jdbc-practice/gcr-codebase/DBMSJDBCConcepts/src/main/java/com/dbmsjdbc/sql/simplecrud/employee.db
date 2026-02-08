@@ -1,0 +1,166 @@
+
+-- ============================================================
+-- Problem: Exercise 1 - Simple CRUD Application
+-- File: employee.db
+-- Table: employee
+-- Database: practice_db
+-- ============================================================
+
+-- mysql>
+
+CREATE DATABASE IF NOT EXISTS practice_db;
+USE practice_db;
+
+/* o/p
+Database changed
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS employee;
+
+/* o/p
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+*/
+
+-- mysql>
+CREATE TABLE employee (
+employee_id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(50) NOT NULL,
+salary DECIMAL(10,2) NOT NULL,
+department VARCHAR(40)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.02 sec)
+*/
+
+-- mysql>
+DESC employee;
+
+/* o/p
++-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| employee_id | int           | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(50)   | NO   |     | NULL    |                |
+| salary      | decimal(10,2) | NO   |     | NULL    |                |
+| department  | varchar(40)   | YES  |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+*/
+
+-- mysql>
+INSERT INTO employee (name, salary, department) VALUES
+('Naruto Uzumaki', 55000, 'Operations'),
+('Monkey D Luffy', 60000, 'Logistics'),
+('Goku Son', 75000, 'Training'),
+('Levi Ackerman', 68000, 'Security'),
+('Itachi Uchiha', 72000, 'Compliance');
+
+/* o/p
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+SELECT * FROM employee;
+
+/* o/p
++-------------+----------------+----------+------------+
+| employee_id | name           | salary   | department |
++-------------+----------------+----------+------------+
+|           1 | Naruto Uzumaki | 55000.00 | Operations |
+|           2 | Monkey D Luffy | 60000.00 | Logistics  |
+|           3 | Goku Son       | 75000.00 | Training   |
+|           4 | Levi Ackerman  | 68000.00 | Security   |
+|           5 | Itachi Uchiha  | 72000.00 | Compliance |
++-------------+----------------+----------+------------+
+5 rows in set (0.00 sec)
+*/
+
+-- mysql>
+UPDATE employee
+SET salary = 80000
+WHERE name = 'Goku Son';
+
+/* o/p
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+*/
+
+-- mysql>
+SELECT * FROM employee WHERE name = 'Goku Son';
+
+/* o/p
++-------------+----------+----------+------------+
+| employee_id | name     | salary   | department |
++-------------+----------+----------+------------+
+|           3 | Goku Son | 80000.00 | Training   |
++-------------+----------+----------+------------+
+1 row in set (0.00 sec)
+*/
+
+-- mysql>
+DELETE FROM employee
+WHERE name = 'Monkey D Luffy';
+
+/* o/p
+Query OK, 1 row affected (0.02 sec)
+*/
+
+-- mysql>
+SELECT * FROM employee;
+
+/* o/p
++-------------+----------------+----------+------------+
+| employee_id | name           | salary   | department |
++-------------+----------------+----------+------------+
+|           1 | Naruto Uzumaki | 55000.00 | Operations |
+|           3 | Goku Son       | 80000.00 | Training   |
+|           4 | Levi Ackerman  | 68000.00 | Security   |
+|           5 | Itachi Uchiha  | 72000.00 | Compliance |
++-------------+----------------+----------+------------+
+4 rows in set (0.00 sec)
+*/
+
+-- mysql>
+SELECT * FROM employee
+WHERE name LIKE '%Uchiha%';
+
+/* o/p
++-------------+---------------+----------+------------+
+| employee_id | name          | salary   | department |
++-------------+---------------+----------+------------+
+|           5 | Itachi Uchiha | 72000.00 | Compliance |
++-------------+---------------+----------+------------+
+1 row in set (0.00 sec)
+*/
+
+-- mysql>
+SELECT COUNT(*) AS total_employees FROM employee;
+
+/* o/p
++-----------------+
+| total_employees |
++-----------------+
+|               4 |
++-----------------+
+1 row in set (0.00 sec)
+*/
+
+-- mysql>
+SELECT department, AVG(salary) AS avg_salary
+FROM employee
+GROUP BY department;
+
+/* o/p
++------------+--------------+
+| department | avg_salary   |
++------------+--------------+
+| Operations | 55000.000000 |
+| Training   | 80000.000000 |
+| Security   | 68000.000000 |
+| Compliance | 72000.000000 |
++------------+--------------+
+4 rows in set (0.00 sec)
+*/
