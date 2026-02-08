@@ -41,7 +41,7 @@ Welcome to **Week 6** of the BridgeLabz Java Training Program! This module explo
 <p>Master lambda expressions and method references for cleaner, more expressive code</p>
 </td>
 <td width="33%" align="center">
-<img src="https://img.icons8.com/color/96/000000/data-stream.png" width="64" alt="Streams"/>
+<img src="https://img.icons8.com/fluency/96/000000/workflow.png" width="64" alt="Streams"/>
 <h4>💧 Stream API</h4>
 <p>Transform data processing with powerful declarative pipeline operations</p>
 </td>
