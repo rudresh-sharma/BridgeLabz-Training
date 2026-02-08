@@ -1,708 +1,534 @@
-# BridgeLabz Training Journey
-> A Java Full Stack Training program covering everything from core java,  object oriented programming  to hard core backend frameworks
+<div align="center">
 
-# Training Overview & Acknowledgement
-> I am gratefull to have a mentors provided by BridgeLabz, I sincerely thanks to all my mentors to trust on me and teaching everything which an industry demands.
-> @Bhuvan Sir
-> @Vishal Sir
-> @Karthik Sir
-> @Koteshwara Sir 
+# 🚀 Java 8 & Modern Features
 
+![Java 8](https://img.shields.io/badge/Java_8-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Lambda](https://img.shields.io/badge/Lambda_Expressions-4CAF50?style=for-the-badge&logo=java&logoColor=white)
+![Streams](https://img.shields.io/badge/Stream_API-2196F3?style=for-the-badge&logo=java&logoColor=white)
+![Functional](https://img.shields.io/badge/Functional_Programming-FF6B6B?style=for-the-badge&logo=java&logoColor=white)
 
-## 📚 Table of Contents
+**Master functional programming paradigms and unlock the power of modern Java development**
 
-1. Branches in repository:
-   - main
-   - core-java-practice
-   - java-oops-practice
-   - java-dsa-practice
+[📂 View Repository](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice) • [🐛 Report Issue](https://github.com/rudresh-sharma/BridgeLabz-Training/issues) • [⭐ Star This Repo](https://github.com/rudresh-sharma/BridgeLabz-Training)
 
-2. Project Structure of respective branch
-   - [Project Structure (core-java-practice)](#project-structure-core-java-practice)
-   - [Project Structure (java-oops-practice)](#project-structure-java-oops-practice)
-   - [Project Structure (java-dsa-practice)](#project-structure-java-dsa-practice)
-
-4. Progress Timeline
-   - [Week 1: Programming Elements](#week-1-programming-elements)
-   - [Week 2: Object Oriented Programming](#week-2-object-oriented-programming)
-   - [Week 3: Data Structure And Algorithm 1](#week-3-data-structure-and-algorithm-1)
-   - [Week 4: Data Structure and Algorithm 2](#week-4-data-structure-and-algorithm-2)
-   - [Week 5: Scenario based questions on OOPS and DSA](#week-5--sbqs-on-oops--dsa)
-
-
-
-     
+</div>
 
 ---
 
-![line](https://capsule-render.vercel.app/api?type=rect&color=0:00b09b,100:96c93d&height=10)
+## 📑 Table of Contents
+
+- [🎯 Overview](#-overview)
+- [📁 Project Structure](#-project-structure)
+- [📚 Learning Journey](#-learning-journey)
+- [🎓 Key Concepts Covered](#-key-concepts-covered)
+- [🚀 How to Use This Repository](#-how-to-use-this-repository)
+- [📊 Progress Tracker](#-progress-tracker)
+- [📞 Connect & Collaborate](#-connect--collaborate)
 
-## Project Structure (core-java-practice)
-
-```
-BridgeLabz-Training/
-│── core-java-practice/
-│ │── gcr-codebase/
-│ │ │── arrays/
-│ │ │── control-flow/
-│ │ │── extras/
-│ │ │── methods/
-│ │ │── programming-elements/
-│ │ │── programming-requisites/
-│ │ │── strings/
-│ │── leet-code-codebase/
-│ │── scenario-based-codebase/
-│ |── README.md
-
-
-```
-
-## Project Structure (java-oops-practice)
-
-```
-BridgeLabz-Training
-└───java-oops-practice
-    ├───gcr-codebase
-    │   └───JavaOopsConcepts
-    │       └───src
-    │           └───com
-    │               ├───classandobject
-    │               ├───constructor
-    │               ├───encapsulation
-    │               ├───inbuiltfunction
-    │               ├───inheritance
-    │               └───objectmodeling
-    ├───leetcode-codebase
-    └───scenario-base
-        └───src
-            └───com
-                ├───dayfive
-                ├───dayfour
-                ├───dayone
-                ├───daythree
-                └───daytwo
-
-
-```
-
-##  Project Structure (java-dsa-practice)
-
-```
-BridgeLabz-Training
-└───java-dsa-practice
-    └───gcr-codebase
-        └───src
-            └───com
-                ├───algorithms
-                │   ├───searchingalgorithms
-                │   ├───sortingalgorithms
-                │   └───utilityclasses
-                └───datastructure
-                    ├───hashmap
-                    ├───linkedlist
-                    │   ├───circularlinkedlist
-                    │   ├───doublylinkedlist
-                    │   └───singlylinkedlist
-                    └───stackandqueue
-
-```
-
-
-# Week 1: Programming Elements
-
---- 
-### 📅 Day 1 – Git and GitHub Setup  
-**Date:** 15-Dec-2025  
-
-- Installed and configured Git  
-- Set up GitHub repository  
-- Created core-java-practice branch
-- Learned basic git commands like (git init, git status, git commit -m "", git add, git push)
-- Successfully pushed files to the remote repository
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-### 🗓 Day 2 – Git Practice & Basic Java Programs  
-**Date:** 16-Dec-2025
-
-- Practiced Git workflow to understand commits and version control.
-- Solved very basic Java programs to understand syntax and structure.
-- Practiced adding, committing, and pushing Java files to GitHub.
-
-🔗 **Code Link:**  
-👉 [Day 2 – Basic Java Programs](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/program-prerequisites)
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-### 🗓 Day 3 – Programming Elements in Java  
-**Date:** 17-Dec-2025
-
-- Studied Java programming elements:
-  - Variables and data types
-  - Operators
-  - User input and output
-- Solved practice problems based on programming elements.
-- Committed and pushed solutions to the repository.
-
-🔗 **Code Link:**  
-👉 [Day 3 – Programming Elements](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/programming-elements)
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-
-### 🗓 Day 4 – Control Flow & Logical Constructs  
-**Date:** 18-Dec-2025
-
-- Studied logical constructs in Java:
-  - if, if-else
-  - switch statement
-  - ternary operator
-- Practiced iteration statements:
-  - for loop
-  - while loop
-  - do-while loop
-- Used break and continue statements.
-- Solved logical problems such as:
-  - Factorial
-  - Prime number check
-- Committed and pushed solutions to the repository.
-
-🔗 **Code Link:**  
-👉 [Day 4 – Control Flow](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/control-flows)
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-
-### 🗓 Day 5 – Arrays & Basic Problem Solving  
-**Date:** 19-Dec-2025
-
-- Studied arrays in Java:
-  - Single-dimensional arrays
-  - Multi-dimensional arrays
-- Practiced array traversal and operations.
-- Solved problems related to:
-  - Finding missing elements
-  - Basic array-based logic
-- Strengthened logical thinking using array problems.
-- Committed and pushed solutions to the repository.
-
-🔗 **Code Link:**  
-👉 [Day 5 – Arrays](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/arrays)
-
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-
-### 🗓 Day 6 –Concepts & problems on Methods  
-**Date: 20-Dec-2025
-
-- Studied Java methods:
-  - Method declaration
-  - Method calling
-  - Parameter passing
-- Practiced reusable logic using methods.
-- Committed and pushed solutions to the repository.
-
-🔗 **Code Link:**  
-👉 [Day 6 – Problems on Methods](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/methods)
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-
-
-# Week 2: Object Oriented Programming
-![line](https://capsule-render.vercel.app/api?type=rect&color=0:00c6ff,100:0072ff&height=4)
-
-### 📅 Day 1 – Strings Concepts & Problems  
-**Date:** 22-Dec-2025 
-
-- [Learn the string concepts](https://docs.google.com/document/d/1-UXHtzpozVZznDVGYivscpQYEL6-vxOFZWiPpvBH5CE/edit?tab=t.0#heading=h.66yv6crqdvrd)
-    - Learn about built in methods for strings
-    - Why string is immutable
-    - Exception handling
- 
-- Solve Problems at three levels
-   - **Level1** Basic problems to create own method resemebles built in method
-   - **Level2** Learn how to print data in tabular format
-   - **Level2** Solve random values generated problems
-
-
-🔗 **Code Link:** <br>
-👉[Day 1 - String problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/strings)
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-
- ### 📅 Day 2 – Solve Extras Problems 
-**Date:** 23-Dec-2025 
-
-- [Extras Problems on String](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/a/ODIxNjE3NTg5MDU3/details)
-   - Work on concepts like frequency,substring,anagram etc . about string
-
- - [Extras Problems on Built in function](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/a/ODIxNjE3NTg5MDYx/details)
-     - Ex. includes time packages functions like LocalDate.now(), LocalTime.now() etc.
-
-  **Code Link:** <br>
-  👉[String Extras solved](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/extras/String%20Handling) ,
-  👉[Buiilt function extras Solved](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/gcr-codebase/extras/Buiit%20In%20Function)
-  <br>
-  **Notes source:** <br>
-  👉[Built in functions 1](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details) , 
-  👉[Built in functions 2](https://classroom.google.com/c/ODIxNjE3NTg5MDE1/m/ODIxNjE3NTg5MDU5/details)
-
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-  ## 📅 Day 3 - Leetcode Practice 1
-**Date:** 24-Dec-2025
-   - Solved Below problems on leetcode
-     - [Two Sum](https://leetcode.com/problems/two-sum/description/)
-     - [First Palindromic string in array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/description/)
-     - [Number of Employees meet target](https://leetcode.com/problems/number-of-employees-who-met-the-target/description/)
-     - [Minimum Number of game](https://leetcode.com/problems/minimum-number-game/description/)
-     - [Difference between Element and digit sum](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/description/)
-     - [Multiples](https://leetcode.com/problems/sum-multiples/description/)
-     - [Type of Triangle](https://leetcode.com/problems/type-of-triangle/description/)
-    
-  🔗 **Code Link:** <br>
-  👉[Code of above Problems](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/core-java-practice/leetcode-codebase/Arrays/Practice1)
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-  ## 📅 Day 4 - Christmas Holiday
-**Date:** 25-Dec-2025
-
-
-📌Note-->> Now After this Leetcode questions are documented which has been done in core-java-practice branch
-  
-  
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-
-### 📅 Day 5 – Class & Object 
-**Date:** 26-Dec-2025  
-
-- Learn Basic concepts of oops
-- Explore about class and object
-    - Solved following Questions on class & objects
-    - [Level1](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/classandobject/level1)
-    - [Level2](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/classandobject/level2)
- 
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-  
-### 📅 Day 6 – Constructors & Access Modifiers
-**Date:** 27-Dec-2025  
-
-
-__Learned core OOP concepts in Java:__
-
-- Constructors in Java
-- Default Constructor
-- Parameterized Constructor
-- Copy Constructor
-- Constructor Overloading
-- Access Modifiers:
-- public, protected, default, private
-- Instance vs Class (static) variables and methods
-- Implemented practice programs:
-
-
-.
-
-🔗**Code Link**
-👉 [Constructor Code](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/constructors/levelone)
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-
-
-# Week 3: Data Structure And Algorithm 1
 ---
 
-### 📅 Day 1 – Core Java Keywords & Inbuiltfunctions
-**Date:** 29-Dec-2025  
+## 🎯 Overview
 
+Welcome to **Week 6** of the BridgeLabz Java Training Program! This module explores **Java 8's revolutionary features** that transformed Java into a modern, expressive, and functional programming language.
 
-- Studied Core Java keywords:
-  - this keyword
-  - static keyword.
-  - final keyword
-- Practiced scenario-based Core Java problems:
-- Applied concepts using:
-  - for, for-each, while, do-while loops
-  -  if-else and switch-case statements
-- Improved logic building through real-world problem scenarios.  
+### 🌟 What Makes This Special?
 
-🔗 **Code Link:**  
-👉 [Core Java Keywords &Inbuilt Functions](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/inbuiltfunction)
+<table>
+<tr>
+<td width="33%" align="center">
+<img src="https://img.icons8.com/color/96/000000/lambda.png" width="64" alt="Lambda"/>
+<h4>🔥 Functional Programming</h4>
+<p>Master lambda expressions and method references for cleaner, more expressive code</p>
+</td>
+<td width="33%" align="center">
+<img src="https://img.icons8.com/color/96/000000/data-stream.png" width="64" alt="Streams"/>
+<h4>💧 Stream API</h4>
+<p>Transform data processing with powerful declarative pipeline operations</p>
+</td>
+<td width="33%" align="center">
+<img src="https://img.icons8.com/color/96/000000/code.png" width="64" alt="Real World"/>
+<h4>🌍 Real-World Scenarios</h4>
+<p>50+ practical problems from healthcare, e-commerce, IoT, and finance domains</p>
+</td>
+</tr>
+</table>
 
- <div align="left">
-│<br>
-│<br>
-│<br>
+### 📅 Learning Timeline
 
-</div>
+> **📆 Learning Period:** January 27-28, 2025  
+> **🌿 Branch:** `java8-programming-practice`  
+> **✅ Total Problems Solved:** 50+  
+> **⏱️ Duration:** 2 Days Intensive Practice
 
-### 📅 Day 2 - Object modelling and Class Diagrams
-**Date:** 30-Dec-2025  
-
-Learned core concepts of **Object Modeling** and **object communication** in Java.
-
-#### Topics Covered:
-- Classes vs Objects (definition, purpose, memory allocation)
-- Object relationships:
-  - Aggregation
-  - Association
-  - Composition
-- UML basics:
-  - Class Diagrams
-  - Object Diagrams
-  - Sequence Diagrams
- 
-  
-🔗 **Code Link:**  
-👉 [Object Modelling](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/objectmodeling)
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-### 📅 Day 3 -  Java Inheritance & OOPS Hierarchies
-**Date:** 31-Dec-2025  
-
-**Topics Covered:**
-- Practiced Single, Multilevel, Hierarchical & Hybrid Inheritance
-- Implemented method overriding, super() constructor calls, and polymorphism
-- Understood access modifiers and their behavior in inheritance
-- Modeled real-world hierarchies (Animal, Employee, Vehicle, Bank, Restaurant)
-  
-🔗 Code Links:
-👉 [Inheritance code ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/inheritance)
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-### 📅 Day 4 -  Encapsulation, Polymorphism, Interface and Abstract Class
-**Date:** 01-Jan-2026 
-
-#### 🔹 Java OOPS Practice (`java-oops-practice`)
-Learned and practiced Encapsulation along with scenario-based OOPS problem solving.
-
-**Topics Covered:**
-- Data hiding using private fields
-- Controlled access via getters & setters
-- Validation logic inside methods
-- Securing sensitive data (e.g., account balance, user details)
-- Improved code safety, flexibility, and maintainability
-- Example Implemented:
-   - BankAccount with validated deposit & withdrawal operations
- 
-  🔗 Code Links:
-👉 [Encapsulation code ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/gcr-codebase/JavaOopsConcepts/src/com/encapsulation)
-
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-### 📅 Day 5 - Solve Question on LinkedList and OOPS (SBQ) 
-**Date:** 02-Jan-2026 
-
-- Learn about linkedlist data structure and practice following question
-    - [Code of Questions](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/datastructure/linkedlist)
-
-
-- Solve following SBQ
-   1. [hospitalpatientmanagementsystem](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/hospitalpatientmanagementsystem)
-   2. [E wallet](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/ewallet)
-   3. [Smart home](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/smarthome)
-   4. [University](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/university)
-   5. [Vehicle rental application](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayone/vehiclerentalapplication)
-
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-### 📅 Day 6 - Stack, Queue & HashMap with OOPS(SBQ)  
-**Date:** 03-Jan-2026 
-
-- Learn abot stack, queue and Hashmap
-   - [Stack & Queue](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/datastructure/stackandqueue)
-   - [HashMap](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/datastructure/hashmap)
- 
-   
-- Solve following SBQ
-    1. [Cabby Go](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daytwo/cabbygo)
-    2. [My Bank](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daytwo/mybank)
- 
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-
-
-
-# Week 4: Data Structure and Algorithm 2
 ---
 
-### 📅 Day 1 - Sorting algorithms and (SBQ) On OOPS  
-**Date:** 05-Jan-2026
+## 📁 Project Structure
 
-- Learn About following sorting algorithm
-     - Bubble sort
-     - Selection sort
-     - Insertion sort
-     - Merge sort
-     - Quick sort
-     - Heap sort
-     - Counting sort
+```plaintext
+java8-programming-practice/
+│
+├── 📂 gcr-codebase/
+│   └── Java8Concepts/
+│       └── src/com/
+│           ├── 🔹 collectors/              # Grouping, partitioning & aggregations
+│           ├── 🔹 functionalinterfaces/    # Predicate, Function, Consumer, Supplier
+│           ├── 🔹 LambdaExpressions/       # Lambda syntax & implementations
+│           ├── 🔹 methodreferences/        # Static, instance & constructor references
+│           └── 🔹 streamapi/               # Filter, map, reduce operations
+│               └── foreach/                # Iteration patterns
+│
+└── 📂 scenario-base/
+    └── java8scenario/
+        └── src/com/streamapi/
+            ├── 📊 employeestreamscenario/     # Employee data analysis
+            ├── 📊 logicalquestions1/           # Complex stream challenges
+            └── 📊 studentstreamscenario/       # Student performance analytics
+```
 
-   👉 [Sorting algorithms code](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/sortingalgorithms)
-
-- Solve following OOPS SBQ
-
-   1. [Campus Connect](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daythree/campusconnect)
-   2. [Swift Cart](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daythree/swiftcart)
- 
-  
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-<br>
-
-### 📅 Day 2 - Searching algorithms, utility classes, and SBQ on OOPs 
-**Date:** 06-Jan-2026
-
-
-- Learn following Searching algorithms
-  - Linear Search
-  - Binary Search
-
-- Work on following utility classes
-  - StringBuffer
-  - StringBuilder
-  - FileReader
-  - InputStreamReader
-
-
-🔗 **Code Link:**  
-👉 [Searching Algo's](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/searchingalgorithms) <br>
-👉 [Utility Classes](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/utilityclasses)
-
-***Solve following SBQ***
-
-   1. [Edu mentor](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/edumentor)
-   2. [Fit Track](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/fittrack)
-   3. [Pet Pal](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/petpal)
-   4. [Event Ease](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfour/eventease)
- 
-
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-<br>
-
-### 📅 Day 3 - Algorithms Analysis and SBQ on OOPS
-**Date:** 07-Jan-2026
-
-
-   - Worked on Algorithm Analysis
-        - [Algorithm Analysis](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/gcr-codebase/src/com/algorithms/analysis)
-
-   - Solve an SBQ's on OOP's
-        - [SBQ's Solution](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayfive)
-
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-<br>
->
-
-
-### 📅 Day 4 - Solve SBQ's on OOP's
-**Date:** 08-Jan-2026
-
-  - Solve following SBQ's
-      - [Medistore](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daysix/medistore)
-      - [Tourmate](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daysix/tourmate)
- 
- 
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-<br>
-
-
-
-### 📅 Day 5 - Solve SBQ's on OOP's
-**Date:** 09-Jan-2026
-
-  - Solve Following SBQ's
-    - [Artify](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/artify)
-    - [FoodLoop](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/foodloop)
-    - [SkillForge](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayseven/skillforge)
-
-
- <div align="left">
-│<br>
-│<br>
-│<br>
-
-</div>
-<br>
-
-### 📅 Day 6 - Solve SBQ's on DSA
-**Date:** 10-Jan-2026
-
-   - Solve Following DSA SBQ's
-        - [Ambulance Route](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayone/ambulanceroute)
-        - [Browwer Buddy](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayone/browserbuddy)
-        - [Bookshelf](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/dayone/bookshelf)
-    
-     
 ---
 
+## 📚 Learning Journey
 
-# Week 5 : SBQ's On OOPs & DSA
+### 🗓️ Week 6: Java 8 & Functional Programming Mastery
 
-### 📅 Day 1 - Solve SBQ's 
-**Date:** 12-Jan-2026
+> **🎯 Focus Areas:** Lambda Expressions • Functional Interfaces • Stream API • Collectors • Method References
 
-`java-dsa-practice`
+---
 
-- Solve Following SBQ's
-    1. [TrafficManager ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/trafficmanager)
-    2. [CallCenter ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/callcenter)
-    3. [TrainCompanion ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/traincompanion)
-    4. [TextEditor ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daytwo/texteditor)
+<details open>
+<summary><h3>📅 Day 1 - Lambda Expressions & Method References (Part 1)</h3></summary>
 
-<br>
+**📆 Date:** January 27, 2025  
+**🎯 Focus:** Functional programming foundations with lambda syntax and method references
 
-`java-oops-practice`
+#### 🎓 Topics Covered
+```
+✅ Lambda expression syntax and structure
+✅ Functional programming paradigms
+✅ Lambda vs Anonymous classes comparison
+✅ Method references (Static, Instance, Constructor)
+✅ Type inference and variable capture
+✅ Scope and closures in lambda expressions
+```
 
-- Solve Following SBQ's
-    1. [HomeNest](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/homenest)
-    2. [BudgetWise](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/budgetwise)
-    3. [Game Box](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/dayeight/gamebox)
- 
-)
+#### 💡 Real-World Scenarios Solved
 
+<table>
+<tr>
+<th width="50%">🔸 Lambda Expressions (3 Problems)</th>
+<th width="50%">🔸 Method References (3 Problems)</th>
+</tr>
+<tr>
+<td valign="top">
 
- <div align="left">
-│<br>
-│<br>
-│<br>
+**1. 🏠 Smart Home Lighting Automation**  
+Define light activation behaviors for motion, time, and voice triggers dynamically without creating multiple classes
+
+**2. 🛒 Custom E-Commerce Sorting**  
+Implement dynamic product sorting with lambda-based Comparator (by price, rating, discount)
+
+**3. 🏥 Hospital Notification Filtering**  
+Filter patient alerts using lambda expressions with Predicate based on user preferences
+
+</td>
+<td valign="top">
+
+**1. 🏥 Patient ID Printing**  
+Print all patient IDs from a list for admin verification using method references
+
+**2. 📝 Name Uppercasing**  
+Convert employee names to uppercase for HR letters using `String::toUpperCase`
+
+**3. 🧾 Invoice Object Creation**  
+Generate invoice objects from transaction IDs using constructor references
+
+</td>
+</tr>
+</table>
+
+**🔗 View Code:** [Lambda Expressions](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice/java8-programming-practice/gcr-codebase/Java8Concepts/src/com/LambdaExpressions) • [Method References](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice/java8-programming-practice/gcr-codebase/Java8Concepts/src/com/methodreferences)
+
+</details>
+
+---
+
+<details>
+<summary><h3>📅 Day 1 - Functional Interfaces (Part 2)</h3></summary>
+
+**📆 Date:** January 27, 2025  
+**🎯 Focus:** Interface design patterns, functional interfaces, and Java 8 interface enhancements
+
+#### 🎓 Topics Covered
+```
+✅ Defining and implementing interfaces (best practices)
+✅ @FunctionalInterface annotation
+✅ Built-in functional interfaces (Predicate, Function, Consumer, Supplier)
+✅ Default and static methods in interfaces
+✅ Marker interfaces
+✅ BiFunction, BiConsumer, BiPredicate
+```
+
+#### 💡 Real-World Scenarios Solved
+
+**🔹 Defining and Implementing Interfaces (3 Problems)**
+
+| # | Scenario | Implementation |
+|---|----------|----------------|
+| 1 | 🏠 **Smart Device Control Interface** | Create interface for `turnOn()` and `turnOff()` methods across lights, AC, and TV |
+| 2 | 🚗 **Multi-Vehicle Rental System** | Interface-based design for cars, bikes, and buses with `rent()` and `returnVehicle()` |
+| 3 | 💳 **Digital Payment Interface** | Define and implement `pay()` method for UPI, Credit Card, and Wallet |
+
+**🔹 Functional Interfaces (3 Problems)**
+
+| # | Scenario | Functional Interface Used |
+|---|----------|---------------------------|
+| 1 | 🌡️ **Temperature Alert System** | `Predicate<Double>` - Alert if temperature crosses threshold |
+| 2 | 📏 **String Length Checker** | `Function<String, Integer>` - Check if message exceeds character limit |
+| 3 | ⚙️ **Background Job Execution** | `Runnable` - Execute tasks asynchronously |
+
+**🔹 Static Methods in Interfaces (3 Problems)**
+
+| # | Scenario | Use Case |
+|---|----------|----------|
+| 1 | 🔐 **Password Strength Validator** | Static method in `SecurityUtils` interface for password policy validation |
+| 2 | 📦 **Unit Conversion Tool** | Static methods for standard unit conversions (km↔miles, kg↔lbs) |
+| 3 | 📅 **Date Format Utility** | Static interface method to format dates in multiple formats |
+
+**🔹 Default Methods in Interfaces (3 Problems)**
+
+| # | Scenario | Solution |
+|---|----------|----------|
+| 1 | 💳 **Payment Gateway Integration** | Add default `refund()` method without breaking existing providers |
+| 2 | 📊 **Data Export Feature** | Add default `exportToJSON()` method to existing CSV/PDF exporters |
+| 3 | 🚗 **Smart Vehicle Dashboard** | Default method to display battery percentage for electric vehicles |
+
+**🔹 Marker Interfaces (3 Problems)**
+
+| # | Scenario | Marker Interface |
+|---|----------|------------------|
+| 1 | 💾 **Data Serialization for Backup** | `Serializable` for backup storage |
+| 2 | 📋 **Cloning Prototype Objects** | `Cloneable` for object cloning |
+| 3 | 🔒 **Sensitive Data Tagging** | Custom marker interface for encryption |
+
+**🔗 View Code:** [Functional Interfaces](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice/java8-programming-practice/gcr-codebase/Java8Concepts/src/com/functionalinterfaces)
+
+</details>
+
+---
+
+<details>
+<summary><h3>📅 Day 2 - Stream API & forEach Method (Part 1)</h3></summary>
+
+**📆 Date:** January 28, 2025  
+**🎯 Focus:** Data transformation pipelines and declarative data processing
+
+#### 🎓 Topics Covered
+```
+✅ Intermediate Operations: filter, map, flatMap, distinct, sorted, peek, limit, skip
+✅ Terminal Operations: collect, forEach, reduce, count, anyMatch, allMatch, noneMatch
+✅ Stateless vs Stateful operations
+✅ Ordered vs Unordered streams
+✅ Parallel streams & performance optimization
+✅ forEach() — Iterable vs Stream comparison
+```
+
+#### 💡 Real-World Scenarios Solved
+
+**🔹 Stream API Operations (5 Problems)**
+
+<table>
+<tr>
+<td width="5%">1</td>
+<td width="30%">🎬 <b>Top 5 Trending Movies</b></td>
+<td>Find top 5 movies based on rating and release year using <code>filter()</code>, <code>sorted()</code>, <code>limit()</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>🏥 <b>Hospital Doctor Availability</b></td>
+<td>Find weekend-available doctors and sort by specialty using streams with <code>filter()</code> and <code>sorted()</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>🏢 <b>Insurance Claim Analysis</b></td>
+<td>Calculate average claim amount per claim type using <code>groupingBy()</code> and <code>averagingDouble()</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>💪 <b>Filtering Expiring Memberships</b></td>
+<td>Filter gym members whose membership expires within 30 days using Stream API</td>
+</tr>
+<tr>
+<td>5</td>
+<td>👥 <b>Transforming Names for Display</b></td>
+<td>Convert customer names to uppercase and sort alphabetically using <code>map()</code> and <code>sorted()</code></td>
+</tr>
+</table>
+
+**🔹 forEach() Method (5 Problems)**
+
+<table>
+<tr>
+<td width="5%">1</td>
+<td width="30%">📈 <b>Stock Price Logger</b></td>
+<td>Display all stock prices from live feed using <code>forEach()</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>🎉 <b>Event Attendee Welcome</b></td>
+<td>Print welcome message for all attendees using <code>forEach()</code> with lambda</td>
+</tr>
+<tr>
+<td>3</td>
+<td>🌡️ <b>IoT Sensor Readings</b></td>
+<td>Print readings above threshold using streams with <code>forEach()</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>📧 <b>Email Notifications</b></td>
+<td>Send notification email to each user using <code>forEach()</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>📝 <b>Logging Transactions</b></td>
+<td>Log each transaction with timestamp to console using <code>forEach()</code></td>
+</tr>
+</table>
+
+**🔗 View Code:** [Stream API](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice/java8-programming-practice/gcr-codebase/Java8Concepts/src/com/streamapi) • [forEach](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice/java8-programming-practice/gcr-codebase/Java8Concepts/src/com/streamapi/foreach)
+
+</details>
+
+---
+
+<details>
+<summary><h3>📅 Day 2 - Collectors (Part 2)</h3></summary>
+
+**📆 Date:** January 28, 2025  
+**🎯 Focus:** Advanced data aggregation and grouping operations
+
+#### 🎓 Topics Covered
+```
+✅ Collectors - Roles and capabilities
+✅ toList(), toSet(), toMap()
+✅ groupingBy(), partitioningBy()
+✅ joining(), counting(), summarizing
+✅ Custom collectors
+✅ Downstream collectors
+```
+
+#### 💡 Real-World Scenarios Solved
+
+**🔹 Collectors Operations (5 Problems)**
+
+| # | Scenario | Collector Used | Description |
+|---|----------|----------------|-------------|
+| 1 | 🎓 **Student Result Grouping** | `groupingBy()` | Group students by grade level and collect names |
+| 2 | 📝 **Word Frequency Counter** | `toMap()` | Analyze paragraph for word occurrence frequency |
+| 3 | 💰 **Order Revenue Summary** | `summingDouble()` | Sum order totals per customer for revenue analysis |
+| 4 | 👔 **Employee Salary Categorization** | `groupingBy()` + `averagingDouble()` | Calculate average salary per department |
+| 5 | 📚 **Library Book Statistics** | `summarizingInt()` | Find total pages, average pages, and max pages per genre |
+
+**💻 Code Example:**
+```java
+// Employee Salary Categorization
+Map<String, Double> avgSalaryByDept = employees.stream()
+    .collect(Collectors.groupingBy(
+        Employee::getDepartment,
+        Collectors.averagingDouble(Employee::getSalary)
+    ));
+```
+
+**🔗 View Code:** [Collectors](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java8-programming-practice/java8-programming-practice/gcr-codebase/Java8Concepts/src/com/collectors)
+
+</details>
+
+---
+
+## 🎓 Key Concepts Covered
+
+<div align="center">
+
+| 🎯 Category | 📚 Concepts | ✅ Status |
+|------------|------------|-----------|
+| **Lambda Expressions** | Syntax, Functional Programming, Type Inference, Variable Capture | Completed |
+| **Method References** | Static References, Instance References, Constructor References | Completed |
+| **Functional Interfaces** | Predicate, Function, Consumer, Supplier, BiFunction, Custom Interfaces | Completed |
+| **Interface Enhancements** | Default Methods, Static Methods, Marker Interfaces | Completed |
+| **Stream API** | Intermediate Operations (filter, map, flatMap, sorted, distinct, limit, skip) | Completed |
+| **Stream API** | Terminal Operations (collect, forEach, reduce, count, match operations) | Completed |
+| **Collectors** | groupingBy, partitioningBy, toList, toSet, toMap, joining, summarizing | Completed |
+| **Advanced Streams** | Parallel Streams, Performance Optimization, Stateless vs Stateful | Completed |
 
 </div>
-<br>
-     
-### 📅 Day 2 - Solve SBQ's 
-**Date:** 13-Jan-2026
 
-`java-dsa-practice`
+---
 
-- Solve Following SBQ's
-  1. [ParcelTracker ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daythree/parceltracker)
-  2. [SmartCheckout ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daythree/smartcheckout)
-  3. [ExamProctor ](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-dsa-practice/java-dsa-practice/scenario-base/JavaDSAScenario/src/com/daythree/examproctor)
- 
+## 🚀 How to Use This Repository
 
-`java-oops-practice`
+### 📋 Prerequisites
 
-- Solve Following SBQ's
-    1. [PayXpress](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daynine/payxpress)
-    2. [Bird Sanctuary](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-oops-practice/java-oops-practice/scenario-base/src/com/daynine/birdsanctuary)
- 
-     
+```plaintext
+✅ Java Development Kit (JDK) 8 or higher
+✅ IDE (IntelliJ IDEA, Eclipse, or VS Code recommended)
+✅ Basic understanding of Java programming
+✅ Git installed on your system
+```
+
+### 🔧 Setup Instructions
+
+**1️⃣ Clone the Repository**
+```bash
+git clone https://github.com/rudresh-sharma/BridgeLabz-Training.git
+cd BridgeLabz-Training
+```
+
+**2️⃣ Switch to Java 8 Branch**
+```bash
+git checkout java8-programming-practice
+```
+
+**3️⃣ Navigate to Project Directory**
+```bash
+cd java8-programming-practice
+```
+
+**4️⃣ Open in Your Favorite IDE**
+```bash
+# For IntelliJ IDEA
+idea .
+
+# For VS Code
+code .
+
+# For Eclipse
+eclipse .
+```
+
+### 📂 Exploring the Code
+
+**🔹 GCR Codebase (Core Concepts)**
+```bash
+cd gcr-codebase/Java8Concepts/src/com/
+
+# Explore different modules:
+cd LambdaExpressions      # Lambda syntax and examples
+cd functionalinterfaces   # Functional interface implementations
+cd streamapi              # Stream API operations
+cd collectors             # Collector examples
+cd methodreferences       # Method reference patterns
+```
+
+**🔹 Scenario-Based Problems**
+```bash
+cd scenario-base/java8scenario/src/com/streamapi/
+
+# Real-world problem solutions:
+cd employeestreamscenario    # Employee data analysis
+cd studentstreamscenario     # Student performance analytics
+cd logicalquestions1         # Complex stream challenges
+```
+
+### ▶️ Running Examples
+
+**Option 1: Run Individual Classes**
+```bash
+# Compile
+javac -d bin src/com/LambdaExpressions/SmartHomeLighting.java
+
+# Run
+java -cp bin com.LambdaExpressions.SmartHomeLighting
+```
+
+**Option 2: Use IDE**
+- Navigate to the desired Java file
+- Right-click → Run 'ClassName.main()'
+
+---
+
+## 📊 Progress Tracker
+
+### 📈 Weekly Progress
+
+| Day | Topic | Problems Solved | Status |
+|:---:|-------|:---------------:|:------:|
+| **Day 1** | Lambda Expressions & Method References | 6 | ✅ Completed |
+| **Day 1** | Functional Interfaces (All Types) | 15 | ✅ Completed |
+| **Day 2** | Stream API & forEach | 10 | ✅ Completed |
+| **Day 2** | Collectors | 5 | ✅ Completed |
+| **Bonus** | Scenario-Based Challenges | 14+ | ✅ Completed |
 
 
+
+
+---
+
+## 🌟 Key Takeaways
+
+<table>
+<tr>
+<td width="50%">
+
+### 💡 What I Learned
+
+- ✅ Functional programming paradigms in Java
+- ✅ Writing cleaner, more expressive code with lambdas
+- ✅ Declarative data processing with Stream API
+- ✅ Advanced interface design patterns
+- ✅ Performance optimization with parallel streams
+- ✅ Real-world application of Java 8 features
+
+</td>
+<td width="50%">
+
+### 🚀 Skills Gained
+
+- ✅ Lambda expression mastery
+- ✅ Stream API proficiency
+- ✅ Functional interface implementation
+- ✅ Data transformation techniques
+- ✅ Complex data aggregation
+- ✅ Modern Java best practices
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📞 Connect & Collaborate
+
+<div align="center">
+
+### 🌐 Let's Connect!
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rudresh-sharma)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rudresh-sharma)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com)
+
+---
+
+### 💬 Feedback & Support
+
+**Found this helpful? ⭐ Star this repository!**
+
+[![Report Bug](https://img.shields.io/badge/Report-Bug-red?style=for-the-badge&logo=github)](https://github.com/rudresh-sharma/BridgeLabz-Training/issues)
+[![Request Feature](https://img.shields.io/badge/Request-Feature-blue?style=for-the-badge&logo=github)](https://github.com/rudresh-sharma/BridgeLabz-Training/issues)
+[![View Main Branch](https://img.shields.io/badge/View-Main_Branch-green?style=for-the-badge&logo=github)](https://github.com/rudresh-sharma/BridgeLabz-Training)
+
+---
+
+### 📜 License
+
+This project is part of the **BridgeLabz Training Program** and is intended for educational purposes.
+
+---
+
+**Made with ❤️ and ☕ by Rudresh Sharma**
+
+*"The only way to learn a new programming language is by writing programs in it." - Dennis Ritchie*
+
+---
+
+**© 2025 Rudresh Sharma | BridgeLabz Fellowship Program**
+
+</div>
