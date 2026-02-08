@@ -66,52 +66,21 @@ Welcome to **Week 7** of the BridgeLabz Java Training Program! This module focus
 
 ```plaintext
 java-design-pattern-practice/
-│
-├── 📂 design-principles/
-│   ├── 🔹 solid/                    # SOLID principles implementation
-│   │   ├── SingleResponsibility/
-│   │   ├── OpenClosed/
-│   │   ├── LiskovSubstitution/
-│   │   ├── InterfaceSegregation/
-│   │   └── DependencyInversion/
-│   └── 🔹 other-principles/         # DRY, KISS, YAGNI
-│
-├── 📂 design-patterns/
-│   ├── 🎨 creational/               # Object creation patterns
-│   │   ├── Singleton/
-│   │   ├── Factory/
-│   │   ├── AbstractFactory/
-│   │   ├── Builder/
-│   │   └── Prototype/
-│   │
-│   ├── 🏗️ structural/               # Object composition patterns
-│   │   ├── Adapter/
-│   │   ├── Decorator/
-│   │   ├── Facade/
-│   │   ├── Proxy/
-│   │   ├── Composite/
-│   │   └── Bridge/
-│   │
-│   └── 🎭 behavioral/               # Object interaction patterns
-│       ├── Observer/
-│       ├── Strategy/
-│       ├── Command/
-│       ├── Template/
-│       ├── State/
-│       └── Iterator/
-│
-├── 📂 multithreading/
-│   ├── 🔹 basics/                   # Thread fundamentals
-│   ├── 🔹 synchronization/          # Thread safety
-│   ├── 🔹 concurrent-utils/         # Concurrent packages
-│   └── 🔹 executor-framework/       # Thread pools
-│
-├── 📂 case-studies/
-│   └── 🏥 LibraryManagementSystem/  # Comprehensive LMS with patterns
-│
-└── 📂 uml-diagrams/                 # Visual documentation
-    ├── class-diagrams/
-    └── sequence-diagrams/
+    |
+    └───gcr-codebase
+        └───JavaDesignPattternAndMultiThreadingPractice
+            └───src
+                └───com
+                    ├───designpattern
+                    │   ├───BookBuilderPattern
+                    │   └───smartuniversitylibrarymanagementsystem
+                    │       └───UMLDiagrams
+                    └───multithreading
+                        ├───banking
+                        ├───downloadmanager
+                        ├───printshopscheduler
+                        ├───restaurantorders
+                        └───threadstatemonitor
 ```
 
 ---
@@ -222,7 +191,7 @@ class PayPal implements PaymentMethod {
 </tr>
 </table>
 
-**🔗 View Code:** [Design Principles](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-design-pattern-practice/java-design-pattern-practice/design-principles)
+**🔗 View Code:** [Design Patterns](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-design-pattern-practice/java-design-pattern-practice/gcr-codebase/JavaDesignPattternAndMultiThreadingPractice/src/com/designpattern)
 
 </details>
 
@@ -528,7 +497,6 @@ class Investor implements Observer {
 └─────────────────┘         └─────────────────┘
 ```
 
-**🔗 View Diagrams:** [UML Documentation](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-design-pattern-practice/java-design-pattern-practice/uml-diagrams)
 
 </details>
 
@@ -798,7 +766,7 @@ try {
 executor.shutdown();
 ```
 
-**🔗 View Code:** [Multithreading](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-design-pattern-practice/java-design-pattern-practice/multithreading)
+**🔗 View Code:** [Multithreading](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/java-design-pattern-practice/java-design-pattern-practice/gcr-codebase/JavaDesignPattternAndMultiThreadingPractice/src/com/multithreading)
 
 </details>
 
