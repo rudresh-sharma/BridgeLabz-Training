@@ -1,0 +1,267 @@
+-- ============================================================
+-- Problem: Appointment Scheduling
+-- File: appointment_scheduling.db
+-- Table: patients, doctors, appointments, appointment_audit
+-- Database: practice_db
+-- ============================================================
+
+-- mysql>
+USE practice_db;
+
+/* o/p
+Database changed
+*/
+
+-- mysql>
+SET FOREIGN_KEY_CHECKS = 0;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS appointment_audit;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS appointments;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS doctors;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS patients;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+SET FOREIGN_KEY_CHECKS = 1;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+CREATE TABLE patients (
+patient_id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(60) NOT NULL,
+phone VARCHAR(15) UNIQUE NOT NULL
+);
+
+/* o/p
+Query OK, 0 rows affected (0.02 sec)
+*/
+
+-- mysql>
+CREATE TABLE doctors (
+doctor_id INT PRIMARY KEY AUTO_INCREMENT,
+doctor_name VARCHAR(60) NOT NULL
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TABLE appointments (
+appointment_id INT PRIMARY KEY AUTO_INCREMENT,
+patient_id INT NOT NULL,
+doctor_id INT NOT NULL,
+appointment_date DATE NOT NULL,
+appointment_time TIME NOT NULL,
+status VARCHAR(20) DEFAULT 'SCHEDULED',
+FOREIGN KEY (patient_id) REFERENCES patients(patient_id),
+FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.02 sec)
+*/
+
+-- mysql>
+CREATE TABLE appointment_audit (
+audit_id INT PRIMARY KEY AUTO_INCREMENT,
+appointment_id INT NOT NULL,
+action VARCHAR(30),
+action_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY (appointment_id) REFERENCES appointments(appointment_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+DESC appointments;
+
+/* o/p
++--------------------+-------------+------+-----+-----------+----------------+
+| Field              | Type        | Null | Key | Default   | Extra          |
++--------------------+-------------+------+-----+-----------+----------------+
+| appointment_id     | int         | NO   | PRI | NULL      | auto_increment |
+| patient_id         | int         | NO   | MUL | NULL      |                |
+| doctor_id          | int         | NO   | MUL | NULL      |                |
+| appointment_date   | date        | NO   |     | NULL      |                |
+| appointment_time   | time        | NO   |     | NULL      |                |
+| status             | varchar(20) | YES  |     | SCHEDULED|                |
++--------------------+-------------+------+-----+-----------+----------------+
+*/
+
+-- mysql>
+INSERT INTO patients (name, phone) VALUES
+('Tanjiro Kamado','9200011111'),
+('Nezuko Kamado','9200022222'),
+('Giyu Tomioka','9200033333');
+
+/* o/p
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO doctors (doctor_name) VALUES
+('Gojo Satoru'),
+('Megumi Fushiguro');
+
+/* o/p
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+SELECT *
+FROM appointments
+WHERE doctor_id = 1
+AND appointment_date = '2026-02-15'
+AND status = 'SCHEDULED';
+
+/* o/p
+Empty set (0.00 sec)
+*/
+
+-- mysql>
+INSERT INTO appointments
+(patient_id, doctor_id, appointment_date, appointment_time, status)
+VALUES (1,1,'2026-02-15','10:00:00','SCHEDULED');
+
+/* o/p
+Query OK, 1 row affected (0.01 sec)
+*/
+
+-- mysql>
+SELECT appointment_time,
+COUNT(*) AS slot_bookings
+FROM appointments
+WHERE doctor_id = 1
+AND appointment_date = '2026-02-15'
+AND status = 'SCHEDULED'
+GROUP BY appointment_time;
+
+/* o/p
++------------------+---------------+
+| appointment_time | slot_bookings|
++------------------+---------------+
+| 10:00:00         | 1            |
++------------------+---------------+
+*/
+
+-- mysql>
+START TRANSACTION;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+UPDATE appointments
+SET status = 'CANCELLED'
+WHERE appointment_id = 1;
+
+/* o/p
+Query OK, 1 row affected (0.00 sec)
+*/
+
+-- mysql>
+INSERT INTO appointment_audit (appointment_id, action)
+VALUES (1,'CANCELLED');
+
+/* o/p
+Query OK, 1 row affected (0.00 sec)
+*/
+
+-- mysql>
+COMMIT;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+START TRANSACTION;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+SELECT *
+FROM appointments
+WHERE doctor_id = 2
+AND appointment_date = '2026-02-16'
+AND appointment_time = '11:00:00'
+AND status = 'SCHEDULED';
+
+/* o/p
+Empty set (0.00 sec)
+*/
+
+-- mysql>
+UPDATE appointments
+SET doctor_id = 2,
+appointment_date = '2026-02-16',
+appointment_time = '11:00:00',
+status = 'SCHEDULED'
+WHERE appointment_id = 1;
+
+/* o/p
+Query OK, 1 row affected (0.00 sec)
+*/
+
+-- mysql>
+COMMIT;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+SELECT a.appointment_time,
+p.name AS patient_name,
+d.doctor_name,
+a.status
+FROM appointments a
+JOIN patients p ON a.patient_id = p.patient_id
+JOIN doctors d ON a.doctor_id = d.doctor_id
+WHERE a.appointment_date = '2026-02-16'
+ORDER BY a.appointment_time;
+
+/* o/p
++------------------+---------------+------------------+-----------+
+| appointment_time | patient_name | doctor_name     | status    |
++------------------+---------------+------------------+-----------+
+| 11:00:00         | Tanjiro Kamado| Megumi Fushiguro| SCHEDULED |
++------------------+---------------+------------------+-----------+
+*/
