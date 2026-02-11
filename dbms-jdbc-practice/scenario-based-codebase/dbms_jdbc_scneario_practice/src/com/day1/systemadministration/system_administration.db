@@ -1,0 +1,196 @@
+-- ============================================================
+-- Problem: System Administration
+-- File: system_administration.db
+-- Table: specialties, doctors, audit_log
+-- Database: practice_db
+-- ============================================================
+
+-- mysql>
+USE practice_db;
+
+/* o/p
+Database changed
+*/
+
+-- mysql>
+SET FOREIGN_KEY_CHECKS = 0;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS audit_log;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS doctors;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS specialties;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+SET FOREIGN_KEY_CHECKS = 1;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+CREATE TABLE specialties (
+specialty_id INT PRIMARY KEY AUTO_INCREMENT,
+specialty_name VARCHAR(60) UNIQUE NOT NULL
+);
+
+/* o/p
+Query OK, 0 rows affected (0.02 sec)
+*/
+
+-- mysql>
+CREATE TABLE doctors (
+doctor_id INT PRIMARY KEY AUTO_INCREMENT,
+doctor_name VARCHAR(60) NOT NULL,
+specialty_id INT,
+FOREIGN KEY (specialty_id) REFERENCES specialties(specialty_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TABLE audit_log (
+audit_id INT PRIMARY KEY AUTO_INCREMENT,
+db_user VARCHAR(50),
+table_name VARCHAR(40),
+operation VARCHAR(20),
+old_value TEXT,
+new_value TEXT,
+event_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TRIGGER trg_specialty_insert
+AFTER INSERT ON specialties
+FOR EACH ROW
+INSERT INTO audit_log
+(db_user, table_name, operation, new_value)
+VALUES (USER(),'specialties','INSERT',NEW.specialty_name);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TRIGGER trg_specialty_update
+AFTER UPDATE ON specialties
+FOR EACH ROW
+INSERT INTO audit_log
+(db_user, table_name, operation, old_value, new_value)
+VALUES (USER(),'specialties','UPDATE',OLD.specialty_name,NEW.specialty_name);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TRIGGER trg_specialty_delete
+AFTER DELETE ON specialties
+FOR EACH ROW
+INSERT INTO audit_log
+(db_user, table_name, operation, old_value)
+VALUES (USER(),'specialties','DELETE',OLD.specialty_name);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+INSERT INTO specialties (specialty_name) VALUES
+('Radiology'),
+('Dermatology'),
+('Pediatrics');
+
+/* o/p
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO doctors (doctor_name, specialty_id) VALUES
+('Aizen Sosuke',1),
+('Albedo',2);
+
+/* o/p
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+UPDATE specialties
+SET specialty_name = 'Child Care'
+WHERE specialty_id = 3;
+
+/* o/p
+Query OK, 1 row affected (0.00 sec)
+*/
+
+-- mysql>
+SELECT COUNT(*) AS doctor_count
+FROM doctors
+WHERE specialty_id = 1;
+
+/* o/p
++--------------+
+| doctor_count |
++--------------+
+| 1            |
++--------------+
+*/
+
+-- mysql>
+DELETE FROM specialties
+WHERE specialty_id = 2
+AND (
+SELECT COUNT(*)
+FROM doctors
+WHERE specialty_id = 2
+) = 0;
+
+/* o/p
+Query OK, 1 row affected (0.00 sec)
+*/
+
+-- mysql>
+SELECT *
+FROM audit_log
+WHERE table_name = 'specialties'
+AND event_time BETWEEN '2026-02-01' AND '2026-02-28'
+AND operation IN ('INSERT','UPDATE','DELETE');
+
+/* o/p
++----------+-------------+------------+-----------+-----------+-----------+---------------------+
+| audit_id | db_user     | table_name | operation | old_value| new_value| event_time          |
++----------+-------------+------------+-----------+-----------+-----------+---------------------+
+| 1        | root@localhost| specialties| INSERT   | NULL     | Radiology| 2026-02-22 10:05:00 |
+| 2        | root@localhost| specialties| INSERT   | NULL     | Dermatology|2026-02-22 10:05:00 |
+| 3        | root@localhost| specialties| INSERT   | NULL     | Pediatrics| 2026-02-22 10:05:00 |
+| 4        | root@localhost| specialties| UPDATE   | Pediatrics| Child Care|2026-02-22 10:06:00 |
+| 5        | root@localhost| specialties| DELETE   | Dermatology| NULL     |2026-02-22 10:07:00 |
++----------+-------------+------------+-----------+-----------+-----------+---------------------+
+*/
