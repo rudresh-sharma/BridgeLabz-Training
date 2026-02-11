@@ -1,0 +1,281 @@
+-- ============================================================
+-- Problem: Patient Management
+-- File: patient_management.db
+-- Table: patients, doctors, appointments, visits
+-- Database: practice_db
+-- ============================================================
+
+-- mysql>
+USE practice_db;
+
+/* o/p
+Database changed
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS visits;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS appointments;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS doctors;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS patients;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+CREATE TABLE patients (
+patient_id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(60) NOT NULL,
+dob DATE NOT NULL,
+phone VARCHAR(15) UNIQUE NOT NULL,
+email VARCHAR(80) UNIQUE,
+address VARCHAR(150),
+blood_group VARCHAR(5)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.02 sec)
+*/
+
+-- mysql>
+CREATE TABLE doctors (
+doctor_id INT PRIMARY KEY AUTO_INCREMENT,
+doctor_name VARCHAR(60) NOT NULL,
+specialization VARCHAR(50)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TABLE appointments (
+appointment_id INT PRIMARY KEY AUTO_INCREMENT,
+patient_id INT NOT NULL,
+doctor_id INT NOT NULL,
+appointment_date DATE NOT NULL,
+FOREIGN KEY (patient_id) REFERENCES patients(patient_id),
+FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TABLE visits (
+visit_id INT PRIMARY KEY AUTO_INCREMENT,
+appointment_id INT NOT NULL,
+diagnosis VARCHAR(150),
+visit_date DATE NOT NULL,
+FOREIGN KEY (appointment_id) REFERENCES appointments(appointment_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+DESC patients;
+
+/* o/p
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| patient_id | int         | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(60) | NO   |     | NULL    |                |
+| dob        | date        | NO   |     | NULL    |                |
+| phone      | varchar(15) | NO   | UNI | NULL    |                |
+| email      | varchar(80) | YES  | UNI | NULL    |                |
+| address    | varchar(150)| YES  |     | NULL    |                |
+| blood_group| varchar(5)  | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+*/
+
+-- mysql>
+DESC doctors;
+
+/* o/p
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| doctor_id     | int         | NO   | PRI | NULL    | auto_increment |
+| doctor_name   | varchar(60) | NO   |     | NULL    |                |
+| specialization| varchar(50)| YES  |     | NULL    |                |
++---------------+-------------+------+-----+---------+----------------+
+*/
+
+-- mysql>
+DESC appointments;
+
+/* o/p
++------------------+------+------+-----+---------+----------------+
+| Field            | Type | Null | Key | Default | Extra          |
++------------------+------+------+-----+---------+----------------+
+| appointment_id   | int  | NO   | PRI | NULL    | auto_increment |
+| patient_id       | int  | NO   | MUL | NULL    |                |
+| doctor_id        | int  | NO   | MUL | NULL    |                |
+| appointment_date | date | NO   |     | NULL    |                |
++------------------+------+------+-----+---------+----------------+
+*/
+
+-- mysql>
+DESC visits;
+
+/* o/p
++------------------+-------------+------+-----+---------+----------------+
+| Field            | Type        | Null | Key | Default | Extra          |
++------------------+-------------+------+-----+---------+----------------+
+| visit_id         | int         | NO   | PRI | NULL    | auto_increment |
+| appointment_id   | int         | NO   | MUL | NULL    |                |
+| diagnosis        | varchar(150)| YES  |     | NULL    |                |
+| visit_date       | date        | NO   |     | NULL    |                |
++------------------+-------------+------+-----+---------+----------------+
+*/
+
+-- mysql>
+INSERT INTO patients (name, dob, phone, email, address, blood_group) VALUES
+('Naruto Uzumaki','1999-10-10','9000011111','naruto@mail.com','Leaf Street','O+'),
+('Sakura Haruno','2000-03-28','9000022222','sakura@mail.com','Blossom Road','A+'),
+('Sasuke Uchiha','1999-07-23','9000033333','sasuke@mail.com','Shadow Lane','B+');
+
+/* o/p
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO doctors (doctor_name, specialization) VALUES
+('Kakashi Hatake','General Medicine'),
+('Tsunade Senju','Cardiology');
+
+/* o/p
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO appointments (patient_id, doctor_id, appointment_date) VALUES
+(1,1,'2026-02-01'),
+(1,2,'2026-02-05'),
+(2,1,'2026-02-06');
+
+/* o/p
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO visits (appointment_id, diagnosis, visit_date) VALUES
+(1,'Fever and cold','2026-02-01'),
+(2,'Chest pain','2026-02-05'),
+(3,'Headache','2026-02-06');
+
+/* o/p
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+SELECT * FROM patients;
+
+/* o/p
++------------+---------------+------------+------------+------------------+------------+-------------+
+| patient_id | name          | dob        | phone      | email            | address    | blood_group|
++------------+---------------+------------+------------+------------------+------------+-------------+
+| 1          | Naruto Uzumaki| 1999-10-10 | 9000011111 | naruto@mail.com  | Leaf Street| O+          |
+| 2          | Sakura Haruno | 2000-03-28 | 9000022222 | sakura@mail.com  | Blossom Rd | A+          |
+| 3          | Sasuke Uchiha | 1999-07-23 | 9000033333 | sasuke@mail.com  | Shadow Ln  | B+          |
++------------+---------------+------------+------------+------------------+------------+-------------+
+*/
+
+-- mysql>
+INSERT INTO patients (name, dob, phone, email, address, blood_group)
+VALUES ('Hinata Hyuga','2001-01-05','9000044444','hinata@mail.com','Moon Colony','AB+');
+
+/* o/p
+Query OK, 1 row affected (0.01 sec)
+*/
+
+-- mysql>
+SELECT * FROM patients WHERE patient_id = 2;
+
+/* o/p
++------------+---------------+------------+------------+------------------+------------+-------------+
+| patient_id | name          | dob        | phone      | email            | address    | blood_group|
++------------+---------------+------------+------------+------------------+------------+-------------+
+| 2          | Sakura Haruno | 2000-03-28 | 9000022222 | sakura@mail.com  | Blossom Rd | A+          |
++------------+---------------+------------+------------+------------------+------------+-------------+
+*/
+
+-- mysql>
+UPDATE patients
+SET address = 'Central Avenue', blood_group = 'O+'
+WHERE patient_id = 2;
+
+/* o/p
+Query OK, 1 row affected (0.01 sec)
+*/
+
+-- mysql>
+SELECT * FROM patients WHERE name LIKE '%Sa%';
+
+/* o/p
++------------+---------------+------------+------------+------------------+---------------+-------------+
+| patient_id | name          | dob        | phone      | email            | address       | blood_group|
++------------+---------------+------------+------------+------------------+---------------+-------------+
+| 2          | Sakura Haruno | 2000-03-28 | 9000022222 | sakura@mail.com  | Central Ave  | O+          |
+| 3          | Sasuke Uchiha | 1999-07-23 | 9000033333 | sasuke@mail.com  | Shadow Ln   | B+          |
++------------+---------------+------------+------------+------------------+---------------+-------------+
+*/
+
+-- mysql>
+SELECT * FROM patients WHERE phone = '9000011111';
+
+/* o/p
++------------+---------------+------------+------------+------------------+------------+-------------+
+| patient_id | name          | dob        | phone      | email            | address    | blood_group|
++------------+---------------+------------+------------+------------------+------------+-------------+
+| 1          | Naruto Uzumaki| 1999-10-10 | 9000011111 | naruto@mail.com  | Leaf Street| O+          |
++------------+---------------+------------+------------+------------------+------------+-------------+
+*/
+
+-- mysql>
+SELECT p.patient_id,
+       p.name,
+       a.appointment_date,
+       d.doctor_name,
+       v.diagnosis
+FROM patients p
+JOIN appointments a ON p.patient_id = a.patient_id
+JOIN doctors d ON a.doctor_id = d.doctor_id
+JOIN visits v ON a.appointment_id = v.appointment_id
+WHERE p.patient_id = 1
+ORDER BY v.visit_date;
+
+/* o/p
++------------+---------------+------------------+----------------+---------------+
+| patient_id | name          | appointment_date| doctor_name    | diagnosis     |
++------------+---------------+------------------+----------------+---------------+
+| 1          | Naruto Uzumaki| 2026-02-01       | Kakashi Hatake | Fever and cold|
+| 1          | Naruto Uzumaki| 2026-02-05       | Tsunade Senju  | Chest pain    |
++------------+---------------+------------------+----------------+---------------+
+*/
