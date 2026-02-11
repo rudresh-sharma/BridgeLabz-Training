@@ -1,0 +1,236 @@
+-- ============================================================
+-- Problem: Visit Management & Medical Records
+-- File: visit_management.db
+-- Table: patients, doctors, appointments, visits, prescriptions
+-- Database: practice_db
+-- ============================================================
+
+-- mysql>
+USE practice_db;
+
+/* o/p
+Database changed
+*/
+
+-- mysql>
+SET FOREIGN_KEY_CHECKS = 0;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS prescriptions;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS visits;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS appointments;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS doctors;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS patients;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+SET FOREIGN_KEY_CHECKS = 1;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+CREATE TABLE patients (
+patient_id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(60) NOT NULL
+);
+
+/* o/p
+Query OK, 0 rows affected (0.02 sec)
+*/
+
+-- mysql>
+CREATE TABLE doctors (
+doctor_id INT PRIMARY KEY AUTO_INCREMENT,
+doctor_name VARCHAR(60) NOT NULL
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TABLE appointments (
+appointment_id INT PRIMARY KEY AUTO_INCREMENT,
+patient_id INT NOT NULL,
+doctor_id INT NOT NULL,
+appointment_date DATE NOT NULL,
+status VARCHAR(20) DEFAULT 'SCHEDULED',
+FOREIGN KEY (patient_id) REFERENCES patients(patient_id),
+FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.02 sec)
+*/
+
+-- mysql>
+CREATE TABLE visits (
+visit_id INT PRIMARY KEY AUTO_INCREMENT,
+appointment_id INT NOT NULL,
+diagnosis VARCHAR(150),
+notes VARCHAR(200),
+visit_date DATE NOT NULL,
+FOREIGN KEY (appointment_id) REFERENCES appointments(appointment_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TABLE prescriptions (
+prescription_id INT PRIMARY KEY AUTO_INCREMENT,
+visit_id INT NOT NULL,
+medicine_name VARCHAR(80),
+dosage VARCHAR(50),
+duration_days INT,
+FOREIGN KEY (visit_id) REFERENCES visits(visit_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+DESC visits;
+
+/* o/p
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| visit_id       | int         | NO   | PRI | NULL    | auto_increment |
+| appointment_id | int         | NO   | MUL | NULL    |                |
+| diagnosis      | varchar(150)| YES  |     | NULL    |                |
+| notes          | varchar(200)| YES  |     | NULL    |                |
+| visit_date     | date        | NO   |     | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+
+*/
+
+-- mysql>
+INSERT INTO patients (name) VALUES
+('Ichigo Kurosaki'),
+('Rukia Kuchiki');
+
+/* o/p
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO doctors (doctor_name) VALUES
+('Shinobu Kocho'),
+('Kento Nanami');
+
+/* o/p
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO appointments (patient_id, doctor_id, appointment_date, status) VALUES
+(1,1,'2026-02-18','SCHEDULED'),
+(2,2,'2026-02-19','SCHEDULED');
+
+/* o/p
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+START TRANSACTION;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+INSERT INTO visits (appointment_id, diagnosis, notes, visit_date)
+VALUES (1,'Seasonal flu','Rest and hydration advised','2026-02-18');
+
+/* o/p
+Query OK, 1 row affected (0.00 sec)
+*/
+
+-- mysql>
+UPDATE appointments
+SET status = 'COMPLETED'
+WHERE appointment_id = 1;
+
+/* o/p
+Query OK, 1 row affected (0.00 sec)
+*/
+
+-- mysql>
+COMMIT;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+INSERT INTO prescriptions (visit_id, medicine_name, dosage, duration_days) VALUES
+(1,'Paracetamol','500mg twice daily',5),
+(1,'Vitamin C','Once daily',7);
+
+/* o/p
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+SELECT p.patient_id,
+p.name,
+a.appointment_date,
+v.visit_date,
+v.diagnosis,
+pr.medicine_name,
+pr.dosage,
+pr.duration_days
+FROM patients p
+JOIN appointments a ON p.patient_id = a.patient_id
+JOIN visits v ON a.appointment_id = v.appointment_id
+JOIN prescriptions pr ON v.visit_id = pr.visit_id
+WHERE p.patient_id = 1
+ORDER BY v.visit_date DESC;
+
+/* o/p
++------------+---------------+------------------+------------+--------------+---------------+------------------+--------------+
+| patient_id | name          | appointment_date| visit_date | diagnosis    | medicine_name| dosage           | duration_days|
++------------+---------------+------------------+------------+--------------+---------------+------------------+--------------+
+| 1          | Ichigo Kurosaki| 2026-02-18       | 2026-02-18 | Seasonal flu | Paracetamol  | 500mg twice daily| 5            |
+| 1          | Ichigo Kurosaki| 2026-02-18       | 2026-02-18 | Seasonal flu | Vitamin C    | Once daily       | 7            |
++------------+---------------+------------------+------------+--------------+---------------+------------------+--------------+
+*/
