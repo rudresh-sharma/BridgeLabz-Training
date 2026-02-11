@@ -1,0 +1,297 @@
+-- ============================================================
+-- Problem: Billing & Payments
+-- File: billing_payments.db
+-- Table: patients, doctors, specialties, visits, bill_items, bills, payment_transactions
+-- Database: practice_db
+-- ============================================================
+
+-- mysql>
+USE practice_db;
+
+/* o/p
+Database changed
+*/
+
+-- mysql>
+SET FOREIGN_KEY_CHECKS = 0;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS payment_transactions;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS bills;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS bill_items;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS visits;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS doctors;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS specialties;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS patients;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+SET FOREIGN_KEY_CHECKS = 1;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+CREATE TABLE patients (
+patient_id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(60) NOT NULL
+);
+
+/* o/p
+Query OK, 0 rows affected (0.02 sec)
+*/
+
+-- mysql>
+CREATE TABLE specialties (
+specialty_id INT PRIMARY KEY AUTO_INCREMENT,
+specialty_name VARCHAR(50) NOT NULL
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TABLE doctors (
+doctor_id INT PRIMARY KEY AUTO_INCREMENT,
+doctor_name VARCHAR(60) NOT NULL,
+consultation_fee DECIMAL(8,2),
+specialty_id INT,
+FOREIGN KEY (specialty_id) REFERENCES specialties(specialty_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.02 sec)
+*/
+
+-- mysql>
+CREATE TABLE visits (
+visit_id INT PRIMARY KEY AUTO_INCREMENT,
+patient_id INT NOT NULL,
+doctor_id INT NOT NULL,
+visit_date DATE NOT NULL,
+FOREIGN KEY (patient_id) REFERENCES patients(patient_id),
+FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TABLE bill_items (
+item_id INT PRIMARY KEY AUTO_INCREMENT,
+visit_id INT NOT NULL,
+description VARCHAR(80),
+amount DECIMAL(8,2),
+FOREIGN KEY (visit_id) REFERENCES visits(visit_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TABLE bills (
+bill_id INT PRIMARY KEY AUTO_INCREMENT,
+visit_id INT NOT NULL,
+total_amount DECIMAL(10,2),
+payment_status VARCHAR(15) DEFAULT 'UNPAID',
+payment_date DATE,
+payment_mode VARCHAR(20),
+FOREIGN KEY (visit_id) REFERENCES visits(visit_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+CREATE TABLE payment_transactions (
+transaction_id INT PRIMARY KEY AUTO_INCREMENT,
+bill_id INT NOT NULL,
+amount DECIMAL(10,2),
+transaction_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY (bill_id) REFERENCES bills(bill_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.01 sec)
+*/
+
+-- mysql>
+INSERT INTO patients (name) VALUES
+('Luffy D Monkey'),
+('Nami');
+
+/* o/p
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO specialties (specialty_name) VALUES
+('Cardiology'),
+('Neurology');
+
+/* o/p
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO doctors (doctor_name, consultation_fee, specialty_id) VALUES
+('Law Trafalgar',1500.00,1),
+('Robin Nico',1200.00,2);
+
+/* o/p
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO visits (patient_id, doctor_id, visit_date) VALUES
+(1,1,'2026-02-21'),
+(2,2,'2026-02-21');
+
+/* o/p
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO bill_items (visit_id, description, amount) VALUES
+(1,'Consultation Fee',1500.00),
+(1,'ECG Test',500.00),
+(2,'Consultation Fee',1200.00);
+
+/* o/p
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO bills (visit_id, total_amount)
+SELECT visit_id, SUM(amount)
+FROM bill_items
+GROUP BY visit_id;
+
+/* o/p
+Query OK, 2 rows affected (0.01 sec)
+*/
+
+-- mysql>
+START TRANSACTION;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+UPDATE bills
+SET payment_status = 'PAID',
+payment_date = '2026-02-21',
+payment_mode = 'CASH'
+WHERE bill_id = 1;
+
+/* o/p
+Query OK, 1 row affected (0.00 sec)
+*/
+
+-- mysql>
+INSERT INTO payment_transactions (bill_id, amount)
+VALUES (1,2000.00);
+
+/* o/p
+Query OK, 1 row affected (0.00 sec)
+*/
+
+-- mysql>
+COMMIT;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+SELECT p.name,
+COUNT(b.bill_id) AS total_bills,
+SUM(b.total_amount) AS pending_amount
+FROM bills b
+JOIN visits v ON b.visit_id = v.visit_id
+JOIN patients p ON v.patient_id = p.patient_id
+WHERE b.payment_status = 'UNPAID'
+GROUP BY p.name;
+
+/* o/p
++------+-------------+---------------+
+| name | total_bills | pending_amount|
++------+-------------+---------------+
+| Nami | 1           | 1200.00       |
++------+-------------+---------------+
+*/
+
+-- mysql>
+SELECT d.doctor_name,
+s.specialty_name,
+SUM(b.total_amount) AS revenue
+FROM bills b
+JOIN visits v ON b.visit_id = v.visit_id
+JOIN doctors d ON v.doctor_id = d.doctor_id
+JOIN specialties s ON d.specialty_id = s.specialty_id
+WHERE b.payment_status = 'PAID'
+AND v.visit_date BETWEEN '2026-02-01' AND '2026-02-28'
+GROUP BY d.doctor_name, s.specialty_name
+HAVING revenue > 1000;
+
+/* o/p
++---------------+--------------+---------+
+| doctor_name   | specialty_name| revenue|
++---------------+--------------+---------+
+| Law Trafalgar | Cardiology  | 2000.00 |
++---------------+--------------+---------+
+*/
