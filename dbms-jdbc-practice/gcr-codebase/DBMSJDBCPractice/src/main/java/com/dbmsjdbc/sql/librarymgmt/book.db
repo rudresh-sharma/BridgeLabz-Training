@@ -1,0 +1,216 @@
+-- ============================================================
+-- Problem: Exercise 3 - Advanced Features (Library Management System)
+-- File: book.db
+-- Table: book, student, borrow_record
+-- Database: practice_db
+-- ============================================================
+
+-- mysql>
+USE practice_db;
+
+/* o/p
+Database changed
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS borrow_record;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS student;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+DROP TABLE IF EXISTS book;
+
+/* o/p
+Query OK, 0 rows affected (0.00 sec)
+*/
+
+-- mysql>
+CREATE TABLE book (
+book_id INT PRIMARY KEY AUTO_INCREMENT,
+title VARCHAR(80) NOT NULL,
+author VARCHAR(60),
+genre VARCHAR(40),
+copies_available INT NOT NULL
+);
+
+/* o/p
+Query OK, 0 rows affected (0.02 sec)
+*/
+
+-- mysql>
+CREATE TABLE student (
+student_id INT PRIMARY KEY AUTO_INCREMENT,
+student_name VARCHAR(60) NOT NULL
+);
+
+/* o/p
+Query OK, 0 rows affected (0.02 sec)
+*/
+
+-- mysql>
+CREATE TABLE borrow_record (
+borrow_id INT PRIMARY KEY AUTO_INCREMENT,
+student_id INT,
+book_id INT,
+borrow_date DATE,
+return_date DATE,
+fine_amount DECIMAL(8,2),
+FOREIGN KEY (student_id) REFERENCES student(student_id),
+FOREIGN KEY (book_id) REFERENCES book(book_id)
+);
+
+/* o/p
+Query OK, 0 rows affected (0.02 sec)
+*/
+
+-- mysql>
+DESC book;
+
+/* o/p
++------------------+-------------+------+-----+---------+----------------+
+| Field            | Type        | Null | Key | Default | Extra          |
++------------------+-------------+------+-----+---------+----------------+
+| book_id          | int         | NO   | PRI | NULL    | auto_increment |
+| title            | varchar(80) | NO   |     | NULL    |                |
+| author           | varchar(60) | YES  |     | NULL    |                |
+| genre            | varchar(40) | YES  |     | NULL    |                |
+| copies_available | int         | NO   |     | NULL    |                |
++------------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+*/
+
+-- mysql>
+INSERT INTO book (title, author, genre, copies_available) VALUES
+('Attack on Titans', 'Hajime Isayama', 'Action', 5),
+('One Piece Voyage', 'Eiichiro Oda', 'Adventure', 4),
+('Dragon Warrior Saga', 'Akira Toriyama', 'Fantasy', 6),
+('Hidden Leaf Chronicles', 'Masashi Kishimoto', 'Action', 3);
+
+/* o/p
+Query OK, 4 rows affected (0.02 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+INSERT INTO student (student_name) 
+VALUES
+('Naruto Uzumaki'),
+('Monkey D Luffy'),
+('Goku Son'),
+('Levi Ackerman');
+
+/* o/p
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+*/
+
+-- mysql>
+SELECT * FROM book;
+
+/* o/p
++---------+------------------------+-------------------+-----------+------------------+
+| book_id | title                  | author            | genre     | copies_available |
++---------+------------------------+-------------------+-----------+------------------+
+|       1 | Attack on Titans       | Hajime Isayama    | Action    |                5 |
+|       2 | One Piece Voyage       | Eiichiro Oda      | Adventure |                4 |
+|       3 | Dragon Warrior Saga    | Akira Toriyama    | Fantasy   |                6 |
+|       4 | Hidden Leaf Chronicles | Masashi Kishimoto | Action    |                3 |
++---------+------------------------+-------------------+-----------+------------------+
+4 rows in set (0.00 sec)
+*/
+
+-- ============================================================
+-- STUDENT BORROWS BOOK + UPDATE INVENTORY
+-- ============================================================
+
+-- mysql>
+INSERT INTO borrow_record (student_id, book_id, borrow_date, return_date, fine_amount)
+VALUES (1, 2, '2026-02-01', '2026-02-10', 0);
+
+/* o/p
+Query OK, 1 row affected (0.01 sec)
+*/
+
+-- mysql>
+UPDATE book
+SET copies_available = copies_available - 1
+WHERE book_id = 2;
+
+/* o/p
+Query OK, 1 row affected (0.01 sec)
+*/
+
+-- ============================================================
+-- FINE CALCULATION (Late return > 7 days, Rs.10/day)
+-- ============================================================
+
+-- mysql>
+UPDATE borrow_record
+SET fine_amount = DATEDIFF(return_date, borrow_date) > 7
+    * (DATEDIFF(return_date, borrow_date) - 7) * 10
+WHERE borrow_id = 1;
+
+/* o/p
+Query OK, 1 row affected (0.01 sec)
+*/
+
+-- mysql>
+SELECT * FROM borrow_record;
+
+/* o/p
++-----------+------------+---------+-------------+-------------+-------------+
+| borrow_id | student_id | book_id | borrow_date | return_date | fine_amount |
++-----------+------------+---------+-------------+-------------+-------------+
+|         1 |          1 |       2 | 2026-02-01  | 2026-02-10  |       20.00 |
++-----------+------------+---------+-------------+-------------+-------------+
+1 row in set (0.00 sec)
+*/
+
+-- ============================================================
+-- SEARCH WITH MULTIPLE FILTERS (GENRE + AUTHOR)
+-- ============================================================
+
+-- mysql>
+SELECT *
+FROM book
+WHERE genre = 'Action'
+AND author LIKE '%Isayama%';
+
+/* o/p
++---------+------------------+----------------+--------+------------------+
+| book_id | title            | author         | genre  | copies_available |
++---------+------------------+----------------+--------+------------------+
+|       1 | Attack on Titans | Hajime Isayama | Action |                5 |
++---------+------------------+----------------+--------+------------------+
+1 row in set (0.00 sec)
+*/
+
+-- ============================================================
+-- SEARCH AVAILABLE BOOKS (> 0 COPIES)
+-- ============================================================
+
+-- mysql>
+SELECT title, copies_available
+FROM book
+WHERE copies_available > 0;
+
+/* o/p
++------------------------+------------------+
+| title                  | copies_available |
++------------------------+------------------+
+| Attack on Titans       |                5 |
+| One Piece Voyage       |                3 |
+| Dragon Warrior Saga    |                6 |
+| Hidden Leaf Chronicles |                3 |
++------------------------+------------------+
+4 rows in set (0.00 sec)
+*/
