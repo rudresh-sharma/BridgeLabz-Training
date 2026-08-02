@@ -5,7 +5,7 @@
 
 ### Learn Following DDL & DML Commands & basics SQL Commands
 
-  ###### DDL
+  #### DDL
   
    *Database Commands*
 
@@ -38,7 +38,7 @@
   - `ALTER TABLE tb_name ADD new_col datatype FIRST;`
 
 
-  ###### DML
+  #### DML
 
   *SELECT Commands*
 
@@ -90,4 +90,19 @@
   - `SELECT * FROM Employees WHERE EmployeeName LIKE 'A%';`
   - `SELECT * FROM Employees WHERE EmployeeName LIKE '%li%';`
   - `SELECT * FROM Employees WHERE EmployeeName LIKE '_____';`
+  
+
+
+
+## Holiday Learnings(Sat&Sun)
+
+Learned About following sql concepts and wrote queries
+  - Triggers
+  - Views
+  - Store Procedures
+  - Indexing
+  - Normalization
+  - User Define Functions
+  - Transactions
+
   
