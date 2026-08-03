@@ -116,6 +116,7 @@ Learned About following sql concepts and wrote queries
 
  - Created a MySQL Sole Based HealthCliniApp application where i implemented the features of mysql which i learned.
 
+  [Code Of HealthClinicApp](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/Refresher-Training/day2/HEALTHCLINICAPP.sql)  <br><br>
 
  ##### Structure of Health Clinic App
 
@@ -128,7 +129,6 @@ Learned About following sql concepts and wrote queries
 
 
  ##### Here Patient and Doctor table primary keys are foreign key in Appointment table and Department primary key is of doctor
-
  **Features My HealthClinicApp Supported** :
 
   🟢 Patient Features
