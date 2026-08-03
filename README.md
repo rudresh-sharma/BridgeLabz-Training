@@ -106,3 +106,70 @@ Learned About following sql concepts and wrote queries
   - Transactions
 
   
+
+
+  ## Day 2 (3 Aug 2026)
+
+
+- Learned about the ER Diagrams, how we can make that. what are its components and what each component represents also I revised the joins, group by, having, store procedures, views, and triggers
+ 
+
+ - Created a MySQL Sole Based HealthCliniApp application where i implemented the features of mysql which i learned.
+
+
+ ##### Structure of Health Clinic App
+
+  **Four Tables**
+
+ - Patient
+ - Department
+ - Doctor
+ - Appointment
+
+
+ ##### Here Patient and Doctor table primary keys are foreign key in Appointment table and Department primary key is of doctor
+
+ **Features My HealthClinicApp Supported** :
+
+  🟢 Patient Features
+  -  ✅ Search patient by ID
+  -  ✅ Search patient by phone number
+  -  ✅ Update patient details
+  -  ✅ Delete patient
+  -  ✅ View all patients
+  -  ✅ Find patients by age
+  -  ✅ Find patients born after a given date
+  -  ✅ Find patients who visited a particular doctor
+  -  ✅ Find patients with no appointments
+ 
+ 🟢 Doctor Features
+
+  -  ✅ Search doctor by ID
+  -  ✅ Search doctor by specialty
+  -  ✅ Update doctor's specialty
+  -  ✅ Update doctor's consultation fee
+  -  ✅ Delete doctor
+  -  ✅ View all doctors
+  -  ✅ List doctors by department
+  -  ✅ Count doctors in each department
+
+
+  🟢 Appointment Features
+  -  ✅ Book appointment
+  -  ✅ Cancel appointment
+  -  ✅ Reschedule appointment
+  -  ✅ Complete appointment
+  -  ✅ View today's appointments
+  -  ✅ View tomorrow's appointments
+  -  ✅ View appointments for any date
+  -  ✅ View appointments between two dates
+  -  ✅ View appointment history of a patient
+  -  ✅ View appointment history of a doctor
+  -  ✅ Count appointments by status
+
+ 🟢 Department Features
+  -  ✅ Add department
+  -  ✅ Update department name
+  -  ✅ Delete department
+  -  ✅ View all departments
+  -  ✅ Count doctors in each department
