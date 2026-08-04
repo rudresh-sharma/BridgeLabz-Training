@@ -428,6 +428,32 @@ SELECT * FROM DoctorCountByDepartment;
 
 
 
+-- FEATURE 9  : GET BUSIEST DOCTOR ON GIVEN DATE
+
+DELIMITER //
+
+CREATE PROCEDURE busiestDoctor(IN wantDate DATE)
+BEGIN
+    SELECT
+        d.doctor_id,
+        d.name,
+        d.specialty,
+        COUNT(a.appointment_id) AS NoOfAppointments
+    FROM doctor d
+    JOIN appointment a
+        ON d.doctor_id = a.doctor_id
+    WHERE DATE(a.appointment_date) = wantDate
+    GROUP BY
+        d.doctor_id,
+        d.name,
+        d.specialty
+    ORDER BY NoOfAppointments DESC
+    LIMIT 1;
+END //
+
+DELIMITER ;
+
+CALL busiestDoctor('2026-08-05');
 
 -- ==========================================================
 -- PATIENT CRUD OPERATIONS
