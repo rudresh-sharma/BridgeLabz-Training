@@ -1,0 +1,54 @@
+-- MYSQL LOCKS COMPLETE NOTES
+
+-- WHAT IS A LOCK?
+-- Controls concurrent access to data.
+
+-- SHARED LOCK
+START TRANSACTION;
+SELECT * FROM patient WHERE patient_id=1 FOR SHARE;
+COMMIT;
+
+-- EXCLUSIVE LOCK
+START TRANSACTION;
+SELECT * FROM patient WHERE patient_id=1 FOR UPDATE;
+COMMIT;
+
+-- TABLE READ LOCK
+LOCK TABLES patient READ;
+UNLOCK TABLES;
+
+-- TABLE WRITE LOCK
+LOCK TABLES patient WRITE;
+UNLOCK TABLES;
+
+-- ROW LOCK
+START TRANSACTION;
+SELECT * FROM patient WHERE patient_id=5 FOR UPDATE;
+COMMIT;
+
+-- IMPLICIT LOCK
+UPDATE patient SET phone='9999999999' WHERE patient_id=3;
+
+-- EXPLICIT LOCK
+START TRANSACTION;
+SELECT * FROM patient WHERE patient_id=1 FOR UPDATE;
+COMMIT;
+
+-- TRANSACTIONS
+START TRANSACTION;
+COMMIT;
+ROLLBACK;
+SAVEPOINT sp1;
+ROLLBACK TO sp1;
+
+-- ACID
+-- Atomicity
+-- Consistency
+-- Isolation
+-- Durability
+
+-- INTERVIEW
+-- InnoDB -> Row Locks
+-- MyISAM -> Table Locks
+-- FOR UPDATE = Exclusive Lock
+-- FOR SHARE = Shared Lock

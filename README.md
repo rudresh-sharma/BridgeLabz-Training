@@ -1,175 +1,100 @@
-# REFRESHER TRAINING (Daily Progress)
+# Refresher Training (Daily Progress)
 
+Day-wise log of my BridgeLabz Refresher Training — SQL fundamentals, database design, and JDBC integration.
 
-## Day 1 (31 July 2026)
+**Repo:** [BridgeLabz-Training (Refresher-Training branch)](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training)
 
-### Learn Following DDL & DML Commands & basics SQL Commands
+---
 
-  #### DDL
-  
-   *Database Commands*
+## 📅 Day 1 — 31 July 2026
 
-  - `CREATE DATABASE IF NOT EXISTS db_name;`
-  - `CREATE DATABASE db_name;`
-  - `USE db_name`
-  - `SHOW DATABASES;`
-  - `DROP DATABASE db_name;`
-  - `DROP DATABASE IF EXISTS db_name;`
-  
-  *Table Commands*
+Focus: Core SQL — DDL, DML, and related concepts.
 
-  - `CREATE TABLE tb_name(
-    col_name datatype constraints,
-    col_name datatype constraints,
-    ....
-  );`
-  
-  - `CREATE TABLE Employees_Backup LIKE Employees;`
-  - `SHOW TABLES;`
-  - `DROP TABLE tb_name;`
-  - `ALTER TABLE tb_name RENAME TO new_tb_name;`
-  - `RENAME TABLE tb_name TO new_tb_name;`
-  - `ALTER TABLE tb_name MODIFY COLUMN col_name newdatatype new_constraints;`
-  - `ALTER TABLE tb_name MODIFY col_name newdatatype newconstranis;`
-  - `ALTER TABLE tb_name RENAME COLUMN oldColName TO newcolname;`
-  - `ALTER TABLE tb_name ADD newcolname datatype constraints;`
-  - `ALTER TABLE tb_name DROP PRIMARY KEY;`
-  - `ALTER TABLE tb_name ADD PRIMARY KEY (col_name);`
-  - `ALTER TABLE tb_name ADD new_col datatype FIRST;`
+| Folder | Topic |
+|---|---|
+| `01_DDL` | Data Definition Language — `CREATE`, `ALTER`, `DROP` for databases & tables |
+| `02_DML` | Data Manipulation Language — `SELECT`, `INSERT`, `UPDATE`, `DELETE` |
+| `03_Constraints` | Table/column constraints |
+| `04_Keys` | Primary keys, foreign keys |
+| `05_Aggregate Functions` | `COUNT`, `SUM`, `AVG`, `MIN`, `MAX` |
+| `06_GroupBy_Having` | `GROUP BY` and `HAVING` clauses |
+| `07_JOINS` | SQL joins |
+| `08_Subqueries` | Nested queries |
+| `09_SetOperators` | `UNION`, `INTERSECT`, etc. |
+| `10_StringFunction` | String functions |
+| `11_Date_Function` | Date/time functions |
+| `12_Views` | Creating and using views |
+| `13_storeprocedur` | Stored procedures |
+| `14_UserDefinedFunction` | User-defined functions |
+| `15_Transactions` | Transaction control |
+| `16_Trigger` | Triggers |
+| `17_Indexing` | Indexing for performance |
 
+📂 [`day1/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day1)
 
-  #### DML
+---
 
-  *SELECT Commands*
+## 📅 Day 2 — 3 August 2026
 
-  - `SELECT * FROM Employees;`
-  - `SELECT EmployeeName, Salary FROM Employees;`
-  - `SELECT DISTINCT Department FROM Employees;`
+Focus: ER diagrams and applying SQL concepts to build a real database application.
 
-  - `SELECT * FROM Employees WHERE Department = 'IT';`
-  - `SELECT * FROM Employees WHERE Department = 'HR' AND Salary > 60000;`
-  - `SELECT * FROM Employees WHERE Salary BETWEEN 55000 AND 70000;`
-  - `SELECT * FROM Employees WHERE Department = 'HR' OR Department = 'Finance';`
-  - `SELECT * FROM Employees WHERE Department IN ('HR', 'Finance', 'IT');`
-  - `SELECT * FROM Employees WHERE Department NOT IN ('IT');`
-  - `SELECT * FROM Employees WHERE Department <> 'IT';`
-  - `SELECT * FROM Employees WHERE Department != 'IT';`
+- Learned ER (Entity-Relationship) diagrams — components and what each represents.
+- Revised joins, `GROUP BY`/`HAVING`, stored procedures, views, and triggers.
+- Built **HealthClinicApp** — a MySQL-based console application implementing everything learned so far.
 
- *INSERT Commands*
+### 🏥 HealthClinicApp
 
-  - `INSERT INTO tb_name (columns you want to add values) VALUES (values for these columns),(...),(..);`
-  - `INSERT INTO Employees (EmployeeId, EmployeeName, Salary, JoiningDate, Email, Department) VALUES (101, 'Alice', 65000.50, '2024-01-10', 'alice@gmail.com', 'HR'), (102, 'Bob', 55000.00, '2023-07-15', 'bob@gmail.com', 'IT'), (103, 'Charlie', 72000.75, '2022-09-20', 'charlie@gmail.com', 'Finance'); `
+**Tables:** `Patient`, `Department`, `Doctor`, `Appointment`
+(Patient & Doctor primary keys are foreign keys in Appointment; Doctor references Department.)
 
-  *UPDATE commands*
-  - `SET SQL_SAFE_UPDATES = 0;`
-  - `UPDATE Employees SET Salary = 60000.00 WHERE EmployeeName = 'Bob';`
-  - `UPDATE Employees SET Salary = Salary+5000 WHERE Department = 'IT';`
+**Features implemented:**
 
+- **Patient** — search by ID/phone, update, delete, view all, filter by age or join date, find by doctor visited, find patients with no appointments
+- **Doctor** — search by ID/specialty, update specialty/fee, delete, view all, list by department, count per department
+- **Appointment** — book, cancel, reschedule, complete, view by day (today/tomorrow/date/range), patient/doctor history, count by status
+- **Department** — add, update, delete, view all, count doctors per department
 
-  *DELETE Commands*
+📄 [`day2/HEALTHCLINICAPP.sql`](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/Refresher-Training/day2/HEALTHCLINICAPP.sql)
+📂 [`day2/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day2)
 
-  - `SET SQL_SAFE_UPDATES = 0;`
-  - `DELETE FROM Employees  WHERE EmployeeID = 102;`
-  - `DELETE FROM Employees WHERE Salary < 60000;`
-  - `DELETE FROM Employees WHERE JoiningDate < '2023-01-01';`
+---
 
-  *ORDER BY Commands*
+## 📅 Day 3 — 4 August 2026
 
-  - `SELECT * FROM Employees ORDER BY Salary ASC;`
-  - `SELECT * FROM Employees ORDER BY Salary DESC;`
-  - `SELECT * FROM Employees ORDER BY Department ASC, Salary DESC;`
+Focus: Advanced SQL practice and connecting Java to MySQL via JDBC.
 
-  *LIMIT Commands*
+| Folder | Topic |
+|---|---|
+| [`JointsLearning`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day3/JointsLearning) | Joins practice (`JoinsPracticeDay3.sql`) |
+| [`StoreProcedure`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day3/StoreProcedure) | Stored procedure practice (`StoreProcedureLearnings.sql`) |
+| [`Triggers`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day3/Triggers) | Trigger practice (`triggersprac.sql`) |
+| [`MySQLPracticeWithJDBC`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day3/MySQLPracticeWithJDBC) | Maven Java project connecting to MySQL using JDBC |
 
-  - `SELECT * FROM Employees LIMIT 3;`
-  - `SELECT * FROM Employees ORDER BY Salary DESC LIMIT 2;`
-  - `SELECT * FROM Employees ORDER BY EmployeeID ASC LIMIT 3 OFFSET 3;`
+### ☕ MySQLPracticeWithJDBC
 
-  *LIKE Commands*
+A Maven-based Java project (`pom.xml`) that connects to a MySQL database using JDBC, under package `com.mysqlwithjdbc`, with a matching test package.
 
-  - `SELECT * FROM Employees WHERE EmployeeName LIKE 'A%';`
-  - `SELECT * FROM Employees WHERE EmployeeName LIKE '%li%';`
-  - `SELECT * FROM Employees WHERE EmployeeName LIKE '_____';`
-  
+📂 [`day3/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day3)
 
+---
 
+## 🛠️ Tech Stack
 
-## Holiday Learnings(Sat&Sun)
+- **MySQL** — database design & querying
+- **Java + JDBC** — database connectivity
+- **Maven** — project/dependency management
 
-Learned About following sql concepts and wrote queries
-  - Triggers
-  - Views
-  - Store Procedures
-  - Indexing
-  - Normalization
-  - User Define Functions
-  - Transactions
+## 📌 How to Use
 
-  
-
-
-  ## Day 2 (3 Aug 2026)
-
-
-- Learned about the ER Diagrams, how we can make that. what are its components and what each component represents also I revised the joins, group by, having, store procedures, views, and triggers
- 
-
- - Created a MySQL Sole Based HealthCliniApp application where i implemented the features of mysql which i learned.
-
-  [Code Of HealthClinicApp](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/Refresher-Training/day2/HEALTHCLINICAPP.sql)  <br><br>
-
- ##### Structure of Health Clinic App
-
-  **Four Tables**
-
- - Patient
- - Department
- - Doctor
- - Appointment
-
-
- ##### Here Patient and Doctor table primary keys are foreign key in Appointment table and Department primary key is of doctor
- **Features My HealthClinicApp Supported** :
-
-  🟢 Patient Features
-  -  ✅ Search patient by ID
-  -  ✅ Search patient by phone number
-  -  ✅ Update patient details
-  -  ✅ Delete patient
-  -  ✅ View all patients
-  -  ✅ Find patients by age
-  -  ✅ Find patients born after a given date
-  -  ✅ Find patients who visited a particular doctor
-  -  ✅ Find patients with no appointments
- 
- 🟢 Doctor Features
-
-  -  ✅ Search doctor by ID
-  -  ✅ Search doctor by specialty
-  -  ✅ Update doctor's specialty
-  -  ✅ Update doctor's consultation fee
-  -  ✅ Delete doctor
-  -  ✅ View all doctors
-  -  ✅ List doctors by department
-  -  ✅ Count doctors in each department
-
-
-  🟢 Appointment Features
-  -  ✅ Book appointment
-  -  ✅ Cancel appointment
-  -  ✅ Reschedule appointment
-  -  ✅ Complete appointment
-  -  ✅ View today's appointments
-  -  ✅ View tomorrow's appointments
-  -  ✅ View appointments for any date
-  -  ✅ View appointments between two dates
-  -  ✅ View appointment history of a patient
-  -  ✅ View appointment history of a doctor
-  -  ✅ Count appointments by status
-
- 🟢 Department Features
-  -  ✅ Add department
-  -  ✅ Update department name
-  -  ✅ Delete department
-  -  ✅ View all departments
-  -  ✅ Count doctors in each department
+1. Clone the repo and switch to the `Refresher-Training` branch:
+   ```bash
+   git clone https://github.com/rudresh-sharma/BridgeLabz-Training.git
+   cd BridgeLabz-Training
+   git checkout Refresher-Training
+   ```
+2. Browse `day1/`, `day2/`, `day3/` for SQL scripts and code from that day.
+3. For `MySQLPracticeWithJDBC`, update your DB credentials and run with Maven:
+   ```bash
+   cd day3/MySQLPracticeWithJDBC
+   mvn clean install
+   ```
