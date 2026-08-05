@@ -78,6 +78,43 @@ A Maven-based Java project (`pom.xml`) that connects to a MySQL database using J
 
 ---
 
+## 📅 Day 4 — 5 August 2026
+
+Focus: Expanding the HealthClinicApp into a full-scale JDBC + MySQL console application covering every major SQL concept end-to-end.
+
+### 🏥 HealthClinicAppMySQLAndJDBC
+
+A Maven-based Java 17 console application (`com.healthclinicapp`) that connects to MySQL via JDBC. On startup it verifies the DB connection, then runs an idempotent `DatabaseInitializer` (creates the database, tables, indexes, views, functions, triggers, events, and seed data) before launching a menu-driven UI.
+
+**Expanded domain model (DAO + model classes):**
+`Patient`, `Doctor`, `Department`, `Appointment`, `Visit`, `Admission`, `Room`, `Billing`, `Payment`, `Insurance`, `Prescription` / `PrescriptionItem`, `Medicine`, `Inventory`, `Supplier`, `LabTest` / `LabReport`, `Disease`, `MedicalHistory`, `EmergencyContact`, `Staff`, `Feedback`, `ActivityLog` / `AuditLog`
+
+**Main Menu:**
+
+| # | Module |
+|---|---|
+| 1 | Patient Management |
+| 2 | Doctor Management |
+| 3 | Department Management |
+| 4 | Appointment Management |
+| 5 | Visit Management |
+| 6 | Billing & Payments |
+| 7 | Medicine & Inventory |
+| 8 | Lab Tests & Reports |
+| 9 | Room & Admission Management |
+| 10 | Reports & Analytics |
+| 11 | SQL Practice Menu |
+| 12 | Database Management |
+
+**Architecture:** layered into `dao/` (data access), `menu/` (console UI per module), `model/` (POJOs), `database/` (connection + schema initializer), and `util/` (input, date, color, print, validation helpers), with a matching `src/test` package.
+
+**Docs:** includes an ER diagram (`HealthClinicAPPER.png`) and a full database design write-up (`HealthClinicApp_Database_Design_Document.docx`).
+
+📄 [`day4/HealthClinicAppMySQLAndJDBC/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day4/HealthClinicAppMySQLAndJDBC)
+📂 [`day4/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day4)
+
+---
+
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
@@ -92,9 +129,15 @@ A Maven-based Java project (`pom.xml`) that connects to a MySQL database using J
    cd BridgeLabz-Training
    git checkout Refresher-Training
    ```
-2. Browse `day1/`, `day2/`, `day3/` for SQL scripts and code from that day.
-3. For `MySQLPracticeWithJDBC`, update your DB credentials and run with Maven:
+2. Browse `day1/`, `day2/`, `day3/`, `day4/` for SQL scripts and code from that day.
+3. For `MySQLPracticeWithJDBC` (Day 3), update your DB credentials and run with Maven:
    ```bash
    cd day3/MySQLPracticeWithJDBC
    mvn clean install
+   ```
+4. For `HealthClinicAppMySQLAndJDBC` (Day 4), update your DB credentials in `DatabaseConnection.java` and run with Maven:
+   ```bash
+   cd day4/HealthClinicAppMySQLAndJDBC
+   mvn clean install
+   mvn exec:java -Dexec.mainClass="com.healthclinicapp.App"
    ```
