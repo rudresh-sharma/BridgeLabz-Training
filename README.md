@@ -22,7 +22,7 @@
 - [Week-wise Progress](#-week-wise-progress)
 - [Technical Competencies](#technical-competencies)
 - [Repository Navigation](#️-repository-navigation)
-- [Refresher Training Progress](#-Refresher-Training)
+- [Refresher Training](#refresher-training)
 
 
 ---
