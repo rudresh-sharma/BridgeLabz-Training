@@ -50,8 +50,8 @@ public class MainMenu {
     private void printHeader() {
         System.out.println(ColorUtil.BOLD_CYAN);
         System.out.println("  ╔══════════════════════════════════════════════════════════╗");
-        System.out.println("  ║       🏥  HEALTH CLINIC MANAGEMENT SYSTEM               ║");
-        System.out.println("  ║              Java + JDBC + MySQL Practice               ║");
+        System.out.println("  ║       🏥  HEALTH CLINIC MANAGEMENT SYSTEM                ║");
+        System.out.println("  ║              Java + JDBC + MySQL Practice                ║");
         System.out.println("  ╚══════════════════════════════════════════════════════════╝");
         System.out.println(ColorUtil.RESET);
         System.out.println(ColorUtil.BOLD_WHITE + "  ┌─────────────────────────────────────────────────────────┐");

@@ -1,6 +1,7 @@
 package com.healthclinicapp;
 
 import com.healthclinicapp.database.DatabaseConnection;
+
 import com.healthclinicapp.database.DatabaseInitializer;
 import com.healthclinicapp.menu.MainMenu;
 import com.healthclinicapp.util.ColorUtil;
