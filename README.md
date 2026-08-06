@@ -22,7 +22,7 @@
 - [Week-wise Progress](#-week-wise-progress)
 - [Technical Competencies](#technical-competencies)
 - [Repository Navigation](#️-repository-navigation)
-- [Refresher Training Progress](#-Refresher-Training-(Daily Progress))
+- [Refresher Training Progress](#-Refresher-Training)
 
 
 ---
@@ -727,7 +727,7 @@ Training Repository/
 
 
 
-# Refresher Training (Daily Progress)
+# Refresher Training
 
 Day-wise log of my BridgeLabz Refresher Training — SQL fundamentals, database design, and JDBC integration.
 
