@@ -115,6 +115,43 @@ A Maven-based Java 17 console application (`com.healthclinicapp`) that connects 
 
 ---
 
+
+## 📅 Day 5 — 6 August 2026
+
+Focus: Dependency Injection patterns in Java (annotation-based, XML-based, and manual/plain Java) and building a first Servlet + JSP web application with MySQL.
+
+| Folder | Topic |
+|---|---|
+| [`DependencyInjectionDemonstration/StudentManagementAnnotation`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day5/DependencyInjectionDemonstration/StudentManagementAnnotation) | DI using annotation-based configuration (`AppConfig`) |
+| [`DependencyInjectionDemonstration/StudentManagementJava`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day5/DependencyInjectionDemonstration/StudentManagementJava) | DI using plain Java-based configuration |
+| [`DependencyInjectionDemonstration/StudentManagementXML`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day5/DependencyInjectionDemonstration/StudentManagementXML) | DI using XML-based configuration (`beans.xml`) |
+| [`FirstServletProject`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day5/FirstServletProject) | Servlet + JSP web app with MySQL (login/signup/dashboard) |
+
+### 💉 DependencyInjectionDemonstration
+
+Three parallel Maven projects implementing the same **Student Management** domain (`Student`, `StudentDAO` / `StudentDAOImpl`, `StudentService`), each wiring dependencies a different way to compare DI styles side by side:
+
+- **StudentManagementAnnotation** — dependencies wired via `AppConfig` using annotations, with separate `StudentServiceConstructor` / `StudentServiceField` implementations to demonstrate constructor vs. field injection.
+- **StudentManagementJava** — same domain, configured via a plain Java-based config class (no annotations, no XML).
+- **StudentManagementXML** — same domain, wired declaratively via `beans.xml`.
+
+Common structure across all three: `config/`, `dao/`, `model/`, `service/`, `util/` (with `DBConnection`), plus a matching `src/test` package.
+
+### 🌐 FirstServletProject
+
+A Maven-based Java web app using Servlets and JSP, backed by MySQL.
+
+**Structure:**
+- `controller/` — `LoginServlet`, `LogoutServlet`, `SignupServlet`
+- `dao/` — `UserDAO`
+- `model/` — `User`
+- `util/` — `DBConnection`
+- `webapp/` — `index.jsp`, `login.jsp`, `signup.jsp`, `dashboard.jsp`, and `WEB-INF/web.xml`
+
+Uses `mysql-connector-j` for database connectivity and builds to a deployable `.war`.
+
+📂 [`day5/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day5)
+
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
