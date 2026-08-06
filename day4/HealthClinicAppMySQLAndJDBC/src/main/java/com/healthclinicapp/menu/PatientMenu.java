@@ -15,7 +15,7 @@ public class PatientMenu {
     public void show() {
         while (true) {
             PrintUtil.subHeader("PATIENT MANAGEMENT");
-            System.out.println(ColorUtil.CYAN +
+            System.out.println(ColorUtil.BOLD_WHITE +
                 "  1. Register New Patient\n" +
                 "  2. View All Patients (Paginated)\n" +
                 "  3. Search Patient (Name / Phone / Email)\n" +

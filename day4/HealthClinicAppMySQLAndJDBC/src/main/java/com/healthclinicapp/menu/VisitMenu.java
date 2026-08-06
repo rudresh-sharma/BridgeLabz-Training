@@ -19,7 +19,7 @@ public class VisitMenu {
     public void show() {
         while (true) {
             PrintUtil.subHeader("VISIT MANAGEMENT");
-            System.out.println(ColorUtil.CYAN +
+            System.out.println(ColorUtil.BOLD_WHITE +
                 "  1. Record New Visit\n" +
                 "  2. View Visit Details\n" +
                 "  3. Patient Visit History\n" +

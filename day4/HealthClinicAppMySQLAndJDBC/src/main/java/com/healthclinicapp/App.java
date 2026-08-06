@@ -19,7 +19,7 @@ import java.sql.SQLException;
  *  3. Launch MainMenu
  */
 public class App {
-
+	
     public static void main(String[] args) {
 
         // 1. Verify connection

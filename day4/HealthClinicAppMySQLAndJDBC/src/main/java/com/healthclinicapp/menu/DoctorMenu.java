@@ -17,7 +17,7 @@ public class DoctorMenu {
     public void show() {
         while (true) {
             PrintUtil.subHeader("DOCTOR MANAGEMENT");
-            System.out.println(ColorUtil.CYAN +
+            System.out.println(ColorUtil.BOLD_WHITE +
                 "  1. Register New Doctor\n" +
                 "  2. View All Doctors\n" +
                 "  3. Search Doctor\n" +
