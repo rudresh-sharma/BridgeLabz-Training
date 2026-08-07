@@ -3,6 +3,7 @@ package com.springmvc.service;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
+import java.time.ZoneId;
 
 /**
  * GreetingService — Business logic for calculating time-based greetings.
@@ -66,7 +67,7 @@ public class GreetingService {
      *                 "Good Evening", "Good Night"
      */
     public String getGreeting() {
-        LocalTime now = LocalTime.now();
+        LocalTime now = LocalTime.now(ZoneId.of("Asia/Kolkata"));
 
         if (!now.isBefore(MORNING_START) && now.isBefore(AFTERNOON_START)) {
             return "Good Morning";
@@ -94,7 +95,7 @@ public class GreetingService {
      * @return a Unicode emoji string for the current time of day
      */
     public String getEmoji() {
-        LocalTime now = LocalTime.now();
+        LocalTime now = LocalTime.now(ZoneId.of("Asia/Kolkata"));
 
         if (!now.isBefore(MORNING_START) && now.isBefore(AFTERNOON_START)) {
             return "☀️";      // Morning sun
@@ -115,7 +116,7 @@ public class GreetingService {
      * @return a CSS class name string
      */
     public String getTimeOfDay() {
-        LocalTime now = LocalTime.now();
+        LocalTime now = LocalTime.now(ZoneId.of("Asia/Kolkata"));
 
         if (!now.isBefore(MORNING_START) && now.isBefore(AFTERNOON_START)) {
             return "morning";
