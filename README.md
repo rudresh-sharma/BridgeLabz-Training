@@ -152,6 +152,45 @@ Uses `mysql-connector-j` for database connectivity and builds to a deployable `.
 
 📂 [`day5/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day5)
 
+
+
+## 📅 Day 6 — 7 August 2026
+
+Focus: Building a production-style Spring MVC 6 web app from scratch (dual view technology, plain JDBC, MySQL) and containerizing + deploying it live with Docker and Render.
+
+### 🌱 GreetingApp
+
+A Maven-based **Spring MVC 6 + Java 21** web application deployed to **Apache Tomcat 11**, demonstrating annotation-based Spring configuration, dual view rendering (JSP *and* Thymeleaf), plain JDBC against MySQL, and a full Docker-based deployment pipeline.
+
+**Structure (`com.springmvc`):**
+- `config/` — Spring Java-based configuration (`WebConfig`, `AppInitializer`, `ThymeleafConfig`)
+- `controller/` — request handlers for the greeting flow
+- `dao/` — plain JDBC data access layer
+- `model/` — POJOs
+- `service/` — business logic layer
+- `util/` — `DBConnection` and helpers
+- `webapp/WEB-INF/` — JSP views + static resources
+- `resources/` — `db.properties`, `logback.xml`
+
+**Key features:**
+- Dual view resolution — JSP (`InternalResourceViewResolver`) and Thymeleaf (`ThymeleafViewResolver`) side by side in the same app
+- Annotation-driven config — no `web.xml`, wired via `AbstractAnnotationConfigDispatcherServletInitializer`
+- Plain JDBC + MySQL 8 (`mysql-connector-j`) for persistence, with SLF4J + Logback logging
+- Packaged as a WAR (`GreetingApp.war`) via `maven-war-plugin`
+
+**🐳 Containerized & deployed:**
+- Multi-stage `Dockerfile` — Stage 1 builds the WAR with Maven (`maven:3.9.6-eclipse-temurin-21-alpine`), Stage 2 runs it on `tomcat:11.0-jdk21-temurin-jammy`, keeping the final image lean (no build tools baked in)
+- `docker-compose.yml` — spins up the app alongside a MySQL 8 container with a healthcheck-gated startup and schema auto-init
+- Deployed live on **Render** (Docker runtime) connected to a **TiDB Cloud** MySQL-compatible database
+- Full deployment walkthrough documented in [`DEPLOYMENT.md`](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/Refresher-Training/day6/Greetinapp/DEPLOYMENT.md) — local setup, Docker, Render, and TiDB Cloud connection steps
+
+**🔗 Live:** [greetingapp-63a4.onrender.com](https://greetingapp-63a4.onrender.com)
+
+📄 [`day6/Greetinapp/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day6/Greetinapp)
+📂 [`day6/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day6)
+
+---
+
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
