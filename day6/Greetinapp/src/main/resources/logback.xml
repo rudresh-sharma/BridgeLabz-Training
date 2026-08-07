@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    logback.xml — Logback logging configuration
+    Placed in src/main/resources/ so it's on the classpath.
+
+    WHY LOGBACK?
+    - SLF4J (Simple Logging Facade for Java) is the logging API we use.
+    - Logback is the most popular SLF4J implementation — fast, powerful.
+    - We use SLF4J logger in every class: LoggerFactory.getLogger(...)
+    - Logback reads this file at startup to know where to write logs.
+-->
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <!-- Console appender: prints logs to stdout (Tomcat logs / IDE console) -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- Rolling file appender: writes logs to a file, rotates daily -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/greetingapp.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/greetingapp.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory> <!-- Keep 7 days of logs -->
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- Application loggers (DEBUG for our own code) -->
+    <logger name="com.springmvc" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <!-- Spring Framework (INFO — not too noisy) -->
+    <logger name="org.springframework" level="INFO"/>
+
+    <!-- Thymeleaf (WARN — only errors) -->
+    <logger name="org.thymeleaf" level="WARN"/>
+
+    <!-- MySQL JDBC (INFO) -->
+    <logger name="com.mysql" level="INFO"/>
+
+    <!-- Root logger: default level for everything else -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>

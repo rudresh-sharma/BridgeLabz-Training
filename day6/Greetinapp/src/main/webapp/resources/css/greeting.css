@@ -1,0 +1,606 @@
+/* =============================================================
+   greeting.css — Styles for the Thymeleaf Greeting Page
+   GreetingApp | Spring MVC 6 | Java 21
+   =============================================================
+   Design: Time-of-day adaptive gradient themes
+   Each theme (morning/afternoon/evening/night) has its own
+   colour palette that changes the entire page atmosphere.
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   1. DESIGN TOKENS
+   --------------------------------------------------------------- */
+:root {
+    /* Glass */
+    --glass-bg:        rgba(255, 255, 255, 0.10);
+    --glass-border:    rgba(255, 255, 255, 0.20);
+    --glass-blur:      20px;
+    --glass-shadow:    0 8px 32px rgba(0, 0, 0, 0.25);
+
+    /* Card */
+    --card-bg:         rgba(255, 255, 255, 0.13);
+    --card-border:     rgba(255, 255, 255, 0.25);
+    --card-shadow:     0 25px 70px rgba(0, 0, 0, 0.35);
+    --card-radius:     28px;
+
+    /* Text */
+    --text-white:      rgba(255, 255, 255, 0.95);
+    --text-dimmed:     rgba(255, 255, 255, 0.65);
+    --text-muted:      rgba(255, 255, 255, 0.45);
+
+    /* Spacing */
+    --s-sm:   0.5rem;
+    --s-md:   1rem;
+    --s-lg:   1.5rem;
+    --s-xl:   2rem;
+    --s-2xl:  3rem;
+
+    /* Transitions */
+    --ease:   cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------------------------------------------------------------
+   2. RESET
+   --------------------------------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    background-size: 400% 400%;
+    animation: gradientPulse 14s ease infinite;
+    color: var(--text-white);
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------------------------------------------------------------
+   3. TIME-OF-DAY GRADIENT THEMES
+   body class is set dynamically by Thymeleaf: th:class="${timeOfDay}-theme"
+   --------------------------------------------------------------- */
+
+/* ☀️ MORNING — warm golden sunrise */
+.morning-theme {
+    background: linear-gradient(
+        135deg,
+        hsl(28, 90%, 25%) 0%,
+        hsl(38, 95%, 35%) 25%,
+        hsl(48, 90%, 45%) 50%,
+        hsl(28, 80%, 30%) 75%,
+        hsl(20, 70%, 20%) 100%
+    );
+}
+
+/* 🌤️ AFTERNOON — bright sky blue */
+.afternoon-theme {
+    background: linear-gradient(
+        135deg,
+        hsl(195, 75%, 20%) 0%,
+        hsl(210, 80%, 30%) 25%,
+        hsl(195, 70%, 40%) 50%,
+        hsl(200, 75%, 25%) 75%,
+        hsl(190, 60%, 18%) 100%
+    );
+}
+
+/* 🌆 EVENING — warm orange-purple dusk */
+.evening-theme {
+    background: linear-gradient(
+        135deg,
+        hsl(20, 80%, 20%)  0%,
+        hsl(280, 70%, 25%) 25%,
+        hsl(315, 75%, 30%) 50%,
+        hsl(30, 80%, 25%)  75%,
+        hsl(280, 60%, 18%) 100%
+    );
+}
+
+/* 🌙 NIGHT — deep indigo navy */
+.night-theme {
+    background: linear-gradient(
+        135deg,
+        hsl(240, 60%, 10%) 0%,
+        hsl(260, 70%, 15%) 25%,
+        hsl(230, 65%, 18%) 50%,
+        hsl(250, 60%, 12%) 75%,
+        hsl(240, 50%, 8%)  100%
+    );
+}
+
+@keyframes gradientPulse {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---------------------------------------------------------------
+   4. FLOATING PARTICLES (decorative background)
+   --------------------------------------------------------------- */
+.particles-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatUp 15s linear infinite;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Position and size each particle uniquely */
+.particle:nth-child(1) { width: 300px; height: 300px; left: 10%;  animation-delay: 0s;   animation-duration: 18s; }
+.particle:nth-child(2) { width: 200px; height: 200px; left: 30%;  animation-delay: 3s;   animation-duration: 22s; }
+.particle:nth-child(3) { width: 250px; height: 250px; left: 55%;  animation-delay: 6s;   animation-duration: 16s; }
+.particle:nth-child(4) { width: 180px; height: 180px; left: 70%;  animation-delay: 9s;   animation-duration: 20s; }
+.particle:nth-child(5) { width: 350px; height: 350px; left: 85%;  animation-delay: 2s;   animation-duration: 25s; }
+.particle:nth-child(6) { width: 150px; height: 150px; left: 45%;  animation-delay: 12s;  animation-duration: 19s; }
+
+@keyframes floatUp {
+    0%   { transform: translateY(110vh) scale(0.5); opacity: 0; }
+    10%  { opacity: 0.25; }
+    90%  { opacity: 0.10; }
+    100% { transform: translateY(-20vh) scale(1.1); opacity: 0; }
+}
+
+/* ---------------------------------------------------------------
+   5. PAGE WRAPPER
+   --------------------------------------------------------------- */
+.page-wrapper {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------------------------------------------------------------
+   6. TOP NAVIGATION BAR
+   --------------------------------------------------------------- */
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--s-md) var(--s-xl);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.glass-nav {
+    background: rgba(0, 0, 0, 0.20);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--s-sm);
+}
+
+.nav-emoji {
+    font-size: 1.5rem;
+    animation: wave 2.5s ease-in-out infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25%       { transform: rotate(15deg); }
+    75%       { transform: rotate(-10deg); }
+}
+
+.nav-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: var(--s-md);
+}
+
+/* Round avatar with user initial */
+.user-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
+    border: 2px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.nav-username {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-dimmed);
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--s-sm);
+    padding: 0.45rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-white);
+    cursor: pointer;
+    transition: background 200ms, transform 200ms, box-shadow 200ms;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logout-icon {
+    font-size: 1rem;
+}
+
+/* ---------------------------------------------------------------
+   7. HERO SECTION
+   --------------------------------------------------------------- */
+.hero-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--s-2xl) var(--s-lg);
+    gap: var(--s-xl);
+}
+
+/* ---------------------------------------------------------------
+   8. FLOATING TIME ICON
+   --------------------------------------------------------------- */
+.time-icon {
+    text-align: center;
+}
+
+.emoji-display {
+    font-size: 5rem;
+    display: block;
+    filter: drop-shadow(0 0 30px rgba(255,255,255,0.3));
+}
+
+.animate-float {
+    animation: gentleFloat 4s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-18px); }
+}
+
+/* ---------------------------------------------------------------
+   9. MAIN GREETING CARD
+   --------------------------------------------------------------- */
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.greeting-card {
+    width: 100%;
+    max-width: 680px;
+    padding: var(--s-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-xl);
+}
+
+/* Animated entry */
+.animate-slide-up {
+    animation: slideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------------------------------------------------------------
+   10. GREETING HEADER
+   --------------------------------------------------------------- */
+.greeting-header {
+    text-align: center;
+}
+
+.greeting-text {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.75) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--s-sm);
+}
+
+.greeting-sub {
+    font-size: 1rem;
+    color: var(--text-dimmed);
+    line-height: 1.6;
+}
+
+/* ---------------------------------------------------------------
+   11. CARD DIVIDER
+   --------------------------------------------------------------- */
+.card-divider {
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--glass-border) 20%,
+        var(--glass-border) 80%,
+        transparent 100%);
+}
+
+/* ---------------------------------------------------------------
+   12. USER INFO SECTION
+   --------------------------------------------------------------- */
+.user-info-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-md);
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: var(--s-sm);
+    padding: var(--s-md);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    transition: background 200ms, transform 200ms;
+}
+
+.info-card:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-2px);
+}
+
+.info-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.info-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+}
+
+.info-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ---------------------------------------------------------------
+   13. TECH SECTION
+   --------------------------------------------------------------- */
+.tech-section {
+    text-align: center;
+}
+
+.tech-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: var(--s-sm);
+}
+
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--s-sm);
+}
+
+.badge {
+    padding: 0.3rem 0.9rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-dimmed);
+    transition: background 200ms, color 200ms, transform 150ms;
+}
+
+.badge:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-white);
+    transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------------
+   14. CARD ACTION BUTTONS
+   --------------------------------------------------------------- */
+.card-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--s-md);
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-sm);
+    padding: 0.75rem 1.75rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 200ms var(--ease), box-shadow 200ms, background 200ms;
+    border: none;
+    font-family: inherit;
+}
+
+.action-btn-logout {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+.action-btn-logout:hover {
+    background: rgba(239, 68, 68, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.25);
+}
+
+/* ---------------------------------------------------------------
+   15. STATS ROW
+   --------------------------------------------------------------- */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-md);
+    width: 100%;
+    max-width: 680px;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s var(--ease) 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.glass-stat {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    padding: var(--s-lg) var(--s-md);
+    display: flex;
+    align-items: center;
+    gap: var(--s-sm);
+    transition: background 200ms, transform 200ms;
+}
+
+.glass-stat:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.stat-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.stat-number {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-white);
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stat-text {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------
+   16. PAGE FOOTER
+   --------------------------------------------------------------- */
+.page-footer {
+    text-align: center;
+    padding: var(--s-lg);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--glass-border);
+}
+
+/* ---------------------------------------------------------------
+   17. RESPONSIVE
+   --------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .user-info-section {
+        grid-template-columns: 1fr;
+    }
+    .stats-row {
+        grid-template-columns: 1fr;
+    }
+    .nav-username { display: none; }
+    .greeting-card { padding: var(--s-xl); }
+    .emoji-display { font-size: 3.5rem; }
+}
+
+@media (max-width: 480px) {
+    .top-nav { padding: var(--s-md); }
+    .hero-section { padding: var(--s-xl) var(--s-md); gap: var(--s-lg); }
+    .greeting-card { padding: var(--s-lg); }
+    .tech-badges { gap: 0.35rem; }
+}
+
+/* ---------------------------------------------------------------
+   18. ACCESSIBILITY
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

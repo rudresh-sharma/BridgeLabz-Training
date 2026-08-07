@@ -1,0 +1,670 @@
+/* =============================================================
+   style.css — Shared styles for Login and Signup JSP pages
+   GreetingApp | Spring MVC 6 | Java 21
+   =============================================================
+   Design system: Glassmorphism + animated gradient background
+   Font: Inter (Google Fonts)
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+   These variables are the single source of truth for colours,
+   spacing, and timing. Changing one variable updates everything.
+   --------------------------------------------------------------- */
+:root {
+    /* Brand colours */
+    --primary-hue: 250;
+    --primary:       hsl(var(--primary-hue), 84%, 60%);
+    --primary-dark:  hsl(var(--primary-hue), 84%, 45%);
+    --primary-light: hsl(var(--primary-hue), 84%, 75%);
+
+    /* Surface colours */
+    --surface-glass:  rgba(255, 255, 255, 0.12);
+    --surface-card:   rgba(255, 255, 255, 0.18);
+    --surface-input:  rgba(255, 255, 255, 0.10);
+    --border-glass:   rgba(255, 255, 255, 0.25);
+
+    /* Text colours */
+    --text-primary:   rgba(255, 255, 255, 0.95);
+    --text-secondary: rgba(255, 255, 255, 0.70);
+    --text-muted:     rgba(255, 255, 255, 0.50);
+
+    /* Semantic colours */
+    --success: hsl(142, 71%, 45%);
+    --success-bg: rgba(34, 197, 94, 0.15);
+    --error:   hsl(0, 84%, 60%);
+    --error-bg: rgba(239, 68, 68, 0.15);
+
+    /* Spacing */
+    --space-xs:  0.25rem;
+    --space-sm:  0.5rem;
+    --space-md:  1rem;
+    --space-lg:  1.5rem;
+    --space-xl:  2rem;
+    --space-2xl: 3rem;
+
+    /* Border radius */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 600ms;
+
+    /* Shadows */
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-card:  0 20px 60px rgba(0, 0, 0, 0.4);
+    --shadow-btn:   0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* ---------------------------------------------------------------
+   2. RESET & BASE
+   --------------------------------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    min-height: 100%;
+}
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------------------
+   3. AUTH BODY — animated gradient background
+   --------------------------------------------------------------- */
+   .auth-body {
+       min-height: 100vh;
+       width: 100%;
+
+       background: linear-gradient(
+           135deg,
+           hsl(250, 84%, 18%) 0%,
+           hsl(280, 84%, 22%) 25%,
+           hsl(220, 84%, 25%) 50%,
+           hsl(250, 84%, 18%) 75%,
+           hsl(280, 60%, 15%) 100%
+       );
+
+       background-size: 400% 400%;
+       animation: gradientShift 12s ease infinite;
+
+       display: flex;
+       justify-content: center;
+       align-items: flex-start;
+
+       padding: 40px 20px;
+
+       overflow-y: auto;
+   }
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---------------------------------------------------------------
+   4. ANIMATED BACKGROUND BLOBS
+   These create a subtle depth effect behind the card.
+   --------------------------------------------------------------- */
+.bg-animation {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+    animation: blobFloat 15s ease-in-out infinite;
+}
+
+.blob-1 {
+    width: 500px;
+    height: 500px;
+    background: hsl(280, 90%, 55%);
+    top: -150px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 400px;
+    height: 400px;
+    background: hsl(220, 90%, 60%);
+    bottom: -100px;
+    right: -80px;
+    animation-delay: -5s;
+    animation-duration: 18s;
+}
+
+.blob-3 {
+    width: 300px;
+    height: 300px;
+    background: hsl(320, 80%, 60%);
+    top: 50%;
+    left: 60%;
+    animation-delay: -10s;
+    animation-duration: 20s;
+}
+
+@keyframes blobFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%       { transform: translate(30px, -30px) scale(1.05); }
+    66%       { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+/* ---------------------------------------------------------------
+   5. AUTH CONTAINER
+   --------------------------------------------------------------- */
+   .auth-container {
+       position: relative;
+       z-index: 1;
+
+       width: 100%;
+       max-width: 440px;
+
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+
+       gap: var(--space-lg);
+
+       margin: auto 0;
+   }
+/* ---------------------------------------------------------------
+   6. BRAND
+   --------------------------------------------------------------- */
+.brand {
+    text-align: center;
+    animation: fadeInDown var(--duration-slow) var(--ease-out) both;
+}
+
+.brand-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-sm);
+    display: block;
+    animation: wave 2s ease-in-out infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25%       { transform: rotate(15deg); }
+    75%       { transform: rotate(-10deg); }
+}
+
+.brand-name {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.brand-tagline {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: var(--space-xs);
+}
+
+/* ---------------------------------------------------------------
+   7. GLASSMORPHISM CARD
+   --------------------------------------------------------------- */
+.glass {
+    background: var(--surface-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.auth-card {
+    width: 100%;
+    padding: var(--space-xl);
+    animation: slideUp var(--duration-slow) var(--ease-out) both;
+    animation-delay: 100ms;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------------------------
+   8. CARD HEADER
+   --------------------------------------------------------------- */
+.auth-card-header {
+    margin-bottom: var(--space-xl);
+}
+
+.auth-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.auth-subtitle {
+    color: var(--text-secondary);
+    margin-top: var(--space-xs);
+    font-size: 0.9375rem;
+}
+
+/* ---------------------------------------------------------------
+   9. ALERT MESSAGES (Flash Messages)
+   --------------------------------------------------------------- */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-lg);
+    font-size: 0.9rem;
+    font-weight: 500;
+    animation: slideIn var(--duration-normal) var(--ease-out);
+    border: 1px solid transparent;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.alert-error {
+    background: var(--error-bg);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+.alert-success {
+    background: var(--success-bg);
+    border-color: rgba(34, 197, 94, 0.3);
+    color: #86efac;
+}
+
+.alert-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.alert-text {
+    flex: 1;
+}
+
+.alert-close {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 0;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity var(--duration-fast);
+    flex-shrink: 0;
+}
+
+.alert-close:hover {
+    opacity: 1;
+}
+
+/* ---------------------------------------------------------------
+   10. FORM STYLES
+   --------------------------------------------------------------- */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Input wrapper: icon + input + optional toggle button */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: var(--space-md);
+    font-size: 1rem;
+    color: var(--text-muted);
+    pointer-events: none;
+    z-index: 1;
+    line-height: 1;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.875rem var(--space-md) 0.875rem 2.75rem;
+    background: var(--surface-input);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    transition:
+        border-color var(--duration-normal) var(--ease-out),
+        background var(--duration-normal) var(--ease-out),
+        box-shadow var(--duration-normal) var(--ease-out);
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: var(--text-muted);
+}
+
+.form-input:focus {
+    border-color: var(--primary-light);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.form-input.input-error {
+    border-color: var(--error);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+/* Toggle password button */
+.toggle-password {
+    position: absolute;
+    right: var(--space-md);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1;
+    transition: color var(--duration-fast);
+}
+
+.toggle-password:hover {
+    color: var(--text-primary);
+}
+
+/* Field-level error message */
+.field-error {
+    font-size: 0.8rem;
+    color: #fca5a5;
+    min-height: 1rem;
+    display: block;
+}
+
+/* ---------------------------------------------------------------
+   11. PASSWORD STRENGTH INDICATOR
+   --------------------------------------------------------------- */
+.password-strength {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-xs);
+}
+
+.strength-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.strength-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width var(--duration-normal) var(--ease-out),
+                background var(--duration-normal) var(--ease-out);
+    width: 0%;
+}
+
+.strength-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------
+   12. CHECKBOX
+   --------------------------------------------------------------- */
+.form-check {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-sm);
+}
+
+.form-checkbox {
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: var(--primary);
+    margin-top: 2px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.check-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.terms-link {
+    color: var(--primary-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.forgot-link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--primary-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color var(--duration-fast);
+}
+
+.forgot-link:hover {
+    color: #fff;
+}
+
+/* ---------------------------------------------------------------
+   13. BUTTONS
+   --------------------------------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 0.875rem var(--space-xl);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        transform var(--duration-fast) var(--ease-out),
+        box-shadow var(--duration-normal) var(--ease-out),
+        opacity var(--duration-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Primary button: solid purple gradient */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), hsl(280, 84%, 55%));
+    color: #ffffff;
+    box-shadow: var(--shadow-btn);
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+}
+
+.btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Ripple effect on primary button */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0);
+    transition: background var(--duration-fast);
+}
+
+.btn-primary:active::after {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Secondary button: ghost / outline */
+.btn-secondary {
+    background: var(--surface-input);
+    color: var(--text-primary);
+    border: 1px solid var(--border-glass);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Loading spinner inside button */
+.btn-spinner {
+    display: inline-flex;
+    align-items: center;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ---------------------------------------------------------------
+   14. AUTH DIVIDER
+   --------------------------------------------------------------- */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-glass);
+}
+
+/* ---------------------------------------------------------------
+   15. AUTH FOOTER
+   --------------------------------------------------------------- */
+.auth-footer {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* ---------------------------------------------------------------
+   16. RESPONSIVE DESIGN
+   --------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .auth-body {
+        padding: var(--space-md);
+        align-items: flex-start;
+        padding-top: var(--space-xl);
+    }
+
+    .auth-card {
+        padding: var(--space-lg);
+    }
+
+    .brand-name {
+        font-size: 1.75rem;
+    }
+
+    .auth-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ---------------------------------------------------------------
+   17. ACCESSIBILITY — reduce motion
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

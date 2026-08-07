@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--
+    greeting.html — Thymeleaf template for the Greeting Page.
+
+    WHY THYMELEAF INSTEAD OF JSP HERE?
+    ============================================================
+    Thymeleaf uses "natural templates" — this HTML file is valid HTML5
+    that can be opened directly in a browser (without a server) and
+    still looks reasonable. JSP files are not valid HTML without
+    a JSP engine processing them first.
+
+    HOW TO READ THYMELEAF SYNTAX:
+    - th:text="${variable}"   → replaces element content with variable value
+    - th:class="${variable}"  → sets the element's CSS class dynamically
+    - th:href="@{/url}"       → builds a URL relative to the context path
+    - th:if="${condition}"    → shows element only if condition is true
+
+    DATA AVAILABLE FROM GreetingController.showGreeting():
+    - ${user}       → the logged-in User object (user.name, user.email)
+    - ${greeting}   → "Good Morning" / "Good Afternoon" etc.
+    - ${emoji}      → "☀️" / "🌤️" etc.
+    - ${timeOfDay}  → "morning" / "afternoon" / "evening" / "night"
+                      (used as CSS class for gradient backgrounds)
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        th:text sets the <title> content.
+        The + operator concatenates strings.
+        Default "GreetingApp" is shown in static preview.
+    -->
+    <title th:text="${greeting} + ' | GreetingApp'">Good Morning | GreetingApp</title>
+    <meta name="description"
+          th:content="${greeting + ', ' + user.name + '! Welcome to GreetingApp.'}"
+          content="Welcome to GreetingApp">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!--
+        th:href="@{...}" builds context-aware URLs.
+        @{/resources/css/greeting.css} becomes /GreetingApp/resources/css/greeting.css
+        This is important when the app is deployed under a context path.
+    -->
+    <link rel="stylesheet" th:href="@{/resources/css/greeting.css}">
+</head>
+
+<!--
+    th:class dynamically sets the body class to the time-of-day value.
+    This drives the CSS gradient theme (morning/afternoon/evening/night).
+-->
+<body th:class="${timeOfDay + '-theme'}">
+
+    <!-- ======================================================
+         ANIMATED PARTICLE BACKGROUND
+         Particles are created and animated by greeting.css
+         ====================================================== -->
+    <div class="particles-bg">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- ======================================================
+         MAIN LAYOUT
+         ====================================================== -->
+    <div class="page-wrapper">
+
+        <!-- ====================================================
+             TOP NAV BAR
+             ==================================================== -->
+        <nav class="top-nav glass-nav" aria-label="Main navigation">
+            <div class="nav-brand">
+                <span class="nav-emoji">👋</span>
+                <span class="nav-title">GreetingApp</span>
+            </div>
+
+            <div class="nav-user">
+                <div class="user-avatar" aria-label="User avatar">
+                    <!--
+                        We take the first character of the user's name
+                        and convert to uppercase as the avatar letter.
+                        th:text="${#strings.substring(user.name, 0, 1).toUpperCase()}"
+                        uses Thymeleaf's built-in #strings utility.
+                    -->
+                    <span th:text="${#strings.substring(user.name, 0, 1).toUpperCase()}">R</span>
+                </div>
+                <span class="nav-username" th:text="${user.name}">Rudresh</span>
+
+                <!--
+                    th:href="@{/user/logout}" generates the correct URL.
+                    Logout link calls GET /user/logout which invalidates session.
+                -->
+                <a th:href="@{/user/logout}"
+                   class="logout-btn"
+                   id="logoutBtn"
+                   aria-label="Logout">
+                    <span class="logout-icon">&#8594;</span>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- ====================================================
+             HERO SECTION — MAIN GREETING CARD
+             ==================================================== -->
+        <main class="hero-section" role="main">
+
+            <!-- Time-of-day decorative icon -->
+            <div class="time-icon animate-float" aria-hidden="true">
+                <!--
+                    th:text="${emoji}" replaces text with the emoji string
+                    from the model. E.g., "☀️" for morning.
+                    Static fallback "🌟" shown in direct browser preview.
+                -->
+                <span th:text="${emoji}" class="emoji-display">🌟</span>
+            </div>
+
+            <!-- ===============================================
+                 GREETING CARD
+                 =============================================== -->
+            <div class="greeting-card glass-card animate-slide-up">
+
+                <!-- Greeting Line -->
+                <div class="greeting-header">
+                    <!--
+                        Concatenate greeting + ", " + user's first name + " 👋"
+                        #strings.substringBefore splits on space to get first name.
+                        Falls back to full name if no space found.
+                    -->
+                    <h1 class="greeting-text" th:text="${greeting + ', ' + user.name + ' 👋'}">
+                        Good Morning, Rudresh 👋
+                    </h1>
+                    <p class="greeting-sub">
+                        Welcome to <strong>GreetingApp</strong> — your personalised greeting experience!
+                    </p>
+                </div>
+
+                <!-- Divider -->
+                <div class="card-divider"></div>
+
+                <!-- User Info Section -->
+                <div class="user-info-section">
+                    <div class="info-card">
+                        <div class="info-icon">&#128100;</div>
+                        <div class="info-content">
+                            <span class="info-label">Logged in as</span>
+                            <span class="info-value" th:text="${user.name}">Rudresh</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">&#9993;</div>
+                        <div class="info-content">
+                            <span class="info-label">Email</span>
+                            <span class="info-value" th:text="${user.email}">rudresh@example.com</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">&#128336;</div>
+                        <div class="info-content">
+                            <span class="info-label">Time of Day</span>
+                            <!--
+                                #strings.capitalize() converts "morning" → "Morning".
+                                This is a Thymeleaf Expression Utility Object.
+                            -->
+                            <span class="info-value"
+                                  th:text="${#strings.capitalize(timeOfDay)}">Morning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="card-divider"></div>
+
+                <!-- Tech Stack Badge Section -->
+                <div class="tech-section">
+                    <p class="tech-label">Powered by</p>
+                    <div class="tech-badges">
+                        <span class="badge">Spring MVC 6</span>
+                        <span class="badge">Thymeleaf 3</span>
+                        <span class="badge">Java 21</span>
+                        <span class="badge">MySQL 8</span>
+                        <span class="badge">Tomcat 11</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="card-actions">
+                    <a th:href="@{/user/logout}"
+                       class="action-btn action-btn-logout"
+                       id="greetingLogoutBtn">
+                        &#128682; Logout
+                    </a>
+                </div>
+
+            </div><!-- /.greeting-card -->
+
+            <!-- ===============================================
+                 ANIMATED STATS BAR
+                 =============================================== -->
+            <div class="stats-row animate-fade-in-up">
+
+                <div class="stat-item glass-stat">
+                    <div class="stat-icon">&#127758;</div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="currentTime">--:--:--</span>
+                        <span class="stat-text">Current Time</span>
+                    </div>
+                </div>
+
+                <div class="stat-item glass-stat">
+                    <div class="stat-icon">&#128197;</div>
+                    <div class="stat-info">
+                        <span class="stat-number" id="currentDate">---</span>
+                        <span class="stat-text">Today's Date</span>
+                    </div>
+                </div>
+
+                <div class="stat-item glass-stat">
+                    <div class="stat-icon">&#129309;</div>
+                    <div class="stat-info">
+                        <span class="stat-number">Active</span>
+                        <span class="stat-text">Session Status</span>
+                    </div>
+                </div>
+
+            </div><!-- /.stats-row -->
+
+        </main><!-- /.hero-section -->
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <p>&copy; 2024 GreetingApp &bull; Built with Spring MVC 6 &bull; Java 21</p>
+        </footer>
+
+    </div><!-- /.page-wrapper -->
+
+    <!-- Greeting Page Script -->
+    <script th:src="@{/resources/js/script.js}"></script>
+    <script>
+        // Live clock update
+        function updateClock() {
+            var now = new Date();
+
+            var timeEl = document.getElementById('currentTime');
+            if (timeEl) {
+                timeEl.textContent = now.toLocaleTimeString('en-IN', {
+                    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+                });
+            }
+
+            var dateEl = document.getElementById('currentDate');
+            if (dateEl) {
+                dateEl.textContent = now.toLocaleDateString('en-IN', {
+                    weekday: 'short', day: 'numeric', month: 'short', year: 'numeric'
+                });
+            }
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // Logout confirmation
+        var logoutBtns = document.querySelectorAll('.action-btn-logout, #logoutBtn');
+        logoutBtns.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                if (!confirm('Are you sure you want to logout?')) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
