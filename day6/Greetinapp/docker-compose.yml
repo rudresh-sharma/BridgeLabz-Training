@@ -1,76 +1,102 @@
-version: '3.9'
-
-# =============================================================
-# docker-compose.yml — GreetingApp + MySQL 8 stack
-# =============================================================
-# Run: docker-compose up --build
-# Stop: docker-compose down
-# Stop + remove volumes: docker-compose down -v
-# =============================================================
-
 services:
 
   # ============================================================
-  # 1. MySQL 8 Database
+  # 1. MySQL - LOCAL DEVELOPMENT
   # ============================================================
   db:
     image: mysql:8.3
     container_name: greetingapp-mysql
     restart: unless-stopped
+
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: greeting_app_db
       MYSQL_USER: greetingapp
       MYSQL_PASSWORD: greetingapp123
+
     ports:
-      - "3306:3306"            # host:container
+      - "3307:3306"
+
     volumes:
-      # Persist MySQL data across container restarts
       - mysql_data:/var/lib/mysql
-      # Run the schema SQL automatically on first startup
       - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
     networks:
       - greetingapp-net
+
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "-proot"
+        ]
       interval: 10s
       timeout: 5s
       retries: 5
+      start_period: 20s
+
 
   # ============================================================
-  # 2. GreetingApp (Spring MVC + Tomcat 11)
+  # 2. GreetingApp - Spring MVC + Tomcat 11
   # ============================================================
   app:
     build:
       context: .
       dockerfile: Dockerfile
+
     container_name: greetingapp-tomcat
     restart: unless-stopped
+
     ports:
       - "8080:8080"
+
     environment:
-      # Override db.properties values via env vars
-      # (requires reading from environment in DBConnection — see note)
-      JAVA_OPTS: >-
-        -Ddb.url=jdbc:mysql://db:3306/greeting_app_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-        -Ddb.username=root
-        -Ddb.password=root
-        -Ddb.driver=com.mysql.cj.jdbc.Driver
-        -Xms256m -Xmx512m
+      # --------------------------------------------------------
+      # LOCAL DEFAULTS
+      #
+      # These are used when running:
+      # docker compose up
+      #
+      # Render will override these using its Environment Variables.
+      # --------------------------------------------------------
+
+      DB_URL: "${DB_URL:-jdbc:mysql://db:3306/greeting_app_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}"
+
+      DB_USERNAME: "${DB_USERNAME:-greetingapp}"
+
+      DB_PASSWORD: "${DB_PASSWORD:-greetingapp123}"
+
+      DB_DRIVER: "${DB_DRIVER:-com.mysql.cj.jdbc.Driver}"
+
     depends_on:
       db:
-        condition: service_healthy   # Wait until MySQL is healthy
+        condition: service_healthy
+
     networks:
       - greetingapp-net
+
     volumes:
       - ./logs:/usr/local/tomcat/logs
 
+
 # ============================================================
-# Volumes & Networks
+# VOLUMES
 # ============================================================
+
 volumes:
   mysql_data:
     driver: local
+
+
+# ============================================================
+# NETWORK
+# ============================================================
 
 networks:
   greetingapp-net:

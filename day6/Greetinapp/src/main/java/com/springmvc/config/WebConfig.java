@@ -22,31 +22,40 @@ public class WebConfig implements WebMvcConfigurer {
     // ============================================================
     // 1. DATABASE CONNECTION
     // ============================================================
+	@Bean
+	public DataSource dataSource() {
 
-    @Bean
-    public DataSource dataSource() {
+	    DriverManagerDataSource ds = new DriverManagerDataSource();
 
-        DriverManagerDataSource ds = new DriverManagerDataSource();
+	    String driver = System.getenv("DB_DRIVER");
+	    String url = System.getenv("DB_URL");
+	    String username = System.getenv("DB_USERNAME");
+	    String password = System.getenv("DB_PASSWORD");
 
-        ds.setDriverClassName(
-                System.getenv("DB_DRIVER")
-        );
+	    // Local STS fallback
+	    if (driver == null || driver.isBlank()) {
+	        driver = "com.mysql.cj.jdbc.Driver";
+	    }
 
-        ds.setUrl(
-                System.getenv("DB_URL")
-        );
+	    if (url == null || url.isBlank()) {
+	        url = "jdbc:mysql://localhost:3306/greeting_app_db";
+	    }
 
-        ds.setUsername(
-                System.getenv("DB_USERNAME")
-        );
+	    if (username == null || username.isBlank()) {
+	        username = "root";
+	    }
 
-        ds.setPassword(
-                System.getenv("DB_PASSWORD")
-        );
+	    if (password == null || password.isBlank()) {
+	        password = "Rudresh@2005";
+	    }
 
-        return ds;
-    }
+	    ds.setDriverClassName(driver);
+	    ds.setUrl(url);
+	    ds.setUsername(username);
+	    ds.setPassword(password);
 
+	    return ds;
+	}
 
 
     // ============================================================
