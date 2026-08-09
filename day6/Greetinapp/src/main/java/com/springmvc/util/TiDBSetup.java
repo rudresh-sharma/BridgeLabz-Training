@@ -1,18 +1,3 @@
-/**
- * TiDB Connection + Schema Test
- *
- * Run with:
- * mvn exec:java -Dexec.mainClass="com.springmvc.util.TiDBSetup"
- *
- * This one-time utility:
- *
- * 1. Loads database credentials from environment variables
- * 2. Connects to TiDB Cloud
- * 3. Creates the 'users' table if it doesn't exist
- * 4. Inserts a test user
- * 5. Reads it back to confirm everything works
- */
-
 package com.springmvc.util;
 
 import java.sql.*;
