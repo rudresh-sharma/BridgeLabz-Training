@@ -129,36 +129,36 @@ public class UserController {
      * survives the redirect and is available to the next GET request.
      * Flash attributes are automatically removed after one use.
      */
-    @PostMapping("/login")
-    public String processLogin(
-            @RequestParam("email") String email,
-            @RequestParam("password") String password,
-            HttpSession session,
-            RedirectAttributes redirectAttributes) {
-
-        log.info("Login attempt for email: {}", email);
-
-        // Basic validation
-        if (email == null || email.isBlank() || password == null || password.isBlank()) {
-            redirectAttributes.addFlashAttribute("errorMessage", "Email and password are required.");
-            return "redirect:/user/login";
-        }
-
-        Optional<User> userOpt = userService.authenticate(email, password);
-
-        if (userOpt.isPresent()) {
-            User user = userOpt.get();
-            // Store user in session — available on all subsequent requests
-            session.setAttribute("loggedInUser", user);
-            log.info("Login successful for: {}", email);
-            // Redirect to the greeting page (GreetingController)
-            return "redirect:/greeting";
-        } else {
-            log.warn("Login failed for: {}", email);
-            redirectAttributes.addFlashAttribute("errorMessage", "Invalid email or password. Please try again.");
-            return "redirect:/user/login";
-        }
-    }
+	    @PostMapping("/login")
+	    public String processLogin(
+	            @RequestParam("email") String email,
+	            @RequestParam("password") String password,
+	            HttpSession session,
+	            RedirectAttributes redirectAttributes) {
+	
+	        log.info("Login attempt for email: {}", email);
+	
+	        // Basic validation
+	        if (email == null || email.isBlank() || password == null || password.isBlank()) {
+	            redirectAttributes.addFlashAttribute("errorMessage", "Email and password are required.");
+	            return "redirect:/user/login";
+	        }
+	
+	        Optional<User> userOpt = userService.authenticate(email, password);
+	
+	        if (userOpt.isPresent()) {
+	            User user = userOpt.get();
+	            // Store user in session — available on all subsequent requests
+	            session.setAttribute("loggedInUser", user);
+	            log.info("Login successful for: {}", email);
+	            // Redirect to the greeting page (GreetingController)
+	            return "redirect:/greeting";
+	        } else {
+	            log.warn("Login failed for: {}", email);
+	            redirectAttributes.addFlashAttribute("errorMessage", "Invalid email or password. Please try again.");
+	            return "redirect:/user/login";
+	        }
+	    }
 
     // =====================================================================
     // SIGNUP — GET (Show the Signup Form)

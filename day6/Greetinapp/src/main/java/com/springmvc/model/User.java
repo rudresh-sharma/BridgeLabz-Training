@@ -1,5 +1,7 @@
 package com.springmvc.model;
 
+import io.micrometer.common.lang.NonNull;
+
 /**
  * User — the domain model representing a registered user.
  *
@@ -41,6 +43,7 @@ public class User {
     private Long id;
 
     // Matches: name VARCHAR(100)
+    
     private String name;
 
     // Matches: email VARCHAR(100) UNIQUE
