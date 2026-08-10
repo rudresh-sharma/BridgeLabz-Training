@@ -11,7 +11,7 @@ import java.sql.*;
 import java.util.Optional;
 
 @Repository
-public class UserDAO {
+public class UserDAO implements UserDAOInterface {
 
     private static final Logger log = LoggerFactory.getLogger(UserDAO.class);
 
@@ -49,7 +49,8 @@ public class UserDAO {
     // =====================================================================
     // PUBLIC METHODS
     // =====================================================================
-
+    
+    @Override
     public void save(User user) {
         log.info("Saving user: {}", user.getEmail());
 
@@ -79,6 +80,7 @@ public class UserDAO {
     }
 
 
+    @Override
     public Optional<User> findByEmail(String email) {
         log.debug("Looking up user by email: {}", email);
 
@@ -106,6 +108,7 @@ public class UserDAO {
     }
 
 
+    @Override
     public boolean existsByEmail(String email) {
         log.debug("Checking existence of email: {}", email);
 
@@ -210,7 +213,7 @@ public class UserDAO {
     // =====================================================================
     // PRIVATE HELPER
     // =====================================================================
-
+    
     private User mapRowToUser(ResultSet rs) throws SQLException {
         return new User(
             rs.getLong("id"),
