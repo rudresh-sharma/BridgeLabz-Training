@@ -921,6 +921,38 @@ A Maven-based **Spring MVC 6 + Java 21** web application deployed to **Apache To
 📂 [`day6/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day6)
 
 ---
+## 📅 Day 7 — 10 August 2026
+
+Focus: Building a layered Spring Boot 4 REST API from scratch with JPA, Bean Validation, global exception handling, and OpenAPI/Swagger docs.
+
+### 📇 MY-CONTACT-APP
+
+A Maven-based **Spring Boot 4.1 + Java 21** REST API for managing contacts, backed by **Spring Data JPA** with an **H2** in-memory database (console enabled), and documented via **springdoc-openapi** (Swagger UI).
+
+**Structure (`com.mycontactapp`):**
+- `controller/` — `ContactController` (REST endpoints + controller-level exception handling)
+- `dto/` — `ContactRequestDTO`, `ContactResponseDTO`, `ValidationErrorDTO`
+- `entity/` — `Contact` (JPA entity, unique email constraint)
+- `exception/` — `ContactNotFoundException`, `EmailAlreadyExistsException`, `GlobalExceptionHandler`
+- `mapper/` — `ContactMapper` (DTO ⇄ entity conversion)
+- `repository/` — `ContactRepository` (Spring Data JPA, `existsByEmail`)
+- `service/` — `ContactService` / `ContactServiceImpl`
+- `resources/` — `application.yaml` (H2 datasource + console config)
+
+**Key features:**
+- Full CRUD REST API — create, get by ID, get all, update, delete contacts under `/api/contacts`
+- **Bean Validation** on requests — `@NotBlank`, `@Email`, `@Size`, `@Pattern` (10-digit phone/alternate-phone validation), with validation errors mapped to a clean `List<ValidationErrorDTO>` response
+- **Global exception handling** via `@RestControllerAdvice` — `MethodArgumentNotValidException` → `400`, unexpected errors → `500`, plus a controller-level `ContactNotFoundException` → `404` handler
+- **Business rule enforcement** — duplicate email check (`EmailAlreadyExistsException`) before create
+- **Phone normalization** — strips leading zeros from phone/alternate phone before persisting
+- **Layered architecture** — clean separation across controller → service → mapper → repository, DTOs used at the API boundary instead of exposing the entity directly
+- **API docs** — `springdoc-openapi-starter-webmvc-ui` auto-generates Swagger UI with `@Tag`, `@Operation`, and `@ApiResponses` annotations on every endpoint
+- **H2 Console** enabled at `/h2-console` for quick in-memory DB inspection during development
+- Lombok (`@Getter`/`@Setter`/`@NoArgsConstructor`/`@AllArgsConstructor`) to keep entity/DTOs concise
+
+📂 [`day7/MY-CONTACT-APP/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day7/MY-CONTACT-APP)
+
+---
 
 
 ## 🛠️ Tech Stack
