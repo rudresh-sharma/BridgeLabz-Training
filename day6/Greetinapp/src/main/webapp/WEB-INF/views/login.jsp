@@ -136,7 +136,7 @@
         </div><!-- /.auth-card -->
 
         <p class="auth-footer">
-            &copy; 2024 GreetingApp &bull; Spring MVC 6 + Java 21
+            &copy; 2026 GreetingApp &bull; Spring MVC 6 + Java 21
         </p>
 
     </main>
