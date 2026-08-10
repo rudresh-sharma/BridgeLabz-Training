@@ -604,3 +604,25 @@ a { color: inherit; text-decoration: none; }
         transition-duration: 0.01ms !important;
     }
 }
+
+
+
+
+
+
+/*
+	CSS for CRUD
+*/
+
+
+.action-btn-edit {
+    background: var(--color-accent, #4f46e5); /* pick a colour matching your theme */
+}
+
+.action-btn-delete {
+    background: #dc2626; /* red, for a destructive action */
+}
+
+.action-btn-delete:hover {
+    background: #b91c1c;
+}

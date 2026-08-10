@@ -16,7 +16,7 @@ import java.time.ZoneId;
  *   09:00 PM – 04:59 AM  →  Good Night      🌙
  */
 @Service
-public class GreetingService {
+public class GreetingService implements GreetingServiceInterface{
 
     // =====================================================================
     // TIME BOUNDARY CONSTANTS

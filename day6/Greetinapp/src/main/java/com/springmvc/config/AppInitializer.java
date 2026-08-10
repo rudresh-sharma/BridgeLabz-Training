@@ -1,6 +1,9 @@
 package com.springmvc.config;
 
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import jakarta.servlet.Filter;
 
 
 public class AppInitializer
@@ -22,5 +25,10 @@ public class AppInitializer
     @Override
     protected String[] getServletMappings() {
         return new String[] { "/" };
+    }
+    
+    @Override
+    protected Filter[] getServletFilters() {
+        return new Filter[] { new HiddenHttpMethodFilter() };
     }
 }

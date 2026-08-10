@@ -26,20 +26,26 @@ document.addEventListener('DOMContentLoaded', function () {
    Flash messages (error/success) disappear automatically after 5s.
    Users can also manually close them with the × button.
    ================================================================ */
-function initAlertAutoDismiss() {
-    var alerts = document.querySelectorAll('.alert');
-    alerts.forEach(function (alert) {
-        // Fade out after 5 seconds
-        setTimeout(function () {
-            alert.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            alert.style.opacity = '0';
-            alert.style.transform = 'translateY(-10px)';
-            setTimeout(function () {
-                alert.style.display = 'none';
-            }, 500);
-        }, 5000);
-    });
-}
+   function initAlertAutoDismiss() {
+       var errorAlerts = document.querySelectorAll('.alert-error');
+       var successAlerts = document.querySelectorAll('.alert-success');
+
+       dismissAfter(errorAlerts, 10000);   // errors: 10 seconds
+       dismissAfter(successAlerts, 5000);  // success: 5 seconds
+   }
+
+   function dismissAfter(alerts, delay) {
+       alerts.forEach(function (alert) {
+           setTimeout(function () {
+               alert.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+               alert.style.opacity = '0';
+               alert.style.transform = 'translateY(-10px)';
+               setTimeout(function () {
+                   alert.style.display = 'none';
+               }, 500);
+           }, delay);
+       });
+   }
 
 /* ================================================================
    3. INPUT FOCUS EFFECTS

@@ -75,7 +75,7 @@
                                id="name"
                                name="name"
                                class="form-input"
-                               placeholder="Rudresh Patel"
+                               placeholder="Rudresh Sharma"
                                autocomplete="name"
                                required>
                     </div>
@@ -107,7 +107,7 @@
                                id="password"
                                name="password"
                                class="form-input"
-                               placeholder="Minimum 6 characters"
+                               placeholder="Minimum 8 characters"
                                autocomplete="new-password"
                                required>
                         <button type="button"

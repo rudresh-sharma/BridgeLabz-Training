@@ -35,6 +35,16 @@ public class UserDAO {
 
     private static final String SQL_EXISTS_BY_EMAIL =
         "SELECT COUNT(*) FROM users WHERE email = ?";
+    
+    private static final String SQL_FIND_BY_ID =
+        "SELECT id, name, email, password FROM users WHERE id = ?";
+
+    private static final String SQL_UPDATE_USER =
+        "UPDATE users SET name = ?, email = ?, password = ? WHERE id = ?";
+
+    private static final String SQL_DELETE_USER =
+        "DELETE FROM users WHERE id = ?";
+
 
     // =====================================================================
     // PUBLIC METHODS
@@ -120,7 +130,83 @@ public class UserDAO {
 
         return false;
     }
+    
+    
+    
+    // ---------------------------------------------------------------
+    // READ (by id) — needed to pre-fill the edit form
+    // ---------------------------------------------------------------
+    public Optional<User> findById(Long id) {
+        log.debug("Looking up user by id: {}", id);
 
+        try (Connection conn = dbConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(SQL_FIND_BY_ID)) {
+
+            ps.setLong(1, id);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return Optional.of(mapRowToUser(rs));
+                }
+            }
+
+        } catch (SQLException e) {
+            log.error("Error finding user by id: {}", id, e);
+            throw new RuntimeException("Error finding user: " + e.getMessage(), e);
+        }
+
+        return Optional.empty();
+    }
+    
+    
+ // ---------------------------------------------------------------
+    // UPDATE
+    // ---------------------------------------------------------------
+    public boolean update(User user) {
+        log.info("Updating user id: {}", user.getId());
+
+        try (Connection conn = dbConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(SQL_UPDATE_USER)) {
+
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getEmail());
+            ps.setString(3, user.getPassword());
+            ps.setLong(4, user.getId());
+
+            int rowsAffected = ps.executeUpdate();
+            log.debug("Rows updated: {}", rowsAffected);
+            return rowsAffected > 0;
+
+        } catch (SQLException e) {
+            log.error("Error updating user id: {}", user.getId(), e);
+            throw new RuntimeException("Error updating user: " + e.getMessage(), e);
+        }
+    }
+    
+    
+    // ---------------------------------------------------------------
+    // DELETE
+    // ---------------------------------------------------------------
+    public boolean deleteById(Long id) {
+        log.info("Deleting user id: {}", id);
+
+        try (Connection conn = dbConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(SQL_DELETE_USER)) {
+
+            ps.setLong(1, id);
+
+            int rowsAffected = ps.executeUpdate();
+            log.debug("Rows deleted: {}", rowsAffected);
+            return rowsAffected > 0;
+
+        } catch (SQLException e) {
+            log.error("Error deleting user id: {}", id, e);
+            throw new RuntimeException("Error deleting user: " + e.getMessage(), e);
+        }
+    }
+    
+    
+    
     // =====================================================================
     // PRIVATE HELPER
     // =====================================================================

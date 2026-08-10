@@ -196,15 +196,26 @@
                     </div>
                 </div>
 
-                <!-- Action Buttons -->
-                <div class="card-actions">
-                    <a th:href="@{/user/logout}"
-                       class="action-btn action-btn-logout"
-                       id="greetingLogoutBtn">
-                        &#128682; Logout
-                    </a>
-                </div>
+				<!-- Action Buttons -->
+				                <div class="card-actions">
+				                    <a th:href="@{/user/edit}"
+				                       class="action-btn action-btn-edit"
+				                       id="editProfileBtn">
+				                        &#9998; Edit Profile
+				                    </a>
 
+				                    <a th:href="@{/user/delete}"
+				                       class="action-btn action-btn-delete"
+				                       id="deleteAccountBtn">
+				                        &#128465; Delete Account
+				                    </a>
+
+				                    <a th:href="@{/user/logout}"
+				                       class="action-btn action-btn-logout"
+				                       id="greetingLogoutBtn">
+				                        &#128682; Logout
+				                    </a>
+				        		</div>
             </div><!-- /.greeting-card -->
 
             <!-- ===============================================
