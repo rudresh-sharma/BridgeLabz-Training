@@ -955,6 +955,27 @@ A Maven-based **Spring Boot 4.1 + Java 21** REST API for managing contacts, back
 ---
 
 
+## 📅 Day 8 — 11 August 2026
+ 
+Focus: Unit testing the Spring Boot REST API from Day 7 — controller-layer testing with MockMvc/Mockito and service-layer testing with Mockito/AssertJ.
+ 
+### 📇 MY-CONTACT-APP (continued)
+ 
+Added a full **JUnit 5** test suite (24 tests) on top of the Day 7 `MY-CONTACT-APP`, covering both the web layer and the business logic layer in isolation.
+ 
+**New test classes (`src/test/java/com/mycontactapp`):**
+- `ContactControllerTest` — 12 tests. Builds `MockMvc` in **standalone mode** with `ContactController` + `GlobalExceptionHandler` registered, so validation errors and service-thrown exceptions resolve exactly as they would at runtime. Covers all five endpoints (`POST`, `GET /{id}`, `GET`, `PUT`, `DELETE`) for both happy paths and failure paths (`400` validation errors, `404` not found, `409` duplicate email).
+- `ContactServiceImplTest` — 12 tests. Mocks `ContactRepository` and `ContactMapper` via Mockito (`@Mock`/`@InjectMocks`) to test `ContactServiceImpl` business logic in isolation — email-uniqueness enforcement, phone/alternate-phone leading-zero normalization, not-found handling, null-safe alternate-phone handling, and correct delegation to the mapper/repository, verified with `ArgumentCaptor`.
+**Key testing practices demonstrated:**
+- **Mockito** (`@Mock`, `@InjectMocks`, `@ExtendWith(MockitoExtension.class)`) to isolate each layer under test
+- **MockMvc** standalone setup for controller tests — no full Spring context load, faster and more focused
+- **AssertJ** (`assertThat`, `assertThatThrownBy`) for fluent, readable assertions
+- **`ArgumentCaptor`** to verify the exact object passed to the repository (e.g. confirming phone numbers are normalized before save)
+- **`@DisplayName`** on every test for human-readable test reports
+- Both success and failure paths tested for every CRUD operation — not just the happy path
+📂 [`day8/MY-CONTACT-APP/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day8/MY-CONTACT-APP)
+ 
+---
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
