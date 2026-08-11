@@ -2,6 +2,7 @@ package com.mycontactapp.exception;
 
 import java.util.List;
 
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -40,6 +41,12 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body("Something went wrong");
+                .body(exception.getMessage());
+    }
+    
+    
+    @ExceptionHandler(EmailAlreadyExistsException.class)
+    public ResponseEntity<String> handleDuplicateEmail(EmailAlreadyExistsException exception){
+    	return ResponseEntity.status(HttpStatus.CONFLICT).body(exception.getMessage());
     }
 }

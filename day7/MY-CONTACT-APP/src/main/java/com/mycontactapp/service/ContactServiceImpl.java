@@ -96,7 +96,9 @@ public class ContactServiceImpl implements ContactService {
                 normalizePhone(dto.getAlternatePhone());
 
         // Update entity
-        contact.setName(dto.getName());
+        contact.setFirstName(dto.getFirstName());
+        contact.setMiddleName(dto.getMiddleName());
+        contact.setLastName(dto.getLastName());
         contact.setEmail(dto.getEmail());
         contact.setPhone(phone);
         contact.setAlternatePhone(alternatePhone);

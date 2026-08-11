@@ -13,7 +13,9 @@ public class ContactMapper {
 
         Contact contact = new Contact();
 
-        contact.setName(dto.getName());
+        contact.setFirstName(dto.getFirstName());
+        contact.setMiddleName(dto.getMiddleName());
+        contact.setLastName(dto.getLastName());
         contact.setEmail(dto.getEmail());
         contact.setPhone(dto.getPhone());
         contact.setAlternatePhone(dto.getAlternatePhone());
@@ -25,7 +27,9 @@ public class ContactMapper {
 
         return new ContactResponseDTO(
                 contact.getId(),
-                contact.getName(),
+                contact.getFirstName(),
+                contact.getMiddleName(),
+                contact.getLastName(),
                 contact.getEmail(),
                 contact.getPhone(),
                 contact.getAlternatePhone()

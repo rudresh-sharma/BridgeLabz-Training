@@ -3,6 +3,7 @@ package com.mycontactapp.controller;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mycontactapp.dto.ContactRequestDTO;
 import com.mycontactapp.dto.ContactResponseDTO;
 import com.mycontactapp.exception.ContactNotFoundException;
+import com.mycontactapp.exception.EmailAlreadyExistsException;
 import com.mycontactapp.service.ContactService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -191,5 +193,7 @@ public class ContactController {
                 .status(HttpStatus.NOT_FOUND)
                 .body(exception.getMessage());
     }
+    
+    
 }
 
