@@ -976,6 +976,34 @@ Added a full **JUnit 5** test suite (24 tests) on top of the Day 7 `MY-CONTACT-A
 📂 [`day8/MY-CONTACT-APP/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day8/MY-CONTACT-APP)
  
 ---
+
+
+## 📅 Day 9 — 12 August 2026
+
+Focus: Extending the Day 7/8 `MY-CONTACT-APP` with a "Favourites" feature — new entity field, repository query, endpoints, and updated test coverage.
+
+### 📇 MY-CONTACT-APP (continued)
+
+Added an **`isFavourite`** flag to the `Contact` entity, with service/controller logic and endpoints to mark, unmark, and list favourite contacts.
+
+**Changes (`com.mycontactapp`):**
+- `entity/Contact` — new `isFavourite` field (`Boolean`, defaults `FALSE`)
+- `repository/ContactRepository` — new derived query `findByIsFavouriteTrue()`
+- `service` — new methods `madeAFavourite(id)`, `removeAFavourite(id)`, `getAllFavourites()`
+- `controller` — three new endpoints; `dto`/`mapper` updated to carry `isFavourite`
+
+**New endpoints:**
+- `PATCH /api/contacts/{id}/favourite` — mark as favourite
+- `DELETE /api/contacts/{id}/favourite` — remove from favourites
+- `GET /api/contacts/favourites` — list all favourites
+
+**Notes:**
+- Reuses the existing `ContactNotFoundException` → `404` pattern for invalid IDs
+- `ContactControllerTest` / `ContactServiceImplTest` updated to cover the new field and behavior
+
+📂 [`day9/MY-CONTACT-APP/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day9/MY-CONTACT-APP)
+
+---
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
