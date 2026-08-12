@@ -1,0 +1,17 @@
+2026-08-12 17:43:44.069835+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM CONTACTS \000d\000a\000d\000aDESCRIBE [*]CONTACTS"; SQL statement:
+SELECT * FROM CONTACTS 
+
+DESCRIBE CONTACTS [42000-240]
+2026-08-12 17:43:56.290665+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]DESCRIBE CONTACTS"; expected "DELETE, DROP"; SQL statement:
+DESCRIBE CONTACTS [42001-240]
+2026-08-12 17:44:11.026430+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]DESC CONTACTS"; expected "DELETE, DROP"; SQL statement:
+DESC CONTACTS [42001-240]
+2026-08-12 17:44:15.267600+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]DESC CONTACTS"; expected "DELETE, DROP"; SQL statement:
+DESC CONTACTS [42001-240]
+2026-08-12 17:44:42.578848+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]DESC CONTACTS"; expected "DELETE, DROP"; SQL statement:
+DESC CONTACTS [42001-240]
