@@ -50,6 +50,9 @@ public class ContactServiceImpl implements ContactService {
         Contact contact = contactMapper.toEntity(dto);
 
         // Set normalized phone numbers
+        contact.setFirstName(dto.getFirstName().toLowerCase());
+        contact.setMiddleName(dto.getMiddleName()==null ?  null :dto.getMiddleName().toLowerCase());
+        contact.setLastName(dto.getLastName().toLowerCase());
         contact.setPhone(phone);
         contact.setAlternatePhone(alternatePhone);
 
@@ -189,5 +192,22 @@ public class ContactServiceImpl implements ContactService {
 	            .stream()
 	            .map(contactMapper::toResponseDTO)
 	            .toList();
+	}
+
+	@Override
+	public List<ContactResponseDTO>  getContacyByName(String firstName) {
+		// TODO Auto-generated method stub
+		
+		List<Contact> allContact = contactRepository.findByFirstNameStartingWith(firstName.toLowerCase());
+		
+		if (allContact.isEmpty()) {
+		    throw new ContactNotFoundException(
+		        "No contact found with name starting with " + firstName
+		    );
+		}
+		
+		List<ContactResponseDTO> mapToConDTO = allContact.stream().map(contactMapper::toResponseDTO).toList();
+		
+		return mapToConDTO;
 	}
 }

@@ -103,6 +103,25 @@ public class ContactController {
         return ResponseEntity.ok(response);
     }
 
+    
+    // Get contact by firstname
+    
+    @GetMapping("/search/{firstName}")
+    public ResponseEntity<List<ContactResponseDTO>> getContactsByName(
+            @Parameter(
+                description = "name of the contact",
+                example = "Rudresh"
+            )
+            @PathVariable("firstName") String firstName) {
+
+    	List<ContactResponseDTO>  response =
+                contactService.getContacyByName(firstName);
+
+        return ResponseEntity.ok(response);
+    }
+    
+    
+    
     // Get all contacts
     @Operation(
         summary = "Get all contacts",

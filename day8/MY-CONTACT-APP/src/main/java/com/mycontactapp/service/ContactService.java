@@ -24,4 +24,6 @@ public interface ContactService {
     ContactResponseDTO removeAFavourite(Long id);
     
     List<ContactResponseDTO> getAllFavourites();
+    
+    List<ContactResponseDTO>  getContacyByName(String firstName);
 }

@@ -13,4 +13,6 @@ public interface ContactRepository extends JpaRepository<Contact, Long> {
     boolean existsByEmail(String email);  // no @Query — let Spring Data derive it
     
     List<Contact> findByIsFavouriteTrue();
+    List<Contact> findByFirstNameStartingWith(String name);
+    
 }
