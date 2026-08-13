@@ -275,6 +275,32 @@ Added an **`isFavourite`** flag to the `Contact` entity, with service/controller
 📂 [`day9/MY-CONTACT-APP/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day9/MY-CONTACT-APP)
 
 ---
+
+## 📅 Day 10 — 13 August 2026
+
+Focus: New **Employee Payroll** Spring Boot 4 REST API with Spring Data JDBC, Flyway migrations, and the Strategy pattern for salary calculation — plus `MY-CONTACT-APP` carried forward.
+
+### 💰 Employee-Pay-Role
+
+Spring Boot 4.1 + Java 21 REST API (`com.employeepayroll`) for `Employee`/`Department`, using **Spring Data JDBC** (not JPA) + H2, schema/data via **Flyway**, and Swagger docs.
+
+**Key features:**
+- `Employee`/`Department` implement `Persistable<UUID>` with `@PersistenceCreator` for correct insert-vs-update behavior
+- **Strategy pattern**: `SalaryCalculator` → `StandardSalaryCalculator` (12× salary, `@Primary`) and `BonusSalaryCalculator` (12× salary + 10%), chosen via `@Qualifier` + `bonus` flag
+- Full CRUD on `/api/employees` & `/api/departments`, plus lookup by email/name
+- `GET /api/employees/email/{email}/annual-salary?bonus=true|false`
+- Pagination, `@Valid` validation, `GlobalExceptionHandler`, H2 console, DevTools
+
+### 📇 MY-CONTACT-APP (carried forward)
+
+`MY-CONTACT-APP` Added Search by firstName feature.
+
+
+📂 [`day10/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day10)
+
+---
+
+
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
