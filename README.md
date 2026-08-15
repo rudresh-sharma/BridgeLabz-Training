@@ -1030,7 +1030,30 @@ Spring Boot 4.1 + Java 21 REST API (`com.employeepayroll`) for `Employee`/`Depar
 
 ---
 
-
+## 📅 Day 11 — 14 August 2026
+ 
+Focus: Migrating the Day 10 **Employee-Pay-Role** API from Spring Data JDBC to full **Spring Data JPA/Hibernate**, with real entity relationships, a custom JPQL query, and new endpoints.
+ 
+### 💰 Employee-Pay-Role (JDBC → JPA migration)
+ 
+**Entities (`com.employeepayroll.entity`):**
+- `Employee` / `Department` — dropped `Persistable<UUID>` + `@PersistenceCreator` (the Spring Data JDBC pattern) in favor of standard `@Entity` / `@Table` / `@Id` with Hibernate's `@UuidGenerator`, plus `@NoArgsConstructor`/`@AllArgsConstructor`
+- `Employee.department` is now a real `@ManyToOne(fetch = LAZY)` + `@JoinColumn("department_id")` relationship instead of a raw `departmentId` UUID field
+**Repository (`EmployeeRepository`, `DepartmentRepository`):**
+- Both now extend `JpaRepository<T, UUID>` instead of `ListCrudRepository`/`PagingAndSortingRepository`
+- New custom JPQL query: `findHighEarners(minSalary)` — `SELECT e FROM Employee e WHERE e.salary > :minSalary ORDER BY e.salary DESC`
+**New endpoints (`EmployeeController`):**
+- `GET /api/employees/high-earners?minSalary=` — employees earning above a threshold, sorted by salary descending
+- `GET /api/employees/totalEmployee` — total employee count (`repository.count()`)
+**Database:**
+- `pom.xml` swapped `spring-boot-starter-data-jdbc` (+ its test starter) for `spring-boot-starter-data-jpa` (+ test starter)
+- `application.yaml` — added `DATABASE_TO_UPPER=FALSE` to the H2 JDBC URL so Hibernate's lower-case, quoted identifiers match the schema
+- New Flyway migration `V4__fix_department_case.sql` — drops and re-adds the `employee → department` foreign key while renaming both tables and all their columns to quoted lower-case identifiers (`"department"`, `"employee"`, `"id"`, `"name"`, etc.), aligning the H2 schema with Hibernate's default naming so JPA can resolve the mapping correctly
+📂 [`day-11/Employee-Pay-Role/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day-11/Employee-Pay-Role)
+📂 [`day-11/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day-11)
+ 
+---
+ 
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
