@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.net.URI;
 import java.util.UUID;
 
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -51,6 +52,7 @@ public class EmployeeController {
     }
     @GetMapping
     public ResponseEntity<Page<EmployeeResponseDTO>> getAllEmployees(
+    		@ParameterObject	
             @PageableDefault(size = 10, sort = "name") Pageable pageable) {
 
         return ResponseEntity.ok(employeeService.getAllEmployees(pageable));
