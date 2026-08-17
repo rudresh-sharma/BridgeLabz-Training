@@ -324,6 +324,46 @@ Focus: Migrating the Day 10 **Employee-Pay-Role** API from Spring Data JDBC to f
 ---
 
 
+
+## 📅 Day 12 — 17 August 2026
+ 
+Focus: Cross-cutting concerns on the Day 11 **Employee-Pay-Role** JPA API — AOP-based audit logging and method logging, a full JUnit 5 test suite, structured Logback configuration, and small entity/repository fixes.
+ 
+### 💰 Employee-Pay-Role (AOP + testing + logging)
+ 
+**New: `audit/` package — AOP-based audit trail**
+- `AuditAspect` — `@Aspect` bean using `@AfterReturning` to intercept `create`/`update`/`delete` methods on both `EmployeeServiceImpl` and `DepartmentServiceImpl`; on success it writes an `AuditLog` row (`action`, `entityType`, `entityId` extracted via reflection off the returned DTO's `getId()`, `details`, `timestamp`)
+- `AuditLog` — new `@Entity` (`audit_log` table) with `@UuidGenerator`-backed `id`
+- `AuditLogRepository` — plain `JpaRepository<AuditLog, UUID>`
+- New Flyway migration `V5__create_audit_log_table.sql` — creates the `audit_log` table (`id`, `action`, `entity_type`, `entity_id`, `details`, `timestamp`)
+**New: `logging/LoggingAspect`**
+- `@Aspect` covering `service..*ServiceImpl.*(..)` and `controller..*.*(..)` pointcuts:
+  - `@Before` — logs method entry + arguments at `DEBUG`
+  - `@AfterReturning` — logs the return value at `DEBUG`
+  - `@AfterThrowing` — logs exceptions at `ERROR` regardless of the package log level
+  - `@Around` — times every service-layer call and logs duration at `INFO`
+
+
+**New: `logback-spring.xml`**
+- `CONSOLE` appender plus size/time-based `RollingFileAppender`s for all logs (`logs/employee-payroll.log`) and an `ERROR`-only file (`logs/employee-payroll-error.log`), both rolled daily/10 MB with history caps
+- `com.employeepayroll` logger set to `INFO` (switch to `DEBUG` to see full `LoggingAspect` entry/exit tracing)
+- Noisy frameworks (Spring, Hibernate, Tomcat, Flyway, HikariCP, DevTools) turned down to `WARN`; the Spring Boot condition-evaluation report logger silenced entirely
+**New: full JUnit 5 test suite (51 tests)**
+- `EmployeeServiceImplTest` (21), `DepartmentServiceImplTest` (12) — Mockito-based service-layer tests
+- `EmployeeControllerTest` (11), `DepartmentControllerTest` (7) — `MockMvc` standalone controller tests
+- Only `EmployeePayRoleApplicationTests` (context-load smoke test) existed as of Day 11; this is the first real test coverage for the project
+
+
+**Fixes carried over from Day 11:**
+- `Employee` / `Department` entities — dropped the redundant `@AllArgsConstructor` (Lombok already generates one via the combination of `@NoArgsConstructor` + field-level annotations conflicting with JPA proxying)
+- `DepartmentRepository.findByName` → `findByNameIgnoreCase`, with `DepartmentServiceImpl` updated to match
+- `V4__fix_department_case.sql` simplified — since `DATABASE_TO_UPPER=FALSE` already stores Day 11's unquoted identifiers in lowercase, the migration now only re-establishes the `employee → department` foreign key with quoted names instead of renaming every table/column
+📂 [`day12/Employee-Pay-Role/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day12/Employee-Pay-Role)
+📂 [`day12/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day12)
+ 
+---
+
+
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
