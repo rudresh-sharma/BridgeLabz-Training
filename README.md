@@ -364,6 +364,43 @@ Focus: Cross-cutting concerns on the Day 11 **Employee-Pay-Role** JPA API — AO
 ---
 
 
+## 📅 Day 13 — 18 August 2026
+
+Focus: A brand-new **Fundo-Notes-App** Spring Boot project — starting the note-taking app's foundation with user registration/login, Spring Security + BCrypt password hashing, Flyway-managed schema, and centralized validation/exception handling. Unlike Day 12 (which built *on top of* the Day 11 **Employee-Pay-Role** API), Day 13 starts a fresh codebase from scratch.
+
+### 📝 Fundo-Notes-App
+
+Spring Boot 4.1 + Java 21 REST API (`com.fundoonotesapp`), using **Spring Data JPA** + MySQL, schema via **Flyway**, `spring-boot-starter-security` for password hashing, and `spring-boot-starter-validation` for request validation — the same core stack pattern as Day 11/12's **Employee-Pay-Role**, but applied to a new `users`/auth domain instead of employees/departments.
+
+**Domain (`user/`):**
+- `User` — `@Entity` (`users` table) with `id`, `name`, `email` (unique, not null), `password`, and `provider` (`@Enumerated(STRING)`)
+- `AuthProvider` — enum (`LOCAL`, `GOOGLE`) laying groundwork for future OAuth login alongside local email/password accounts
+- `UserRepository` — `JpaRepository<User, Long>` with derived queries `findByEmail` and `existsByEmail`
+
+**Auth (`auth/`):**
+- `AuthController` — `POST /auth/register`, `POST /auth/login`, `POST /auth/forgot-password`, `POST /auth/reset-password`, all `@Valid @RequestBody`
+- `AuthService` — registration (checks `existsByEmail`, hashes password via `PasswordEncoder`, defaults `provider = LOCAL`), login (looks up by email, verifies hash with `passwordEncoder.matches`), forgot-password (validates the email exists; token generation/email sending left as a `// Later:` stub), reset-password (re-hashes and saves a new password)
+- DTOs — `RegisterRequest`, `LoginRequest`, `ForgotPasswordRequest`, `ResetPasswordRequest`, `AuthResponse`, each with Jakarta Bean Validation: `@Email`/`@NotBlank` on emails, and a shared `@Pattern` regex requiring 8+ characters with at least one uppercase, one lowercase, one digit, and one special symbol for passwords
+
+**Config & security:**
+- `PasswordConfig` — exposes a `BCryptPasswordEncoder` bean
+- `SecurityConfig` — `@EnableWebSecurity` filter chain with CSRF disabled, `/auth/**` permitted to all, everything else requiring authentication
+
+**Error handling (`exception/`, `common/dto/`):**
+- Package-scoped custom exceptions — `UserAlreadyExistsException` (`user/`), `InvalidCredentialsException` (`auth/`), `ResourceNotFoundException` (`common/`)
+- `GlobalExceptionHandler` — `@RestControllerAdvice` mapping each to the right HTTP status (`409` conflict, `401` unauthorized, `404` not found) via `AuthResponse`, plus a `MethodArgumentNotValidException` handler that collects field-level Bean Validation errors into a `ValidationErrorResponse` (`400`)
+
+**Database:**
+- New Flyway migration `V1__create_users_table.sql` — creates the `users` table (`id`, `name`, `email` unique, `password`, `provider`), the first migration of this new project (compare to Day 11/12's `Employee-Pay-Role`, which was already up to `V5`)
+- `application.properties` (not `.yaml`, unlike `Employee-Pay-Role`) — MySQL datasource pointing at `fundo_notes_db`, `spring.jpa.hibernate.ddl-auto=update`, SQL logging enabled
+
+
+📂 [`day13/Fundo-Notes-App/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day13/Fundo-Notes-App)
+📂 [`day13/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day13)
+
+---
+
+
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
