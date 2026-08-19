@@ -400,6 +400,38 @@ Spring Boot 4.1 + Java 21 REST API (`com.fundoonotesapp`), using **Spring Data J
 
 ---
 
+## 📅 Day 14 — 19 August 2026
+ 
+Focus: Adding a **Notes** module and **JWT authentication** (+ account lockout) to the Day 13 `Fundo-Notes-App`.
+ 
+### 📝 Fundo-Notes-App (continued from Day 13)
+ 
+Added `io.jsonwebtoken` (jjwt 0.12.6) to the existing Spring Boot 4.1 / JPA / MySQL / Flyway stack.
+ 
+**New: `notes/` — first real feature**
+
+- `Note` entity (`pinned`/`archived`/`trashed`, timestamps, owning `user`) + `NoteRepository`, `NoteService`, `NoteController` (`POST/GET/PUT/DELETE /notes`), `NoteMapper`
+- Migration `V2__create_notes_table.sql`
+
+**New: JWT auth, replacing the plain login check**
+
+- `auth/jwt/JwtService` + `JwtAuthenticationFilter` — issue/validate tokens, authenticate requests via `Authorization: Bearer`
+- `security/CustomUserDetails(Service)` — adapts `User` to Spring Security
+- `SecurityConfig` moved `security/` → `config/`, rebuilt as stateless (JWT filter + `AuthenticationManager`), absorbing the old `PasswordConfig`
+- `AuthService.login` now authenticates via `AuthenticationManager`; `register`/`login` return a JWT in `AuthResponse`
+- `TestController` — `GET /test` sanity endpoint for the JWT filter chain
+
+**New: account lockout**
+- `User` gains `failedAttempts` / `accountLockedUntil`; 5 failed logins → 15-min lock (`AuthService.login`)
+- New `UnauthorizedException` for invalid-credentials/locked cases
+- Migration `V3__add_login_attempt_fields.sql`
+
+**Config:** new `.env.example` (`JWT_SECRET`, `JWT_EXPIRATION`) loaded via `spring.config.import` in `application.properties`
+ 
+📂 [`day14/Fundo-Notes-App/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day14/Fundo-Notes-App)
+↩️ Previous: [Day 13](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day13/Fundo-Notes-App)
+ 
+---
 
 ## 🛠️ Tech Stack
 
