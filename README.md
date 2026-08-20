@@ -433,6 +433,55 @@ Added `io.jsonwebtoken` (jjwt 0.12.6) to the existing Spring Boot 4.1 / JPA / My
  
 ---
 
+
+## 📅 Day 15 — 20 August 2026
+ 
+Focus: Rounding out the Day 14 `Fundo-Notes-App` with **labels**, richer **note lifecycle states** (pin/archive/trash as a single status instead of three booleans), a real **password-reset flow**, **Elasticsearch-backed search**, and **Swagger/OpenAPI** docs.
+ 
+### 📝 Fundo-Notes-App (continued from Day 14)
+ 
+Added `springdoc-openapi-starter-webmvc-ui` (3.0.1) and `spring-boot-starter-data-elasticsearch` to the existing Spring Boot 4.1 / JPA / MySQL / Flyway / JWT stack.
+ 
+**New: `labels/` — first real feature since notes**
+
+- `Label` entity (`name`, owning `user`, unique per `(name, user_id)`) + `LabelRepository`, `LabelService`, `LabelController` (`POST/GET/PUT/DELETE /labels`)
+- `Note` ↔ `Label` many-to-many via a `note_labels` join table; `NoteController` gains `POST/DELETE /notes/{noteId}/labels/{labelId}`
+- Migrations `V6__create_labels_table.sql`, `V7__create_note_labels_table.sql`
+
+**Changed: note lifecycle — booleans replaced with a status enum**
+
+- `Note.pinned`/`archived`/`trashed` (Day 14 booleans) collapsed into a single `Note.NoteStatus` enum (`ACTIVE`, `PINNED`, `ARCHIVED`, `TRASHED`)
+- `NoteController` gains `PATCH /notes/{noteId}/{pin,unpin,archive,unarchive,trash,restore}`, all routed through a shared `NoteService.changeNoteStatus`
+- Migration `V5__replace_note_booleans_with_status.sql` — adds `status`, backfills it from the old booleans (trashed > archived > pinned > active), then drops the three boolean columns
+
+**New: real password reset, replacing the Day 13 `// Later:` stub**
+
+
+- `PasswordResetToken` entity (UUID token, 15-min expiry, one-per-user) + `PasswordResetTokenRepository`
+- `AuthService.forgotPassword` now issues and stores a token (returned directly for Postman testing, in place of the old email-sending stub); `resetPassword` validates/expires the token, re-hashes the password, and deletes the token so it can't be reused
+- Migration `V4__create_password_reset_tokens_table.sql`
+
+**New: `search/` — Elasticsearch-backed note search**
+
+- `NoteDocument` (`@Document(indexName = "notes")`) + `NoteSearchRepository`, `SearchService`, `SearchController` (`GET /search/notes`) — keyword + status filtering, paginated and sortable (`SearchSortField`, `Sort.Direction`)
+- `NoteService` now indexes/updates/deletes the Elasticsearch document alongside every MySQL write (create, update, delete, and every status change)
+- `application.properties` gains `spring.elasticsearch.uris`
+
+
+**New: API docs**
+
+
+- `OpenApiConfig` — `springdoc` `OpenAPI` bean (title, contact, license, local server)
+- `SecurityConfig` permits `/swagger-ui/**` and `/v3/api-docs/**` alongside `/auth/**`; `PasswordConfig`'s `BCryptPasswordEncoder` is now injected into `SecurityConfig` rather than declared inline
+- Day 14's `TestController` (`GET /test`) removed — no longer needed now that JWT auth is exercised by real endpoints
+
+
+📂 [`day15/Fundo-Notes-App/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day15/Fundo-Notes-App)
+↩️ Previous: [Day 14](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day14/Fundo-Notes-App)
+ 
+---
+ 
+
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
