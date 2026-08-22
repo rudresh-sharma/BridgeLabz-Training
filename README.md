@@ -1216,7 +1216,24 @@ Added `springdoc-openapi-starter-webmvc-ui` (3.0.1) and `spring-boot-starter-dat
  
 ---
  
+## 📅 Day 16 — 21 August 2026
+ 
+Focus: Package-by-feature refactor + Redis caching, RabbitMQ event-driven audit logging, and a JMS/email reminder pipeline for `Fundo-Notes-App`.
+ 
+### 📝 Fundo-Notes-App
+ 
+- **Repackaged** from one flat package into feature packages: `auth/`, `notes/`, `labels/`, `search/`, `security/`, `config/`, `exception/`, `mapper/`, `audit/`, `messaging/`, `notification/`, `reminder/`
+- **Redis caching** — `RedisConfig`, `TokenCacheService` (caches JWTs), `UserCacheService` + `CachedUserDetails` (caches `UserDetails`)
+- **RabbitMQ event bus** — `RabbitMQConfig` (`note.exchange` + created/updated/deleted routing keys); `NoteEventProducer` publishes on every note write; consumers re-index Elasticsearch and write to a new `audit_logs` table (migration `V9`)
+- **Reminders** — new `Reminder` entity/CRUD (`ReminderController`, `ReminderService`, migration `V8`) + `ReminderScheduler` polling every minute for due reminders
+- **Notifications** — ActiveMQ Artemis (JMS) queue delivers due reminders to `NotificationListener`, which emails via `EmailService`/`JavaMailSender` and marks the reminder notified
+- **Config** — `application.properties` switched to `${ENV_VAR:default}` placeholders; added Redis, Artemis, Mail, RabbitMQ settings
+- **pom.xml** — added `spring-boot-starter-data-redis`, `spring-boot-starter-artemis`, `artemis-jakarta-server`, `spring-boot-starter-mail`, `spring-boot-starter-amqp`
+📂 [`day16/Fundo-Notes-App/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day16/Fundo-Notes-App)
+↩️ Previous: [Day 15](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day15/Fundo-Notes-App)
 
+
+ ---
  
 ## 🛠️ Tech Stack
 
