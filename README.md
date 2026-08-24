@@ -6,6 +6,50 @@ Day-wise log of my BridgeLabz Refresher Training
 
 ---
 
+## 📅 Day 17 — [DATE] 2026
+
+Focus: Closing gaps left in Day 16 — fixing invalid `pom.xml` dependency coordinates, completing the RabbitMQ event pipeline so update/delete events actually publish, splitting the shared search queue per event type, and adding a registration welcome email.
+
+### 📝 Fundo-Notes-App (continued from Day 16)
+
+**Fixed: `pom.xml` — several Day 16 starters weren't real Maven coordinates**
+
+- `spring-boot-starter-webmvc` → `spring-boot-starter-web`, and the `-test`-suffixed starters (`spring-boot-starter-data-jpa-test`, `-flyway-test`, `-security-test`, `-validation-test`, `-webmvc-test`) → the single real `spring-boot-starter-test`
+- Removed the non-existent `spring-boot-starter-flyway` (the real `flyway-mysql` dependency was already present separately)
+- Added `spring-boot-starter-batch`, `poi-ooxml` (5.2.5), and `spring-boot-starter-aspectj` — dependencies the Day 16 `batch/` (CSV/Excel export) and `ControllerLoggingAspect` code needed but never declared
+
+**Fixed: RabbitMQ update/delete events now actually publish**
+
+- `NoteEventProducer` gains `publishNoteUpdated`/`publishNoteDeleted` (Day 16 only had `publishNoteCreated`); `NoteService.updateNote`/`deleteNote` now call these instead of calling `rabbitTemplate.convertAndSend` inline
+- The Day 16 `NoteUpdatedAuditConsumer`/`NoteDeletedAuditConsumer`/`*SearchConsumer` listeners were already wired to these routing keys but never received anything, since nothing published to them
+
+**Changed: search queue split per event type**
+
+- The single shared `note.search.queue` (bound to all three routing keys and drained by a generic `NoteSearchConsumer`) is replaced with three dedicated queues — `note.created.search.queue`, `note.updated.search.queue`, `note.deleted.search.queue` — each bound to one routing key
+- `NoteSearchConsumer.java` removed; the existing per-event consumers (`NoteCreatedSearchConsumer`, `NoteUpdatedSearchConsumer`, `NoteDeletedSearchConsumer`) each now own their own queue instead of overlapping on one
+
+**New: registration welcome email**
+
+- `AuthService.register` now sends a `RegisterMail` via `NotificationProducer.sendRegisterMail` → new JMS queue `register.email.queue` → `NotificationListener.sendRegisterEmail` → `EmailService.sendRegistrationEmail`, which sends an HTML welcome email (`MimeMessageHelper`) instead of the reminder path's plain-text `SimpleMailMessage`
+- `ReminderMessage`/`ReminderScheduler`/`EmailService.sendReminderEmail` now also pass the user's name into the reminder email body
+
+**Cleanup: dropped redundant Redis cache bean**
+
+- Removed `RedisConfig.userRedisTemplate` and the `CachedUser` class — `CachedUserDetails` + `UserCacheService` (already in Day 16) already cover user caching, making this a duplicate
+
+**Fixed: Spring Batch chunk builder for the current Batch version**
+
+- `BatchConfig` — `.chunk(5, transactionManager)` → `.chunk(5).transactionManager(transactionManager)` (separate builder calls)
+
+**Config**
+
+- `application.properties` gains file-based logging (`logging.file.name`, per-package levels, custom console/file patterns), `spring.batch.job.enabled=false` (so the batch job doesn't auto-run on every startup), and `debug` is now hardcoded `false` instead of `${DEBUG:true}`
+
+📂 [`day17/Fundo-Notes-App/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day17/Fundo-Notes-App)
+↩️ Previous: [Day 16](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day16/Fundo-Notes-App)
+
+---
+
 ## 📅 Day 1 — 31 July 2026
 
 Focus: Core SQL — DDL, DML, and related concepts.
