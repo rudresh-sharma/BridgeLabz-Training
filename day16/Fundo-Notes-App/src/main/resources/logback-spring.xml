@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <!-- ============================= -->
+    <!-- LOG DIRECTORY -->
+    <!-- ============================= -->
+
+    <property name="LOG_PATH" value="logs"/>
+
+
+    <!-- ============================= -->
+    <!-- CONSOLE APPENDER -->
+    <!-- ============================= -->
+
+    <appender name="CONSOLE"
+              class="ch.qos.logback.core.ConsoleAppender">
+
+        <encoder>
+
+            <pattern>
+                %d{HH:mm:ss} %-5level %logger{40} - %msg%n
+            </pattern>
+
+        </encoder>
+
+    </appender>
+
+
+    <!-- ============================= -->
+    <!-- FILE APPENDER -->
+    <!-- ============================= -->
+
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <file>${LOG_PATH}/fundo-notes.log</file>
+
+
+        <!-- Rolling Policy -->
+
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+
+            <fileNamePattern>
+                ${LOG_PATH}/archive/fundo-notes.%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+
+            <!-- New file after 10 MB -->
+
+            <maxFileSize>10MB</maxFileSize>
+
+            <!-- Keep logs for 7 days -->
+
+            <maxHistory>7</maxHistory>
+
+            <!-- Maximum total archive size -->
+
+            <totalSizeCap>100MB</totalSizeCap>
+
+        </rollingPolicy>
+
+
+        <encoder>
+
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss} %-5level %logger{50} - %msg%n
+            </pattern>
+
+        </encoder>
+
+    </appender>
+
+
+    <!-- ============================= -->
+    <!-- YOUR APPLICATION -->
+    <!-- ============================= -->
+
+    <logger name="com.fundoonotesapp"
+            level="INFO"
+            additivity="false">
+
+        <appender-ref ref="CONSOLE"/>
+
+        <appender-ref ref="FILE"/>
+
+    </logger>
+
+
+    <!-- ============================= -->
+    <!-- SPRING LOGS -->
+    <!-- ============================= -->
+
+    <logger name="org.springframework"
+            level="WARN"/>
+
+
+    <!-- ============================= -->
+    <!-- HIBERNATE LOGS -->
+    <!-- ============================= -->
+
+    <logger name="org.hibernate"
+            level="WARN"/>
+
+
+    <!-- ============================= -->
+    <!-- ROOT LOGGER -->
+    <!-- ============================= -->
+
+    <root level="WARN">
+
+        <appender-ref ref="CONSOLE"/>
+
+        <appender-ref ref="FILE"/>
+
+    </root>
+
+</configuration>

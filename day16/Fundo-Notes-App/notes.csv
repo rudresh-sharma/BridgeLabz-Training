@@ -1,0 +1,6 @@
+title,content,status
+What is Spring Batch?,Spring Batch is used for processing large amounts of data.,ACTIVE
+What is Redis?,Redis is an in-memory data store used for caching.,ACTIVE
+What is RabbitMQ?,RabbitMQ is a message broker used for asynchronous communication.,ACTIVE
+What is Elasticsearch?,Elasticsearch is used for fast searching and indexing of data.,ACTIVE
+What is Spring Security?,Spring Security handles authentication and authorization.,ACTIVE
