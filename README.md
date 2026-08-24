@@ -6,7 +6,7 @@ Day-wise log of my BridgeLabz Refresher Training
 
 ---
 
-## 📅 Day 17 — [DATE] 2026
+## 📅 Day 17 —  24 August 2026
 
 Focus: Closing gaps left in Day 16 — fixing invalid `pom.xml` dependency coordinates, completing the RabbitMQ event pipeline so update/delete events actually publish, splitting the shared search queue per event type, and adding a registration welcome email.
 
