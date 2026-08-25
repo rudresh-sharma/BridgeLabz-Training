@@ -44,6 +44,7 @@ public class ReminderScheduler {
             ReminderMessage message = new ReminderMessage(
                     reminder.getId(),
                     reminder.getUser().getId(),
+                    reminder.getUser().getName(),
                     reminder.getUser().getEmail(),
                     reminder.getNote().getTitle(),
                     reminder.getNote().getContent()

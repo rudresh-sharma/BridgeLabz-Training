@@ -119,4 +119,16 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
 		response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid or missing token");
 	}
+	
+	@Override
+	protected boolean shouldNotFilter(HttpServletRequest request) {
+
+	    String path = request.getServletPath();
+
+	    return path.startsWith("/auth/")
+	            || path.equals("/swagger-ui.html")
+	            || path.startsWith("/swagger-ui/")
+	            || path.equals("/v3/api-docs")
+	            || path.startsWith("/v3/api-docs/");
+	}
 }

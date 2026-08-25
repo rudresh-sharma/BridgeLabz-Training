@@ -6,6 +6,8 @@ import lombok.Getter;
 
 import java.time.LocalDateTime;
 
+import com.fundoonotesapp.notes.entity.Note.NoteStatus;
+
 @Getter
 @Builder
 @AllArgsConstructor
@@ -17,11 +19,7 @@ public class NoteResponse {
 
     private final String content;
 
-    private final boolean pinned;
-
-    private final boolean archived;
-
-    private final boolean trashed;
+    private final NoteStatus status;
 
     private final LocalDateTime createdAt;
 

@@ -79,15 +79,17 @@ public class SecurityConfig {
                 )
 
                 .authorizeHttpRequests(auth -> auth
-                		.requestMatchers(
-                		        "/auth/login",
-                		        "/auth/register",
-                		        "/swagger-ui/**",
-                		        "/v3/api-docs/**"
-                		).permitAll()
-                		 .requestMatchers("/search/**").authenticated()
+                        .requestMatchers(
+                                "/auth/login",
+                                "/auth/register",
+                                "/swagger-ui.html",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**"
+                        ).permitAll()
 
-                		.anyRequest().authenticated()
+                        .requestMatchers("/search/**").authenticated()
+
+                        .anyRequest().authenticated()
                 )
                 .exceptionHandling(exception -> exception
                         .authenticationEntryPoint(

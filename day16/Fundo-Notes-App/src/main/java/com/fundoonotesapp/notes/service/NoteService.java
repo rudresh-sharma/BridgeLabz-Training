@@ -27,311 +27,202 @@ import org.springframework.stereotype.Service;
 import java.security.Principal;
 import java.util.List;
 import com.fundoonotesapp.search.service.SearchService;
+
 @Service
 @RequiredArgsConstructor
 public class NoteService {
 
-    private final NoteRepository noteRepository;
-    private final LabelRepository labelRepository;
-    private final UserRepository userRepository;
-    private final NoteEventProducer noteEventProducer;
-    private final SearchService searchService;
-    private final NoteMapper noteMapper;
-    private final RabbitTemplate rabbitTemplate;
+	private final NoteRepository noteRepository;
+	private final LabelRepository labelRepository;
+	private final UserRepository userRepository;
+	private final NoteEventProducer noteEventProducer;
+	private final SearchService searchService;
+	private final NoteMapper noteMapper;
+	private final RabbitTemplate rabbitTemplate;
 
-    // CREATE NOTE
-    public NoteResponse createNote(CreateNoteRequest request) {
+	// CREATE NOTE
+	public NoteResponse createNote(CreateNoteRequest request) {
 
-        User currentUser = getCurrentUser();
-        Note note = noteMapper.toEntity(request, currentUser);
+		User currentUser = getCurrentUser();
+		Note note = noteMapper.toEntity(request, currentUser);
 
-        Note savedNote = noteRepository.save(note);
+		Note savedNote = noteRepository.save(note);
 
-        // Index the saved note in Elasticsearch
-        searchService.indexNote(savedNote);
-        
-        NoteCreatedEvent event = new NoteCreatedEvent(
-                savedNote.getId(),
-                currentUser.getId(),
-                savedNote.getTitle()
-        );
+		// Index the saved note in Elasticsearch
+		searchService.indexNote(savedNote);
 
-        noteEventProducer.publishNoteCreated(event);
+		NoteCreatedEvent event = new NoteCreatedEvent(savedNote.getId(), currentUser.getId(), savedNote.getTitle());
 
-        return noteMapper.toResponse(savedNote);
-    }
+		noteEventProducer.publishNoteCreated(event);
 
+		return noteMapper.toResponse(savedNote);
+	}
 
-    // GET ALL NOTES OF CURRENT USER
-    public List<NoteResponse> getMyNotes() {
+	// GET ALL NOTES OF CURRENT USER
+	public List<NoteResponse> getMyNotes() {
 
-        User currentUser = getCurrentUser();
+		User currentUser = getCurrentUser();
 
-        return noteRepository.findByUser(currentUser)
-                .stream()
-                .map(noteMapper::toResponse)
-                .toList();
-    }
+		return noteRepository.findByUser(currentUser).stream().map(noteMapper::toResponse).toList();
+	}
 
+	// UPDATE NOTE
+	public NoteResponse updateNote(Long noteId, UpdateNoteRequest request) {
 
-    // UPDATE NOTE
-    public NoteResponse updateNote(
-            Long noteId,
-            UpdateNoteRequest request) {
+		User currentUser = getCurrentUser();
 
-        User currentUser = getCurrentUser();
+		Note note = noteRepository.findByIdAndUser(noteId, currentUser)
+				.orElseThrow(() -> new ResourceNotFoundException("Note not found"));
 
-        Note note = noteRepository
-                .findByIdAndUser(noteId, currentUser)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Note not found")
-                );
+		// Update only fields sent by the client
+		if (request.getTitle() != null) {
+			note.setTitle(request.getTitle());
+		}
 
-        // Update only fields sent by the client
-        if (request.getTitle() != null) {
-            note.setTitle(request.getTitle());
-        }
+		if (request.getContent() != null) {
+			note.setContent(request.getContent());
+		}
 
-        if (request.getContent() != null) {
-            note.setContent(request.getContent());
-        }
+		Note updatedNote = noteRepository.save(note);
 
-        Note updatedNote = noteRepository.save(note);
+		// Update Elasticsearch index
+		searchService.indexNote(updatedNote);
 
-     // Update Elasticsearch index
-     searchService.indexNote(updatedNote);
-     
-    
+		NoteUpdatedEvent event = new NoteUpdatedEvent(updatedNote.getId(), updatedNote.getUser().getId(),
+				updatedNote.getTitle());
 
-     NoteUpdatedEvent event = new NoteUpdatedEvent(
-             updatedNote.getId(),
-             updatedNote.getUser().getId(),
-             updatedNote.getTitle()
-     );
+		noteEventProducer.publishNoteUpdated(event);
 
-     rabbitTemplate.convertAndSend(
-             RabbitMQConfig.NOTE_EXCHANGE,
-             RabbitMQConfig.NOTE_UPDATED_ROUTING_KEY,
-             event
-     );
+		System.out.println("NOTE UPDATED EVENT SENT TO RABBITMQ: " + event);
 
-     System.out.println(
-             "NOTE UPDATED EVENT SENT TO RABBITMQ: " + event
-     );
+		return noteMapper.toResponse(updatedNote);
+	}
 
-     return noteMapper.toResponse(updatedNote);
-    }
+	// DELETE NOTE
+	public void deleteNote(Long noteId) {
 
+		User currentUser = getCurrentUser();
 
-    // DELETE NOTE
-    public void deleteNote(Long noteId) {
+		Note note = noteRepository.findByIdAndUser(noteId, currentUser)
+				.orElseThrow(() -> new ResourceNotFoundException("Note not found"));
 
-        User currentUser = getCurrentUser();
+		if (!note.getUser().getId().equals(currentUser.getId())) {
+			throw new RuntimeException("Unauthorized");
+		}
 
-        Note note = noteRepository
-                .findByIdAndUser(noteId, currentUser)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Note not found")
-                );
-        
-        
-        if (!note.getUser().getId().equals(currentUser.getId())) {
-            throw new RuntimeException("Unauthorized");
-        }
-        
-        // Save event data BEFORE deletion
-        NoteDeletedEvent event = new NoteDeletedEvent(
-                note.getId(),
-                currentUser.getId(),
-                note.getTitle()
-        );
+		// Save event data BEFORE deletion
+		NoteDeletedEvent event = new NoteDeletedEvent(note.getId(), currentUser.getId(), note.getTitle());
 
-        noteRepository.delete(note);
+		noteRepository.delete(note);
 
-        // Remove from Elasticsearch
-        searchService.deleteNoteFromIndex(noteId);  
-        
-        
-        // Publish event
-        rabbitTemplate.convertAndSend(
-                RabbitMQConfig.NOTE_EXCHANGE,
-                RabbitMQConfig.NOTE_DELETED_ROUTING_KEY,
-                event
-        );
+		// Remove from Elasticsearch
+		searchService.deleteNoteFromIndex(noteId);
 
-        System.out.println(
-                "NOTE DELETED EVENT SENT TO RABBITMQ: " + event
-        );
-    }
+		// Publish event
+		noteEventProducer.publishNoteDeleted(event);
 
+		
+		System.out.println("NOTE DELETED EVENT SENT TO RABBITMQ: " + event);
+	}
 
-    // GET CURRENT LOGGED-IN USER
-    private User getCurrentUser() {
+	// GET CURRENT LOGGED-IN USER
+	private User getCurrentUser() {
 
-        String email = SecurityContextHolder
-                .getContext()
-                .getAuthentication()
-                .getName();
+		String email = SecurityContextHolder.getContext().getAuthentication().getName();
 
-        return userRepository.findByEmail(email)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException(
-                                "Authenticated user not found"
-                        )
-                );
-    }
-    
-    
-    private Note getUserNote(Long noteId, User user) {
+		return userRepository.findByEmail(email)
+				.orElseThrow(() -> new ResourceNotFoundException("Authenticated user not found"));
+	}
 
-        return noteRepository.findByIdAndUser(noteId, user)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Note not found")
-                );
-    }
-    
-    private NoteResponse changeNoteStatus(
-            Long noteId,
-            User user,
-            NoteStatus status) {
+	private Note getUserNote(Long noteId, User user) {
 
-        Note note = getUserNote(noteId, user);
+		return noteRepository.findByIdAndUser(noteId, user)
+				.orElseThrow(() -> new ResourceNotFoundException("Note not found"));
+	}
 
-        note.setStatus(status);
+	private NoteResponse changeNoteStatus(Long noteId, User user, NoteStatus status) {
 
-        Note updatedNote = noteRepository.save(note);
+		Note note = getUserNote(noteId, user);
 
-        // Synchronize updated status with Elasticsearch
-        searchService.indexNote(updatedNote);
+		note.setStatus(status);
 
-        return noteMapper.toResponse(updatedNote);
-    }
-    
-    public NoteResponse pinNote(Long noteId, User user) {
+		Note updatedNote = noteRepository.save(note);
 
-        return changeNoteStatus(
-                noteId,
-                user,
-                NoteStatus.PINNED
-        );
-    }
-    
-    
-    public NoteResponse unpinNote(Long noteId, User user) {
+		// Synchronize updated status with Elasticsearch
+		searchService.indexNote(updatedNote);
 
-        return changeNoteStatus(
-                noteId,
-                user,
-                NoteStatus.ACTIVE
-        );
-    }
-    
-    
-    public NoteResponse archiveNote(Long noteId, User user) {
+		return noteMapper.toResponse(updatedNote);
+	}
 
-        return changeNoteStatus(
-                noteId,
-                user,
-                NoteStatus.ARCHIVED
-        );
-    }
-    
-    public NoteResponse unarchiveNote(Long noteId, User user) {
+	public NoteResponse pinNote(Long noteId, User user) {
 
-        return changeNoteStatus(
-                noteId,
-                user,
-                NoteStatus.ACTIVE
-        );
-    }
-    
-    
-    public NoteResponse trashNote(Long noteId, User user) {
+		return changeNoteStatus(noteId, user, NoteStatus.PINNED);
+	}
 
-        return changeNoteStatus(
-                noteId,
-                user,
-                NoteStatus.TRASHED
-        );
-    }
-    
-    public NoteResponse restoreNote(Long noteId, User user) {
+	public NoteResponse unpinNote(Long noteId, User user) {
 
-        return changeNoteStatus(
-                noteId,
-                user,
-                NoteStatus.ACTIVE
-        );
-    }
-    
-    
-    public void addLabelToNote(
-            Long noteId,
-            Long labelId,
-            Principal principal
-    ) {
-        User user = getCurrentUser(principal);
+		return changeNoteStatus(noteId, user, NoteStatus.ACTIVE);
+	}
 
-        Note note = noteRepository
-                .findByIdAndUserId(noteId, user.getId())
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Note not found")
-                );
+	public NoteResponse archiveNote(Long noteId, User user) {
 
-        Label label = labelRepository
-                .findByIdAndUserId(labelId, user.getId())
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Label not found")
-                );
+		return changeNoteStatus(noteId, user, NoteStatus.ARCHIVED);
+	}
 
-        note.getLabels().add(label);
+	public NoteResponse unarchiveNote(Long noteId, User user) {
 
-        noteRepository.save(note);
-    }
-    
-    
-    public void removeLabelFromNote(
-            Long noteId,
-            Long labelId,
-            Principal principal
-    ) {
+		return changeNoteStatus(noteId, user, NoteStatus.ACTIVE);
+	}
 
-        User user = getCurrentUser(principal);
+	public NoteResponse trashNote(Long noteId, User user) {
 
-        // Check that the note belongs to the logged-in user
-        Note note = noteRepository
-                .findByIdAndUserId(noteId, user.getId())
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Note not found")
-                );
+		return changeNoteStatus(noteId, user, NoteStatus.TRASHED);
+	}
 
-        // Check that the label belongs to the logged-in user
-        Label label = labelRepository
-                .findByIdAndUserId(labelId, user.getId())
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Label not found")
-                );
+	public NoteResponse restoreNote(Long noteId, User user) {
 
-        note.getLabels().remove(label);
+		return changeNoteStatus(noteId, user, NoteStatus.ACTIVE);
+	}
 
-        noteRepository.save(note);
-    }
-    
-    
- // ============================
-    // CURRENT LOGGED-IN USER
-    // ============================
+	public void addLabelToNote(Long noteId, Long labelId, Principal principal) {
+		User user = getCurrentUser(principal);
 
-    private User getCurrentUser(Principal principal) {
+		Note note = noteRepository.findByIdAndUserId(noteId, user.getId())
+				.orElseThrow(() -> new ResourceNotFoundException("Note not found"));
 
-        return userRepository
-                .findByEmail(principal.getName())
-                .orElseThrow(() ->
-                        new ResourceNotFoundException(
-                                "User not found"
-                        )
-                );
-    }
-    
+		Label label = labelRepository.findByIdAndUserId(labelId, user.getId())
+				.orElseThrow(() -> new ResourceNotFoundException("Label not found"));
+
+		note.getLabels().add(label);
+
+		noteRepository.save(note);
+	}
+
+	public void removeLabelFromNote(Long noteId, Long labelId, Principal principal) {
+
+		User user = getCurrentUser(principal);
+
+		// Check that the note belongs to the logged-in user
+		Note note = noteRepository.findByIdAndUserId(noteId, user.getId())
+				.orElseThrow(() -> new ResourceNotFoundException("Note not found"));
+
+		// Check that the label belongs to the logged-in user
+		Label label = labelRepository.findByIdAndUserId(labelId, user.getId())
+				.orElseThrow(() -> new ResourceNotFoundException("Label not found"));
+
+		note.getLabels().remove(label);
+
+		noteRepository.save(note);
+	}
+
+	// ============================
+	// CURRENT LOGGED-IN USER
+	// ============================
+
+	private User getCurrentUser(Principal principal) {
+
+		return userRepository.findByEmail(principal.getName())
+				.orElseThrow(() -> new ResourceNotFoundException("User not found"));
+	}
 
 }

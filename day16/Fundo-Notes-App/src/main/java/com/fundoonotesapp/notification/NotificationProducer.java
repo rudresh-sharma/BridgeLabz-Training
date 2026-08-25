@@ -35,4 +35,12 @@ public class NotificationProducer {
                         + reminderMessage.reminderId()
         );
     }
+    
+    
+    public void sendRegisterMail(RegisterMail regMail) {
+    	jmsTemplate.convertAndSend(NotificationQueue.REGISTER_EMAIL_QUEUE,regMail);
+    	
+    	System.out.println("REGISTER EMAIL SEND BY PRODUCER TO " + regMail.email());	
+    }
+    
 }

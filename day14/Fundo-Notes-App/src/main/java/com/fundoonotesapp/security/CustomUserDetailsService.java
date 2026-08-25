@@ -1,6 +1,5 @@
 package com.fundoonotesapp.security;
 
-import com.fundoonotesapp.user.entity.User;
 import com.fundoonotesapp.user.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -17,13 +16,15 @@ public class CustomUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String email)
+    public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
 
-        User user = userRepository.findByEmail(email)
+        return userRepository.findByEmail(username)
+                .<UserDetails>map(CustomUserDetails::new)
                 .orElseThrow(() ->
-                        new UsernameNotFoundException("User not found"));
-
-        return new CustomUserDetails(user);
+                        new UsernameNotFoundException(
+                                "User not found with email: " + username
+                        )
+                );
     }
 }

@@ -15,17 +15,21 @@ public class RabbitMQConfig {
 
     // ================= QUEUES =================
 
-    public static final String NOTE_SEARCH_QUEUE =
-            "note.search.queue";
+    public static final String NOTE_CREATED_SEARCH_QUEUE =
+            "note.created.search.queue";
+
+    public static final String NOTE_UPDATED_SEARCH_QUEUE =
+            "note.updated.search.queue";
+
+    public static final String NOTE_DELETED_SEARCH_QUEUE =
+            "note.deleted.search.queue";
 
     public static final String NOTE_CREATED_AUDIT_QUEUE =
             "note.created.audit.queue";
 
     public static final String NOTE_UPDATED_AUDIT_QUEUE =
             "note.updated.audit.queue";
-    
-    public static final String NOTE_DELETED_SEARCH_QUEUE =
-            "note.deleted.search.queue";
+
     public static final String NOTE_DELETED_AUDIT_QUEUE =
             "note.deleted.audit.queue";
 
@@ -64,11 +68,21 @@ public class RabbitMQConfig {
     }
 
 
-    // ================= SEARCH QUEUE =================
+    // ================= SEARCH QUEUES =================
 
     @Bean
-    public Queue noteSearchQueue() {
-        return new Queue(NOTE_SEARCH_QUEUE, true);
+    public Queue noteCreatedSearchQueue() {
+        return new Queue(NOTE_CREATED_SEARCH_QUEUE, true);
+    }
+
+    @Bean
+    public Queue noteUpdatedSearchQueue() {
+        return new Queue(NOTE_UPDATED_SEARCH_QUEUE, true);
+    }
+
+    @Bean
+    public Queue noteDeletedSearchQueue() {
+        return new Queue(NOTE_DELETED_SEARCH_QUEUE, true);
     }
 
 
@@ -89,44 +103,38 @@ public class RabbitMQConfig {
         return new Queue(NOTE_DELETED_AUDIT_QUEUE, true);
     }
 
-    @Bean
-    public Queue noteDeletedSearchQueue() {
-        return new Queue(NOTE_DELETED_SEARCH_QUEUE, true);
-    }
 
     // =====================================================
     // SEARCH QUEUE BINDINGS
-    // Search receives all note events
+    // Each queue receives only its own event type
     // =====================================================
 
     @Bean
     public Binding noteCreatedSearchBinding(
-            @Qualifier("noteSearchQueue") Queue noteSearchQueue,
+            @Qualifier("noteCreatedSearchQueue") Queue noteCreatedSearchQueue,
             TopicExchange noteExchange
     ) {
-        return BindingBuilder.bind(noteSearchQueue)
+        return BindingBuilder.bind(noteCreatedSearchQueue)
                 .to(noteExchange)
                 .with(NOTE_CREATED_ROUTING_KEY);
     }
 
-
     @Bean
     public Binding noteUpdatedSearchBinding(
-            @Qualifier("noteSearchQueue") Queue noteSearchQueue,
+            @Qualifier("noteUpdatedSearchQueue") Queue noteUpdatedSearchQueue,
             TopicExchange noteExchange
     ) {
-        return BindingBuilder.bind(noteSearchQueue)
+        return BindingBuilder.bind(noteUpdatedSearchQueue)
                 .to(noteExchange)
                 .with(NOTE_UPDATED_ROUTING_KEY);
     }
 
-
     @Bean
     public Binding noteDeletedSearchBinding(
-            @Qualifier("noteSearchQueue") Queue noteSearchQueue,
+            @Qualifier("noteDeletedSearchQueue") Queue noteDeletedSearchQueue,
             TopicExchange noteExchange
     ) {
-        return BindingBuilder.bind(noteSearchQueue)
+        return BindingBuilder.bind(noteDeletedSearchQueue)
                 .to(noteExchange)
                 .with(NOTE_DELETED_ROUTING_KEY);
     }
@@ -147,7 +155,6 @@ public class RabbitMQConfig {
                 .with(NOTE_CREATED_ROUTING_KEY);
     }
 
-
     @Bean
     public Binding noteUpdatedAuditBinding(
             @Qualifier("noteUpdatedAuditQueue") Queue noteUpdatedAuditQueue,
@@ -157,7 +164,6 @@ public class RabbitMQConfig {
                 .to(noteExchange)
                 .with(NOTE_UPDATED_ROUTING_KEY);
     }
-
 
     @Bean
     public Binding noteDeletedAuditBinding(

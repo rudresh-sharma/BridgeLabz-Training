@@ -16,137 +16,107 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    private final JwtService jwtService;
-    private final CustomUserDetailsService customUserDetailsService;
-    private final TokenCacheService tokenCacheService;
+	private final JwtService jwtService;
+	private final CustomUserDetailsService customUserDetailsService;
+	private final TokenCacheService tokenCacheService;
 
+	@Override
+	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+			throws ServletException, IOException {
 
-    @Override
-    protected void doFilterInternal(
-            HttpServletRequest request,
-            HttpServletResponse response,
-            FilterChain filterChain
-    ) throws ServletException, IOException {
+		// 1. Skip JWT validation for public endpoints
+		if (isPublicEndpoint(request)) {
+			filterChain.doFilter(request, response);
+			return;
+		}
 
-        // 1. Skip JWT validation for public endpoints
-        if (isPublicEndpoint(request)) {
-            filterChain.doFilter(request, response);
-            return;
-        }
+		// 2. Get Authorization header
+		String authHeader = request.getHeader("Authorization");
 
-        // 2. Get Authorization header
-        String authHeader = request.getHeader("Authorization");
+		log.debug("JWT authentication request: {}", request.getRequestURI());
 
-        System.out.println("URI: " + request.getRequestURI());
+		// 3. Reject protected request if token is missing
+		if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+			rejectUnauthorized(response);
+			return;
+		}
 
-        // 3. Reject protected request if token is missing
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            rejectUnauthorized(response);
-            return;
-        }
+		// 4. Extract JWT
+		String jwt = authHeader.substring(7);
 
-        // 4. Extract JWT
-        String jwt = authHeader.substring(7);
+		try {
 
-        try {
+			// 5. Extract email from JWT
+			String userEmail = jwtService.extractUsername(jwt);
 
-            // 5. Extract email from JWT
-            String userEmail = jwtService.extractUsername(jwt);
+			log.debug("Username extracted from JWT: {}", userEmail);
 
-            System.out.println("Username from JWT: " + userEmail);
+			// 6. Check whether user is already authenticated
+			if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-            // 6. Check whether user is already authenticated
-            if (userEmail != null
-                    && SecurityContextHolder.getContext()
-                            .getAuthentication() == null) {
+				// 7. Check whether exact token exists in Redis
+				boolean tokenCached = tokenCacheService.isTokenCached(userEmail, jwt);
 
-                // 7. Check whether exact token exists in Redis
-                boolean tokenCached =
-                        tokenCacheService.isTokenCached(userEmail, jwt);
+//				log.debug("Token found in Redis cache: {}", tokenCached);
 
-                System.out.println("Token cached: " + tokenCached);
+				if (!tokenCached) {
+					rejectUnauthorized(response);
+					return;
+				}
 
-                if (!tokenCached) {
-                    rejectUnauthorized(response);
-                    return;
-                }
+				// 8. Load user details
+				UserDetails userDetails = customUserDetailsService.loadUserByUsername(userEmail);
 
-                // 8. Load user details
-                UserDetails userDetails =
-                        customUserDetailsService
-                                .loadUserByUsername(userEmail);
+				// 9. Validate JWT
+				if (!jwtService.isTokenValid(jwt, userDetails)) {
+					rejectUnauthorized(response);
+					return;
+				}
 
-                // 9. Validate JWT
-                if (!jwtService.isTokenValid(jwt, userDetails)) {
-                    rejectUnauthorized(response);
-                    return;
-                }
+				// 10. Create authenticated token
+				UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
+						userDetails, null, userDetails.getAuthorities());
 
-                // 10. Create authenticated token
-                UsernamePasswordAuthenticationToken authenticationToken =
-                        new UsernamePasswordAuthenticationToken(
-                                userDetails,
-                                null,
-                                userDetails.getAuthorities()
-                        );
+				// 11. Add request details
+				authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
-                // 11. Add request details
-                authenticationToken.setDetails(
-                        new WebAuthenticationDetailsSource()
-                                .buildDetails(request)
-                );
+				// 12. Store authenticated user
+				SecurityContextHolder.getContext().setAuthentication(authenticationToken);
 
-                // 12. Store authenticated user
-                SecurityContextHolder.getContext()
-                        .setAuthentication(authenticationToken);
+				log.debug("User authenticated successfully: {}", userEmail);			}
 
-                System.out.println(
-                        "USER AUTHENTICATED: " + userEmail
-                );
-            }
+		} catch (Exception e) {
 
-        } catch (Exception e) {
+			// Invalid, expired, malformed JWT, etc.
+			SecurityContextHolder.clearContext();
 
-            // Invalid, expired, malformed JWT, etc.
-            SecurityContextHolder.clearContext();
+			System.out.println("JWT AUTHENTICATION FAILED: " + e.getMessage());
 
-            System.out.println(
-                    "JWT AUTHENTICATION FAILED: "
-                            + e.getMessage()
-            );
+			rejectUnauthorized(response);
+			return;
+		}
 
-            rejectUnauthorized(response);
-            return;
-        }
+		// 13. Continue only after successful authentication
+		filterChain.doFilter(request, response);
+	}
 
-        // 13. Continue only after successful authentication
-        filterChain.doFilter(request, response);
-    }
+	private boolean isPublicEndpoint(HttpServletRequest request) {
 
+		String path = request.getServletPath();
 
-    private boolean isPublicEndpoint(HttpServletRequest request) {
+		return path.startsWith("/auth/") || path.startsWith("/swagger-ui/") || path.startsWith("/v3/api-docs")
+				|| path.equals("/swagger-ui.html");
+	}
 
-        String path = request.getServletPath();
+	private void rejectUnauthorized(HttpServletResponse response) throws IOException {
 
-        return path.startsWith("/auth/")
-                || path.startsWith("/swagger-ui/")
-                || path.startsWith("/v3/api-docs")
-                || path.equals("/swagger-ui.html");
-    }
-
-
-    private void rejectUnauthorized(
-            HttpServletResponse response
-    ) throws IOException {
-
-        response.sendError(
-                HttpServletResponse.SC_UNAUTHORIZED,
-                "Invalid or missing token"
-        );
-    }
+		response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid or missing token");
+	}
 }

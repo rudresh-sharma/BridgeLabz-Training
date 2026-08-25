@@ -29,7 +29,7 @@ public class ReminderScheduler {
 
         List<Reminder> dueReminders =
                 reminderRepository
-                        .findByNotifiedFalseAndReminderTimeLessThanEqual(now);
+                        .findDueReminders(now);
 
         if (dueReminders.isEmpty()) {
             return;

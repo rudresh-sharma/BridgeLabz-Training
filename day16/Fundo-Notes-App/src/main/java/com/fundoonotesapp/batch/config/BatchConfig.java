@@ -1,6 +1,7 @@
 package com.fundoonotesapp.batch.config;
 
 import com.fundoonotesapp.batch.dto.NoteExcelRow;
+
 import com.fundoonotesapp.batch.processor.NoteProcessor;
 import com.fundoonotesapp.batch.reader.ExcelNoteReader;
 import com.fundoonotesapp.batch.writer.NoteWriter;
@@ -39,15 +40,12 @@ public class BatchConfig {
     public Step importNotesStep(
             ItemReader<NoteExcelRow> csvNoteReader
     ) {
-
         return new StepBuilder(
                 "importNotesStep",
                 jobRepository
         )
-        .<NoteExcelRow, Note>chunk(
-                5,
-                transactionManager
-        )
+        .<NoteExcelRow, Note>chunk(5)
+        .transactionManager(transactionManager)
         .reader(csvNoteReader)
         .processor(noteProcessor)
         .writer(noteWriter)

@@ -2,8 +2,10 @@ package com.fundoonotesapp.auth.service;
 
 import com.fundoonotesapp.auth.dto.AuthResponse;
 import com.fundoonotesapp.auth.jwt.JwtService;
+import com.fundoonotesapp.auth.repository.PasswordResetTokenRepository;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -14,6 +16,7 @@ import com.fundoonotesapp.auth.dto.ForgotPasswordRequest;
 import com.fundoonotesapp.auth.dto.LoginRequest;
 import com.fundoonotesapp.auth.dto.RegisterRequest;
 import com.fundoonotesapp.auth.dto.ResetPasswordRequest;
+import com.fundoonotesapp.auth.entity.PasswordResetToken;
 import com.fundoonotesapp.exception.auth.*;
 import com.fundoonotesapp.exception.common.*;
 import com.fundoonotesapp.exception.user.*;
@@ -26,11 +29,13 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
 public class AuthService {
-
+	
+	private final PasswordResetTokenRepository passwordResetTokenRepository;
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
@@ -73,7 +78,7 @@ public class AuthService {
                 .orElseThrow(() ->
                         new UnauthorizedException("Invalid email or password")
                 );
-
+        
         // Check whether account is locked
         if (user.getAccountLockedUntil() != null
                 && user.getAccountLockedUntil().isAfter(LocalDateTime.now())) {
@@ -150,20 +155,38 @@ public class AuthService {
         }
     }
     // Forgot Password
+    @Transactional
     public AuthResponse forgotPassword(ForgotPasswordRequest request) {
 
-        userRepository.findByEmail(request.getEmail())
+        User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() ->
                         new ResourceNotFoundException("User not found")
                 );
 
-        // Later:
-        // Generate reset token
-        // Store token and expiry
-        // Send reset email
+        // Delete previous reset token, if it exists
+        passwordResetTokenRepository.deleteByUser(user);
 
+        // Generate a new random token
+        String token = UUID.randomUUID().toString();
+
+        // Create reset token
+        PasswordResetToken passwordResetToken =
+                PasswordResetToken.builder()
+                        .token(token)
+                        .expiresAt(
+                                LocalDateTime.now().plusMinutes(15)
+                        )
+                        .user(user)
+                        .build();
+
+        // Save token
+        passwordResetTokenRepository.save(passwordResetToken);
+
+        // For now, return the token so we can test with Postman.
+        // Later, this token should be sent through email instead.
         return new AuthResponse(
-                "Password reset request accepted"
+                "Password reset token generated",
+                token
         );
     }
 
@@ -171,17 +194,44 @@ public class AuthService {
     // Reset Password
     public AuthResponse resetPassword(ResetPasswordRequest request) {
 
-        User user = userRepository.findByEmail(request.getEmail())
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("User not found")
-                );
+        // 1. Find reset token
+        PasswordResetToken passwordResetToken =
+                passwordResetTokenRepository
+                        .findByToken(request.getToken())
+                        .orElseThrow(() ->
+                                new ResourceNotFoundException(
+                                        "Invalid password reset token"
+                                )
+                        );
 
+        // 2. Check whether token has expired
+        if (passwordResetToken.getExpiresAt()
+                .isBefore(LocalDateTime.now())) {
+
+            // Remove expired token
+            passwordResetTokenRepository.delete(passwordResetToken);
+
+            throw new UnauthorizedException(
+                    "Password reset token has expired"
+            );
+        }
+
+        // 3. Get the user associated with this token
+        User user = passwordResetToken.getUser();
+
+        // 4. Encode and update password
         user.setPassword(
                 passwordEncoder.encode(request.getNewPassword())
         );
 
         userRepository.save(user);
 
-        return new AuthResponse("Password reset successfully");
+        // 5. Delete token so it cannot be reused
+        passwordResetTokenRepository.delete(passwordResetToken);
+
+        return new AuthResponse(
+                "Password reset successfully"
+        );
     }
+    
 }

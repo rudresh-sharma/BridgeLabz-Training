@@ -21,6 +21,8 @@ import com.fundoonotesapp.auth.entity.PasswordResetToken;
 import com.fundoonotesapp.exception.auth.*;
 import com.fundoonotesapp.exception.common.*;
 import com.fundoonotesapp.exception.user.*;
+import com.fundoonotesapp.notification.NotificationProducer;
+import com.fundoonotesapp.notification.RegisterMail;
 import com.fundoonotesapp.security.CustomUserDetails;
 import com.fundoonotesapp.user.entity.AuthProvider;
 import com.fundoonotesapp.user.entity.User;
@@ -40,40 +42,47 @@ public class AuthService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
+    private final NotificationProducer notificationProducer;
     private final TokenCacheService tokenCacheService;
     private final JwtService jwtService;
     private static final int MAX_FAILED_ATTEMPTS = 5;
     private static final int LOCK_DURATION_MINUTES = 15;
     // Register User
-    public AuthResponse register(RegisterRequest request) {
-
-        // Check whether email already exists
-        if (userRepository.existsByEmail(request.getEmail().toLowerCase())) {
-            throw new UserAlreadyExistsException(
-                    "Email already registered"
-            );
-        }
-
-        // Create User entity
-        User user = User.builder()
-                .name(request.getName())
-                .email(request.getEmail().toLowerCase())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .provider(AuthProvider.LOCAL)
-                .build();
-
-        // Save user
-        userRepository.save(user);
-        
-        String token = jwtService.generateToken(user);
-        
-        tokenCacheService.saveToken(
-                user.getEmail(),
-                token,
-                jwtService.getJwtExpirationSeconds() * 1000
-        );
-        return new AuthResponse("User registered successfully, Kindly Login", token);
-    }
+    
+    
+	    public AuthResponse register(RegisterRequest request) {
+	
+	        // Check whether email already exists
+	        if (userRepository.existsByEmail(request.getEmail().toLowerCase())) {
+	            throw new UserAlreadyExistsException(
+	                    "Email already registered"
+	            );
+	        }
+	
+	        // Create User entity
+	        User user = User.builder()
+	                .name(request.getName())
+	                .email(request.getEmail().toLowerCase())
+	                .password(passwordEncoder.encode(request.getPassword()))
+	                .provider(AuthProvider.LOCAL)
+	                .build();
+	
+	        // Save user
+	        userRepository.save(user);
+	        
+	        String token = jwtService.generateToken(user);
+	        
+	        tokenCacheService.saveToken(
+	                user.getEmail(),
+	                token,
+	                jwtService.getJwtExpirationSeconds() * 1000
+	        );
+	        
+	        
+	        RegisterMail mail = new RegisterMail(user.getName(), user.getEmail());
+	        notificationProducer.sendRegisterMail(mail);
+	        return new AuthResponse("User registered successfully, Kindly Login", token);
+	    }
 
 
     // Login User
@@ -92,15 +101,6 @@ public class AuthService {
             throw new UnauthorizedException(
                     "Account is locked. Please try again later."
             );
-        }
-
-        // Unlock if lock time expired
-        if (user.getAccountLockedUntil() != null
-                && !user.getAccountLockedUntil().isAfter(LocalDateTime.now())) {
-
-            user.setAccountLockedUntil(null);
-            user.setFailedAttempts(0);
-            userRepository.save(user);
         }
 
         try {

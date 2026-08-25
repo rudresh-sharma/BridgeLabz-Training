@@ -3,6 +3,7 @@ package com.fundoonotesapp.notification;
 import com.fundoonotesapp.reminder.entity.Reminder;
 import com.fundoonotesapp.reminder.repository.ReminderRepository;
 
+import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.jms.annotation.JmsListener;
@@ -24,9 +25,17 @@ public class NotificationListener {
                 "MESSAGE RECEIVED FROM QUEUE: " + message
         );
     }
-
-
-    @JmsListener(destination = NotificationQueue.REMINDER_QUEUE)
+    
+    
+    @JmsListener(destination = NotificationQueue.REGISTER_EMAIL_QUEUE, containerFactory = "jmsListenerContainerFactory")
+    public void sendRegisterEmail(RegisterMail regMail) throws MessagingException {
+    	emailService.sendRegistrationEmail(regMail.fullname(), regMail.email());
+    }
+    
+    
+    
+    
+    @JmsListener(destination = NotificationQueue.REMINDER_QUEUE, containerFactory = "jmsListenerContainerFactory")
     @Transactional
     public void receiveReminder(ReminderMessage message) {
 
@@ -43,6 +52,7 @@ public class NotificationListener {
 
         // Send actual email
         emailService.sendReminderEmail(
+                message.fullname(),
                 message.email(),
                 message.noteTitle(),
                 message.noteContent()

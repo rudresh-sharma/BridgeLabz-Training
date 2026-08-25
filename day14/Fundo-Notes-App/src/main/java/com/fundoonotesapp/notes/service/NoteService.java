@@ -1,11 +1,14 @@
 package com.fundoonotesapp.notes.service;
 
 import com.fundoonotesapp.exception.common.ResourceNotFoundException;
+import com.fundoonotesapp.labels.entity.Label;
+import com.fundoonotesapp.labels.repository.LabelRepository;
 import com.fundoonotesapp.mapper.NoteMapper;
 import com.fundoonotesapp.notes.dto.CreateNoteRequest;
 import com.fundoonotesapp.notes.dto.NoteResponse;
 import com.fundoonotesapp.notes.dto.UpdateNoteRequest;
 import com.fundoonotesapp.notes.entity.Note;
+import com.fundoonotesapp.notes.entity.Note.NoteStatus;
 import com.fundoonotesapp.notes.repository.NoteRepository;
 import com.fundoonotesapp.user.entity.User;
 import com.fundoonotesapp.user.repository.UserRepository;
@@ -15,14 +18,17 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.util.List;
-
+import com.fundoonotesapp.search.service.SearchService;
 @Service
 @RequiredArgsConstructor
 public class NoteService {
 
     private final NoteRepository noteRepository;
+    private final LabelRepository labelRepository;
     private final UserRepository userRepository;
+    private final SearchService searchService;
     private final NoteMapper noteMapper;
 
 
@@ -30,10 +36,12 @@ public class NoteService {
     public NoteResponse createNote(CreateNoteRequest request) {
 
         User currentUser = getCurrentUser();
-
         Note note = noteMapper.toEntity(request, currentUser);
 
         Note savedNote = noteRepository.save(note);
+
+        // Index the saved note in Elasticsearch
+        searchService.indexNote(savedNote);
 
         return noteMapper.toResponse(savedNote);
     }
@@ -75,7 +83,10 @@ public class NoteService {
 
         Note updatedNote = noteRepository.save(note);
 
-        return noteMapper.toResponse(updatedNote);
+     // Update Elasticsearch index
+     searchService.indexNote(updatedNote);
+
+     return noteMapper.toResponse(updatedNote);
     }
 
 
@@ -91,7 +102,9 @@ public class NoteService {
                 );
 
         noteRepository.delete(note);
-    }
+
+        // Remove from Elasticsearch
+        searchService.deleteNoteFromIndex(noteId);    }
 
 
     // GET CURRENT LOGGED-IN USER
@@ -109,4 +122,158 @@ public class NoteService {
                         )
                 );
     }
+    
+    
+    private Note getUserNote(Long noteId, User user) {
+
+        return noteRepository.findByIdAndUser(noteId, user)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Note not found")
+                );
+    }
+    
+    private NoteResponse changeNoteStatus(
+            Long noteId,
+            User user,
+            NoteStatus status) {
+
+        Note note = getUserNote(noteId, user);
+
+        note.setStatus(status);
+
+        Note updatedNote = noteRepository.save(note);
+
+        // Synchronize updated status with Elasticsearch
+        searchService.indexNote(updatedNote);
+
+        return noteMapper.toResponse(updatedNote);
+    }
+    
+    public NoteResponse pinNote(Long noteId, User user) {
+
+        return changeNoteStatus(
+                noteId,
+                user,
+                NoteStatus.PINNED
+        );
+    }
+    
+    
+    public NoteResponse unpinNote(Long noteId, User user) {
+
+        return changeNoteStatus(
+                noteId,
+                user,
+                NoteStatus.ACTIVE
+        );
+    }
+    
+    
+    public NoteResponse archiveNote(Long noteId, User user) {
+
+        return changeNoteStatus(
+                noteId,
+                user,
+                NoteStatus.ARCHIVED
+        );
+    }
+    
+    public NoteResponse unarchiveNote(Long noteId, User user) {
+
+        return changeNoteStatus(
+                noteId,
+                user,
+                NoteStatus.ACTIVE
+        );
+    }
+    
+    
+    public NoteResponse trashNote(Long noteId, User user) {
+
+        return changeNoteStatus(
+                noteId,
+                user,
+                NoteStatus.TRASHED
+        );
+    }
+    
+    public NoteResponse restoreNote(Long noteId, User user) {
+
+        return changeNoteStatus(
+                noteId,
+                user,
+                NoteStatus.ACTIVE
+        );
+    }
+    
+    
+    public void addLabelToNote(
+            Long noteId,
+            Long labelId,
+            Principal principal
+    ) {
+        User user = getCurrentUser(principal);
+
+        Note note = noteRepository
+                .findByIdAndUserId(noteId, user.getId())
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Note not found")
+                );
+
+        Label label = labelRepository
+                .findByIdAndUserId(labelId, user.getId())
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Label not found")
+                );
+
+        note.getLabels().add(label);
+
+        noteRepository.save(note);
+    }
+    
+    
+    public void removeLabelFromNote(
+            Long noteId,
+            Long labelId,
+            Principal principal
+    ) {
+
+        User user = getCurrentUser(principal);
+
+        // Check that the note belongs to the logged-in user
+        Note note = noteRepository
+                .findByIdAndUserId(noteId, user.getId())
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Note not found")
+                );
+
+        // Check that the label belongs to the logged-in user
+        Label label = labelRepository
+                .findByIdAndUserId(labelId, user.getId())
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Label not found")
+                );
+
+        note.getLabels().remove(label);
+
+        noteRepository.save(note);
+    }
+    
+    
+ // ============================
+    // CURRENT LOGGED-IN USER
+    // ============================
+
+    private User getCurrentUser(Principal principal) {
+
+        return userRepository
+                .findByEmail(principal.getName())
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "User not found"
+                        )
+                );
+    }
+    
+
 }

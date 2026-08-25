@@ -15,8 +15,8 @@ import java.util.List;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@NoArgsConstructor   // for jackson deserilzation
+@AllArgsConstructor  // for creating object for that easily
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CachedUserDetails implements UserDetails {
 

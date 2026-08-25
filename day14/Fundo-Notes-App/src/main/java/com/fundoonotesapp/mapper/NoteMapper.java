@@ -28,9 +28,7 @@ public class NoteMapper {
                 .id(note.getId())
                 .title(note.getTitle())
                 .content(note.getContent())
-                .pinned(note.isPinned())
-                .archived(note.isArchived())
-                .trashed(note.isTrashed())
+                .status(note.getStatus())
                 .createdAt(note.getCreatedAt())
                 .updatedAt(note.getUpdatedAt())
                 .build();

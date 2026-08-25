@@ -4,126 +4,76 @@ import com.fundoonotesapp.user.entity.User;
 import com.fundoonotesapp.user.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final UserRepository userRepository;
-    private final UserCacheService userCacheService;
+	private final UserRepository userRepository;
+	private final UserCacheService userCacheService;
 
+	@Override
+	public UserDetails loadUserByUsername(String usernam) throws UsernameNotFoundException {
 
-    @Override
-    public UserDetails loadUserByUsername(String usernam)
-            throws UsernameNotFoundException {
+		String username = usernam.toLowerCase();
 
-        String username = usernam.toLowerCase();
+		// ==========================================
+		// 1. CHECK REDIS
+		// ==========================================
 
+		CachedUserDetails cachedUser = userCacheService.getUser(username);
 
-        // ==========================================
-        // 1. CHECK REDIS
-        // ==========================================
+		if (cachedUser != null) {
 
-        CachedUserDetails cachedUser =
-                userCacheService.getUser(username);
+			log.debug("User details found in Redis for email: {}", username);
 
-        if (cachedUser != null) {
+			
 
-            System.out.println(
-                    "USER DETAILS FOUND IN REDIS: " + username
-            );
+			// returning original because become admin so might still as user in redis
+			User user = userRepository.findByEmail(cachedUser.getUsername()).orElseThrow(
+					() -> new UsernameNotFoundException("User not found with email: " + cachedUser.getUsername()));
 
-            /*
-             * Important:
-             * Do NOT return cachedUser directly.
-             *
-             * AuthService and other parts of the application
-             * expect CustomUserDetails.
-             */
+			log.debug("User entity loaded from database for cached user: {}", username);
+			return new CustomUserDetails(user);
+		}
 
-            User user = userRepository
-                    .findByEmail(cachedUser.getUsername())
-                    .orElseThrow(() ->
-                            new UsernameNotFoundException(
-                                    "User not found with email: "
-                                            + cachedUser.getUsername()
-                            )
-                    );
+		// ==========================================
+		// 2. REDIS CACHE MISS -> MYSQL
+		// ==========================================
 
-            System.out.println(
-                    "USER ENTITY LOADED FOR REDIS USER: "
-                            + username
-            );
+		log.debug("Redis cache miss. Loading user from database: {}", username);
 
-            return new CustomUserDetails(user);
-        }
+		User user = userRepository.findByEmail(username)
+				.orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + username));
 
+		// ==========================================
+		// 3. CREATE CustomUserDetails
+		// ==========================================
 
-        // ==========================================
-        // 2. REDIS CACHE MISS -> MYSQL
-        // ==========================================
+		CustomUserDetails userDetails = new CustomUserDetails(user);
 
-        System.out.println(
-                "REDIS CACHE MISS - LOADING USER FROM MYSQL: "
-                        + username
-        );
+		// ==========================================
+		// 4. CREATE REDIS CACHE OBJECT
+		// ==========================================
 
-        User user = userRepository
-                .findByEmail(username)
-                .orElseThrow(() ->
-                        new UsernameNotFoundException(
-                                "User not found with email: "
-                                        + username
-                        )
-                );
+		CachedUserDetails userToCache = new CachedUserDetails(userDetails.getUsername(), userDetails.getPassword(),
+				userDetails.getAuthorities().stream().map(authority -> authority.getAuthority()).toList(),
+				userDetails.isEnabled());
 
+		// ==========================================
+		// 5. SAVE TO REDIS
+		// ==========================================
 
-        // ==========================================
-        // 3. CREATE CustomUserDetails
-        // ==========================================
+		userCacheService.saveUser(userToCache, 3600);
 
-        CustomUserDetails userDetails =
-                new CustomUserDetails(user);
-
-
-        // ==========================================
-        // 4. CREATE REDIS CACHE OBJECT
-        // ==========================================
-
-        CachedUserDetails userToCache =
-                new CachedUserDetails(
-                        userDetails.getUsername(),
-                        userDetails.getPassword(),
-                        userDetails.getAuthorities()
-                                .stream()
-                                .map(authority ->
-                                        authority.getAuthority()
-                                )
-                                .toList(),
-                        userDetails.isEnabled()
-                );
-
-
-        // ==========================================
-        // 5. SAVE TO REDIS
-        // ==========================================
-
-        userCacheService.saveUser(
-                userToCache,
-                3600
-        );
-
-        System.out.println(
-                "USER DETAILS SAVED TO REDIS: "
-                        + username
-        );
-
-
-        return userDetails;
-    }
+		log.debug("User details saved to Redis: {}", username);
+		return userDetails;
+	}
 }

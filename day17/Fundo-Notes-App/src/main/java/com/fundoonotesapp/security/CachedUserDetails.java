@@ -20,7 +20,11 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CachedUserDetails implements UserDetails {
 
-    private String username;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String username;
     private String password;
     private List<String> authorities;
     private boolean enabled = true;

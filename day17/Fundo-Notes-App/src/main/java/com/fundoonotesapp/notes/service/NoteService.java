@@ -48,8 +48,7 @@ public class NoteService {
 
 		Note savedNote = noteRepository.save(note);
 
-		// Index the saved note in Elasticsearch
-		searchService.indexNote(savedNote);
+	
 
 		NoteCreatedEvent event = new NoteCreatedEvent(savedNote.getId(), currentUser.getId(), savedNote.getTitle());
 
@@ -85,8 +84,7 @@ public class NoteService {
 
 		Note updatedNote = noteRepository.save(note);
 
-		// Update Elasticsearch index
-		searchService.indexNote(updatedNote);
+		
 
 		NoteUpdatedEvent event = new NoteUpdatedEvent(updatedNote.getId(), updatedNote.getUser().getId(),
 				updatedNote.getTitle());
@@ -115,8 +113,7 @@ public class NoteService {
 
 		noteRepository.delete(note);
 
-		// Remove from Elasticsearch
-		searchService.deleteNoteFromIndex(noteId);
+	
 
 		// Publish event
 		noteEventProducer.publishNoteDeleted(event);
