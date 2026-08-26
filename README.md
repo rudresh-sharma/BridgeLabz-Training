@@ -549,6 +549,61 @@ Focus: Closing gaps left in Day 16 — fixing invalid `pom.xml` dependency coord
 ↩️ Previous: [Day 16](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day16/Fundo-Notes-App)
 
 ---
+
+
+## 📅 Day 18 — 25 August 2026
+ 
+Focus: Splitting `Fundo-Notes-App` (Day 17) from a single Spring Boot monolith into a Spring Cloud microservices architecture — `discovery-server`, `api-gateway`, `auth-service`, `user-service`, and `notes-service` — each with its own database, migrations, and deployable unit.
+ 
+### 🧩 FundoNotesMicroservices (replaces Fundo-Notes-App)
+ 
+The Day 1–17 monolith is retired in favor of five independent Maven modules under `FundoNotesMicroservices/`, moving from a package-by-feature structure to service-per-feature. Redis caching, RabbitMQ eventing, Elasticsearch indexing, and the reminder/notification pipeline built up through Day 16–17 are dropped from this scope — Day 18 focuses purely on getting the auth/user/notes split working end-to-end behind service discovery and a gateway.
+ 
+### 🔭 discovery-server
+ 
+- Netflix Eureka server (`spring-cloud-starter-netflix-eureka-server`) on port `8761`
+- `register-with-eureka=false` / `fetch-registry=false` — it only hosts the registry, doesn't register itself
+📂 [`day18/FundoNotesMicroservices/discovery-server/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices/discovery-server)
+ 
+### 🚪 api-gateway
+ 
+- Spring Cloud Gateway (WebMVC variant, `spring-cloud-starter-gateway-server-webmvc`) on port `8080`, routing by path prefix to each downstream service via Eureka (`lb://AUTH-SERVICE`, `lb://USER-SERVICE`, `lb://NOTES-SERVICE`)
+- Routes: `/auth/**` → auth-service, `/users/**` → user-service, `/notes/**` → notes-service, each with a `Retry` filter (3 attempts on `SERVICE_UNAVAILABLE`, `GET`/`POST`)
+- `loadbalancer.cache.enabled=false` and a short Eureka fetch/lease interval (5s) so routing picks up newly (de)registered instances quickly
+📂 [`day18/FundoNotesMicroservices/api-gateway/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices/api-gateway)
+ 
+### 🔐 auth-service
+ 
+- Owns login/register/refresh/logout only — no user data of its own; calls `user-service` over Feign (`UserClient`) to create/fetch users
+- `AuthService.register` encodes the password and delegates user creation to `UserClient.createUser`; `login` fetches credentials via `getUserForAuth`, verifies the password, then issues a JWT (`JwtService`) plus a rotating refresh token
+- `RefreshToken` is the only entity owned by this service, backed by its own `refresh_tokens` table (migration `V1`) and `RefreshTokenService` (create/verify/rotate/revoke)
+- `SecurityConfig` permits `/auth/register|login|refresh|logout`, requires `ADMIN`/`USER` roles for `/admin/**` and `/user/**`, and authenticates everything else via `JwtAuthenticationFilter`
+- Registers with Eureka as `auth-service`
+📂 [`day18/FundoNotesMicroservices/auth-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices/auth-service)
+ 
+### 👤 user-service
+ 
+- Owns the `User` entity (`id`, `name`, `email`, `password`, `AuthProvider`, `Role`) and its own `users` table (migration `V1`)
+- `UserController` exposes CRUD by id/email plus two auth-only lookups (`/users/auth/{userId}`, `/users/auth/email/{email}`) that return `UserAuthResponse` (includes the password hash) for `auth-service`'s Feign calls — the plain `/users/**` responses (`UserResponse`) never expose the password
+- No Spring Security dependency — this service isn't meant to be called directly by clients, only through the gateway/other services
+- Registers with Eureka as `user-service`
+📂 [`day18/FundoNotesMicroservices/user-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices/user-service)
+ 
+### 📝 notes-service
+ 
+- Owns the `Note` entity and table (migration `V1`), then migration `V2` swaps the original `user_id` foreign key for a plain `user_email` column + index — notes are now scoped by the email carried in the JWT rather than a cross-service user id lookup
+- Its own `JwtService`/`JwtAuthenticationFilter` validate the token locally (shared `jwt.secret`) and set the caller's email as a request attribute, which `NoteController` reads for every operation — no call back to auth-service or user-service per request
+- `NoteController`: create, list mine, get by id, update, and pin/unpin (`PATCH /notes/{noteId}/pin`) — the labels, search, reminders, and audit-log features from Day 15–16 are not part of this service
+- Registers with Eureka as `notes-service`
+📂 [`day18/FundoNotesMicroservices/notes-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices/notes-service)
+ 
+### ⬆️ Platform bump
+ 
+- All five modules move from `spring-boot-starter-parent` 4.1.0 (Day 17) to 4.1.1, and correctly use `spring-boot-starter-webmvc` (the Spring Boot 4 name for the servlet-stack web starter) rather than Day 16's invalid `spring-boot-starter-webmvc` coordinate on Boot 3
+📂 [`day18/FundoNotesMicroservices/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices)
+↩️ Previous: [Day 17](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day17/Fundo-Notes-App)
+ 
+---
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
