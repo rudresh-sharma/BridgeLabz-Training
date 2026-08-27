@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: user-service
+
+  config:
+    import: optional:file:.env[.properties]
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/fundo_user_db?createDatabaseIfNotExist=true
+    username: root
+    password: Rudresh@2005
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  tracing:
+    sampling:
+      probability: 1.0   # 1.0 = trace 100% of requests (dev only; lower in prod, e.g. 0.1)
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
