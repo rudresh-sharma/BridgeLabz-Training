@@ -1,0 +1,46 @@
+package com.fundoo.reminderservice.logging;
+
+import lombok.extern.slf4j.Slf4j;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
+
+@Aspect
+@Component
+@Slf4j
+public class ControllerLoggingAspect {
+
+    @Around("execution(* com.fundoo.reminderservice..controller..*(..))")
+    public Object logControllerExecution(
+            ProceedingJoinPoint joinPoint
+    ) throws Throwable {
+
+        String className  = joinPoint.getTarget().getClass().getSimpleName();
+        String methodName = joinPoint.getSignature().getName();
+        long startTime    = System.currentTimeMillis();
+
+        log.info("REQUEST STARTED: {}.{}()", className, methodName);
+
+        try {
+
+            Object result = joinPoint.proceed();
+
+            log.info("REQUEST COMPLETED: {}.{}() | {} ms",
+                    className, methodName,
+                    System.currentTimeMillis() - startTime);
+
+            return result;
+
+        } catch (Exception ex) {
+
+            log.error("REQUEST FAILED: {}.{}() | {} ms | Error: {}",
+                    className, methodName,
+                    System.currentTimeMillis() - startTime,
+                    ex.getMessage());
+
+            throw ex;
+        }
+    }
+}

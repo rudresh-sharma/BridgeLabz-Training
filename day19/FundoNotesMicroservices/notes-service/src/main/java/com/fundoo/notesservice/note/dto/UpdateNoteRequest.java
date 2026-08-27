@@ -1,0 +1,13 @@
+package com.fundoo.notesservice.note.dto;
+
+import jakarta.validation.constraints.Size;
+
+public record UpdateNoteRequest(
+
+        @Size(max = 255, message = "Title cannot exceed 255 characters")
+        String title,
+
+        String content
+
+) {
+}
