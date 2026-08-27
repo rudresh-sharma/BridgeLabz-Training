@@ -1,0 +1,66 @@
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+### Java ###
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+### Spring Boot ###
+*.log
+spring.log
+
+### IDE - Eclipse ###
+.classpath
+.project
+.settings/
+.factorypath
+bin/
+
+### IDE - IntelliJ ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+### IDE - VS Code ###
+.vscode/
+
+### Environment / secrets ###
+.env
+.env.*
+*.env
+!.env.example
+
+### OS files ###
+.DS_Store
+Thumbs.db
+desktop.ini
+
+### Logs ###
+logs/
+*.log
+
+### Node (if any frontend exists) ###
+node_modules/
+dist/
+build/
+
+### Misc ###
+*.bak
+*.tmp
+*.swp
