@@ -675,7 +675,54 @@ Focus: Growing `FundoNotesMicroservices` (Day 18) with three new services — `s
 ↩️ Previous: [Day 18](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices)
 
 
+--- 
 
+## 📅 Day 20 — 27 August 2026
+
+Focus: Distributed tracing (Zipkin) wired into all `FundoNotesMicroservices` (Day 19) modules, reminder emails enriched with real note content via a new inter-service Feign call from `reminder-service` → `notes-service`, a stricter reminder duplicate-check, and two dormant Day 19 config bugs (`reminder-service`'s JWT secret, `notification-service`'s mail sender identity) fixed.
+
+### 🔭 Platform-wide — distributed tracing (Zipkin)
+
+- New `zipkin` container added to `docker-compose.yml` (`openzipkin/zipkin`, port `9411`), alongside Day 19's `kafka` and `elasticsearch`
+- Every module (`api-gateway`, `auth-service`, `discovery-server`, `notes-service`, `notification-service`, `reminder-service`, `search-sevice`, `user-service`) gains `micrometer-tracing-bridge-brave` + `zipkin-reporter-brave` in `pom.xml`, plus `management.tracing.sampling.probability=1.0` and `management.zipkin.tracing.endpoint=http://localhost:9411/api/v2/spans` in its config
+- Same modules swap `spring-boot-starter-aop` → `spring-boot-starter-aspectj` in `pom.xml` (load-time weaving, needed alongside the new tracing instrumentation)
+
+### 📝 reminder-service — Feign call to notes-service, note content in emails, stricter duplicates
+
+- **New: `reminder/client/`** — `NoteClient` (`@FeignClient`, `GET /notes/internal/{id}`), `NoteDto` (`id`, `title`, `content`), `FeignClientConfig` (adds an `X-Internal-Api-Key` header to every outgoing call via a `RequestInterceptor`); `pom.xml` gains `spring-cloud-starter-openfeign`, `ReminderServiceApplication` gains `@EnableFeignClients`
+- `ReminderScheduler` now calls `noteClient.getNoteById(...)` for each due reminder before publishing, so `ReminderDueEvent` (record, both here and in `notification-service`) carries the note's `title`/`content` instead of just its ID
+- **Changed: duplicate check narrowed** — `Reminder`'s unique constraint and `ReminderRepository.existsByNoteIdAndEmail` (Day 19) become `existsByNoteIdAndEmailAndReminderTime`, so multiple reminders are allowed per note as long as their times differ; migration `V2__update_reminder_unique_constraint.sql` drops the old constraint and adds the new one
+- `ReminderService.createReminder`/`updateReminder` now throw the new `DuplicateReminderException` instead of a bare `RuntimeException`; `updateReminder` also re-checks for a collision when the reminder time changes
+- **New: `reminder/common/`** — `GlobalExceptionHandler` (`@RestControllerAdvice`) maps `DuplicateReminderException` → `409`, malformed bodies → `400`, Bean Validation errors → `400`, and a catch-all → `500`, each returning a structured `ApiError` (timestamp/status/error/message/path)
+- **Fix:** `JwtService.secret` was reading from an empty `@Value("")` in Day 19 (dead code — the field was never actually populated); now correctly bound to `${jwt.secret}`
+- `application.yaml` gains `note-service.url` and `internal.api.key` (shared secret with `notes-service`)
+
+📂 [`day20/FundoNotesMicroservices/reminder-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day20/FundoNotesMicroservices/reminder-service)
+
+### 📝 notes-service — internal API for note lookups
+
+- New `GET /notes/internal/{noteId}` (`NoteController` + `NoteService.getNoteByIdInternal`) — the endpoint `reminder-service`'s new `NoteClient` calls
+- New `security/InternalApiKeyFilter` (`OncePerRequestFilter`) — rejects any request under `/notes/internal/**` that's missing or has the wrong `X-Internal-Api-Key` header (`403`); registered in `SecurityConfig` ahead of the existing `JwtAuthenticationFilter`
+- `application.yaml` gains `internal.api.key`, matching `reminder-service`'s
+
+📂 [`day20/FundoNotesMicroservices/notes-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day20/FundoNotesMicroservices/notes-service)
+
+### 📧 notification-service — HTML reminder emails
+
+- `EmailService.sendReminderEmail` rewritten from a plain-text `SimpleMailMessage` to an HTML email built with `MimeMessageHelper` — a styled template (subject line now uses the note's title instead of its ID, body shows title + content + scheduled time), with a new `escapeHtml()` helper to sanitize note title/content before embedding them in the HTML
+- **Fix:** `fromAddress`/`fromName` were reading from empty `@Value("")` bindings in Day 19 (same dead-config pattern as `reminder-service`'s `JwtService`); now bound to `${spring.mail.username}` and the new `app.mail.from-name` property
+
+📂 [`day20/FundoNotesMicroservices/notification-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day20/FundoNotesMicroservices/notification-service)
+
+### 🚪 api-gateway
+
+- The `/notes/**` route's `Retry` filter narrows back from Day 19's `GET,POST,PUT,PATCH,DELETE` to `GET` only
+- Gains the same Zipkin tracing dependencies/config as every other module
+
+📂 [`day20/FundoNotesMicroservices/api-gateway/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day20/FundoNotesMicroservices/api-gateway)
+
+📂 [`day20/FundoNotesMicroservices/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day20/FundoNotesMicroservices)
+↩️ Previous: [Day 19](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day19/FundoNotesMicroservices)
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
