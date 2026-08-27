@@ -1277,6 +1277,184 @@ Focus: Closing gaps left in Day 16 — fixing invalid `pom.xml` dependency coord
 ↩️ Previous: [Day 16](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day16/Fundo-Notes-App)
 
 ---
+
+
+
+## 📅 Day 18 — 25 August 2026
+ 
+Focus: Splitting `Fundo-Notes-App` (Day 17) from a single Spring Boot monolith into a Spring Cloud microservices architecture — `discovery-server`, `api-gateway`, `auth-service`, `user-service`, and `notes-service` — each with its own database, migrations, and deployable unit.
+ 
+### 🧩 FundoNotesMicroservices (replaces Fundo-Notes-App)
+ 
+The Day 1–17 monolith is retired in favor of five independent Maven modules under `FundoNotesMicroservices/`, moving from a package-by-feature structure to service-per-feature. Redis caching, RabbitMQ eventing, Elasticsearch indexing, and the reminder/notification pipeline built up through Day 16–17 are dropped from this scope — Day 18 focuses purely on getting the auth/user/notes split working end-to-end behind service discovery and a gateway.
+ 
+### 🔭 discovery-server
+ 
+- Netflix Eureka server (`spring-cloud-starter-netflix-eureka-server`) on port `8761`
+- `register-with-eureka=false` / `fetch-registry=false` — it only hosts the registry, doesn't register itself
+📂 [`day18/FundoNotesMicroservices/discovery-server/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices/discovery-server)
+ 
+### 🚪 api-gateway
+ 
+- Spring Cloud Gateway (WebMVC variant, `spring-cloud-starter-gateway-server-webmvc`) on port `8080`, routing by path prefix to each downstream service via Eureka (`lb://AUTH-SERVICE`, `lb://USER-SERVICE`, `lb://NOTES-SERVICE`)
+- Routes: `/auth/**` → auth-service, `/users/**` → user-service, `/notes/**` → notes-service, each with a `Retry` filter (3 attempts on `SERVICE_UNAVAILABLE`, `GET`/`POST`)
+- `loadbalancer.cache.enabled=false` and a short Eureka fetch/lease interval (5s) so routing picks up newly (de)registered instances quickly
+📂 [`day18/FundoNotesMicroservices/api-gateway/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices/api-gateway)
+ 
+### 🔐 auth-service
+ 
+- Owns login/register/refresh/logout only — no user data of its own; calls `user-service` over Feign (`UserClient`) to create/fetch users
+- `AuthService.register` encodes the password and delegates user creation to `UserClient.createUser`; `login` fetches credentials via `getUserForAuth`, verifies the password, then issues a JWT (`JwtService`) plus a rotating refresh token
+- `RefreshToken` is the only entity owned by this service, backed by its own `refresh_tokens` table (migration `V1`) and `RefreshTokenService` (create/verify/rotate/revoke)
+- `SecurityConfig` permits `/auth/register|login|refresh|logout`, requires `ADMIN`/`USER` roles for `/admin/**` and `/user/**`, and authenticates everything else via `JwtAuthenticationFilter`
+- Registers with Eureka as `auth-service`
+📂 [`day18/FundoNotesMicroservices/auth-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices/auth-service)
+ 
+### 👤 user-service
+ 
+- Owns the `User` entity (`id`, `name`, `email`, `password`, `AuthProvider`, `Role`) and its own `users` table (migration `V1`)
+- `UserController` exposes CRUD by id/email plus two auth-only lookups (`/users/auth/{userId}`, `/users/auth/email/{email}`) that return `UserAuthResponse` (includes the password hash) for `auth-service`'s Feign calls — the plain `/users/**` responses (`UserResponse`) never expose the password
+- No Spring Security dependency — this service isn't meant to be called directly by clients, only through the gateway/other services
+- Registers with Eureka as `user-service`
+📂 [`day18/FundoNotesMicroservices/user-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices/user-service)
+ 
+### 📝 notes-service
+ 
+- Owns the `Note` entity and table (migration `V1`), then migration `V2` swaps the original `user_id` foreign key for a plain `user_email` column + index — notes are now scoped by the email carried in the JWT rather than a cross-service user id lookup
+- Its own `JwtService`/`JwtAuthenticationFilter` validate the token locally (shared `jwt.secret`) and set the caller's email as a request attribute, which `NoteController` reads for every operation — no call back to auth-service or user-service per request
+- `NoteController`: create, list mine, get by id, update, and pin/unpin (`PATCH /notes/{noteId}/pin`) — the labels, search, reminders, and audit-log features from Day 15–16 are not part of this service
+- Registers with Eureka as `notes-service`
+📂 [`day18/FundoNotesMicroservices/notes-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices/notes-service)
+ 
+### ⬆️ Platform bump
+ 
+- All five modules move from `spring-boot-starter-parent` 4.1.0 (Day 17) to 4.1.1, and correctly use `spring-boot-starter-webmvc` (the Spring Boot 4 name for the servlet-stack web starter) rather than Day 16's invalid `spring-boot-starter-webmvc` coordinate on Boot 3
+📂 [`day18/FundoNotesMicroservices/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices)
+↩️ Previous: [Day 17](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day17/Fundo-Notes-App)
+ 
+---
+
+## 📅 Day 19 — 26 August 2026
+
+Focus: Growing `FundoNotesMicroservices` (Day 18) with three new services — `search-service`, `reminder-service`, `notification-service` — plus notes labels/trash/archive, audit logging via Kafka, account lockout, and self-service password reset, wired through Docker Compose for Kafka + Elasticsearch.
+
+### 🐳 docker-compose.yml (new)
+
+- Brings up `kafka` (KRaft mode, single broker, no Zookeeper) on `9092` and `elasticsearch` 9.4.5 (security disabled, single-node) on `9200`/`9300`, backing the new event-driven services below
+📄 [`day19/FundoNotesMicroservices/docker-compose.yml`](https://github.com/rudresh-sharma/BridgeLabz-Training/blob/Refresher-Training/day19/FundoNotesMicroservices/docker-compose.yml)
+
+### 📝 notes-service — labels, archive/trash, Kafka events, audit log
+
+- **Package reshuffle:** `controller/NoteController` moves into a dedicated `note/` package (`note/controller`, `note/entity`, `note/event`) alongside new `note/kafka/NoteEventProducer` and `note/scheduler/NoteCleanupScheduler`
+- **New note lifecycle actions** on `NoteController` — `archive`/`unarchive`, `trash`/`restore`, plus `GET /notes/pinned`, `/notes/archived`, `/notes/trashed` — extending Day 18's create/list/get/update/pin-unpin
+- **New `labels/` feature slice** — `Label` entity + `LabelController` (`POST/GET /labels`, `PUT/DELETE /labels/{labelId}`) and `NoteController` gains `POST`/`DELETE /notes/{noteId}/labels/{labelId}` to attach/detach labels, backed by migrations `V3__create_labels_tables.sql` and `V4__add_label_unique_constraint.sql`
+- **`NoteEventProducer`** publishes a `NoteEvent` to Kafka topic `note-events` (keyed by note ID) on every create/update/delete; `audit/NoteAuditConsumer` listens on the same topic and persists each one as an `AuditLog` row (migration `V5__create_audit_logs_table.sql`) — this is the audit trail dropped from scope on Day 18
+- **`NoteCleanupScheduler`** — a daily cron job (`0 0 2 * * *` by default) that hard-deletes notes left in `TRASHED` status past a configurable retention window (30 days default), publishing a `DELETED` `NoteEvent` before each delete so `search-service` stays in sync
+- **New `ControllerLoggingAspect`** — an `@Around` AOP aspect logging start/completion/failure and timing for every controller method, matching the Day 17 monolith's request logging (added via new `spring-boot-starter-aop`/`spring-boot-starter-kafka` dependencies)
+- **pom.xml cleanup** — the invalid Day 18 test-starter coordinates (`spring-boot-starter-data-jpa-test`, `-flyway-test`, `-validation-test`, `-webmvc-test`) collapse into the single real `spring-boot-starter-test`, plus `spring-security-test` added directly
+📂 [`day19/FundoNotesMicroservices/notes-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day19/FundoNotesMicroservices/notes-service)
+↩️ Previous: [Day 18 notes-service](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices/notes-service)
+
+### 🔎 search-service (new)
+
+- A new Spring Cloud module (`spring-boot-starter-data-elasticsearch`) that indexes notes for search, independent of the MySQL-backed `notes-service`
+- `SearchNote` — an Elasticsearch `@Document` (index `notes`) mirroring a note's id/title/content/email/status
+- `NoteEventConsumer` listens on Kafka topic `note-events` (`search-service-group`): `CREATED`/`UPDATED` events upsert the `SearchNote` document, `DELETED` removes it by ID — keeping the search index in sync with `notes-service` without a direct service call
+- `SearchNoteController` exposes `GET /search/notes`; own `JwtService`/`JwtAuthenticationFilter`/`SecurityConfig` validate the token locally, same pattern as `notes-service`
+- Registers with Eureka as `search-service` (note: the module folder itself is named `search-sevice`, a typo carried through the package name `com.fundoo.searchsevice` and all its classes)
+📂 [`day19/FundoNotesMicroservices/search-sevice/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day19/FundoNotesMicroservices/search-sevice)
+
+### ⏰ reminder-service (new)
+
+- Owns the `Reminder` entity/table (migration `V1__create_reminders_table.sql`) and its own `ReminderController` (`POST/GET /reminders`, `GET/PUT/DELETE /reminders/{id}`), scoped by the caller's email the same way `notes-service` reads it off the JWT
+- `ReminderScheduler` runs every 60 seconds (matching the Day 16–17 monolith's `fixedRate=60000`), finds all due, unnotified reminders, publishes a `ReminderDueEvent` to Kafka topic `notification-events` (keyed by email), and marks each `notified=true` immediately so a downstream failure can't cause double-sends
+- Has its own `JwtService`/`JwtAuthenticationFilter`/`SecurityConfig`, same local-JWT-validation pattern as `notes-service` and `search-service`
+📂 [`day19/FundoNotesMicroservices/reminder-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day19/FundoNotesMicroservices/reminder-service)
+
+### 📧 notification-service (new)
+
+- A lightweight consumer-only module: `NotificationConsumer` listens on Kafka topic `notification-events` (`notification-service-group`) for `ReminderDueEvent`s coming from `reminder-service`
+- `EmailService` sends a plain-text `SimpleMailMessage` reminder email via `JavaMailSender` for each event; email failures are logged and swallowed so a bad send doesn't block the Kafka consumer (noted in-code as needing a Dead Letter Topic for production)
+- Depends on `spring-boot-starter-mail` and `spring-boot-starter-thymeleaf` (the latter unused by the current plain-text implementation), plus `spring-boot-starter-kafka`; has no controller of its own
+📂 [`day19/FundoNotesMicroservices/notification-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day19/FundoNotesMicroservices/notification-service)
+
+### 🔐 auth-service — forgot/reset password, account lockout
+
+- **New:** `POST /auth/forgot-password` → `AuthService.forgotPassword` issues a 15-minute `PasswordResetToken` (own entity/repository, migration `V2__create_password_reset_tokens.sql`); `POST /auth/reset-password` verifies the token, calls `user-service`'s new password-update endpoint, then deletes the token
+- **New:** account lockout on login — `AuthService.login` now checks `UserAuthResponse.accountLockedUntil()` before verifying the password, calls `user-service`'s `incrementFailedAttempts` on a bad password and `resetFailedAttempts` on success
+- Migration file renamed: `V1__create_refresh_tokens_table.sql` (Day 18) → `V1__create_refresh_tokens.sql`
+- Gains the same `ControllerLoggingAspect` (AOP) as `notes-service`, via new `spring-boot-starter-aop` dependency; pom.xml test-starter cleanup mirrors `notes-service`'s
+📂 [`day19/FundoNotesMicroservices/auth-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day19/FundoNotesMicroservices/auth-service)
+↩️ Previous: [Day 18 auth-service](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices/auth-service)
+
+### 👤 user-service — password update, lockout tracking
+
+- **New endpoints on `UserController`:** `PATCH /{userId}/password` (sets an already-encoded password, used by `auth-service`'s reset flow), and two internal-only endpoints `POST /{userId}/lockout/increment` / `POST /{userId}/lockout/reset` used exclusively by `auth-service` around login attempts
+- Gains the matching `ControllerLoggingAspect`
+📂 [`day19/FundoNotesMicroservices/user-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day19/FundoNotesMicroservices/user-service)
+
+### 🚪 api-gateway — routes for the three new services
+
+- Three new routes added alongside Day 18's `/auth/**`, `/users/**`, `/notes/**`: `/labels/**` → `lb://NOTES-SERVICE`, `/search/**` → `lb://SEARCH-SERVICE`, `/reminders/**` → `lb://REMINDER-SERVICE`, each with the same 3-attempt `Retry` filter on `SERVICE_UNAVAILABLE`
+- The existing `/notes/**` route's `Retry` filter widens from `GET,POST` (Day 18) to `GET,POST,PUT,PATCH,DELETE` to cover the new archive/trash/label actions
+- A commented-out `batch-service` route is left as a placeholder for future batch endpoints
+📂 [`day19/FundoNotesMicroservices/api-gateway/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day19/FundoNotesMicroservices/api-gateway)
+
+📂 [`day19/FundoNotesMicroservices/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day19/FundoNotesMicroservices)
+↩️ Previous: [Day 18](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day18/FundoNotesMicroservices)
+
+
+--- 
+
+## 📅 Day 20 — 27 August 2026
+
+Focus: Distributed tracing (Zipkin) wired into all `FundoNotesMicroservices` (Day 19) modules, reminder emails enriched with real note content via a new inter-service Feign call from `reminder-service` → `notes-service`, a stricter reminder duplicate-check, and two dormant Day 19 config bugs (`reminder-service`'s JWT secret, `notification-service`'s mail sender identity) fixed.
+
+### 🔭 Platform-wide — distributed tracing (Zipkin)
+
+- New `zipkin` container added to `docker-compose.yml` (`openzipkin/zipkin`, port `9411`), alongside Day 19's `kafka` and `elasticsearch`
+- Every module (`api-gateway`, `auth-service`, `discovery-server`, `notes-service`, `notification-service`, `reminder-service`, `search-sevice`, `user-service`) gains `micrometer-tracing-bridge-brave` + `zipkin-reporter-brave` in `pom.xml`, plus `management.tracing.sampling.probability=1.0` and `management.zipkin.tracing.endpoint=http://localhost:9411/api/v2/spans` in its config
+- Same modules swap `spring-boot-starter-aop` → `spring-boot-starter-aspectj` in `pom.xml` (load-time weaving, needed alongside the new tracing instrumentation)
+
+### 📝 reminder-service — Feign call to notes-service, note content in emails, stricter duplicates
+
+- **New: `reminder/client/`** — `NoteClient` (`@FeignClient`, `GET /notes/internal/{id}`), `NoteDto` (`id`, `title`, `content`), `FeignClientConfig` (adds an `X-Internal-Api-Key` header to every outgoing call via a `RequestInterceptor`); `pom.xml` gains `spring-cloud-starter-openfeign`, `ReminderServiceApplication` gains `@EnableFeignClients`
+- `ReminderScheduler` now calls `noteClient.getNoteById(...)` for each due reminder before publishing, so `ReminderDueEvent` (record, both here and in `notification-service`) carries the note's `title`/`content` instead of just its ID
+- **Changed: duplicate check narrowed** — `Reminder`'s unique constraint and `ReminderRepository.existsByNoteIdAndEmail` (Day 19) become `existsByNoteIdAndEmailAndReminderTime`, so multiple reminders are allowed per note as long as their times differ; migration `V2__update_reminder_unique_constraint.sql` drops the old constraint and adds the new one
+- `ReminderService.createReminder`/`updateReminder` now throw the new `DuplicateReminderException` instead of a bare `RuntimeException`; `updateReminder` also re-checks for a collision when the reminder time changes
+- **New: `reminder/common/`** — `GlobalExceptionHandler` (`@RestControllerAdvice`) maps `DuplicateReminderException` → `409`, malformed bodies → `400`, Bean Validation errors → `400`, and a catch-all → `500`, each returning a structured `ApiError` (timestamp/status/error/message/path)
+- **Fix:** `JwtService.secret` was reading from an empty `@Value("")` in Day 19 (dead code — the field was never actually populated); now correctly bound to `${jwt.secret}`
+- `application.yaml` gains `note-service.url` and `internal.api.key` (shared secret with `notes-service`)
+
+📂 [`day20/FundoNotesMicroservices/reminder-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day20/FundoNotesMicroservices/reminder-service)
+
+### 📝 notes-service — internal API for note lookups
+
+- New `GET /notes/internal/{noteId}` (`NoteController` + `NoteService.getNoteByIdInternal`) — the endpoint `reminder-service`'s new `NoteClient` calls
+- New `security/InternalApiKeyFilter` (`OncePerRequestFilter`) — rejects any request under `/notes/internal/**` that's missing or has the wrong `X-Internal-Api-Key` header (`403`); registered in `SecurityConfig` ahead of the existing `JwtAuthenticationFilter`
+- `application.yaml` gains `internal.api.key`, matching `reminder-service`'s
+
+📂 [`day20/FundoNotesMicroservices/notes-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day20/FundoNotesMicroservices/notes-service)
+
+### 📧 notification-service — HTML reminder emails
+
+- `EmailService.sendReminderEmail` rewritten from a plain-text `SimpleMailMessage` to an HTML email built with `MimeMessageHelper` — a styled template (subject line now uses the note's title instead of its ID, body shows title + content + scheduled time), with a new `escapeHtml()` helper to sanitize note title/content before embedding them in the HTML
+- **Fix:** `fromAddress`/`fromName` were reading from empty `@Value("")` bindings in Day 19 (same dead-config pattern as `reminder-service`'s `JwtService`); now bound to `${spring.mail.username}` and the new `app.mail.from-name` property
+
+📂 [`day20/FundoNotesMicroservices/notification-service/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day20/FundoNotesMicroservices/notification-service)
+
+### 🚪 api-gateway
+
+- The `/notes/**` route's `Retry` filter narrows back from Day 19's `GET,POST,PUT,PATCH,DELETE` to `GET` only
+- Gains the same Zipkin tracing dependencies/config as every other module
+
+📂 [`day20/FundoNotesMicroservices/api-gateway/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day20/FundoNotesMicroservices/api-gateway)
+
+📂 [`day20/FundoNotesMicroservices/`](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day20/FundoNotesMicroservices)
+↩️ Previous: [Day 19](https://github.com/rudresh-sharma/BridgeLabz-Training/tree/Refresher-Training/day19/FundoNotesMicroservices)
+
+
+---
 ## 🛠️ Tech Stack
 
 - **MySQL** — database design & querying
