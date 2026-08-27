@@ -1,36 +1,60 @@
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+### Build output (Maven/Gradle) — applies to every service folder ###
+**/target/
+**/build/
+**/out/
 
-### STS ###
-.apt_generated
+### Compiled files ###
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+!.mvn/wrapper/maven-wrapper.jar
+
+### Maven ###
+**/.mvn/timing.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+### Logs ###
+**/logs/
+*.log
+spring.log
+
+### Environment / secrets ###
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+
+### IDE - Eclipse ###
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
+.settings/
+.factorypath
+bin/
 
-### IntelliJ IDEA ###
-.idea
+### IDE - IntelliJ ###
+.idea/
 *.iws
 *.iml
 *.ipr
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
+### IDE - VS Code ###
 .vscode/
 
-.env
-logs
+### OS files ###
+.DS_Store
+Thumbs.db
+desktop.ini
+
+### Misc ###
+*.bak
+*.tmp
+*.swp
