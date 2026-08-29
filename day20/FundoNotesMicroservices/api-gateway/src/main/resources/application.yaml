@@ -1,6 +1,7 @@
 spring:
   application:
     name: api-gateway
+
   cloud:
     gateway:
       server:
@@ -16,6 +17,11 @@ spring:
                     retries: 3
                     statuses: SERVICE_UNAVAILABLE
                     methods: GET,POST
+
+            - id: auth-service-oauth2
+              uri: lb://AUTH-SERVICE
+              predicates :
+                - Path=/oauth2/**,/login/**
 
             - id: user-service
               uri: lb://USER-SERVICE
@@ -96,6 +102,8 @@ spring:
 server:
   port: 8080
 
+  forward-headers-strategy: framework
+
 eureka:
   client:
     service-url:
@@ -113,3 +121,8 @@ management:
   zipkin:
     tracing:
       endpoint: http://localhost:9411/api/v2/spans
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG

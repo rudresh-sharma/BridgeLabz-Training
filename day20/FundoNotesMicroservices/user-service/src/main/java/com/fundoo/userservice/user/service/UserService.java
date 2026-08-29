@@ -9,9 +9,11 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fundoo.userservice.user.dto.ChangePasswordRequest;
 import com.fundoo.userservice.user.dto.CreateUserRequest;
+import com.fundoo.userservice.user.dto.OAuthUserRequest;
 import com.fundoo.userservice.user.dto.UpdateUserRequest;
 import com.fundoo.userservice.user.dto.UserAuthResponse;
 import com.fundoo.userservice.user.dto.UserResponse;
+import com.fundoo.userservice.user.entity.Role;
 import com.fundoo.userservice.user.entity.User;
 import com.fundoo.userservice.user.repository.UserRepository;
 
@@ -42,7 +44,30 @@ public class UserService {
 
         return mapToResponse(savedUser);
     }
+    
+    public UserAuthResponse findOrCreateOAuthUser(OAuthUserRequest request) {
 
+        User user = userRepository.findByEmail(request.email())
+                .orElseGet(() -> userRepository.save(
+                        User.builder()
+                                .name(request.name())
+                                .email(request.email())
+                                .password(null)              // no password for OAuth users
+                                .provider(request.provider())
+                                .profilePicUrl(request.profilePicUrl())
+                                .role(Role.USER)
+                                .build()
+                ));
+
+        return new UserAuthResponse(
+                user.getId(),
+                user.getEmail(),
+                user.getPassword(),
+                user.getRole(),
+                0,
+                user.getAccountLockedUntil()
+        );
+    }
     public UserResponse getUserById(UUID id) {
 
         User user = userRepository.findById(id)
@@ -171,4 +196,7 @@ public class UserService {
                 user.getRole()
         );
     }
+    
+    
+   
 }

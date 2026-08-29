@@ -1,5 +1,6 @@
 package com.fundoo.userservice.user.controller;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.http.ResponseEntity;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.fundoo.userservice.user.dto.ChangePasswordRequest;
 import com.fundoo.userservice.user.dto.CreateUserRequest;
+import com.fundoo.userservice.user.dto.OAuthUserRequest;
 import com.fundoo.userservice.user.dto.UpdateUserRequest;
 import com.fundoo.userservice.user.dto.UserAuthResponse;
 import com.fundoo.userservice.user.dto.UserResponse;
@@ -119,5 +121,15 @@ public class UserController {
         userService.resetFailedAttempts(userId);
 
         return ResponseEntity.noContent().build();
+    }
+    
+    @PostMapping("/oauth")
+    public ResponseEntity<UserAuthResponse> findOrCreateOAuthUser(
+            @RequestBody OAuthUserRequest request) {
+
+        UserAuthResponse user =userService.findOrCreateOAuthUser(request);
+
+        return ResponseEntity.ok(user
+        );
     }
 }

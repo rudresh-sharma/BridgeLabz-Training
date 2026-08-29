@@ -13,6 +13,7 @@ import com.fundoo.authservice.dto.CreateUserRequest;
 import com.fundoo.authservice.dto.ForgotPasswordRequest;
 import com.fundoo.authservice.dto.LoginRequest;
 import com.fundoo.authservice.dto.LoginResponse;
+import com.fundoo.authservice.dto.OAuthUserRequest;
 import com.fundoo.authservice.dto.RefreshTokenRequest;
 import com.fundoo.authservice.dto.RefreshTokenResponse;
 import com.fundoo.authservice.dto.RegisterRequest;
@@ -197,5 +198,25 @@ public class AuthService {
         );
 
         passwordResetTokenRepository.delete(resetToken);
+    }
+    
+    public LoginResponse loginWithGoogle(OAuthUserRequest oAuthUserRequest) {
+
+        UserAuthResponse user = userClient.findOrCreateOAuthUser(oAuthUserRequest);
+
+        String accessToken = jwtService.generateToken(
+                user.id(),
+                user.email(),
+                user.role()
+        );
+
+        RefreshToken refreshToken =
+                refreshTokenService.createRefreshToken(user.id());
+
+        return new LoginResponse(
+                accessToken,
+                refreshToken.getToken(),
+                "Bearer"
+        );
     }
 }

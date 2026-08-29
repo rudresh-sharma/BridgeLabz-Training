@@ -2,6 +2,7 @@ package com.fundoo.authservice.client;
 
 import com.fundoo.authservice.dto.ChangePasswordRequest;
 import com.fundoo.authservice.dto.CreateUserRequest;
+import com.fundoo.authservice.dto.OAuthUserRequest;
 import com.fundoo.authservice.dto.UserAuthResponse;
 import com.fundoo.authservice.dto.UserResponse;
 
@@ -54,4 +55,7 @@ public interface UserClient {
     void resetFailedAttempts(
             @PathVariable("userId") UUID userId
     );
+    
+    @PostMapping("/users/oauth")
+    UserAuthResponse findOrCreateOAuthUser(@RequestBody OAuthUserRequest request);
 }
